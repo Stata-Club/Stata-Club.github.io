@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="爬虫神奇Curl继续带你抓网页">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-10-14T06:18:24.764Z">
+<meta property="og:updated_time" content="2017-10-14T06:50:16.640Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爬虫神奇Curl继续带你抓网页">
 <meta name="twitter:description" content="爬虫神奇Curl继续带你抓网页">
@@ -197,7 +197,31 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>爬虫神奇Curl继续带你抓网页<a id="more"></a></p>
-<iframe src="https://mp.weixin.qq.com/s/uWaF-fqK4nuKUfUpyMx2TA" width="1000px" height="2000px" scrolling="auto" frameborder="0"></iframe>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+</script>
+
+<iframe src="https://mp.weixin.qq.com/s/uWaF-fqK4nuKUfUpyMx2TA" width="700px" height="3000px" scrolling="auto" frameborder="0"></iframe>
+
+
+<script type="text/javascript">
+$.ajaxPrefilter( function (options) {
+    if (options.crossDomain && jQuery.support.cors) {
+       var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
+       options.url = http + '//cors-anywhere.herokuapp.com/' + options.url;
+       //options.url = "http://cors.corsproxy.io/url=" + options.url;
+    }
+});
+
+ var share_link="https://mp.weixin.qq.com/s/uWaF-fqK4nuKUfUpyMx2TA";//微信文章地址
+$.get(
+      share_link,
+      function (response) {
+      console.log("> ", response); 
+      var html = response;
+      html=html.replace(/data-src/g, "src"); 
+      var html_src = 'data:text/html;charset=utf-8,' + html;
+      $("iframe").attr("src" , html_src);
+});</script>
       
     </div>
     <footer class="article-footer">

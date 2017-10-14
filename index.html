@@ -322,7 +322,17 @@
       
         <p>爬虫神奇Curl继续带你抓网页
         <!-- 爬虫神奇Curl继续带你抓网页
-...  -->
+
+
+
+
+
+
+
+$.ajaxPrefilter( function (options) {
+    if (options.crossDomain && jQuery.support.cors) {
+       var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
+   ......  -->
         <p class="article-more-link">
           <a href="/2017/10/14/爬虫神奇Curl继续带你抓网页/#more">阅读全文</a>
         </p>
