@@ -90,5 +90,5 @@ theme: hiker
 
 deploy:
   type: git
-  repo: git@id_rsa_stata.github.com:Stata-Club/Stata-Club.github.io.git
+  repo: git@stata.github.com:Stata-Club/Stata-Club.github.io.git
   branch: master
