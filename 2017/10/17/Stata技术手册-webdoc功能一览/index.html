@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[stata技术手册]webdoc功能一览 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="Statawebdoc技术手册" />
+  
+  
+  
+  
+  <meta name="description" content="webdoc命令是Stata的一项外部命令，它旨在将Stata的do文件转化为html文件，并为此配置了一系列的（繁杂的）选项设置。 鉴于国内还没有相关的中文资料，本篇文章将详细介绍关于webdoc的参数配置选项。">
+<meta name="keywords" content="Stata,webdoc,技术手册">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Stata技术手册]webdoc功能一览">
+<meta property="og:url" content="http://yoursite.com/2017/10/17/Stata技术手册-webdoc功能一览/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="webdoc命令是Stata的一项外部命令，它旨在将Stata的do文件转化为html文件，并为此配置了一系列的（繁杂的）选项设置。 鉴于国内还没有相关的中文资料，本篇文章将详细介绍关于webdoc的参数配置选项。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-10-18T12:53:18.562Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Stata技术手册]webdoc功能一览">
+<meta name="twitter:description" content="webdoc命令是Stata的一项外部命令，它旨在将Stata的do文件转化为html文件，并为此配置了一系列的（繁杂的）选项设置。 鉴于国内还没有相关的中文资料，本篇文章将详细介绍关于webdoc的参数配置选项。">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/favicon.jpg">
+  <link rel="apple-touch-icon" href="/css/images/favicon.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+  <script src="/js/bootstrap.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    <link rel="stylesheet" href="/css/dialog.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="120px" height="120px" alt="Hike News" src="/css/images/favicon.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">归档</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories/程序图书馆">程序图书馆</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories/推文">推文</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories/数据">数据</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">标签</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">关于我们</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-Stata技术手册-webdoc功能一览"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      [Stata技术手册]webdoc功能一览
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2017/10/17/Stata技术手册-webdoc功能一览/" class="article-date">
+	  <time datetime="2017-10-17T02:46:04.000Z" itemprop="datePublished">2017-10-17</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/推文/">推文</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		阅读量<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>webdoc</code>命令是Stata的一项外部命令，它旨在将Stata的do文件转化为html文件，并为此配置了一系列的（繁杂的）选项设置。</p>
+<p>鉴于国内还没有相关的中文资料，本篇文章将详细介绍关于<code>webdoc</code>的参数配置选项。</p>
+<a id="more"></a>
+<h2 id="0-准备与配置"><a href="#0-准备与配置" class="headerlink" title="0.准备与配置"></a>0.准备与配置</h2><ul>
+<li>安装webdoc： <code>ssc install webdoc</code></li>
+<li><p>在本篇文章中，我们使用模板do文件如下</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sysuse auto</div><div class="line">summarize price mpg</div><div class="line">regress price mpg</div><div class="line">twoway (scatter price mpg) (lfit price mpg)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="1-迅速开始"><a href="#1-迅速开始" class="headerlink" title="1.迅速开始"></a>1.迅速开始</h2><h3 id="1-1-example1"><a href="#1-1-example1" class="headerlink" title="1.1 example1"></a>1.1 example1</h3><p>新建do文件example1.do，输入如下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">webdoc init example1, replace logall plain</div><div class="line">/***</div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;&lt;body&gt;</div><div class="line">&lt;h1&gt;Exercise 1&lt;/h1&gt;</div><div class="line">&lt;p&gt;Open the 1978 automobile data and summarize price and mileage.&lt;/p&gt;</div><div class="line">***/</div><div class="line">sysuse auto</div><div class="line">summarize price mpg</div><div class="line">/***</div><div class="line">&lt;h1&gt;Exercise 2&lt;/h1&gt;</div><div class="line">&lt;p&gt;Run a regression of price on mileage and display the relation in a scatter plot.&lt;/p&gt;</div><div class="line">***/</div><div class="line">regress price mpg</div><div class="line">twoway (scatter price mpg) (lfit price mpg)</div><div class="line">webdoc graph</div><div class="line">/***</div><div class="line">&lt;/body&gt;&lt;/html&gt;</div><div class="line">***/</div></pre></td></tr></table></figure>
+<p>在Stata命令框中输入命令：</p>
+<pre><code>webdoc do example1.do
+</code></pre><p>得到<a href="example1.txt">html文件</a></p>
+<h3 id="1-2-基本解释"><a href="#1-2-基本解释" class="headerlink" title="1.2 基本解释"></a>1.2 基本解释</h3><p>webdoc命令的形式有一点特殊，它由两部分组成：</p>
+<ol>
+<li>第一部分是webdoc do命令，格式为：</li>
+</ol>
+<blockquote>
+<p>webdoc do <em>filename</em> [arguments] [, do_options]</p>
+</blockquote>
+<ol>
+<li>第二部分是<code>webdoc 标签命令</code></li>
+</ol>
+<p>通过webdoc do命令，我们可以将一份do文档转化为html文档，当然，这份do文档会有一些格式要求，具体如下：</p>
+<ol>
+<li>do文档中的<code>/***  ***/</code>之间写入html代码，它们会在<code>webdoc do</code>命令进行处理时被直接写入html文件。</li>
+<li><code>webdoc 标签命令</code> 是webdoc为了方便生成html文件而特意准备的一系列命令，它们写在将要被转换的do文件里，在遇到webdoc do命令执行时，执行其相应功能。简介其中的两个标签命令<ul>
+<li><code>webdoc init [docname][,do_options]</code> 这一<code>webdoc标签命令</code>用来初始化html文件，该命令的do_options有：<ul>
+<li><code>replace</code>:覆盖已存在的同名文件     </li>
+<li><code>logall</code>:要求日志记录所有的Stata输出结果。</li>
+</ul>
+</li>
+<li><code>webdoc graph</code> 用于将之前生成的图片输出到html文件中。</li>
+</ul>
+</li>
+<li>do文档在<code>/*** ***/</code>之外可以自由书写Stata命令，它们会(也可以选择不会)输出到html文件中(包括命令自身和命令得到的结果)</li>
+</ol>
+<p>也就是说，在被转换的do文档中包含有Stata命令、webdoc 标签命令还有一部分的html代码，当使用<code>webdoc do</code>命令转换时，</p>
+<ul>
+<li>Stata命令会被Stata执行，将执行的结果返回到html文件中</li>
+<li>webdoc标签命令会执行其相应功能</li>
+<li>html代码部分则原封不动地添加进html文件中</li>
+</ul>
+<p>文档的这三部分内容共同组成了最后的html文件。</p>
+<h2 id="2-webdoc-init"><a href="#2-webdoc-init" class="headerlink" title="2.webdoc init"></a>2.webdoc init</h2><blockquote>
+<p>webdoc init [docname] [, init_options]</p>
+</blockquote>
+<p>该命令用于初始化将要输出的html(或markdown)文档，其中<code>init_options</code>选项如下：</p>
+<ul>
+<li>Main<ul>
+<li><strong>replace</strong>:  如果当前目录有同名文件，覆盖之。</li>
+<li><strong>append</strong>：   如果当前目录有同名文件，增加之。</li>
+<li><strong>md</strong>：   选择输出文件类型为md，默认选项是html。</li>
+<li><strong>header[(header_opts)]</strong>:  创建一个独立的html文档(有开头与结尾的相应标签)，其中还有更具体的 <strong>header_opts</strong> 以供细化。</li>
+</ul>
+</li>
+<li>Log and graph options<ul>
+<li>[no]logall：   指定是否需要开启记录所有的Stata输出结果，默认值为不开启。</li>
+<li>stlog_options:   该选项通过<code>webdoc stlog</code>命令发挥作用。</li>
+<li>gropts(graph_options)：  该选项通过<code>webdoc graph</code>命令发挥作用。</li>
+</ul>
+</li>
+<li>Filenames/paths<ul>
+<li>[no]logdir[(path)]:   指定存储Stata记录文件的生成路径。默认为当前目录。</li>
+<li>grdir(path)      指定存储Stata产生的图片的生成路径。默认为当前目录。</li>
+<li>dodir(path)              指定存储do-files的生成路径。默认为当前目录。</li>
+<li>[no]prefix[(prefix)]     指定生成文件的文件名前缀。</li>
+<li>[no]stpath[(path)]       指定输出文件中的include-path</li>
+</ul>
+</li>
+</ul>
+<p>以下是关于 <strong>header[(header_opts)]</strong> 的选项介绍</p>
+<ul>
+<li>Main<ul>
+<li>width(width)：设置页面宽度</li>
+<li>nofooter      忽略结尾标签（当这份html文件没有完稿时，可以使用该选项）</li>
+</ul>
+</li>
+<li>Meta data<ul>
+<li>title(str)   指定文件标题</li>
+<li>author(str)    指定文件作者  </li>
+<li>date(str)      指定文件日期  </li>
+<li>description(str)   添加文件描述  </li>
+<li>keywords(str)       添加文件的关键词列表（以逗号分隔） </li>
+<li>language(str)      指定文件语言，默认为language(en)</li>
+<li>charset(str)      指定文件编码形式，默认为utf-8</li>
+</ul>
+</li>
+<li>Stylesheets<ul>
+<li>bstheme[(spec)]     从 <a href="http://bootswatch.com" target="_blank" rel="external">http://bootswatch.com</a> 中指定一个Bootstrap的CSS主题， <em>spec</em> 中的内容为 [theme] [,jscript selfcontained] 形式<ul>
+<li>theme 名称可以为 default cerulean cosmo simplex united 更多请参考<a href="https://www.bootstrapcdn.com/bootswatch" target="_blank" rel="external">bootswatch官网</a>，如果该选项被忽略，则自动使用 default主题</li>
+<li>如果你想加入需要调用javascript的Bootstrap元素，则可以指定 jscript 选项，程序为为你添加进相关的插入元素。</li>
+<li>如果指定 <code>selfcontained</code> 选项，则将所引用的CSS及JS全部囊括至目标文件中。</li>
+<li>最后的最后，如果你未添加<code>bstheme</code>选项，则它会在你的头文件中写入一个最基本的CSS设定。</li>
+</ul>
+</li>
+<li>include(filename)     从 <strong>filename</strong> 中导入内容到<code>&lt;head&gt;&lt;/head&gt;</code> </li>
+<li>stscheme(stscheme_opts)  指定Stata输出的外观主题<ul>
+<li>事前提要：由 <code>cmdlog</code> 所产生的section 内容不会受到 stscheme 影响。</li>
+<li>Stata scheme<ul>
+<li>standard      使用 standard 主题（直接在stscheme中填写即可）</li>
+<li>studio       </li>
+<li>classic                 </li>
+<li>desert            </li>
+<li>mountain            </li>
+<li>ocean                </li>
+<li>simple                </li>
+</ul>
+</li>
+<li>Manual settings<ul>
+<li>bg(color)     指定背景颜色，color使用16进制颜色码，如#00ff00</li>
+<li>fg(color)     指定前置颜色</li>
+<li>rfg(color)    指定输出结果的字体颜色</li>
+<li>cfg(color)    指定命令颜色</li>
+<li>rbf           输出结果加粗</li>
+<li>cbf           输入结果加粗</li>
+<li>lcom          输出结果斜体或加阴影</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>以下是关于 <strong>stlog_options</strong> 的选项介绍</p>
+<ul>
+<li>Main<ul>
+<li>linesize(#)   指定Stata log中的行宽，用字符数来表示</li>
+<li>[no]do        指定是否运行Stata命令，默认是运行</li>
+<li>[no]log       指定是否创建log文件并将其输出到html文件中，默认是记录。</li>
+<li>[no]cmdlog    指定是否仅展示命令而不输出结果，默认是 否</li>
+<li>[no]dosave    是否对do文件中的命令储存一份拷贝，默认是 否  </li>
+</ul>
+</li>
+<li>Contents<ul>
+<li>[no]output               是否隐藏输出内容，默认是不隐藏</li>
+<li>[no]matastrip            是否隐藏Mata环境的开启与结束命令，默认是不隐藏</li>
+<li>[no]cmdstrip             是否不记录命令行，默认为记录</li>
+<li>[no]lbstrip              whether to strip line-break comments; default is nolbstrip</li>
+<li>[no]gtstrip              whether to strip continuation symbols; default is nogtstrip</li>
+<li>[no]ltrim                whether to remove indentation; default is ltrim</li>
+</ul>
+</li>
+<li>Highlighting<ul>
+<li>mark(strlist)            apply <code>&lt;mark&gt;</code> tag to specified strings</li>
+<li>tag(matchlist)           apply custom tags to specified strings</li>
+</ul>
+</li>
+<li>Technical<ul>
+<li>[no]plain                whether to omit markup; default is noplain</li>
+<li>[no]raw                  whether to omit markup and character substitutions; default is noraw</li>
+<li>[no]custom               whether to use custom code to include the log file; default is<pre><code>nocustom
+</code></pre></li>
+<li>[no]keep                 whether to erase the external log file; default is keep</li>
+<li>[no]certify              whether to compare results against previous version; default is<pre><code>nocertify
+</code></pre></li>
+<li>[no]sthlp[(subst)]       (webdoc stlog using only) whether to treat as a Stata help file</li>
+<li>nostop                   (webdoc stlog using only) do not stop execution on error</li>
+</ul>
+</li>
+</ul>
+<p>以下是关于 <strong>graph_options</strong> 的选项介绍</p>
+<ul>
+<li>Main<ul>
+<li>as(fileformats)  输出图片的格式，默认为 as(png)  </li>
+<li>name(name)        输出图片的名称</li>
+<li>width(#)        输出图片的宽度，默认为 width(500) </li>
+<li>height(#)       输出图片的高度，</li>
+<li>override_options   override conversion defaults; see graph export</li>
+</ul>
+</li>
+<li>Attributes<ul>
+<li>alt(string)  为图片增加alt属性，默认为图片名称 </li>
+<li>title(string)    为图片提供一个”tooltip” 标题</li>
+<li>attributes(args)       关于img标签更多的属性</li>
+</ul>
+</li>
+<li>Environment<ul>
+<li>[no]link[(fileformat)]  是否给图片增加一个链接，默认为增加一个链接，除非hardcode情况</li>
+<li>[no]figure[(id)]       是否使用figure标签，默认是使用 </li>
+<li>caption(string)          给figure提供一个标题</li>
+<li>cabove or cbelow        标题位于图片上方(cabove)或者下方(cbelow)</li>
+</ul>
+</li>
+<li>Technical<ul>
+<li>[no]hardcode      是否将图片嵌入文件中</li>
+<li>[no]keep   当选择了hardcode后，是否要将原图片文件删除，默认为保留</li>
+<li>[no]custom  是否在图片中使用custom code，默认是不使用</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-webdoc-标签命令一览"><a href="#3-webdoc-标签命令一览" class="headerlink" title="3.webdoc 标签命令一览"></a>3.webdoc 标签命令一览</h2><ul>
+<li><code>webdoc init [docname] [, init_options]</code>  初始化输出文件，设置相关全局属性                                     </li>
+<li>/<strong><em> … </em></strong>/            在do文件相应位置中加入html代码 </li>
+<li><code>webdoc substitute [from to ...] [, add]</code>  替换代码区的元素</li>
+<li><code>webdoc write</code>     输出一行文本（除了换行符） </li>
+<li><code>webdoc put</code> …    输出包含换行符的一行文本  </li>
+<li><code>webdoc append filename [, append_opts]</code>  引入某文件内的内容</li>
+<li><code>webdoc toc [levels [offset]] [, ...]</code>   加入一个表格</li>
+<li><code>webdoc stlog [name] [, stlog_options]</code>  开启一个Stata log记录 </li>
+<li><code>webdoc stlog oom cmdline</code>       隐藏命令行，并增加一句”output omitted” 的解释  </li>
+<li><code>webdoc stlog quietly cmdline</code>    隐藏命令行，啥也不说</li>
+<li><code>webdoc stlog cnp</code>    插入一个换页符，并增加一句”continued on next page”        </li>
+<li><code>webdoc stlog close</code>       停止Stata log记录</li>
+<li><code>webdoc stlog [name] using dofile [, ...]</code> 载入某个do文件的命令的记录</li>
+<li><code>webdoc stlog [name] [, ...] : command</code>  加入某个命令的输出结果</li>
+<li><code>webdoc local name definition</code>      定义一个局部宏</li>
+<li><code>webdoc graph [name] [, graph_options]</code>   插入一张图片</li>
+<li><code>webdoc close</code>             关闭输出文件</li>
+<li><code>webdoc set [setname [definition]]</code>   改变html标签设置</li>
+<li><code>webdoc strip filename newname [, replace append]</code> 将一个do文件中的所有webdoc 标签命令移除</li>
+</ul>
+<p>以下是关于 <strong>append_options</strong> 的选项介绍</p>
+<ul>
+<li><code>substitute(subst)</code>   应用替换功能，subst形式为  from to</li>
+<li><code>drop(numlist)</code>     忽略指定行数 </li>
+</ul>
+<h2 id="webdoc-set-自定义所生成的html代码"><a href="#webdoc-set-自定义所生成的html代码" class="headerlink" title="webdoc set  自定义所生成的html代码"></a>webdoc set  自定义所生成的html代码</h2><blockquote>
+<p>webdoc set [ <em>setname</em> [definition]]</p>
+</blockquote>
+<p>setname是你想要改变的标签<br>本命令只在被 webdoc do 处理，当本次命令执行完成后，所有setting失效</p>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th style="text-align:center">setname</th>
+<th>Default definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stata output section</td>
+<td style="text-align:center">stlog</td>
+<td><code>&lt;pre class=&quot;stlog&quot;&gt;&lt;samp&gt;</code></td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">_stlog</td>
+<td><code>&lt;/samp&gt;&lt;/pre&gt;</code></td>
+</tr>
+<tr>
+<td>Stata code section</td>
+<td style="text-align:center">stcmd</td>
+<td><code>&lt;pre class=&quot;stcmd&quot;&gt;&lt;code&gt;</code></td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">_stcmd</td>
+<td><code>&lt;/code&gt;&lt;/pre&gt;</code></td>
+</tr>
+<tr>
+<td>Stata help section</td>
+<td style="text-align:center">sthlp</td>
+<td><code>&lt;pre class=&quot;sthlp&quot;&gt;</code></td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">_sthlp</td>
+<td><code>&lt;/pre&gt;</code></td>
+</tr>
+<tr>
+<td>Stata input tag</td>
+<td style="text-align:center">stinp</td>
+<td><code>&lt;span class=&quot;stinp&quot;&gt;</code></td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">_stinp</td>
+<td><code>&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td>Stata result tag</td>
+<td style="text-align:center">stres</td>
+<td><code>&lt;span class=&quot;stres&quot;&gt;</code></td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">_stres</td>
+<td><code>&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td>Stata comment tag</td>
+<td style="text-align:center"></td>
+<td><code>&lt;span class=&quot;stcmt&quot;&gt;</code></td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">_stcmt</td>
+<td><code>&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td>Output-omitted tag</td>
+<td style="text-align:center">stoom</td>
+<td><code>&lt;span class=&quot;stoom&quot;&gt;(output omitted)&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td>Continued on next page tag</td>
+<td style="text-align:center">stcnp</td>
+<td><code>&lt;span class=&quot;stcnp&quot; style=&quot;page-break-after:always&quot;&gt;&lt;br/&gt;(continued on next page)&lt;br/&gt;&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td>Figure tag</td>
+<td style="text-align:center">figure</td>
+<td><code>&lt;figure id=&quot;macval(id)&quot;&gt;</code></td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">_figure</td>
+<td><code>&lt;/figure&gt;</code></td>
+</tr>
+<tr>
+<td>Figure caption</td>
+<td style="text-align:center">fcap</td>
+<td></td>
+</tr>
+<tr>
+<td>Figure link tag</td>
+<td style="text-align:center">flink</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">_flink</td>
+<td><code>&lt;/a&gt;</code></td>
+</tr>
+<tr>
+<td>Image tag</td>
+<td style="text-align:center">img</td>
+<td><code>&lt;img alt=&quot;macval(alt)&quot; macval(title) src=&quot;</code></td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">_img</td>
+<td><code>&quot;macval(attributes)/&gt;</code></td>
+</tr>
+<tr>
+<td>Embedded SVG</td>
+<td style="text-align:center">svg</td>
+<td><code>&lt;span macval(title) macval(attributes)&gt;</code></td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">_svg</td>
+<td><code>&lt;/span&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>用法举例 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">webdoc set stlog &lt;pre id=&quot;\`id&apos;&quot; class=&quot;stlog&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;\`doname&apos;&quot; style=&quot;position:absolute;top:5px;right:5px&quot;&gt;[code]&lt;/a&gt;&lt;samp&gt;</div></pre></td></tr></table></figure>
+<p>提醒事项：</p>
+<p>当svg图片指定了 hardcode 选项时，图片代码会被be tagged by  svg，而img则正常</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
+<li><code>$</code>是Stata中用以表示宏的符号，因此如果你使用 <code>webdoc write</code> 或者 <code>webdoc put</code> 写的文本中含有 <code>$</code> ，别忘了加上转义字符 <code>\$</code></li>
+<li>webdoc do 命令不能良好支持 semicolon command delimiter ， The semicolon command delimiter 在 webdoc commands，及 <code>/*** ***/</code>中正常运行</li>
+<li>webdoc 标签命令 应在每一行的开头书写</li>
+<li>webdoc stlog 不能被嵌套使用</li>
+<li>不要在webdoc stlog 中写入 webdoc do 及webdoc init命令</li>
+</ul>
+<h2 id="宏变量及返回结果列表"><a href="#宏变量及返回结果列表" class="headerlink" title="宏变量及返回结果列表"></a>宏变量及返回结果列表</h2><p>webdoc命令在执行的过程中会产生若干全局宏以供使用，当webdoc do 结束后，这些宏会被自动删除。 以下是全部的宏列表</p>
+<ul>
+<li><p>webdoc do</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> WebDoc_dofile, WebDoc_do_snippets, WebDoc_do_replace, WebDoc_do_append, WebDoc_do_md,</div><div class="line">WebDoc_do_header, WebDoc_do_header2, WebDoc_do_logall, WebDoc_do_linesize, WebDoc_do_nodo, WebDoc_do_nolog, WebDoc_do_cmdlog, WebDoc_do_dosave, WebDoc_do_plain, WebDoc_do_raw,</div><div class="line">WebDoc_do_nooutput, WebDoc_do_matastrip, WebDoc_do_cmdstrip, WebDoc_do_lbstrip, WebDoc_do_gtstrip, WebDoc_do_noltrim, WebDoc_do_mark, WebDoc_do_tag, WebDoc_do_custom,</div><div class="line">WebDoc_do_nokeep, WebDoc_do_certify, WebDoc_do_gropts, WebDoc_do_logdir, WebDoc_do_logdir2, WebDoc_do_grdir, WebDoc_do_dodir, WebDoc_do_noprefix, WebDoc_do_prefix,</div><div class="line">WebDoc_do_prefix2, WebDoc_do_stpath, WebDoc_do_stpath2</div></pre></td></tr></table></figure>
+</li>
+<li><p>webdoc set</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">WebDoc_set_stlog, WebDoc_set__stlog, WebDoc_set_stcmd, WebDoc_set__stcmd, WebDoc_set_sthlp,</div><div class="line">WebDoc_set__sthlp, WebDoc_set_stinp, WebDoc_set__stinp, WebDoc_set_stres, WebDoc_set__stres, WebDoc_set_stcmt, WebDoc_set__stcmt, WebDoc_set_stoom, WebDoc_set_stcnp,</div><div class="line">WebDoc_set_figure, WebDoc_set__figure, WebDoc_set_fcap, WebDoc_set_flink, WebDoc_set__flink, WebDoc_set_img, WebDoc_set__img, WebDoc_set_svg, WebDoc_set__svg</div></pre></td></tr></table></figure>
+</li>
+<li><p>webdoc init</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> WebDoc_docname, WebDoc_docname_FH, WebDoc_docname0, WebDoc_basename, WebDoc_path, WebDoc_path0,</div><div class="line">WebDoc_stcounter, WebDoc_md, WebDoc_nofooter, WebDoc_logall, WebDoc_linesize, WebDoc_nodo, WebDoc_nolog, WebDoc_cmdlog, WebDoc_dosave, WebDoc_plain, WebDoc_straw, WebDoc_nooutput,</div><div class="line">WebDoc_matastrip, WebDoc_cmdstrip, WebDoc_lbstrip, WebDoc_gtstrip, WebDoc_noltrim, WebDoc_mark, WebDoc_tag, WebDoc_custom, WebDoc_nokeep, WebDoc_certify, WebDoc_gropts,</div><div class="line">WebDoc_logdir, WebDoc_do_grdir, WebDoc_dodir, WebDoc_prefix, WebDoc_prefix0, WebDoc_stpath</div></pre></td></tr></table></figure>
+</li>
+<li><p>webdoc substitute</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">WebDoc_substitute</div></pre></td></tr></table></figure>
+</li>
+<li><p>webdoc stlog</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">WebDoc_ststatus, WebDoc_stname, WebDoc_stname0, WebDoc_stid, WebDoc_stfilename, WebDoc_stfilename0,</div><div class="line">WebDoc_stwebname, WebDoc_stwebname0, WebDoc_stgrcounter, WebDoc_stlinesize, WebDoc_stlinesize0, WebDoc_stnodo, WebDoc_stnolog, WebDoc_stcmdlog, WebDoc_stdosave, WebDoc_stplain,</div><div class="line">WebDoc_straw, WebDoc_stnooutput, WebDoc_stmatastrip, WebDoc_stcmdstrip, WebDoc_stlbstrip, WebDoc_stgtstrip, WebDoc_stnoltrim, WebDoc_stmark, WebDoc_sttag, WebDoc_stcustom,</div><div class="line">WebDoc_stnokeep, WebDoc_stcertify</div></pre></td></tr></table></figure>
+</li>
+<li><p>webdoc local</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">WebDoc_stloc</div></pre></td></tr></table></figure>
+</li>
+<li><p>webdoc do(an external Mata global called <strong>WebDoc_do_snippets</strong>    )</p>
+</li>
+</ul>
+<p>在使用webdoc do执行转换工作后，会产生一系列相关的结果宏，这些宏变量当遇到 webdoc init时清空并初始化，webdoc close 则将它们储存如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">s(docname)        name of output document (including absolute path)</div><div class="line">s(basename)       base name of output document (excluding path)</div><div class="line">s(path)           (absolute) path of output document</div><div class="line">s(md)             md or empty</div><div class="line">s(logall)         logall or empty</div><div class="line">s(linesize)       specified line width or empty</div><div class="line">s(nodo)           nodo or empty</div><div class="line">s(nolog)          nolog or empty</div><div class="line">s(cmdlog)         cmdlog or empty</div><div class="line">s(dosave)         dosave or empty</div><div class="line">s(plain)          plain or empty</div><div class="line">s(raw)            raw or empty</div><div class="line">s(nooutput)       nooutput or empty</div><div class="line">s(matastrip)      matastrip or empty</div><div class="line">s(cmdstrip)       cmdstrip or empty</div><div class="line">s(lbstrip)        lbstrip or empty</div><div class="line">s(gtstrip)        gtstrip or empty</div><div class="line">s(noltrim)        noltrim or empty</div><div class="line">s(mark)           contents of mark() option</div><div class="line">s(tag)            contents of tag() option</div><div class="line">s(custom)         custom or empty</div><div class="line">s(nokeep)         nokeep or empty</div><div class="line">s(certify)        certify or empty</div><div class="line">s(gropts)         default graph export options</div><div class="line">s(logdir)         subdirectory used for Stata log files</div><div class="line">s(grdir)          subdirectory used for graphs (if different from s(logdir))</div><div class="line">s(dodir)          subdirectory used for do-files (if different from s(logdir))</div><div class="line">s(prefix)         prefix for automatic names</div><div class="line">s(stpath)         include-path to be used in the output document</div></pre></td></tr></table></figure>
+<p>webdoc stlog close 以及 webdoc stlog using 储存了如下结果宏</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">s(name)           name of the Stata output log, including logdir() path</div><div class="line">s(name0)          s(name) without logdir() path</div><div class="line">s(id)             id of the log in the output document</div><div class="line">s(filename)       name of log file on disk (including absolute path and suffix)</div><div class="line">s(filename0)      s(filename) without suffix</div><div class="line">s(webname)        name of log file with include-path for use in output document</div><div class="line">s(webname0)       s(webname) without suffix</div><div class="line">s(doname)         name (and include-path) of do-file</div><div class="line">s(linesize)       line width used for the output log</div><div class="line">s(indent)         size of indentation</div><div class="line">s(nodo)           nodo or empty</div><div class="line">s(nolog)          nolog or empty</div><div class="line">s(cmdlog)         cmdlog or empty</div><div class="line">s(dosave)         dosave or empty</div><div class="line">s(plain)          plain or empty</div><div class="line">s(raw)            raw or empty</div><div class="line">s(nooutput)       nooutput or empty</div><div class="line">s(matastrip)      matastrip or empty</div><div class="line">s(cmdstrip)       cmdstrip or empty</div><div class="line">s(lbstrip)        lbstrip or empty</div><div class="line">s(gtstrip)        gtstrip or empty</div><div class="line">s(noltrim)        noltrim or empty</div><div class="line">s(mark)           contents of mark() option</div><div class="line">s(tag)            contents of tag() option</div><div class="line">s(custom)         custom or empty</div><div class="line">s(nokeep)         nokeep or empty</div><div class="line">s(certify)        certify or empty</div></pre></td></tr></table></figure>
+<h2 id="webdoc-local"><a href="#webdoc-local" class="headerlink" title="webdoc local"></a>webdoc local</h2><p>webdoc local 命令用于设置局部宏，该命令只有在 webdoc stlog 命令后方可使用，该宏会被Stata 输出结果的同名列表所存储（使用后缀名 .stloc）每一个输出结果都会有其自己的同名列表，所以不同结果间可以重复使用同名宏，webdoc local的具体用法与 local一致</p>
+<p>通过使用webdoc local命令，你可以将输出结果直接写入文本中，webdoc local所定义的宏在 代码区和 webdoc put 命令中均适用，直至下一个webdoc stlog命令之前。需要说明的是，这两者间有一些不同，在代码区使用宏建立在了宏的内容被宏列表储存了，webdoc put则是直接使用宏。</p>
+<p>栗子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">webdoc stlog</div><div class="line">regress y x1 x2 ...</div><div class="line">webdoc stlog close</div><div class="line">webdoc local b = strofreal(_b[x1], &quot;%9.3f&quot;)</div><div class="line">webdoc local se = strofreal(_se[x1], &quot;%9.3f&quot;)</div><div class="line"></div><div class="line">/*** &lt;p&gt;As can be seen in the output above, the estimate for the effect</div><div class="line">of x1 on y is equal to `b&apos; (with a standard error of `se&apos;).&lt;/p&gt; ***/</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">webdoc put &lt;p&gt; As can be seen in the output above, the estimate for </div><div class="line">webdoc put the effect of x1 on y is equal to `b&apos; (with a standard </div><div class="line">webdoc put error of `se&apos;).&lt;/p&gt;</div></pre></td></tr></table></figure>
+<h2 id="webdoc-substitute"><a href="#webdoc-substitute" class="headerlink" title="webdoc substitute"></a>webdoc substitute</h2><p>webdoc substitute用于将所有代码区内的文字替换为指定文字，其用法为</p>
+<blockquote>
+<p>webdoc substitute “some text” “SOME TEXT”</p>
+</blockquote>
+<p>如果在后续的文字部分想要改变，则可以使用 webdoc substitute 重新指定，如果想要增加替换方案，可以使用 webdoc substitute add ，如果想要清空方案，则使用webdoc substitute 不加任何参数</p>
+<h2 id="webdoc-strip"><a href="#webdoc-strip" class="headerlink" title="webdoc strip"></a>webdoc strip</h2><ul>
+<li>replace </li>
+<li>append</li>
+</ul>
+<h2 id="webdoc-do"><a href="#webdoc-do" class="headerlink" title="webdoc do"></a>webdoc do</h2><p>命令将一份do文档转换为html文档或者markdown文档，webdoc do与 do 命令很相似</p>
+<h2 id="webdoc-stlog"><a href="#webdoc-stlog" class="headerlink" title="webdoc stlog"></a>webdoc stlog</h2><blockquote>
+<p>webdoc stlog</p>
+</blockquote>
+<p>为将Stata的输出结果写入html文档中，你可以使用webdoc stlog命令，该命令将命令的输出结果写入一个log文件中，再将其内容写入html里，</p>
+<p>webdoc stlog oom <em>cmdline</em> 可以将该命令的输出内容隐藏，并加上一句 “output omitted”信息，如果你连这条信息都不想添加，可以使用 webdoc stlog quietly <em>cmdline</em>  webdoc stlog cnp 可以插入一条分页标记，以及”continued on next page”</p>
+<p>webdoc stlog close 表示一个输出模块的结束，如果你想将一个外部do文件的输出结果加入本html中，可以使用 webdoc stlog <em>filename</em> <em>filename</em>即为do文件名称，另外，如果只是想包含一个单独命令的输出结果，而去除命令本身，你可以输入  webdoc stlog : <em>command</em> 在这种命令下，使不需要 webdoc stlog close 的。</p>
+<p>PS：你也可以不选择这种方式来添加输出结果，而是在webdoc do 或者 webdoc init 中指定 logall 选项。</p>
+<h2 id="webdoc-append-用于将其一个外部文件的内容引入"><a href="#webdoc-append-用于将其一个外部文件的内容引入" class="headerlink" title="webdoc append 用于将其一个外部文件的内容引入"></a>webdoc append 用于将其一个外部文件的内容引入</h2><h2 id="webdoc-toc"><a href="#webdoc-toc" class="headerlink" title="webdoc toc"></a>webdoc toc</h2><p>webdoc toc命令将一个表格插入html中</p>
+<p>webdoc toc num1 num2  将创建<code>&lt;hnum2+1&gt;</code>…三种标签，num2 默认为0  num1 默认为1 </p>
+<h2 id="webdoc-graph"><a href="#webdoc-graph" class="headerlink" title="webdoc graph"></a>webdoc graph</h2><p>webdoc graph 用于将已经生成的图片插入到输出文件中，该命令可以在webdoc stlog中使用，或者在webdoc stlog close之后直接写，如果webdoc graph是在webdoc stlog中书写，图片会在Stata output之前生成，如果webdoc graph是在webdoc stlog close</p>
+<pre><code>webdoc graph can be used to export the current graph and include appropriate code in the output document to display a graph.  webdoc graph can be specified within a webdoc stlog
+section or directly after webdoc stlog close.  If webdoc graph is specified within a webdoc stlog section, the graph is included in the document before the Stata output; if webdoc
+graph is specified after webdoc stlog close, the graph is included after the Stata output (furthermore, if webdoc graph is used outside a webdoc stlog section while logall is on,
+the graph will be placed at the position in the output where the webdoc graph command occurs).  Unless a custom name is specified, the name of the webdoc stlog section is used to
+name the graph (possibly suffixed by a counter if the webdoc stlog section contains more than one webdoc graph command).
+
+webdoc close closes the HTML or Markdown document.  This is not strictly needed, because webdoc do closes the document automatically if the do-file does not contain a webdoc close
+command.  Furthermore, to exit a do-file before the end of the file, add a line containing // webdoc exit (without anything else on the same line).  webdoc do will read only the
+do-file up to this line.
+
+webdoc uses a specific set of HTML tags to include and format the Stata outputs and graphs.  The definitions of these tags can be changed within the do-file by the webdoc set
+command.  For details, see Changing the HTML settings under Remarks below.  Specifying webdoc set without an argument restores the default settings.
+
+webdoc strip removes all webdoc commands and all /*** ***/ blocks from a do-file.
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+<script src="/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: '打赏支持', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'http://powerofstata.club/QQ%E5%9B%BE%E7%89%8720170806125829.jpg',
+  alipayImage: 'http://powerofstata.club/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20170806214451.jpg'
+});
+</script>
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Stata/">Stata</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webdoc/">webdoc</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术手册/">技术手册</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/13/爬虫神器curl继续带你抓网页/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">爬虫神器curl继续带你抓网页</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2017 - 2017 Hexo All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				访客数 : <span id="busuanzi_value_site_uv"></span> |  
+				访问量 : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">home</a>
+  
+    <a href="/archives" class="mobile-nav-link">archives</a>
+  
+    <a href="/categories/程序图书馆" class="mobile-nav-link">library</a>
+  
+    <a href="/categories/推文" class="mobile-nav-link">tweets</a>
+  
+    <a href="/categories/数据" class="mobile-nav-link">data</a>
+  
+    <a href="/tags" class="mobile-nav-link">tags</a>
+  
+    <a href="/about" class="mobile-nav-link">about</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+  <script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Hexo
+          </div>
+          <div class="panel-body">
+            Copyright © 2017 John Doe All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+</body>
+</html>
