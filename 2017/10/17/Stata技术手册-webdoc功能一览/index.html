@@ -34,7 +34,9 @@
 <meta property="og:image" content="http://yoursite.com/2017/10/17/Stata技术手册-webdoc功能一览/webdoc_graph_1.png">
 <meta property="og:image" content="http://yoursite.com/2017/10/17/Stata技术手册-webdoc功能一览/webdoc_substitute.png">
 <meta property="og:image" content="http://yoursite.com/2017/10/17/Stata技术手册-webdoc功能一览/webdoc_append_1.png">
-<meta property="og:updated_time" content="2017-10-20T07:44:48.783Z">
+<meta property="og:image" content="http://yoursite.com/2017/10/17/Stata技术手册-webdoc功能一览/webdoc_toc_1.png">
+<meta property="og:image" content="http://yoursite.com/2017/10/17/Stata技术手册-webdoc功能一览/webdoc_index.png">
+<meta property="og:updated_time" content="2017-10-20T12:42:07.666Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Stata技术手册]webdoc功能一览">
 <meta name="twitter:description" content="webdoc命令是Stata的一项外部命令，它旨在将Stata的do文件转化为html文件，并为此配置了一系列的（繁杂的）选项设置。 鉴于国内还没有相关的中文资料，本篇文章将详细介绍关于webdoc的参数配置选项。">
@@ -330,7 +332,7 @@
 <p>试一试，建立webdoc_init.do 文档</p>
 </blockquote>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">webdoc init webdoc_init_1, replace logall plain logdir("webdoc_init") grdir("webdoc_init_pict") dodir("webdoc_init_do") prefix("yes") stpath("path")</div><div class="line">/***</div><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Exercise 1<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Open the 1978 automobile data and summarize price and mileage.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">***/</div><div class="line">sysuse auto</div><div class="line">summarize price mpg</div><div class="line">/***</div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Exercise 2<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Run a regression of price on mileage and display the relation in a scatter plot.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">***/</div><div class="line">regress price mpg</div><div class="line">twoway (scatter price mpg) (lfit price mpg)</div><div class="line">webdoc graph</div><div class="line">/***</div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div><div class="line">***/</div></pre></td></tr></table></figure>
-<p>在这次webdoc init 中，logdir(“webdoc_init”)表示将这次运行生成的log文件存放于<code>webdoc_init</code>目录下，grdir(“webdoc_init_pict”)表示将这次运行生成的图片存放于``目录下，dodir(“webdoc_init_do”)表示指定生成do文件的目录，它虽然会生成对应文件夹，但是目前还没有发现有什么作用（因为我们是将do文档转为html，并不会生成do文档），prefix(“yes”)将log文件及图片文件的文件名改为yes。stpath(“path”)会在html文件中的图片中加入一层相对路径。</p>
+<p>在这次webdoc init 中，logdir(“webdoc_init”)表示将这次运行生成的log文件存放于<code>webdoc_init</code>目录下，grdir(“webdoc_init_pict”)表示将这次运行生成的图片存放于``目录下，dodir(“webdoc_init_do”)表示指定生成do文件的目录，它会生成对应文件夹，在某些特殊时刻有作用（后续中有的命令会生成关于do文件的命令的拷贝版本，即生成了一份do文件），prefix(“yes”)将log文件及图片文件的文件名改为yes。stpath(“path”)会在html文件中的图片中加入一层相对路径。</p>
 <blockquote>
 <p>webdoc do webdoc_init.do</p>
 </blockquote>
@@ -453,26 +455,24 @@
 <li><strong>[no]output</strong>               是否隐藏输出内容，默认是不隐藏</li>
 <li><strong>[no]matastrip</strong>            是否隐藏Mata环境的开启与结束命令，默认是不隐藏</li>
 <li><strong>[no]cmdstrip</strong>             是否不记录命令行，默认为记录</li>
-<li><strong>[no]lbstrip</strong>              whether to strip line-break comments; default is nolbstrip</li>
-<li><strong>[no]gtstrip</strong>              whether to strip continuation symbols; default is nogtstrip</li>
-<li><strong>[no]ltrim</strong>                whether to remove indentation; default is ltrim</li>
+<li><strong>[no]lbstrip</strong>              是否删去分割线，默认为不删去</li>
+<li><strong>[no]gtstrip</strong>              是否删去显示继续的标志，默认为不删去</li>
+<li><strong>[no]ltrim</strong>                是否删去缩进，默认为删去</li>
 </ul>
 </li>
 <li>Highlighting<ul>
-<li><strong>mark(strlist)</strong>            apply <code>&lt;mark&gt;</code> tag to specified strings</li>
-<li><strong>tag(matchlist)</strong>           apply custom tags to specified strings</li>
+<li><strong>mark(strlist)</strong>            给本次section指定字符加上<code>&lt;mark&gt;</code>标签</li>
+<li><strong>tag(matchlist)</strong>           给Stata输出内容加上自定义标签</li>
 </ul>
 </li>
 <li>Technical<ul>
-<li><strong>[no]plain</strong>                whether to omit markup; default is noplain</li>
-<li><strong>[no]raw</strong>                  whether to omit markup and character substitutions; default is noraw</li>
-<li><strong>[no]custom</strong>               whether to use custom code to include the log file; default is<pre><code>nocustom
-</code></pre></li>
-<li><strong>[no]keep</strong>                 whether to erase the external log file; default is keep</li>
-<li><strong>[no]certify</strong>              whether to compare results against previous version; default is<pre><code>nocertify
-</code></pre></li>
-<li><strong>[no]sthlp[(subst)]</strong>       (webdoc stlog using only) whether to treat as a Stata help file</li>
-<li><strong>nostop</strong>                   (webdoc stlog using only) do not stop execution on error</li>
+<li><strong>[no]plain</strong>                是否删去引入的html标签记号(以节约空间)，默认为noplain(不删去)</li>
+<li><strong>[no]raw</strong>                  是否忽略标签及字符的替换过程，默认是不忽略</li>
+<li><strong>[no]custom</strong>               是否使用自定义代码包装log文件内容</li>
+<li><strong>[no]keep</strong>                 是否在执行结束后删去log文件，默认为保留</li>
+<li><strong>[no]certify</strong>              是否将结果与前代版本比较，默认为不比较</li>
+<li><strong>[no]sthlp[(subst)]</strong>       (stlog using专用)是否作为sthlp文件读取</li>
+<li><strong>nostop</strong>                   (stlog using专用)当webdoc do在执行过程中遇到了error会继续执行</li>
 </ul>
 </li>
 </ul>
@@ -624,8 +624,6 @@
 <p>查阅该文件源代码</p>
 <p><img src="webdoc_set_3.png" alt=""></p>
 <p>也就是说，webdoc set命令具备将固定的输出标签形式更改的能力，这一功能有什么作用呢？当你引用了bootstrap的css及js文件后，可以通过更改标签的class、引入js事件实现更加绚丽的效果</p>
-<p>提醒事项：</p>
-<p>当svg图片指定了 hardcode 选项时，图片代码会被be tagged by  svg，而img则正常</p>
 <h2 id="6-webdoc-local"><a href="#6-webdoc-local" class="headerlink" title="6.webdoc local"></a>6.webdoc local</h2><p>webdoc local 命令用于设置局部宏，该命令只有在 webdoc stlog 命令后方可使用，该宏会被Stata 输出结果的同名列表所存储（使用后缀名 .stloc）每一个输出结果都会有其自己的同名列表，所以不同结果间可以重复使用同名宏，webdoc local的具体用法与 local一致</p>
 <p>通过使用webdoc local命令，你可以将输出结果直接写入文本中，webdoc local所定义的宏在 代码区和 webdoc put 命令中均适用，直至下一个webdoc stlog命令之前。需要说明的是，这两者间有一些不同，在代码区使用宏建立在了宏的内容被宏列表储存了，webdoc put则是直接使用宏。</p>
 <blockquote>
@@ -709,15 +707,31 @@
 <h2 id="10-webdoc-toc"><a href="#10-webdoc-toc" class="headerlink" title="10.webdoc toc"></a>10.webdoc toc</h2><blockquote>
 <p>webdoc toc [levels [offset]] [, …]</p>
 </blockquote>
+<p>webdoc toc命令，顾名思义，是为整篇文章增加一份目录，它的添加机制是，检索整篇文章的标题符号，然后将其整理成列表，放入一个事先预设好的<code>&lt;span class=&quot;toc&quot;&gt;</code>的位置处————当然，这是一个html标签，且它需要你自己设置位置</p>
+<p>用法</p>
+<blockquote>
+<p>webdoc toc num1 num2</p>
+</blockquote>
+<p>num1代表该目录要收集几级标题，默认为收集三级标题(h1 h2 h3)<br>num2代表该目录从哪一级标题开始采集，默认为0(即从h1开始采集)</p>
+<p>webdoc toc 的选项如下：</p>
 <ul>
-<li>numbered </li>
-<li>md </li>
+<li>numbered  为目录增加章节数标志</li>
+<li>md        支持markdown格式的目录采集，即，如果你的标题是采用markdown的标记书写的，那么它同样可以找到并放置在目录里。</li>
 </ul>
-<h2 id="11-webdoc-close-关闭html或md文件"><a href="#11-webdoc-close-关闭html或md文件" class="headerlink" title="11.webdoc close 关闭html或md文件"></a>11.webdoc close 关闭html或md文件</h2><p>该命令不是必须的，因为webdoc do命令会在do文件结束时自动补全。另外，如果你想在文件结束前就结束webdoc的读取工作，可以在文件最后加上 webdoc exit（其它啥也别加）webdoc do命令就只会读取到该行为止。</p>
-<h2 id="12-webdoc-strip"><a href="#12-webdoc-strip" class="headerlink" title="12.webdoc strip"></a>12.webdoc strip</h2><p>该命令用于将do文件中所有代码区和所有webdoc标签命令移除</p>
+<blockquote>
+<p>试一试 创建webdoc_toc.do文件</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">webdoc init webdoc_toc, replace header(width(900px) bstheme(darkly ,jscript) )</div><div class="line"></div><div class="line">/***</div><div class="line"></div><div class="line">&lt;!-- Table of contents --&gt;</div><div class="line"></div><div class="line">&lt;span class=&quot;toc&quot;&gt;</div><div class="line">&lt;p&gt;Run a regression of price on mileage and display the relation in a scatter plot.&lt;/p&gt;</div><div class="line">***/</div><div class="line"></div><div class="line">webdoc toc 3 ,md numbered</div><div class="line"></div><div class="line">/***</div><div class="line">&lt;h1&gt;Exercise1&lt;/h1&gt;</div><div class="line">&lt;h2&gt;Exercise2&lt;/h1&gt;</div><div class="line">&lt;h3&gt;Exercise3&lt;/h1&gt;</div><div class="line">&lt;h1&gt;Exercise4&lt;/h1&gt;</div><div class="line">&lt;h2&gt;Exercise5&lt;/h1&gt;</div><div class="line"></div><div class="line"># one</div><div class="line">## two</div><div class="line"># three</div><div class="line"></div><div class="line">***/</div></pre></td></tr></table></figure>
+<p>效果如下所示：</p>
+<p><img src="webdoc_toc_1.png" alt=""></p>
+<h2 id="11-webdoc-close-关闭html或md文件"><a href="#11-webdoc-close-关闭html或md文件" class="headerlink" title="11.webdoc close 关闭html或md文件"></a>11.webdoc close 关闭html或md文件</h2><p>webdoc close命令用于关闭输出文件。该命令不是必须的，因为webdoc do命令会在do文件结束时自动结束工作。<br>另外，如果你想在do文件结束前就结束webdoc的读取工作，可以在文件最后加上<br>webdoc exit（其它啥也别加），webdoc do命令就只会读取到该行为止。(注意，这两者是不同的，webdoc close是关闭输出文件，而webdoc exit是关闭webdoc do命令)</p>
+<h2 id="12-webdoc-strip"><a href="#12-webdoc-strip" class="headerlink" title="12.webdoc strip"></a>12.webdoc strip</h2><blockquote>
+<p>webdoc strip filename newname [, replace append]</p>
+</blockquote>
+<p>该命令用于将do文件中所有代码区和所有webdoc标签命令移除</p>
 <ul>
-<li>replace </li>
-<li>append</li>
+<li>replace 如果有同名文件名，则替换之</li>
+<li>append  如果有同名文件名，则续写之</li>
 </ul>
 <h2 id="13-宏变量及返回结果列表"><a href="#13-宏变量及返回结果列表" class="headerlink" title="13.宏变量及返回结果列表"></a>13.宏变量及返回结果列表</h2><p>webdoc命令在执行的过程中会产生若干全局宏以供使用，当webdoc do 结束后，这些宏会被自动删除。 以下是全部的宏列表</p>
 <ul>
@@ -746,13 +760,32 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">s(docname)        name of output document (including absolute path)</div><div class="line">s(basename)       base name of output document (excluding path)</div><div class="line">s(path)           (absolute) path of output document</div><div class="line">s(md)             md or empty</div><div class="line">s(logall)         logall or empty</div><div class="line">s(linesize)       specified line width or empty</div><div class="line">s(nodo)           nodo or empty</div><div class="line">s(nolog)          nolog or empty</div><div class="line">s(cmdlog)         cmdlog or empty</div><div class="line">s(dosave)         dosave or empty</div><div class="line">s(plain)          plain or empty</div><div class="line">s(raw)            raw or empty</div><div class="line">s(nooutput)       nooutput or empty</div><div class="line">s(matastrip)      matastrip or empty</div><div class="line">s(cmdstrip)       cmdstrip or empty</div><div class="line">s(lbstrip)        lbstrip or empty</div><div class="line">s(gtstrip)        gtstrip or empty</div><div class="line">s(noltrim)        noltrim or empty</div><div class="line">s(mark)           contents of mark() option</div><div class="line">s(tag)            contents of tag() option</div><div class="line">s(custom)         custom or empty</div><div class="line">s(nokeep)         nokeep or empty</div><div class="line">s(certify)        certify or empty</div><div class="line">s(gropts)         default graph export options</div><div class="line">s(logdir)         subdirectory used for Stata log files</div><div class="line">s(grdir)          subdirectory used for graphs (if different from s(logdir))</div><div class="line">s(dodir)          subdirectory used for do-files (if different from s(logdir))</div><div class="line">s(prefix)         prefix for automatic names</div><div class="line">s(stpath)         include-path to be used in the output document</div></pre></td></tr></table></figure>
 <p>webdoc stlog close 以及 webdoc stlog using 储存了如下结果宏</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">s(name)           name of the Stata output log, including logdir() path</div><div class="line">s(name0)          s(name) without logdir() path</div><div class="line">s(id)             id of the log in the output document</div><div class="line">s(filename)       name of log file on disk (including absolute path and suffix)</div><div class="line">s(filename0)      s(filename) without suffix</div><div class="line">s(webname)        name of log file with include-path for use in output document</div><div class="line">s(webname0)       s(webname) without suffix</div><div class="line">s(doname)         name (and include-path) of do-file</div><div class="line">s(linesize)       line width used for the output log</div><div class="line">s(indent)         size of indentation</div><div class="line">s(nodo)           nodo or empty</div><div class="line">s(nolog)          nolog or empty</div><div class="line">s(cmdlog)         cmdlog or empty</div><div class="line">s(dosave)         dosave or empty</div><div class="line">s(plain)          plain or empty</div><div class="line">s(raw)            raw or empty</div><div class="line">s(nooutput)       nooutput or empty</div><div class="line">s(matastrip)      matastrip or empty</div><div class="line">s(cmdstrip)       cmdstrip or empty</div><div class="line">s(lbstrip)        lbstrip or empty</div><div class="line">s(gtstrip)        gtstrip or empty</div><div class="line">s(noltrim)        noltrim or empty</div><div class="line">s(mark)           contents of mark() option</div><div class="line">s(tag)            contents of tag() option</div><div class="line">s(custom)         custom or empty</div><div class="line">s(nokeep)         nokeep or empty</div><div class="line">s(certify)        certify or empty</div></pre></td></tr></table></figure>
-<h2 id="14-注意事项"><a href="#14-注意事项" class="headerlink" title="14.注意事项"></a>14.注意事项</h2><ul>
+<h2 id="14-见证大神，访问webdoc官网"><a href="#14-见证大神，访问webdoc官网" class="headerlink" title="14.见证大神，访问webdoc官网"></a>14.见证大神，访问webdoc官网</h2><p>webdoc的作者为了方便大家可以更详尽地了解webdoc命令，专门为其制作了一份<a href="http://repec.sowi.unibe.ch/stata/webdoc/" target="_blank" rel="external">网页</a>，而事实上，连这个网站，都是使用webdoc生成的。作者提供了关于生成网页的源码供大家下载，点击<a href="../source.zip">此处领取
+</a>，现在我们尝试将网页文件生成。</p>
+<p>首先我们使用Stata进入解压后的文件夹目录，然后打开其中的0-compile.do文件，修改如下：将cd部分去除，将zipfile去除，即可正常运行，作者使用webdoc生成网页，虽然听起来很炫，然而大部分的工作都是使用html生成的，只是在生成目录、生成Stata output的过程中使用了一些Stata命令。因此，使用webdoc制作自动化报告容易，而制作正经的网站，并没有比传统方法更简单。</p>
+<p>效果图如下所示(可以看见，网页已经变成了本地目录)：</p>
+<p><img src="webdoc_index.png" alt=""></p>
+<h2 id="15-注意事项"><a href="#15-注意事项" class="headerlink" title="15.注意事项"></a>15.注意事项</h2><ul>
 <li><code>$</code>是Stata中用以表示宏的符号，因此如果你使用 <code>webdoc write</code> 或者 <code>webdoc put</code> 写的文本中含有 <code>$</code> ，别忘了加上转义字符 <code>\$</code></li>
 <li>webdoc do 命令不能良好支持 semicolon command delimiter ， The semicolon command delimiter 在 webdoc commands，及 <code>/*** ***/</code>中正常运行</li>
 <li>webdoc 标签命令 应在每一行的开头书写</li>
 <li>webdoc stlog 不能被嵌套使用</li>
 <li>不要在webdoc stlog 中写入 webdoc do 及webdoc init命令</li>
 </ul>
+<h2 id="16-尾语"><a href="#16-尾语" class="headerlink" title="16.尾语"></a>16.尾语</h2><h3 id="赞扬"><a href="#赞扬" class="headerlink" title="赞扬"></a>赞扬</h3><p>webdoc命令是一项外部命令，由University of Bern的Ben Jann独自完成，这是一项相当浩大的命令，命令全文达4000+行，所涵盖的子命令约17个，选项轻轻松松上百，作者甚至为此专门制作了一个<a href="http://repec.sowi.unibe.ch/stata/webdoc/" target="_blank" rel="external">网站</a>————当然，它也是用webdoc生成的。之所以对这个命令进行(几乎)全文搬运，是因为它目前是Stata生成自动化报告最权威的命令。甚至于Stata原厂在更新Stata15 时新增加的dyndoc系列命令，就是大部分地借鉴了它。————但是dyndoc只在Stata15中有，而webdoc可以在Stata10版本及以上运行，因此更具有用户市场。</p>
+<p>webdoc的命令写得繁杂，但它实现了一个大家梦寐以求的需求————Stata自动化报告，并且通过花样百出的接口，极大地改善了页面外观。</p>
+<ul>
+<li>支持webdoc setting更改各类Stata结果输出标签，通过这一接口，可以将某一区块设置成自己想要的class，或者添加JS事件。————虽然这很麻烦，但是相比于纯手写html，它已经非常人性化了。</li>
+<li>支持bootstrap主题引入，并且同样支持引入bootstrap的JS包，因此，通过webdoc直接写出来一份bootstrap框架构建的网页不是天方夜谭————当然，你也必须对bootstrap有一些了解。</li>
+<li>webdoc toc支持目录自动生成</li>
+<li>webdoc append支持引入相关文件</li>
+<li>…</li>
+</ul>
+<p>总之，借助于webdoc，我们已经基本解决了Stata自动化报告的接口问题</p>
+<h3 id="反思"><a href="#反思" class="headerlink" title="反思"></a>反思</h3><p>说了很多webdoc的优点，我们当然也要做一些反思————webdoc的缺点是什么呢？</p>
+<p>不可否认的是————它的标签实在是太多了，这已经不亚于学习一种新式的生成html的标记语言(笔者接触并熟练使用markdown大约只用了两个小时，而翻译本篇命令，却花了整整的两天)，虽然它的获利也是很显然的————我们拥有了一种将报告自动生成的方案，基于Stata的。</p>
+<p>除此之外，作者似乎非常放心用户们的前端基本功，开放了许多标签接口以供读者调用————甚至提供了修改标签的接口(webdoc set)，虽然这确实使得设计网页极大丰富，但也造成了命令不易推广的困扰————毕竟用户市场中，不熟悉html的是多数，如果他们在浅尝webdoc后，发现只能生成非常简陋的网页，而更多方法隐藏在一堆他们看不懂的东西后面，就会不得不辄止。这不是webdoc一个命令的问题，而是Stata中许多外部命令遇到的问题————我们是应该提供一种规定好了格式的便利化输出，还是应该提供拥有丰富接口，自由度极高的命令。至少在笔者这里看来，我们应该提供给读者前者的服务，至少应该提供几种已经设计好了的选项。</p>
+<p>本文翻译自Stata软件：help webdoc及作者<a href="http://repec.sowi.unibe.ch/stata/webdoc/" target="_blank" rel="external">官网</a>，爬虫俱乐部保留翻译版权 ，本博客为爬虫俱乐部官方主页。</p>
 
       
     </div>
