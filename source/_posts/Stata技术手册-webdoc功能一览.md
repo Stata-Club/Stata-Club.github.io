@@ -182,7 +182,7 @@ webdoc graph
 ***/
 ```
 
-在这次webdoc init 中，logdir("webdoc_init")表示将这次运行生成的log文件存放于`webdoc_init`目录下，grdir("webdoc_init_pict")表示将这次运行生成的图片存放于``目录下，dodir("webdoc_init_do")表示指定生成do文件的目录，它虽然会生成对应文件夹，但是目前还没有发现有什么作用（因为我们是将do文档转为html，并不会生成do文档），prefix("yes")将log文件及图片文件的文件名改为yes。stpath("path")会在html文件中的图片中加入一层相对路径。
+在这次webdoc init 中，logdir("webdoc_init")表示将这次运行生成的log文件存放于`webdoc_init`目录下，grdir("webdoc_init_pict")表示将这次运行生成的图片存放于``目录下，dodir("webdoc_init_do")表示指定生成do文件的目录，它会生成对应文件夹，在某些特殊时刻有作用（后续中有的命令会生成关于do文件的命令的拷贝版本，即生成了一份do文件），prefix("yes")将log文件及图片文件的文件名改为yes。stpath("path")会在html文件中的图片中加入一层相对路径。
 
 >webdoc do webdoc_init.do
 
@@ -401,22 +401,20 @@ webdoc stlog close
     - **[no]output**               是否隐藏输出内容，默认是不隐藏
     - **[no]matastrip**            是否隐藏Mata环境的开启与结束命令，默认是不隐藏
     - **[no]cmdstrip**             是否不记录命令行，默认为记录
-    - **[no]lbstrip**              whether to strip line-break comments; default is nolbstrip
-    - **[no]gtstrip**              whether to strip continuation symbols; default is nogtstrip
-    - **[no]ltrim**                whether to remove indentation; default is ltrim
+    - **[no]lbstrip**              是否删去分割线，默认为不删去
+    - **[no]gtstrip**              是否删去显示继续的标志，默认为不删去
+    - **[no]ltrim**                是否删去缩进，默认为删去
 - Highlighting
-    - **mark(strlist)**            apply `<mark>` tag to specified strings
-    - **tag(matchlist)**           apply custom tags to specified strings
+    - **mark(strlist)**            给本次section指定字符加上`<mark>`标签
+    - **tag(matchlist)**           给Stata输出内容加上自定义标签
 - Technical
-    - **[no]plain**                whether to omit markup; default is noplain
-    - **[no]raw**                  whether to omit markup and character substitutions; default is noraw
-    - **[no]custom**               whether to use custom code to include the log file; default is
-                                 nocustom
-    - **[no]keep**                 whether to erase the external log file; default is keep
-    - **[no]certify**              whether to compare results against previous version; default is
-                                 nocertify
-    - **[no]sthlp[(subst)]**       (webdoc stlog using only) whether to treat as a Stata help file
-    - **nostop**                   (webdoc stlog using only) do not stop execution on error
+    - **[no]plain**                是否删去引入的html标签记号(以节约空间)，默认为noplain(不删去)
+    - **[no]raw**                  是否忽略标签及字符的替换过程，默认是不忽略
+    - **[no]custom**               是否使用自定义代码包装log文件内容
+    - **[no]keep**                 是否在执行结束后删去log文件，默认为保留
+    - **[no]certify**              是否将结果与前代版本比较，默认为不比较
+    - **[no]sthlp[(subst)]**       (stlog using专用)是否作为sthlp文件读取
+    - **nostop**                   (stlog using专用)当webdoc do在执行过程中遇到了error会继续执行
 
 >试一试，建立webdoc_stlog_2.do文件
 
@@ -522,10 +520,6 @@ webdoc stlog close
 ![](webdoc_set_3.png)
 
 也就是说，webdoc set命令具备将固定的输出标签形式更改的能力，这一功能有什么作用呢？当你引用了bootstrap的css及js文件后，可以通过更改标签的class、引入js事件实现更加绚丽的效果
-
-提醒事项：
-
-当svg图片指定了 hardcode 选项时，图片代码会被be tagged by  svg，而img则正常
 
 ## 6.webdoc local 
 
@@ -688,21 +682,69 @@ webdoc append append.txt,substitute("regress" "gress") drop(11)
 
 >webdoc toc [levels [offset]] [, ...]
 
-- numbered 
-- md 
 
+webdoc toc命令，顾名思义，是为整篇文章增加一份目录，它的添加机制是，检索整篇文章的标题符号，然后将其整理成列表，放入一个事先预设好的`<span class="toc">`的位置处————当然，这是一个html标签，且它需要你自己设置位置
+
+用法
+
+>webdoc toc num1 num2
+
+num1代表该目录要收集几级标题，默认为收集三级标题(h1 h2 h3)
+num2代表该目录从哪一级标题开始采集，默认为0(即从h1开始采集)
+
+webdoc toc 的选项如下：
+
+- numbered  为目录增加章节数标志
+- md        支持markdown格式的目录采集，即，如果你的标题是采用markdown的标记书写的，那么它同样可以找到并放置在目录里。
+
+>试一试 创建webdoc_toc.do文件
+
+```
+webdoc init webdoc_toc, replace header(width(900px) bstheme(darkly ,jscript) )
+
+/***
+
+<!-- Table of contents -->
+
+<span class="toc">
+<p>Run a regression of price on mileage and display the relation in a scatter plot.</p>
+***/
+
+webdoc toc 3 ,md numbered
+
+/***
+<h1>Exercise1</h1>
+<h2>Exercise2</h1>
+<h3>Exercise3</h1>
+<h1>Exercise4</h1>
+<h2>Exercise5</h1>
+
+# one
+## two
+# three
+
+***/
+```
+
+效果如下所示：
+
+![](webdoc_toc_1.png)
 
 
 ## 11.webdoc close 关闭html或md文件
 
-该命令不是必须的，因为webdoc do命令会在do文件结束时自动补全。另外，如果你想在文件结束前就结束webdoc的读取工作，可以在文件最后加上 webdoc exit（其它啥也别加）webdoc do命令就只会读取到该行为止。
+webdoc close命令用于关闭输出文件。该命令不是必须的，因为webdoc do命令会在do文件结束时自动结束工作。
+另外，如果你想在do文件结束前就结束webdoc的读取工作，可以在文件最后加上 
+webdoc exit（其它啥也别加），webdoc do命令就只会读取到该行为止。(注意，这两者是不同的，webdoc close是关闭输出文件，而webdoc exit是关闭webdoc do命令)
 
 ## 12.webdoc strip 
 
+>webdoc strip filename newname [, replace append]
+
 该命令用于将do文件中所有代码区和所有webdoc标签命令移除
 
-- replace 
-- append
+- replace 如果有同名文件名，则替换之
+- append  如果有同名文件名，则续写之
 
 ## 13.宏变量及返回结果列表
 
@@ -813,10 +855,49 @@ webdoc stlog close 以及 webdoc stlog using 储存了如下结果宏
 ```
 
 
-## 14.注意事项
+## 14.见证大神，访问webdoc官网
+
+webdoc的作者为了方便大家可以更详尽地了解webdoc命令，专门为其制作了一份[网页](http://repec.sowi.unibe.ch/stata/webdoc/)，而事实上，连这个网站，都是使用webdoc生成的。作者提供了关于生成网页的源码供大家下载，点击[此处领取
+](../source.zip)，现在我们尝试将网页文件生成。
+
+首先我们使用Stata进入解压后的文件夹目录，然后打开其中的0-compile.do文件，修改如下：将cd部分去除，将zipfile去除，即可正常运行，作者使用webdoc生成网页，虽然听起来很炫，然而大部分的工作都是使用html生成的，只是在生成目录、生成Stata output的过程中使用了一些Stata命令。因此，使用webdoc制作自动化报告容易，而制作正经的网站，并没有比传统方法更简单。
+
+效果图如下所示(可以看见，网页已经变成了本地目录)：
+
+![](webdoc_index.png)
+
+
+
+## 15.注意事项
 
 - `$`是Stata中用以表示宏的符号，因此如果你使用 `webdoc write` 或者 `webdoc put` 写的文本中含有 `$` ，别忘了加上转义字符 `\$`
 - webdoc do 命令不能良好支持 semicolon command delimiter ， The semicolon command delimiter 在 webdoc commands，及 `/*** ***/`中正常运行
 - webdoc 标签命令 应在每一行的开头书写
 - webdoc stlog 不能被嵌套使用
 - 不要在webdoc stlog 中写入 webdoc do 及webdoc init命令
+
+## 16.尾语
+
+### 赞扬
+
+webdoc命令是一项外部命令，由University of Bern的Ben Jann独自完成，这是一项相当浩大的命令，命令全文达4000+行，所涵盖的子命令约17个，选项轻轻松松上百，作者甚至为此专门制作了一个[网站](http://repec.sowi.unibe.ch/stata/webdoc/)————当然，它也是用webdoc生成的。之所以对这个命令进行(几乎)全文搬运，是因为它目前是Stata生成自动化报告最权威的命令。甚至于Stata原厂在更新Stata15 时新增加的dyndoc系列命令，就是大部分地借鉴了它。————但是dyndoc只在Stata15中有，而webdoc可以在Stata10版本及以上运行，因此更具有用户市场。
+
+webdoc的命令写得繁杂，但它实现了一个大家梦寐以求的需求————Stata自动化报告，并且通过花样百出的接口，极大地改善了页面外观。
+
+- 支持webdoc setting更改各类Stata结果输出标签，通过这一接口，可以将某一区块设置成自己想要的class，或者添加JS事件。————虽然这很麻烦，但是相比于纯手写html，它已经非常人性化了。
+- 支持bootstrap主题引入，并且同样支持引入bootstrap的JS包，因此，通过webdoc直接写出来一份bootstrap框架构建的网页不是天方夜谭————当然，你也必须对bootstrap有一些了解。
+- webdoc toc支持目录自动生成
+- webdoc append支持引入相关文件
+- ...
+
+总之，借助于webdoc，我们已经基本解决了Stata自动化报告的接口问题
+
+### 反思
+
+说了很多webdoc的优点，我们当然也要做一些反思————webdoc的缺点是什么呢？
+
+不可否认的是————它的标签实在是太多了，这已经不亚于学习一种新式的生成html的标记语言(笔者接触并熟练使用markdown大约只用了两个小时，而翻译本篇命令，却花了整整的两天)，虽然它的获利也是很显然的————我们拥有了一种将报告自动生成的方案，基于Stata的。
+
+除此之外，作者似乎非常放心用户们的前端基本功，开放了许多标签接口以供读者调用————甚至提供了修改标签的接口(webdoc set)，虽然这确实使得设计网页极大丰富，但也造成了命令不易推广的困扰————毕竟用户市场中，不熟悉html的是多数，如果他们在浅尝webdoc后，发现只能生成非常简陋的网页，而更多方法隐藏在一堆他们看不懂的东西后面，就会不得不辄止。这不是webdoc一个命令的问题，而是Stata中许多外部命令遇到的问题————我们是应该提供一种规定好了格式的便利化输出，还是应该提供拥有丰富接口，自由度极高的命令。至少在笔者这里看来，我们应该提供给读者前者的服务，至少应该提供几种已经设计好了的选项。
+
+本文翻译自Stata软件：help webdoc及作者[官网](http://repec.sowi.unibe.ch/stata/webdoc/)，爬虫俱乐部保留翻译版权 ，本博客为爬虫俱乐部官方主页。
