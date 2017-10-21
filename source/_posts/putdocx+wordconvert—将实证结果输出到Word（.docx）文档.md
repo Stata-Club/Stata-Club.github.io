@@ -1,8 +1,9 @@
 ---
 title: putdocx+wordconvert—将实证结果输出到Word（.docx）文档
 date: 2017-06-28
+tag: putdocx
 categories: 推文
 ---
-putdocx+wordconvert—将实证结果输出到Word（.docx）文档
-<!--more-->
-<iframe src="http://powerofstata.club/stata_article/2017-06-28.html" width="900px" height="10000px" scrolling="no" frameborder="0"></iframe>
+
+<img src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhYDibC2nGJl9yqXgicmfKzOpmpzFHYAoMgD7CTBOMiamtnctiauJia8303KjicThHmqTI8C4u76wMC0gnng/0?wx_fmt.jpeg" style="width: 60%; height: auto;"/><!--more-->
+<iframe src="http://powerofstata.club/stata_article/2017-06-28.html" width="900px" height="9000px" scrolling="auto" frameborder="0"></iframe>
