@@ -1,0 +1,906 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body><div class="rich_media_area_primary" id="page-content">
+ <div id="img-content">
+  <h2 class="rich_media_title" id="activity-name">
+  </h2>
+  <div class="rich_media_meta_list" id="meta_content">
+  </div>
+  <div class="rich_media_content " id="js_content">
+   <p style="text-indent: 0em;">
+    <span style="font-family: 宋体; font-size: 16px; text-indent: 0em; line-height: 1.6;">
+     今天介绍两个命令，都是用来计算字符串之间的相似度，具体往下看。
+    </span>
+   </p>
+   <p>
+    <br/>
+   </p>
+   <section class="" data-source="bj.96weixin.com">
+    <section style="border: 0px none; margin-right: auto; margin-left: auto; text-align: center;">
+     <section class="" style="padding: 10px; display: inline-block; border-style: solid; -webkit-border-image: url(http://mmbiz.qpic.cn/mmbiz_jpg/qicgibLrMsZrg1qxe3LqziaKxBWIsgqckjzQqaZ2Mu1urKg1x4BBK16Hn5TRWPyo5ttpKnLat4vlFu8HwariasLRjQ/0?wx_fmt=jpeg) 0 350 0 248 fill stretch; border-width: 0px 36px 0px 32px; margin-right: auto; margin-left: auto;">
+      <section style="display: inline-block; color: rgb(102, 102, 102);">
+       <p>
+        <span style="color: rgb(0, 0, 0);">
+         <strong>
+          <span style="font-size: 20px;">
+           s
+           <span style="font-family: Calibri, sans-serif;">
+            trdist
+           </span>
+          </span>
+         </strong>
+        </span>
+       </p>
+      </section>
+     </section>
+    </section>
+   </section>
+   <p>
+    <span style="font-family: 宋体; font-size: 16px;">
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="font-family:宋体">
+     该命令用于计算
+    </span>
+    Levenshtein
+    <span style="font-family:宋体">
+     距离，又叫编辑距离。是指两个字串之间，由一个转成另一个所需的最少编辑操作次数。许可的编辑操作包括将一个字符替换成另一个字符，插入一个字符，删除一个字符。
+    </span>
+   </p>
+   <p style="text-indent:28px">
+    <span style="font-family:宋体">
+     <br/>
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="font-family:宋体">
+     语法为：
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="color: rgb(0, 209, 0);">
+     strdist {varname1|"string1"} {varname2|"string2"} [if] [in] [, generate(newvar) ]
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="font-family:宋体">
+     如果是对两个字符串计算编辑距离，记得要加引号。
+    </span>
+   </p>
+   <p style="text-indent:28px">
+    <span style="font-family:宋体">
+     <br/>
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="font-family:宋体">
+     举个栗子。
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="color: rgb(0, 209, 0);">
+     sysuse census
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="color: rgb(0, 209, 0);">
+     strdist state "west virginia" , gen(wvdist)
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="color: rgb(0, 209, 0);">
+     list state wvdist in 1/5
+    </span>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.6603325415676959" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhbrR0AibbDdWRjY7lt2WamY1jveXbTb8sY1bvpagOBib0FAttWibUpEiblWFWo2NncllXLq4knH5QwRRw/0?wx_fmt=png" data-type="png" data-w="421" src="%E6%83%B3%E6%AF%94%E8%BE%83%E6%96%87%E6%9C%AC%E7%9B%B8%E4%BC%BC%E5%BA%A6%E5%90%97%EF%BC%9F%E4%B9%9F%E8%AE%B8%E8%BF%99%E4%B8%A4%E4%B8%AA%E5%91%BD%E4%BB%A4%E5%8F%AF%E4%BB%A5%E5%B8%AE%E4%BD%A0_files/640_004.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+   </p>
+   <p style="text-indent:28px">
+    <span style="font-family:宋体">
+     <br/>
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="font-family:宋体">
+     比如，
+    </span>
+    state
+    <span style="font-family:宋体">
+     的第
+    </span>
+    5
+    <span style="font-family:宋体">
+     个观测值“
+    </span>
+    California
+    <span style="font-family:宋体">
+     ”要转换成“
+    </span>
+    westvirginia
+    <span style="font-family:宋体">
+     ”，先插入
+    </span>
+    w
+    <span style="font-family:宋体">
+     、
+    </span>
+    e
+    <span style="font-family:宋体">
+     、
+    </span>
+    s
+    <span style="font-family:宋体">
+     三个字母，再将
+    </span>
+    C
+    <span style="font-family:宋体">
+     、
+    </span>
+    a
+    <span style="font-family:宋体">
+     、
+    </span>
+    l
+    <span style="font-family:宋体">
+     三个字母分别替换为
+    </span>
+    t
+    <span style="font-family:宋体">
+     、空格和
+    </span>
+    v
+    <span style="font-family:宋体">
+     ，字母
+    </span>
+    i
+    <span style="font-family:宋体">
+     匹配成功不做编辑，再将
+    </span>
+    f
+    <span style="font-family:宋体">
+     、
+    </span>
+    o
+    <span style="font-family:宋体">
+     、
+    </span>
+    r
+    <span style="font-family:宋体">
+     分别替换为
+    </span>
+    r
+    <span style="font-family:宋体">
+     、
+    </span>
+    g
+    <span style="font-family:宋体">
+     、
+    </span>
+    i
+    <span style="font-family:宋体">
+     。总共进行了
+    </span>
+    9
+    <span style="font-family:宋体">
+     次编辑操作，所以算得编辑距离为
+    </span>
+    9
+    <span style="font-family:宋体">
+     。
+    </span>
+   </p>
+   <p style="text-indent:28px">
+    <span style="font-family:宋体">
+     <br/>
+    </span>
+   </p>
+   <section class="" data-source="bj.96weixin.com">
+    <section style="border: 0px none; margin-right: auto; margin-left: auto; text-align: center;">
+     <section class="" style="padding: 10px; display: inline-block; border-style: solid; -webkit-border-image: url(http://mmbiz.qpic.cn/mmbiz_jpg/qicgibLrMsZrg1qxe3LqziaKxBWIsgqckjzQqaZ2Mu1urKg1x4BBK16Hn5TRWPyo5ttpKnLat4vlFu8HwariasLRjQ/0?wx_fmt=jpeg) 0 350 0 248 fill stretch; border-width: 0px 36px 0px 32px; margin-right: auto; margin-left: auto;">
+      <section style="display: inline-block; color: rgb(102, 102, 102);">
+       <p>
+        <span style="color: rgb(0, 0, 0);">
+         <strong>
+          <span style="font-family: Calibri, sans-serif; font-size: 20px;">
+           jarowinkler
+          </span>
+         </strong>
+        </span>
+       </p>
+      </section>
+     </section>
+    </section>
+   </section>
+   <p style="text-indent: 28px">
+    <span style="font-family:宋体">
+     <br/>
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="font-family:宋体">
+     该命令用于计算两个字符串变量之间
+    </span>
+    Jaro-Winkler
+    <span style="font-family:宋体">
+     距离，
+    </span>
+    Jaro-Winkler
+    <span style="font-family:宋体">
+     距离越大，相似度越高，最小为
+    </span>
+    0
+    <span style="font-family:宋体">
+     ，表示两个字符串完全不相似；最大为
+    </span>
+    1
+    <span style="font-family:宋体">
+     ，表示完全相同。
+    </span>
+    Jaro-Winkler
+    <span style="font-family:宋体">
+     距离是
+    </span>
+    Jaro
+    <span style="font-family:宋体">
+     距离的一个扩展，而
+    </span>
+    Jaro
+    <span style="font-family:宋体">
+     距离（
+    </span>
+    Jaro 1989;1995
+    <span style="font-family:宋体">
+     ）据说是用来判定健康记录上两个名字是否相同，也有说是用于人口普查，爬虫君的洛阳铲使得不好，留待他人考察。今儿只讲
+    </span>
+    Jaro-Winkler
+    <span style="font-family:宋体">
+     距离的具体定义。
+    </span>
+   </p>
+   <p style="text-indent: 28px">
+    <span style="font-family:宋体">
+     <br/>
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="font-family:宋体">
+     先说
+    </span>
+    Jaro
+    <span style="font-family:宋体">
+     距离。定义如下
+    </span>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.32344213649851633" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhbrR0AibbDdWRjY7lt2WamY1s95YPianypsiboShicKN6tuP5RwrHobKoGUwsBpDbG2KRlQ15AvT8IsrA/0?wx_fmt=png" data-type="png" data-w="337" src="%E6%83%B3%E6%AF%94%E8%BE%83%E6%96%87%E6%9C%AC%E7%9B%B8%E4%BC%BC%E5%BA%A6%E5%90%97%EF%BC%9F%E4%B9%9F%E8%AE%B8%E8%BF%99%E4%B8%A4%E4%B8%AA%E5%91%BD%E4%BB%A4%E5%8F%AF%E4%BB%A5%E5%B8%AE%E4%BD%A0_files/640_006.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+   </p>
+   <p>
+    <br/>
+   </p>
+   <p style="text-indent: 0em;">
+    s1
+    <span style="font-family:宋体">
+     、
+    </span>
+    s2
+    <span style="font-family:宋体">
+     分别是字符串
+    </span>
+    s1
+    <span style="font-family:宋体">
+     、
+    </span>
+    s2
+    <span style="font-family:宋体">
+     的长度，
+    </span>
+    m
+    <span style="font-family:宋体">
+     是匹配的字符数，
+    </span>
+    t
+    <span style="font-family:宋体">
+     是换位的数目。换位的数目
+    </span>
+    t
+    <span style="font-family:宋体">
+     ，简单来说就是不同顺序的匹配字符的数目的一半，比如
+    </span>
+    QI
+    <span style="font-family:宋体">
+     和
+    </span>
+    IQ
+    <span style="font-family:宋体">
+     ，匹配但顺序不同，
+    </span>
+    t=2/2=1
+    <span style="font-family:宋体">
+     ，换位数就是
+    </span>
+    1
+    <span style="font-family:宋体">
+     。
+    </span>
+   </p>
+   <p style="text-indent: 2em;">
+    <span style="font-family:宋体">
+     <br/>
+    </span>
+   </p>
+   <p style="text-indent: 2em;">
+    <span style="font-family:宋体">
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="font-family:宋体">
+     举个栗子。organize和organise，s1和s2都是8，m为7，t为0，则Jaro距离为0.9167。
+    </span>
+   </p>
+   <p style="text-indent: 28px">
+    <br/>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="font-family:宋体">
+     Jaro-Winkler则给予了起始部分就相同的字符串更高的分数，他定义了一个前缀p，给予两个字符串，如果前缀部分有长度为小写L的部分相同，则Jaro-Winkler Distance为：
+    </span>
+   </p>
+   <p style="text-indent: 2em;">
+    <span style="font-family:宋体">
+    </span>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.27906976744186046" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhbrR0AibbDdWRjY7lt2WamY1vea3z9XE9ocxH9qLLkfIBkFtlBZou7rE2Nf6kCSsd3H0PQXItnHl6w/0?wx_fmt=png" data-type="png" data-w="258" src="%E6%83%B3%E6%AF%94%E8%BE%83%E6%96%87%E6%9C%AC%E7%9B%B8%E4%BC%BC%E5%BA%A6%E5%90%97%EF%BC%9F%E4%B9%9F%E8%AE%B8%E8%BF%99%E4%B8%A4%E4%B8%AA%E5%91%BD%E4%BB%A4%E5%8F%AF%E4%BB%A5%E5%B8%AE%E4%BD%A0_files/640_003.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="font-family:宋体">
+     小写L是前缀的相同的长度，但是规定最大为
+    </span>
+    4
+    <span style="font-family:宋体">
+     ，如果前缀相同的长度超出
+    </span>
+    4
+    <span style="font-family:宋体">
+     ，也按
+    </span>
+    4
+    <span style="font-family:宋体">
+     计算；
+    </span>
+    p
+    <span style="font-family:宋体">
+     则是调整分数的常数，规定不能超过
+    </span>
+    0.25
+    <span style="font-family:宋体">
+     ，不然可能出现
+    </span>
+    dw
+    <span style="font-family:宋体">
+     大于
+    </span>
+    1
+    <span style="font-family:宋体">
+     的情况，这个常数默认值为
+    </span>
+    0.1
+    <span style="font-family:宋体">
+     。
+    </span>
+   </p>
+   <p style="text-indent: 28px">
+    <span style="font-family:宋体">
+     <br/>
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="font-family:宋体">
+     命令语法：
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="color: rgb(0, 209, 0);">
+     jarowinkler varname1 varname2 [,generate(newvar) jaroonly(newvar) pwinkler(x) ]
+    </span>
+   </p>
+   <p style="text-indent: 28px">
+    <span style="color: rgb(0, 209, 0);">
+     <br/>
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="font-family:宋体">
+     计算出的
+    </span>
+    Jaro-Winkler
+    <span style="font-family:宋体">
+     距离的变量名可以在
+    </span>
+    generate()
+    <span style="font-family:宋体">
+     中定义，
+    </span>
+    jaroonly()
+    <span style="font-family:宋体">
+     选项计算
+    </span>
+    Jaro
+    <span style="font-family:宋体">
+     距离，
+    </span>
+    pwinkler()
+    <span style="font-family:宋体">
+     选项可以自定义调整分数的常数
+    </span>
+    p
+    <span style="font-family:宋体">
+     ，不可大于
+    </span>
+    0.25
+    <span style="font-family:宋体">
+     ，不填则默认为
+    </span>
+    0.1
+    <span style="font-family:宋体">
+     。
+    </span>
+   </p>
+   <p style="text-indent: 28px">
+    <span style="font-family:宋体">
+     <br/>
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="font-family:宋体">
+     举个栗子。
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="color: rgb(0, 209, 0);">
+     jarowinkler state state3,gen(dist_jw) jaroonly(dist_jw1) pwinkler(0.2)
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="color: rgb(0, 209, 0);">
+     list state state3 dist_jw dist_jw1 in 1/5
+    </span>
+   </p>
+   <p style="text-indent: 2em;">
+    <span style="font-family:宋体">
+    </span>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.37969094922737306" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhbrR0AibbDdWRjY7lt2WamY1YzBicDmCZ6eSVGibbnSoR8JPD7BIk1ic7WqdFnIdMaUpMKfOLiccU4grCg/0?wx_fmt=png" data-type="png" data-w="453" src="%E6%83%B3%E6%AF%94%E8%BE%83%E6%96%87%E6%9C%AC%E7%9B%B8%E4%BC%BC%E5%BA%A6%E5%90%97%EF%BC%9F%E4%B9%9F%E8%AE%B8%E8%BF%99%E4%B8%A4%E4%B8%AA%E5%91%BD%E4%BB%A4%E5%8F%AF%E4%BB%A5%E5%B8%AE%E4%BD%A0_files/640_005.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+   </p>
+   <p style="text-indent: 2em;">
+    <span style="font-family:宋体">
+     <br/>
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="font-family:宋体">
+     可以看出，经过调整后，
+    </span>
+    Jaro-Winkler
+    <span style="font-family:宋体">
+     距离比
+    </span>
+    Jaro
+    <span style="font-family:宋体">
+     距离给了有相同前缀的字符串更高的分数。
+    </span>
+   </p>
+   <p style="text-indent: 28px">
+    <span style="font-family:宋体">
+     <br/>
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="font-family:宋体">
+     在计算出
+    </span>
+    Jaro
+    <span style="font-family:宋体">
+     距离后，由于变量
+    </span>
+    state
+    <span style="font-family:宋体">
+     和
+    </span>
+    state3
+    <span style="font-family:宋体">
+     的观测值前缀的相同的长度超过
+    </span>
+    4
+    <span style="font-family:宋体">
+     ，所以按
+    </span>
+    4
+    <span style="font-family:宋体">
+     计算，我们在命令中给
+    </span>
+    p
+    <span style="font-family:宋体">
+     赋值为
+    </span>
+    0.2
+    <span style="font-family:宋体">
+     ，所以
+    </span>
+    Jaro-Winkler
+    <span style="font-family:宋体">
+     距离等于
+    </span>
+    Jaro
+    <span style="font-family:宋体">
+     距离加上
+    </span>
+    0.8
+    <span style="font-family:宋体">
+     倍的
+    </span>
+    1
+    <span style="font-family:宋体">
+     减
+    </span>
+    Jaro
+    <span style="font-family:宋体">
+     距离。
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="color: rgb(0, 209, 0);">
+     gen dist=dist_jw1+0.8*(1-dist_jw1)
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="color: rgb(0, 209, 0);">
+     list dist dist_jw dist_jw1 in 1/5
+    </span>
+   </p>
+   <p style="text-indent: 2em;">
+    <span style="font-family:宋体">
+    </span>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.6366366366366366" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhbrR0AibbDdWRjY7lt2WamY1Z7jYoxru9GfdJM1zfmdDN7icjicCgU5Fd47iaB17vuIAIHMuHu3qqKWwA/0?wx_fmt=png" data-type="png" data-w="333" src="%E6%83%B3%E6%AF%94%E8%BE%83%E6%96%87%E6%9C%AC%E7%9B%B8%E4%BC%BC%E5%BA%A6%E5%90%97%EF%BC%9F%E4%B9%9F%E8%AE%B8%E8%BF%99%E4%B8%A4%E4%B8%AA%E5%91%BD%E4%BB%A4%E5%8F%AF%E4%BB%A5%E5%B8%AE%E4%BD%A0_files/640_002.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+   </p>
+   <p style="text-indent: 2em;">
+    <span style="font-family:宋体">
+    </span>
+    <br/>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="font-family:宋体">
+     看，我们自行计算的
+    </span>
+    Jaro-Winkler
+    <span style="font-family:宋体">
+     距离和命令计算
+    </span>
+    Jaro-Winkler
+    <span style="font-family:宋体">
+     距离的结果是一样的。
+    </span>
+   </p>
+   <p style="text-indent: 28px">
+    <span style="font-family:宋体">
+     <br/>
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="font-family:宋体">
+     这些字符串相似度算法在处理拉丁文字的文本匹配时，都能起到非常好的效果。它们本身最初的发明者也是为了解决拉丁文字中遇到的问题。然而，对于象形文字相似度计算，比如说中文，这些算法就显得捉襟见肘了。
+    </span>
+   </p>
+   <p style="margin-top: 5px; margin-bottom: 5px; max-width: 100%; min-height: 1em; color: rgb(62, 62, 62); text-indent: 0em; white-space: normal; font-family: 'MicroSoft YaHei'; font-size: 14px; line-height: normal; text-align: center; box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    <span style="max-width: 100%; font-size: 16px; font-family: 华文楷体; box-sizing: border-box !important; word-wrap: break-word !important;">
+     <img _width="670px" class="" data-fail="0" data-ratio="0.10507246376811594" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZT4pibDibj7cOVxCJcXhaia2446lMswxJdzt7sXqzWHTQqMpAicDm1Qg21XbDCIlOttwJtfYpSqkjzLw/640?wx_fmt=png" data-type="png" data-w="552" src="%E6%83%B3%E6%AF%94%E8%BE%83%E6%96%87%E6%9C%AC%E7%9B%B8%E4%BC%BC%E5%BA%A6%E5%90%97%EF%BC%9F%E4%B9%9F%E8%AE%B8%E8%BF%99%E4%B8%A4%E4%B8%AA%E5%91%BD%E4%BB%A4%E5%8F%AF%E4%BB%A5%E5%B8%AE%E4%BD%A0_files/640.png" style="display: inline; box-sizing: border-box !important; overflow-wrap: break-word !important; visibility: visible !important; width: 670px !important; height: auto !important;" title="大树分割线" width="100%"/>
+    </span>
+   </p>
+   <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+     <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+      <section class="" style="max-width: 100%; box-sizing: border-box; font-size: 14px; line-height: 1.8; word-wrap: break-word !important;">
+       <p style="max-width: 100%; min-height: 1em; font-size: 16px; line-height: 25.6px; text-indent: 2em; box-sizing: border-box !important; word-wrap: break-word !important;">
+        <span style="max-width: 100%; color: rgb(136, 136, 136); font-family: 微软雅黑; line-height: 23.27px; text-align: justify; text-indent: 2em; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+         以上就是今天给大家分享的内容了，说得好就赏个铜板呗！有钱的捧个钱场，有人的捧个人场~。
+        </span>
+       </p>
+       <p style="max-width: 100%; min-height: 1em; font-size: 16px; line-height: 25.6px; text-indent: 2em; box-sizing: border-box !important; word-wrap: break-word !important;">
+        <span style="max-width: 100%; color: rgb(122, 79, 214); font-size: 14px; font-family: 微软雅黑; line-height: 25.6px; text-align: justify; text-indent: 2em; box-sizing: border-box !important; word-wrap: break-word !important;">
+         应广大粉丝要求，爬虫俱乐部的推文公众号打赏功能可以开发票啦，累计打赏超过1000元我们即可给您开具发票，发票类别为“咨询费”。用心做事，只为做您更贴心的小爬虫。第一批发票已经寄到各位小主的手中，大家快来给小爬虫打赏呀~
+        </span>
+       </p>
+       <p style="max-width: 100%; min-height: 1em; font-size: 16px; line-height: 25.6px; text-align: right; text-indent: 28px; box-sizing: border-box !important; word-wrap: break-word !important;">
+        <span style="max-width: 100%; font-size: 14px; line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important;">
+         <span style="max-width: 100%; color: rgb(122, 79, 214); font-family: 微软雅黑; box-sizing: border-box !important; word-wrap: break-word !important;">
+         </span>
+        </span>
+        <span style="max-width: 100%; color: rgb(117, 114, 114); font-size: 14px; line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important;">
+         文字编辑：强宇曦
+        </span>
+       </p>
+       <p style="max-width: 100%; min-height: 1em; font-size: 16px; line-height: 25.6px; text-align: right; text-indent: 28px; box-sizing: border-box !important; word-wrap: break-word !important;">
+        <span style="max-width: 100%; font-size: 14px; color: rgb(117, 114, 114); line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important;">
+         技术总编：刘贝贝
+        </span>
+       </p>
+       <hr style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+       <hr style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+       <p style="max-width: 100%; min-height: 1em; font-size: 16px; line-height: 25.6px; text-indent: 0em; box-sizing: border-box !important; word-wrap: break-word !important;">
+        <strong style="max-width: 100%; text-indent: 0em; font-family: 微软雅黑; text-align: justify; color: rgb(136, 136, 136); line-height: 23.27px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+         往期推文推荐：
+        </strong>
+        <span style="max-width: 100%; font-size: 14px; color: rgb(117, 114, 114); line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important;">
+        </span>
+       </p>
+       <p style="max-width: 100%; min-height: 1em; box-sizing: border-box !important; word-wrap: break-word !important;">
+        <span style="max-width: 100%; font-size: 15px; line-height: 25.6px; font-family: 微软雅黑; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;">
+         1.
+        </span>
+        <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247485548&amp;idx=1&amp;sn=478ba30875877af79d97e9ed4eecaa7c&amp;chksm=e9af40c3ded8c9d5dc76879c0d21bb2e5e8fd182c59f2545c9879706403cafb260281dc13fce&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247485548&amp;idx=1&amp;sn=478ba30875877af79d97e9ed4eecaa7c&amp;chksm=e9af40c3ded8c9d5dc76879c0d21bb2e5e8fd182c59f2545c9879706403cafb260281dc13fce&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; font-size: 15px; line-height: 25.6px; font-family: 微软雅黑; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+         中国高校财经、管理与综合类期刊灌水排行榜
+        </a>
+        <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+       </p>
+       <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; font-size: 16px; line-height: 25.6px; word-wrap: break-word !important;">
+        <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+         <section class="" style="max-width: 100%; box-sizing: border-box; font-size: 14px; line-height: 1.8; word-wrap: break-word !important;">
+          <section style="max-width: 100%; box-sizing: border-box; line-height: 2.2; word-wrap: break-word !important;">
+           <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+            <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+             <section class="" style="max-width: 100%; box-sizing: border-box; line-height: 1.8; word-wrap: break-word !important;">
+              <section style="max-width: 100%; box-sizing: border-box; line-height: 25.6px; word-wrap: break-word !important;">
+               <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                 <section style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+                  <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <span style="max-width: 100%; font-family: 微软雅黑; line-height: 25.6px; text-align: justify; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+                    2.
+                   </span>
+                   <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484899&amp;idx=1&amp;sn=0da9bcae33696501a5eb8c8ab9c5b5ff&amp;chksm=e9af4d4cded8c45a84ed90d75464c3a866a79295f355f75e68943300fa58eb2ad1d18e016ef5&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484899&amp;idx=1&amp;sn=0da9bcae33696501a5eb8c8ab9c5b5ff&amp;chksm=e9af4d4cded8c45a84ed90d75464c3a866a79295f355f75e68943300fa58eb2ad1d18e016ef5&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; font-family: 微软雅黑; line-height: 25.6px; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                    关于RTF你不知道的命令
+                   </a>
+                  </p>
+                  <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <span style="max-width: 100%; line-height: 25.6px; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+                    3.
+                   </span>
+                   <span style="max-width: 100%; line-height: 25.6px; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+                    <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484941&amp;idx=1&amp;sn=f348ba26ed2e9c5c25efd14e3c26c506&amp;chksm=e9af4ea2ded8c7b4f0c98365323ca46337259f9ba58c9d2541b94898bcd450c162108ba9a577&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484941&amp;idx=1&amp;sn=f348ba26ed2e9c5c25efd14e3c26c506&amp;chksm=e9af4ea2ded8c7b4f0c98365323ca46337259f9ba58c9d2541b94898bcd450c162108ba9a577&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                     关于RTF你不知道的命令之番外篇
+                    </a>
+                   </span>
+                  </p>
+                  <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <span style="max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+                    4.
+                    <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484326&amp;idx=1&amp;sn=179a96c391bae0ff47e9f84b3e960aae&amp;chksm=e9af4b09ded8c21f705cc74ba9a18f996a6fed246222e51b404425e79a30b041bf2eef5c5d44&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484326&amp;idx=1&amp;sn=179a96c391bae0ff47e9f84b3e960aae&amp;chksm=e9af4b09ded8c21f705cc74ba9a18f996a6fed246222e51b404425e79a30b041bf2eef5c5d44&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                     免费事件研究，一片片从邮局寄来
+                    </a>
+                   </span>
+                  </p>
+                  <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <span style="max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+                    5.
+                   </span>
+                   <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484452&amp;idx=1&amp;sn=c40cd805dafb50cf9c226cdd20550382&amp;chksm=e9af4c8bded8c59da87a75728c6600f0b6691846dfc071d9ee50d4d1424fd26bb696ed2ee0d4&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484452&amp;idx=1&amp;sn=c40cd805dafb50cf9c226cdd20550382&amp;chksm=e9af4c8bded8c59da87a75728c6600f0b6691846dfc071d9ee50d4d1424fd26bb696ed2ee0d4&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                    免费的股价同步性，一片片从邮局寄来
+                   </a>
+                  </p>
+                  <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <span style="max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+                    6.
+                   </span>
+                   <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484529&amp;idx=1&amp;sn=dace95be71022f51c515c28b252d1e7b&amp;chksm=e9af4cdeded8c5c87a91fb3a1a5caa55cc6fe961ab72c6734cd859b48239882b48756bd4ad5e&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484529&amp;idx=1&amp;sn=dace95be71022f51c515c28b252d1e7b&amp;chksm=e9af4cdeded8c5c87a91fb3a1a5caa55cc6fe961ab72c6734cd859b48239882b48756bd4ad5e&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                    Stata叫你回家听音乐了！
+                   </a>
+                  </p>
+                  <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <span style="max-width: 100%; color: rgb(0, 0, 0); line-height: 1.4; font-family: 微软雅黑; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;">
+                    7.
+                   </span>
+                   <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484866&amp;idx=1&amp;sn=9814dd7590f639877665d9a7be1a7596&amp;chksm=e9af4d6dded8c47bec92e4f77659fe8b2b6ec7502b6d380e34a3c67ef83165e103077abd3ee5&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484866&amp;idx=1&amp;sn=9814dd7590f639877665d9a7be1a7596&amp;chksm=e9af4d6dded8c47bec92e4f77659fe8b2b6ec7502b6d380e34a3c67ef83165e103077abd3ee5&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; line-height: 1.4; font-family: 微软雅黑; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                    一言不合就用stata写邮件（Outlook/Foxmail）
+                   </a>
+                  </p>
+                  <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <span style="max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+                    8.
+                   </span>
+                   <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484979&amp;idx=1&amp;sn=e572f2658ba8137832e3ae3aff2ce01a&amp;chksm=e9af4e9cded8c78a191dd0bcd06218c57a5492e4d23b1f7b0c564701a174337a4afe61a6b8e2&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484979&amp;idx=1&amp;sn=e572f2658ba8137832e3ae3aff2ce01a&amp;chksm=e9af4e9cded8c78a191dd0bcd06218c57a5492e4d23b1f7b0c564701a174337a4afe61a6b8e2&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                    听说你想知道怎么用stata画地图？
+                   </a>
+                  </p>
+                  <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <span style="max-width: 100%; color: rgb(0, 0, 0); line-height: 1.4; font-family: 微软雅黑; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;">
+                    9.
+                   </span>
+                   <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484233&amp;idx=1&amp;sn=104ca64b0bd3cf2dea046b11ea89e028&amp;chksm=e9af4be6ded8c2f005e28306aa9dab5cfcbca4020abb8296469fc5006c1eb32c6594c7b99a4b&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484233&amp;idx=1&amp;sn=104ca64b0bd3cf2dea046b11ea89e028&amp;chksm=e9af4be6ded8c2f005e28306aa9dab5cfcbca4020abb8296469fc5006c1eb32c6594c7b99a4b&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; line-height: 1.4; font-family: 微软雅黑; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                    I have a Stata, I have a python
+                   </a>
+                  </p>
+                  <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <span style="max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+                    10.
+                   </span>
+                   <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484789&amp;idx=1&amp;sn=5c52d2bba468ceb9392b440c43638a19&amp;chksm=e9af4ddaded8c4cc6bf486b21c87f0e3b17b79694bbc388741e0a1d9f5e8f6bd4134efede7f2&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484789&amp;idx=1&amp;sn=5c52d2bba468ceb9392b440c43638a19&amp;chksm=e9af4ddaded8c4cc6bf486b21c87f0e3b17b79694bbc388741e0a1d9f5e8f6bd4134efede7f2&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                    I have a Stata, I have a Python之二——pdf转word
+                   </a>
+                  </p>
+                  <hr style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                  <hr style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                  <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                  </p>
+                 </section>
+                </section>
+               </section>
+              </section>
+             </section>
+            </section>
+           </section>
+          </section>
+         </section>
+        </section>
+       </section>
+       <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; font-size: 16px; line-height: 25.6px; word-wrap: break-word !important;">
+        <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+         <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+          <section style="max-width: 100%; box-sizing: border-box; font-size: 14px; line-height: 2.2; word-wrap: break-word !important;">
+           <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+            <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+             <section class="" style="max-width: 100%; box-sizing: border-box; line-height: 1.8; word-wrap: break-word !important;">
+              <section style="max-width: 100%; box-sizing: border-box; line-height: 25.6px; word-wrap: break-word !important;">
+               <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                 <section style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+                  <section style="margin-top: 10px; margin-bottom: 10px; max-width: 100%; box-sizing: border-box; line-height: 25.6px; font-size: 15px; font-family: 微软雅黑; text-align: center; color: rgb(120, 114, 114); font-stretch: normal; word-wrap: break-word !important;">
+                   <section style="padding-right: 1em; max-width: 100%; box-sizing: border-box; width: 556.36px; text-align: right; vertical-align: top; display: inline-block; word-wrap: break-word !important;">
+                    <section style="margin-right: -1em; max-width: 100%; box-sizing: border-box; text-align: left; vertical-align: bottom; display: inline-block; transform: rotate(0deg); word-wrap: break-word !important;">
+                     <section style="max-width: 100%; box-sizing: border-box; width: 0px; border-right-width: 0.8em; border-right-style: solid; border-right-color: rgb(1, 115, 164); border-bottom-width: 0.8em; border-bottom-style: solid; border-bottom-color: rgb(1, 115, 164); word-wrap: break-word !important; border-top-width: 0.8em !important; border-top-style: solid !important; border-top-color: transparent !important; border-left-width: 0.8em !important; border-left-style: solid !important; border-left-color: transparent !important;">
+                     </section>
+                     <section style="margin-top: -1em; margin-left: -0.18em; max-width: 100%; box-sizing: border-box; width: 0px; border-right-width: 0.8em; border-right-style: solid; border-right-color: rgb(255, 255, 255); border-bottom-width: 0.8em; border-bottom-style: solid; border-bottom-color: rgb(255, 255, 255); word-wrap: break-word !important; border-top-width: 0.8em !important; border-top-style: solid !important; border-top-color: transparent !important; border-left-width: 0.8em !important; border-left-style: solid !important; border-left-color: transparent !important;">
+                     </section>
+                    </section>
+                    <section style="margin-top: 0.3em; padding-bottom: 1em; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; background-color: rgb(1, 183, 204);">
+                     <section style="margin-top: -1em; margin-right: -1em; max-width: 100%; box-sizing: border-box; border: 0.2em solid rgb(1, 115, 164); width: 540.36px; display: inline-block; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+                      <section style="padding: 10px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                       <section powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                        <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                         <section style="max-width: 100%; box-sizing: border-box; text-align: center; word-wrap: break-word !important;">
+                          <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; line-height: 25.6px; word-wrap: break-word !important;">
+                           <span style="max-width: 100%; color: rgb(255, 41, 65); box-sizing: border-box !important; word-wrap: break-word !important;">
+                            <strong style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+                             关于我们
+                            </strong>
+                           </span>
+                          </p>
+                          <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; text-align: left; line-height: 25.6px; word-wrap: break-word !important;">
+                           <span style="max-width: 100%; color: rgb(0, 0, 0); line-height: 1.6; box-sizing: border-box !important; word-wrap: break-word !important;">
+                            微信公众号“爬虫俱乐部”分享实用的stata命令，欢迎转载、打赏。爬虫俱乐部是由李春涛教授领导下的研究生及本科生组成的大数据分析和数据挖掘团队。
+                           </span>
+                          </p>
+                         </section>
+                        </section>
+                       </section>
+                      </section>
+                     </section>
+                    </section>
+                   </section>
+                  </section>
+                  <p style="max-width: 100%; min-height: 1em; box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <span style="max-width: 100%; color: rgb(255, 76, 0); line-height: 25.6px; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;">
+                    此外，欢迎大家踊跃投稿，介绍一些关于stata的数据处理和分析技巧。
+                   </span>
+                   <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                  </p>
+                  <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <span style="max-width: 100%; color: rgb(255, 76, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                    投稿邮箱：
+                   </span>
+                   statatraining@163.com
+                  </p>
+                  <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <span style="max-width: 100%; color: rgb(255, 76, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                    投稿要求：
+                    <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                    1）必须原创，禁止抄袭；
+                    <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                    2）必须准确，详细，有例子，有截图；
+                    <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                    注意事项：
+                    <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                    1）所有投稿都会经过本公众号运营团队成员的审核，审核通过才可录用，一经录用，会在该推文里为作者署名，并有赏金分成。
+                    <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                    2）邮件请注明投稿，邮件名称为“投稿”+“推文名称”。
+                    <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                    <span style="max-width: 100%; color: rgb(122, 79, 214); box-sizing: border-box !important; word-wrap: break-word !important;">
+                     3）应广大读者要求，现开通有偿问答服务，如果大家遇到关于stata分析数据的问题，可以在公众号中提出，只需支付少量赏金，我们会在后期的推文里给予解答。
+                    </span>
+                   </span>
+                  </p>
+                 </section>
+                </section>
+               </section>
+              </section>
+              <p style="max-width: 100%; min-height: 1em; text-align: center; box-sizing: border-box !important; word-wrap: break-word !important;">
+               <img _width="556px" class="" data-fail="0" data-ratio="1" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhYE0k0faBcgXia019H7uYBVzf6PiaTnnkjzGYnLk7xUYpTCUTvVhQfapavZz4nptAvBUVAz1QO8etZQ/640?" data-type="jpeg" data-w="344" src="%E6%83%B3%E6%AF%94%E8%BE%83%E6%96%87%E6%9C%AC%E7%9B%B8%E4%BC%BC%E5%BA%A6%E5%90%97%EF%BC%9F%E4%B9%9F%E8%AE%B8%E8%BF%99%E4%B8%A4%E4%B8%AA%E5%91%BD%E4%BB%A4%E5%8F%AF%E4%BB%A5%E5%B8%AE%E4%BD%A0_files/640.jpg" style="box-sizing: border-box !important; overflow-wrap: break-word !important; visibility: visible !important; width: 556px !important; height: auto !important;" width="100%"/>
+              </p>
+              <p style="max-width: 100%; min-height: 1em; line-height: 25.6px; text-align: center; box-sizing: border-box !important; word-wrap: break-word !important;">
+               <span style="max-width: 100%; color: rgb(120, 114, 114); font-family: 微软雅黑; font-size: 15px; letter-spacing: 2px; line-height: 19.2px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                欢迎关注爬虫俱乐部
+               </span>
+              </p>
+             </section>
+            </section>
+           </section>
+          </section>
+         </section>
+        </section>
+       </section>
+      </section>
+     </section>
+    </section>
+   </section>
+  </div>
+  <script nonce="384208455" type="text/javascript">
+   var first_sceen__time = (+new Date());
+
+                    if ("" == 1 && document.getElementById('js_content')) {
+                        document.getElementById('js_content').addEventListener("selectstart",function(e){ e.preventDefault(); });
+                    }
+
+                    
+                    (function(){
+                        if (navigator.userAgent.indexOf("WindowsWechat") != -1){
+                            var link = document.createElement('link');
+                            var head = document.getElementsByTagName('head')[0];
+                            link.rel = 'stylesheet';
+                            link.type = 'text/css';
+                            link.href = "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/page_mp_article_improve_winwx31619e.css";
+                            head.appendChild(link);
+                        }
+                    })();
+  </script>
+  <div class="ct_mpda_wrp" id="js_sponsor_ad_area" style="display:none;">
+  </div>
+  <div class="reward_area tc" id="js_reward_area" style="display:none;">
+   <p class="tips_global reward_tips">
+    说得好就赏个铜板呗！
+   </p>
+   <p>
+    <a class="reward_access" href="##" id="js_reward_link">
+     赞赏
+    </a>
+   </p>
+   <div class="reward_area_inner" id="js_reward_inner" style="display: none; width: 578px;">
+    <p class="tips_global reward_user_tips">
+     <a href="##" id="js_reward_total">
+     </a>
+     人赞赏
+    </p>
+    <div class="reward_user_list" id="js_reward_list">
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="rich_media_tool" id="js_toobar3">
+  <div class="media_tool_meta tips_global meta_primary" id="js_read_area3" style="display:none;">
+   阅读
+   <span id="readNum3">
+   </span>
+  </div>
+  <span class="media_tool_meta meta_primary tips_global meta_praise" id="like3" style="display:none;">
+   <i class="icon_praise_gray">
+   </i>
+   <span class="praise_num" id="likeNum3">
+   </span>
+  </span>
+  <a class="media_tool_meta tips_global meta_extra" href="##" id="js_report_article3" style="display:none;">
+   投诉
+  </a>
+ </div>
+</div>
+</body></html>

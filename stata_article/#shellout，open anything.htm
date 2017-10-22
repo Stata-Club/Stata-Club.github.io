@@ -1,0 +1,609 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body><div class="rich_media_area_primary" id="page-content">
+ <div id="img-content">
+  <h2 class="rich_media_title" id="activity-name">
+  </h2>
+  <div class="rich_media_meta_list" id="meta_content">
+  </div>
+  <div class="rich_media_content " id="js_content">
+   <section data-role="outer" label="Powered by 135editor.com" style="font-family: 微软雅黑; font-size: 16px;">
+    <section class="" data-id="29735" data-tools="135编辑器" style="border: 0px none; box-sizing: border-box;">
+     <section style="padding-right: 5px; padding-left: 5px; line-height: 10px; color: inherit; border: 1px solid rgb(226, 121, 97); box-sizing: border-box;">
+      <section data-width="50%" style="color: inherit; height: 8px; margin-top: -8px; margin-left: 140px; width: 50%; box-sizing: border-box; background-color: rgb(254, 254, 254);">
+       <section style="width: 8px; height: 8px; border-radius: 100%; line-height: 1; box-sizing: border-box; font-size: 18px; text-decoration: inherit; border-color: rgb(226, 121, 97); display: inline-block; color: inherit; background-color: rgb(226, 121, 97);">
+       </section>
+      </section>
+      <section class="" data-style="text-indent: 2em;" style="line-height: 2em; color: rgb(62, 62, 62); font-size: 14px; margin: 15px; box-sizing: border-box;">
+       <p style="text-indent: 28px; text-align: justify;">
+        大家知道，
+        <span style="color: rgb(255, 0, 0);">
+         <strong>
+          use
+         </strong>
+        </span>
+        可以直接从stata内部打开数据集，那我们可不可以直接从stata内部打开其他格式的文件呢？我们以前在推文
+        <span style="background-color: rgb(253, 234, 218);">
+         《
+         <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484529&amp;idx=1&amp;sn=dace95be71022f51c515c28b252d1e7b&amp;chksm=e9af4cdeded8c5c87a91fb3a1a5caa55cc6fe961ab72c6734cd859b48239882b48756bd4ad5e&amp;scene=21#wechat_redirect" target="_blank">
+          Stata叫你回家听音乐了！
+         </a>
+         》
+        </span>
+        中详细介绍过
+        <strong>
+         <span style="color: rgb(255, 0, 0);">
+          winexec
+         </span>
+        </strong>
+        命令，但是winexec命令需要找到打开某个文件的应用程序所在路径，如果我们只知道一个文件，而不知道打开它的应用程序所在路径该怎么办呢？今天，我们来为大家介绍一个非常方便的新命令
+        <strong>
+         <span style="color: rgb(255, 0, 0);">
+          shellout
+         </span>
+        </strong>
+        。
+       </p>
+      </section>
+      <section data-width="65%" style="color: inherit; text-align: right; height: 10px; margin-bottom: -4px; margin-left: 25px; width: 65%; box-sizing: border-box; background-color: rgb(254, 254, 254);">
+       <section style="margin-right: auto; margin-bottom: 1px; margin-left: auto; border-radius: 100%; line-height: 1; box-sizing: border-box; text-decoration: inherit; border-color: rgb(226, 121, 97); display: inline-block; height: 8px; width: 8px; color: inherit; background-color: rgb(226, 121, 97);">
+       </section>
+      </section>
+     </section>
+    </section>
+    <section class="" data-id="45" data-tools="135编辑器" style="border: 0px none; box-sizing: border-box;">
+     <section style="margin-top: 0.8em; margin-bottom: 0.5em; line-height: 32px; font-weight: bold;">
+      <section style="display: inline-block; float: left; width: 32px; height: 32px; border-radius: 32px; vertical-align: top; text-align: center; border-color: rgb(239, 112, 96); color: rgb(254, 254, 254); box-sizing: border-box; background-color: rgb(239, 112, 96);">
+       <section data-width="100%" style="display: table; width: 100%; color: inherit; border-color: rgb(239, 112, 96); box-sizing: border-box;">
+        <section class="" data-original-title="" placeholder="1" style="display: table-cell; vertical-align: middle; border-color: rgb(239, 112, 96); box-sizing: border-box;" title="">
+         1
+        </section>
+       </section>
+      </section>
+      <section class="" data-brushtype="text" style="margin-left: 36px; color: rgb(239, 112, 96); border-color: rgb(239, 112, 96); box-sizing: border-box;">
+       什么是shellout？
+      </section>
+     </section>
+    </section>
+    <p style="text-indent: 28px; text-align: justify;">
+     <span style="font-size: 14px;">
+      shellout
+命令可以直接从Stata内部打开一个文件（如.doc, .do, .dta, .txt, .xls, 
+.xml等等）。与winexec命令不同，winexec命令必须找到打开某个文件所需应用程序的路径，同时明确文件所在路径才可以打开文件，而
+shellout命令只需要知道文件所在路径就可以在Stata中直接打开文件。当然，shellout命令也可以打开一个应用程序。如果我们要打开的文
+件或者应用程序位于当前工作路径下（如“E:/stata15”）下，那就不需要指定文件路径，但是记得其他的情况都是要指定文件路径的哦。
+     </span>
+    </p>
+    <p style="text-indent: 28px; text-align: justify;">
+     <span style="font-size: 14px;">
+      shellout是外部命令，打包在outreg2里面，可以通过
+      <span style="font-size: 14px; color: rgb(255, 41, 65);">
+       ssc install outreg2
+      </span>
+      或者f
+      <span style="font-size: 14px; color: rgb(255, 41, 65);">
+       indit shellout
+      </span>
+      进行安装。以后者为例，在命令框中输入：
+     </span>
+    </p>
+    <p style="text-indent: 28px; text-align: justify;">
+     <span style="font-size: 14px; color: rgb(255, 41, 65);">
+      findit shellout
+     </span>
+    </p>
+    <p style="text-indent: 28px; text-align: justify;">
+     <span style="font-size: 14px;">
+      在弹出的窗口中点击“outreg2”，shellout命令内嵌在outreg2的工具包中。
+     </span>
+    </p>
+    <p style="text-align: center; text-indent: 0em;">
+     <span style="font-size: 14px;">
+      <img class="" data-fail="0" data-ratio="0.15170278637770898" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhbVaQdQJqVPYEtwYK266KKla7h5NneuUh6KNzXnxCO5pSIvIWboibLeOvmvbfj2hpbicoXzovJM0zLQ/0?wx_fmt=png" data-type="png" data-w="646" src="shellout%EF%BC%8Copen%20anything_files/640_003.png" style="width: auto !important; height: auto !important; visibility: visible !important;"/>
+     </span>
+    </p>
+    <p style="text-indent:28px">
+     <span style="font-size: 14px;">
+      然后点击“
+      <span style="font-size: 14px; color: rgb(255, 41, 65);">
+       click here to install
+      </span>
+      ”就安装成功啦。
+     </span>
+    </p>
+    <p style="text-align: center; text-indent: 0em;">
+     <span style="font-size: 14px;">
+     </span>
+     <img class="" data-fail="0" data-ratio="0.23577235772357724" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhbVaQdQJqVPYEtwYK266KKlznpeibSnYCAGtFDFVZcPRH0YhAnRtpwvByUEUQJnAiarsASPXA3EPnmQ/0?wx_fmt=png" data-type="png" data-w="615" src="shellout%EF%BC%8Copen%20anything_files/640_006.png" style="width: auto !important; height: auto !important; visibility: visible !important;"/>
+    </p>
+    <section class="" data-id="45" data-tools="135编辑器" style="border: 0px none; box-sizing: border-box;">
+     <section style="margin-top: 0.8em; margin-bottom: 0.5em; line-height: 32px; font-weight: bold;">
+      <section style="display: inline-block; float: left; width: 32px; height: 32px; border-radius: 32px; vertical-align: top; text-align: center; border-color: rgb(239, 112, 96); color: rgb(254, 254, 254); box-sizing: border-box; background-color: rgb(239, 112, 96);">
+       <section data-width="100%" style="display: table; width: 100%; color: inherit; border-color: rgb(239, 112, 96); box-sizing: border-box;">
+        <section class="" data-original-title="" placeholder="1" style="display: table-cell; vertical-align: middle; border-color: rgb(239, 112, 96); box-sizing: border-box;" title="">
+         2
+        </section>
+       </section>
+      </section>
+      <section class="" data-brushtype="text" style="margin-left: 36px; color: rgb(239, 112, 96); border-color: rgb(239, 112, 96); box-sizing: border-box;">
+       举几个例子
+      </section>
+     </section>
+    </section>
+    <p style="text-indent:28px">
+     <span style="font-size: 14px;">
+      比如：
+     </span>
+    </p>
+    <p style="text-indent:28px">
+     <span style="font-size: 14px; color: rgb(255, 41, 65);">
+      shellout StataMP-64.exe
+     </span>
+    </p>
+    <p style="text-align: center; text-indent: 0em;">
+     <img class="" data-fail="0" data-ratio="0.3260340632603406" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhbVaQdQJqVPYEtwYK266KKl4mQGgzECyxkTYf5jebiboDuMcibSIiaba1CP714efs98wAu3nkhUS5cKA/0?wx_fmt=png" data-type="png" data-w="822" src="shellout%EF%BC%8Copen%20anything_files/640_003.jpg" style="width: auto !important; height: auto !important; visibility: visible !important;"/>
+    </p>
+    <p style="text-indent:28px">
+     <span style="font-size: 14px;">
+      我们就打开了另一个Stata15。
+     </span>
+    </p>
+    <p style="text-indent:28px">
+     <span style="font-size: 14px; color: rgb(255, 41, 65);">
+      shellout D:/Program Files/Tencent/QQ/Bin/QQScLauncher.exe
+     </span>
+    </p>
+    <p style="text-align: center; text-indent: 0em;">
+     <img class="" data-fail="0" data-ratio="0.7686915887850467" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhbVaQdQJqVPYEtwYK266KKllPdB9iasicpJxpa2zUAWAHEUIM98icuiaGh6lia6tMVRWcWJfkoS9XA06Pg/0?wx_fmt=png" data-type="png" data-w="428" src="shellout%EF%BC%8Copen%20anything_files/640_004.jpg" style="width: auto !important; height: auto !important; visibility: visible !important;"/>
+    </p>
+    <p style="text-indent:28px">
+     <span style="font-size: 14px;">
+      我们就启动了QQ。
+     </span>
+    </p>
+    <p style="text-indent:28px">
+     <span style="font-size: 14px; color: rgb(255, 41, 65);">
+      shellout E:/docx/mytable1.docx
+     </span>
+     <img class="" data-fail="0" data-ratio="0.6123662306777645" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhbVaQdQJqVPYEtwYK266KKlfwTtTic0YZpS3U6E9PPQ3MRmbUALzRPBUgnuBQcq2icGgkpFdXKIF0kQ/0?wx_fmt=png" data-type="png" data-w="841" src="shellout%EF%BC%8Copen%20anything_files/640_002.jpg" style="font-size: 14px; line-height: inherit; width: auto !important; height: auto !important; visibility: visible !important;"/>
+    </p>
+    <p style="text-indent:28px">
+     <span style="font-size: 14px;">
+      我们就在Word中打开了之前在推
+     </span>
+     <span style="font-size: 14px;">
+      文《命令sum2docx输出统计量表到docx文件》中
+     </span>
+     <span style="font-size: 14px;">
+      用sum2docx输出描述性统计结果的文档。
+     </span>
+    </p>
+    <section class="" data-id="45" data-tools="135编辑器" style="border: 0px none; box-sizing: border-box;">
+     <section style="margin-top: 0.8em; margin-bottom: 0.5em; line-height: 32px; font-weight: bold;">
+      <section style="display: inline-block; float: left; width: 32px; height: 32px; border-radius: 32px; vertical-align: top; text-align: center; border-color: rgb(239, 112, 96); color: rgb(254, 254, 254); box-sizing: border-box; background-color: rgb(239, 112, 96);">
+       <section data-width="100%" style="display: table; width: 100%; color: inherit; border-color: rgb(239, 112, 96); box-sizing: border-box;">
+        <section class="" data-original-title="" placeholder="1" style="display: table-cell; vertical-align: middle; border-color: rgb(239, 112, 96); box-sizing: border-box;" title="">
+         3
+        </section>
+       </section>
+      </section>
+      <section class="" data-brushtype="text" style="margin-left: 36px; color: rgb(239, 112, 96); border-color: rgb(239, 112, 96); box-sizing: border-box;">
+       GitHub上的shellout
+      </section>
+     </section>
+    </section>
+    <p style="text-indent: 28px; text-align: justify;">
+     <span style="font-size: 14px;">
+      我们接下来主要介绍GitHub上的shellout命令，编写者是Keith Finlay，程序位于
+     </span>
+     <span style="text-decoration: underline; color: rgb(0, 0, 255);">
+      https://github.com/kfinlay/stata-tools/blob/master/shellout.ado
+     </span>
+     <span style="font-size: 14px;">
+      。
+但是需要注意一点：Github上面的shellout（下文中我们将其改为shellout2以表区别）和ssc上面的shellout是完全不同的命
+令，用途也不同。这一命令可以帮助我们调用cmd执行命令（类似于shell），同时也将cmd界面显示的结果放进返回值中。
+     </span>
+     <br/>
+    </p>
+    <p style="text-align: justify;">
+     <span style="font-size: 14px;">
+      我们在
+     </span>
+     <span style="text-decoration: underline; color: rgb(0, 0, 255);">
+      https://github.com/kfinlay/stata-tools
+     </span>
+     <span style="font-size: 14px;">
+      页面点击“Download ZIP”下载压缩包。
+     </span>
+    </p>
+    <p style="text-align: center;">
+     <span style="font-size: 14px;">
+      <img class="" data-fail="0" data-ratio="0.544" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhbVaQdQJqVPYEtwYK266KKlYO80BkUbejDzM2QuOXxM5QynC1JXg2D8SoOfNehkIohndoiaoDBvbXg/0?wx_fmt=png" data-type="png" data-w="375" src="shellout%EF%BC%8Copen%20anything_files/640_005.png" style="width: auto !important; height: auto !important; visibility: visible !important;"/>
+     </span>
+    </p>
+    <p style="text-indent: 28px; text-align: justify;">
+     <span style="font-size: 14px;">
+      解压并运行“
+      <span style="font-size: 14px; color: rgb(255, 41, 65);">
+       shellout.ado
+      </span>
+      ”。为了与ssc上面的shellout命令分开，我们将 “shellout”改为“shellout2”。
+     </span>
+    </p>
+    <p style="text-align: center;">
+     <img class="" data-fail="0" data-ratio="0.41414141414141414" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhbVaQdQJqVPYEtwYK266KKl5ia3wSOvro2WM1NU0Oh2TAQBjeK5UJzazsHCQ2fGEw5MGYwx0enbpGA/0?wx_fmt=png" data-type="png" data-w="297" src="shellout%EF%BC%8Copen%20anything_files/640_002.png" style="width: auto !important; height: auto !important; visibility: visible !important;"/>
+     <span style="font-size: 14px;">
+     </span>
+     <br/>
+    </p>
+    <p style="text-indent: 28px; text-align: justify;">
+     <span style="font-size: 14px;">
+      比如，我们想查看当前的主目录，可以在cmd上输入“cd”，随即显示当前主目录为“E:/Stata15”。
+     </span>
+    </p>
+    <p style="text-align: center;">
+     <img class="" data-fail="0" data-ratio="0.33518005540166207" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhbVaQdQJqVPYEtwYK266KKlDGts5oXG91YnGGiaYI7jHt5D77vbWBVXv9AY501rExtKKIUJZrP6TYA/0?wx_fmt=png" data-type="png" data-w="361" src="shellout%EF%BC%8Copen%20anything_files/640_007.png" style="width: auto !important; height: auto !important; visibility: visible !important;"/>
+    </p>
+    <p style="text-indent: 28px; text-align: justify;">
+     <span style="font-size: 14px;">
+      在stata中，我们可以使用shellout2命令来完成同样的操作，并且这一命令会将cmd显示的结果放进返回值中。在命令窗口输入：
+     </span>
+    </p>
+    <p style="text-indent: 28px; text-align: justify;">
+     <span style="font-size: 14px; color: rgb(255, 41, 65);">
+      shellout2 cd
+     </span>
+    </p>
+    <p style="text-indent: 28px; text-align: justify;">
+     <span style="font-size: 14px; color: rgb(255, 41, 65);">
+      return list
+     </span>
+    </p>
+    <p style="text-indent: 28px; text-align: justify;">
+     <span style="font-size: 14px;">
+      可以看到在cmd中运行“cd”所显示的结果“E:/Stata15”被放进了“r(shellout)” 这一返回值中。
+     </span>
+    </p>
+    <p style="text-align: center;">
+     <img class="" data-fail="0" data-ratio="0.38870431893687707" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhbVaQdQJqVPYEtwYK266KKlpcGI1Up4lqtYOgIZZIUoAHWib8vbE4UxYsLI8jErLJnBF4EX5kbWCjQ/0?wx_fmt=png" data-type="png" data-w="301" src="shellout%EF%BC%8Copen%20anything_files/640_004.png" style="width: auto !important; height: auto !important; visibility: visible !important;"/>
+    </p>
+    <p style="text-indent:28px">
+     <span style="font-size: 14px;">
+      再比如，我们想要查看windows版本，在cmd中输入“winver”，便会弹出如下窗口：
+     </span>
+    </p>
+    <p style="text-align: center;">
+     <img class="" data-fail="0" data-ratio="0.4600760456273764" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhbVaQdQJqVPYEtwYK266KKlwgxjH0LxEultkEGtuxVMhDPn5SrvcCAoN9iavSAibWXaQz1OZ49cqOzA/0?wx_fmt=png" data-type="png" data-w="526" src="shellout%EF%BC%8Copen%20anything_files/640.png" style="width: auto !important; height: auto !important; visibility: visible !important;"/>
+    </p>
+    <p style="text-indent:28px">
+     <span style="font-size: 14px;">
+      在stata的命令窗口中输入：
+     </span>
+    </p>
+    <p style="text-indent:28px">
+     <span style="font-size: 14px; color: rgb(255, 41, 65);">
+      shellout2 winver
+     </span>
+    </p>
+    <p style="text-indent:28px">
+     <span style="font-size: 14px;">
+      也会弹出关于“Windows”窗口。但由于“winver”这一命令在cmd中运行时不会出现任何文字结果，因此在返回值中也没有任何内容，仅仅是执行了这一命令。
+     </span>
+    </p>
+    <section style="max-width: 100%; box-sizing: border-box; color: rgb(62, 62, 62); font-size: 16px; line-height: 25.6px; white-space: normal; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+     <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+      <section class="" style="margin-top: 10px; margin-bottom: 10px; max-width: 100%; box-sizing: border-box; text-align: center; word-wrap: break-word !important;">
+       <img _width="auto" class="__bg_gif " data-fail="0" data-order="0" data-ratio="0.0671875" data-src="http://mmbiz.qpic.cn/mmbiz_gif/ACviaWTBFxhbH0bnk9Zwv6oiacY8Jl4d7N9puosiaEIZPNnQp4nnwo7t9fR6wJMOVfm3hOwKcibibBpOibpicN4f6P7ibg/0?wx_fmt=gif" data-type="gif" data-w="640" src="shellout%EF%BC%8Copen%20anything_files/0.gif" style="box-sizing: border-box; vertical-align: middle; overflow-wrap: break-word !important; visibility: visible !important; width: auto !important; height: auto !important;" width="auto"/>
+      </section>
+     </section>
+    </section>
+    <p style="max-width: 100%; min-height: 1em; color: rgb(62, 62, 62); font-size: 16px; line-height: 25.6px; white-space: normal; text-indent: 28px; box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+     <span style="max-width: 100%; color: rgb(136, 136, 136); font-size: 14px; line-height: 24px; text-align: justify; text-indent: 2em; box-sizing: border-box !important; word-wrap: break-word !important;">
+      以上就是今天给大家分享的内容了，说得好就赏个铜板呗！有钱的捧个钱场，有人的捧个人场~。
+     </span>
+    </p>
+    <p style="max-width: 100%; min-height: 1em; color: rgb(62, 62, 62); font-size: 16px; line-height: 25.6px; white-space: normal; text-indent: 2em; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+     <span style="max-width: 100%; text-align: justify; color: rgb(122, 79, 214); line-height: 25.6px; text-indent: 2em; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+      应广大粉丝要求，爬虫俱乐部的推文公众号打赏功能可以开发票啦，累计打赏超过1000元我们即可给您开具发票，发票类别为“咨询费”。用心做事，只为做您更贴心的小爬虫。第一批发票已经寄到各位小主的手中，大家快来给小爬虫打赏呀~
+     </span>
+    </p>
+    <section style="max-width: 100%; box-sizing: border-box; color: rgb(62, 62, 62); font-size: 16px; line-height: 25.6px; white-space: normal; text-align: center; word-wrap: break-word !important; overflow-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+     <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+      <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+       <section style="max-width: 100%; box-sizing: border-box; line-height: 1.8; font-size: 14px; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+        <p style="max-width: 100%; min-height: 1em; text-align: right; line-height: 25.6px; text-indent: 28px; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+         <span style="max-width: 100%; color: rgb(122, 79, 214); line-height: 25.6px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+         </span>
+         <span style="max-width: 100%; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+          文字编辑：高娜娜
+         </span>
+        </p>
+        <p style="max-width: 100%; min-height: 1em; text-align: right; line-height: 25.6px; text-indent: 28px; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+         <span style="max-width: 100%; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+          技术总编：刘贝贝
+         </span>
+        </p>
+        <hr style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+        <hr style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+        <p style="max-width: 100%; min-height: 1em; line-height: 25.6px; text-indent: 0em; font-size: 16px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+         <strong style="max-width: 100%; text-align: justify; color: rgb(136, 136, 136); line-height: 23.27px; text-indent: 0em; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+          往期推文推荐：
+         </strong>
+         <span style="max-width: 100%; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+         </span>
+        </p>
+        <p style="max-width: 100%; min-height: 1em; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+         <span style="max-width: 100%; font-size: 15px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+          1.
+         </span>
+         <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247486256&amp;idx=1&amp;sn=ac0e923153845a620ebcd57045f105a0&amp;chksm=e9af439fded8ca89ea91469c79d865dde3e12bfcfe55f4a8175785032a8ffdc5f24f8cdab400&amp;scene=21#wechat_redirect" se_prerender_url="complete" style="color: rgb(0, 0, 0); max-width: 100%; font-size: 15px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;" target="_blank">
+          高校学术大神：你的导师上榜了吗？
+         </a>
+        </p>
+        <section style="max-width: 100%; box-sizing: border-box; line-height: 25.6px; font-size: 16px; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+         <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+          <section style="max-width: 100%; box-sizing: border-box; line-height: 1.8; font-size: 14px; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+           <section style="max-width: 100%; box-sizing: border-box; line-height: 2.2; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+            <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+             <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+              <section style="max-width: 100%; box-sizing: border-box; line-height: 1.8; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+               <section style="max-width: 100%; box-sizing: border-box; line-height: 25.6px; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                 <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                  <section style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                   <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                    <span style="max-width: 100%; text-align: justify; color: rgb(0, 0, 0); line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                     2.
+                    </span>
+                    <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247485548&amp;idx=1&amp;sn=478ba30875877af79d97e9ed4eecaa7c&amp;chksm=e9af40c3ded8c9d5dc76879c0d21bb2e5e8fd182c59f2545c9879706403cafb260281dc13fce&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; text-align: justify; line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;" target="_blank">
+                     中国高校财经、管理与综合类期刊灌水排行榜
+                    </a>
+                   </p>
+                   <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                    <span style="max-width: 100%; color: rgb(0, 0, 0); line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                     3.
+                     <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484941&amp;idx=1&amp;sn=f348ba26ed2e9c5c25efd14e3c26c506&amp;chksm=e9af4ea2ded8c7b4f0c98365323ca46337259f9ba58c9d2541b94898bcd450c162108ba9a577&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;" target="_blank">
+                      关于RTF你不知道的命令之番外篇
+                     </a>
+                    </span>
+                   </p>
+                   <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                    <span style="max-width: 100%; text-align: justify; color: rgb(0, 0, 0); line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                     4.
+                     <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484326&amp;idx=1&amp;sn=179a96c391bae0ff47e9f84b3e960aae&amp;chksm=e9af4b09ded8c21f705cc74ba9a18f996a6fed246222e51b404425e79a30b041bf2eef5c5d44&amp;scene=21#wechat_redirect" se_prerender_url="complete" style="color: rgb(0, 0, 0); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;" target="_blank">
+                      免费事件研究，一片片从邮局寄来
+                     </a>
+                    </span>
+                   </p>
+                   <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                    <span style="max-width: 100%; text-align: justify; color: rgb(0, 0, 0); line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                     5.
+                    </span>
+                    <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484452&amp;idx=1&amp;sn=c40cd805dafb50cf9c226cdd20550382&amp;chksm=e9af4c8bded8c59da87a75728c6600f0b6691846dfc071d9ee50d4d1424fd26bb696ed2ee0d4&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; text-align: justify; line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;" target="_blank">
+                     免费的股价同步性，一片片从邮局寄来
+                    </a>
+                   </p>
+                   <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                    <span style="max-width: 100%; text-align: justify; color: rgb(0, 0, 0); line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                     6.
+                    </span>
+                    <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484529&amp;idx=1&amp;sn=dace95be71022f51c515c28b252d1e7b&amp;chksm=e9af4cdeded8c5c87a91fb3a1a5caa55cc6fe961ab72c6734cd859b48239882b48756bd4ad5e&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; text-align: justify; line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;" target="_blank">
+                     Stata叫你回家听音乐了！
+                    </a>
+                   </p>
+                   <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                    <span style="max-width: 100%; text-align: justify; color: rgb(0, 0, 0); line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                     7.
+                    </span>
+                    <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484866&amp;idx=1&amp;sn=9814dd7590f639877665d9a7be1a7596&amp;chksm=e9af4d6dded8c47bec92e4f77659fe8b2b6ec7502b6d380e34a3c67ef83165e103077abd3ee5&amp;scene=21#wechat_redirect" se_prerender_url="complete" style="color: rgb(0, 0, 0); max-width: 100%; text-align: justify; line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;" target="_blank">
+                     一言不合就用stata写邮件（Outlook/Foxmail）
+                    </a>
+                   </p>
+                   <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                    <span style="max-width: 100%; text-align: justify; color: rgb(0, 0, 0); line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                     8.
+                    </span>
+                    <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484979&amp;idx=1&amp;sn=e572f2658ba8137832e3ae3aff2ce01a&amp;chksm=e9af4e9cded8c78a191dd0bcd06218c57a5492e4d23b1f7b0c564701a174337a4afe61a6b8e2&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; text-align: justify; line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;" target="_blank">
+                     听说你想知道怎么用stata画地图？
+                    </a>
+                   </p>
+                   <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                    <span style="max-width: 100%; text-align: justify; color: rgb(0, 0, 0); line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                     9.
+                    </span>
+                    <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484233&amp;idx=1&amp;sn=104ca64b0bd3cf2dea046b11ea89e028&amp;chksm=e9af4be6ded8c2f005e28306aa9dab5cfcbca4020abb8296469fc5006c1eb32c6594c7b99a4b&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; text-align: justify; line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;" target="_blank">
+                     I have a Stata, I have a python
+                    </a>
+                   </p>
+                   <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                    <span style="max-width: 100%; text-align: justify; color: rgb(0, 0, 0); line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                     10.
+                    </span>
+                    <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484789&amp;idx=1&amp;sn=5c52d2bba468ceb9392b440c43638a19&amp;chksm=e9af4ddaded8c4cc6bf486b21c87f0e3b17b79694bbc388741e0a1d9f5e8f6bd4134efede7f2&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; text-align: justify; line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;" target="_blank">
+                     I have a Stata, I have a Python之二——pdf转word
+                    </a>
+                   </p>
+                   <hr style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+                   <hr style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+                   <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                    <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+                   </p>
+                  </section>
+                 </section>
+                </section>
+               </section>
+              </section>
+             </section>
+            </section>
+           </section>
+          </section>
+         </section>
+        </section>
+        <section style="max-width: 100%; box-sizing: border-box; line-height: 25.6px; font-size: 16px; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+         <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+          <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+           <section style="max-width: 100%; box-sizing: border-box; line-height: 2.2; font-size: 14px; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+            <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+             <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+              <section style="max-width: 100%; box-sizing: border-box; line-height: 1.8; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+               <section style="max-width: 100%; box-sizing: border-box; font-family: 微软雅黑; line-height: 25.6px; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                 <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                  <section style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                   <section style="margin-top: 10px; margin-bottom: 10px; max-width: 100%; box-sizing: border-box; color: rgb(120, 114, 114); line-height: 25.6px; font-size: 15px; font-stretch: normal; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                    <section style="padding-right: 1em; max-width: 100%; box-sizing: border-box; width: 556.36px; text-align: right; vertical-align: top; display: inline-block; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                     <section style="margin-right: -1em; max-width: 100%; box-sizing: border-box; text-align: left; vertical-align: bottom; display: inline-block; transform: rotate(0deg); word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                      <section style="max-width: 100%; box-sizing: border-box; width: 0px; border-right-width: 0.8em; border-right-style: solid; border-right-color: rgb(1, 115, 164); border-bottom-width: 0.8em; border-bottom-style: solid; border-bottom-color: rgb(1, 115, 164); word-wrap: break-word !important; overflow-wrap: break-word !important; border-top-width: 0.8em !important; border-top-style: solid !important; border-top-color: transparent !important; border-left-width: 0.8em !important; border-left-style: solid !important; border-left-color: transparent !important;">
+                      </section>
+                      <section style="margin-top: -1em; margin-left: -0.18em; max-width: 100%; box-sizing: border-box; width: 0px; border-right-width: 0.8em; border-right-style: solid; border-right-color: rgb(255, 255, 255); border-bottom-width: 0.8em; border-bottom-style: solid; border-bottom-color: rgb(255, 255, 255); word-wrap: break-word !important; overflow-wrap: break-word !important; border-top-width: 0.8em !important; border-top-style: solid !important; border-top-color: transparent !important; border-left-width: 0.8em !important; border-left-style: solid !important; border-left-color: transparent !important;">
+                      </section>
+                     </section>
+                     <section style="margin-top: 0.3em; padding-bottom: 1em; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important; background-color: rgb(1, 183, 204);">
+                      <section style="margin-top: -1em; margin-right: -1em; max-width: 100%; box-sizing: border-box; border: 0.2em solid rgb(1, 115, 164); width: 540.36px; display: inline-block; word-wrap: break-word !important; overflow-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+                       <section style="padding: 10px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                        <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                         <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                          <section style="max-width: 100%; box-sizing: border-box; text-align: center; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                           <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; line-height: 25.6px; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                            <span style="max-width: 100%; color: rgb(255, 41, 65); box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                             <strong style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                              关于我们
+                             </strong>
+                            </span>
+                           </p>
+                           <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; text-align: left; line-height: 25.6px; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                            <span style="max-width: 100%; color: rgb(0, 0, 0); line-height: 1.6; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                             微信公众号“爬虫俱乐部”分享实用的stata命令，欢迎转载、打赏。爬虫俱乐部是由李春涛教授领导下的研究生及本科生组成的大数据分析和数据挖掘团队。
+                            </span>
+                           </p>
+                          </section>
+                         </section>
+                        </section>
+                       </section>
+                      </section>
+                     </section>
+                    </section>
+                   </section>
+                   <p style="max-width: 100%; min-height: 1em; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                    <span style="max-width: 100%; text-align: justify; color: rgb(255, 76, 0); line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                     此外，欢迎大家踊跃投稿，介绍一些关于stata的数据处理和分析技巧。
+                    </span>
+                   </p>
+                   <p style="max-width: 100%; min-height: 1em; text-align: left; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                    <span style="max-width: 100%; color: rgb(255, 76, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                     投稿邮箱：
+                    </span>
+                    statatraining@163.com
+                   </p>
+                   <p style="max-width: 100%; min-height: 1em; text-align: left; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                    <span style="max-width: 100%; color: rgb(255, 76, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                     投稿要求：
+                     <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+                     1）必须原创，禁止抄袭；
+                     <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+                     2）必须准确，详细，有例子，有截图；
+                     <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+                     注意事项：
+                     <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+                     1）所有投稿都会经过本公众号运营团队成员的审核，审核通过才可录用，一经录用，会在该推文里为作者署名，并有赏金分成。
+                     <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+                     2）邮件请注明投稿，邮件名称为“投稿”+“推文名称”。
+                     <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+                     <span style="max-width: 100%; color: rgb(122, 79, 214); box-sizing: border-box !important; word-wrap: break-word !important;">
+                      3）应广大读者要求，现开通有偿问答服务，如果大家遇到关于stata分析数据的问题，可以在公众号中提出，只需支付少量赏金，我们会在后期的推文里给予解答。
+                     </span>
+                    </span>
+                   </p>
+                  </section>
+                 </section>
+                </section>
+               </section>
+               <p style="max-width: 100%; min-height: 1em; line-height: 25.2px; font-family: 微软雅黑; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                <img _width="556px" class="" data-fail="0" data-ratio="1" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhaWXvVQ75jWic8ZgzBHtCqoBqxqNuAHrRUqGSSdt9PXL1ibOiadXZDz2bHs7MsqI4tViaF9GoGceQ71Qw/640?wx_fmt=jpeg" data-type="jpeg" data-w="430" src="shellout%EF%BC%8Copen%20anything_files/640.jpg" style="box-sizing: border-box !important; overflow-wrap: break-word !important; visibility: visible !important; width: 556px !important; height: auto !important;" width="556px"/>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-family: 微软雅黑; line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                <span style="max-width: 100%; color: rgb(120, 114, 114); line-height: 19.2px; letter-spacing: 2px; font-size: 15px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                 欢迎关注爬虫俱乐部
+                </span>
+               </p>
+              </section>
+             </section>
+            </section>
+           </section>
+          </section>
+         </section>
+        </section>
+       </section>
+      </section>
+     </section>
+    </section>
+   </section>
+  </div>
+  <script nonce="7383196" type="text/javascript">
+   var first_sceen__time = (+new Date());
+
+                    if ("" == 1 && document.getElementById('js_content')) {
+                        document.getElementById('js_content').addEventListener("selectstart",function(e){ e.preventDefault(); });
+                    }
+
+                    
+                    (function(){
+                        if (navigator.userAgent.indexOf("WindowsWechat") != -1){
+                            var link = document.createElement('link');
+                            var head = document.getElementsByTagName('head')[0];
+                            link.rel = 'stylesheet';
+                            link.type = 'text/css';
+                            link.href = "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/page_mp_article_improve_winwx31619e.css";
+                            head.appendChild(link);
+                        }
+                    })();
+  </script>
+  <div class="ct_mpda_wrp" id="js_sponsor_ad_area" style="display:none;">
+  </div>
+  <div class="reward_area tc" id="js_reward_area" style="display:none;">
+   <p>
+    <a class="reward_access" href="##" id="js_reward_link">
+     赞赏
+    </a>
+   </p>
+   <div class="reward_area_inner" id="js_reward_inner" style="display: none; width: 578px;">
+    <p class="tips_global reward_user_tips">
+     <a href="##" id="js_reward_total">
+     </a>
+     人赞赏
+    </p>
+    <div class="reward_user_list" id="js_reward_list">
+    </div>
+   </div>
+  </div>
+  <div class="reward_qrcode_area reward_area tc" id="js_reward_qrcode" style="display:none;">
+   <p class="tips_global">
+    长按二维码向我转账
+   </p>
+   <p class="reward_tips">
+   </p>
+   <span class="reward_qrcode_img_wrp">
+    <img class="reward_qrcode_img" id="js_reward_qrcode_img"/>
+   </span>
+   <p class="tips_global">
+    受苹果公司新规定影响，微信 iOS 版的赞赏功能被关闭，可通过二维码转账支持公众号。
+   </p>
+  </div>
+ </div>
+ <div class="rich_media_tool" id="js_toobar3">
+  <div class="media_tool_meta tips_global meta_primary" id="js_read_area3" style="display:none;">
+   阅读
+   <span id="readNum3">
+   </span>
+  </div>
+  <span class="media_tool_meta meta_primary tips_global meta_praise" id="like3" style="display:none;">
+   <i class="icon_praise_gray">
+   </i>
+   <span class="praise_num" id="likeNum3">
+   </span>
+  </span>
+  <a class="media_tool_meta tips_global meta_extra" href="##" id="js_report_article3" style="display:none;">
+   投诉
+  </a>
+ </div>
+</div>
+</body></html>

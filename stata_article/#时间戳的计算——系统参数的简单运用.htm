@@ -1,0 +1,523 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body><div class="rich_media_area_primary" id="page-content">
+ <div id="img-content">
+  <h2 class="rich_media_title" id="activity-name">
+  </h2>
+  <div class="rich_media_meta_list" id="meta_content">
+  </div>
+  <div class="rich_media_content " id="js_content">
+   <p style="text-indent: 0em;">
+    前两天笔者在爬一个网页的时候，需要传输的内容中有一部分是一个十位数字1491277727，当然这个数字也不是固定不变的，每次访问时都会改变，同时也无法从先前加载的网页中获取，这个究竟是什么呢？经过笔者多方查找，发现这个东西叫做
+    <strong>
+     timestamp
+    </strong>
+    ，中文翻译为
+    <strong>
+     时间戳
+    </strong>
+    。
+   </p>
+   <p style="text-indent: 0em;">
+    <br/>
+   </p>
+   <section class="" data-source="bj.96weixin.com">
+    <p>
+     <img _width="100%" class="" data-fail="0" data-ratio="0.06172839506172839" data-src="http://mmbiz.qpic.cn/mmbiz/yqVAqoZvDibFmQoNR6iaxQxSgCeqT5RVqMJPskOZwibpscACpabsMIWwo3JTOyarP4H3zpeCJ9kaEZNicNEmleja1Q/0?wx_fmt=png" data-w="486" src="%E6%97%B6%E9%97%B4%E6%88%B3%E7%9A%84%E8%AE%A1%E7%AE%97%E2%80%94%E2%80%94%E7%B3%BB%E7%BB%9F%E5%8F%82%E6%95%B0%E7%9A%84%E7%AE%80%E5%8D%95%E8%BF%90%E7%94%A8_files/640_004.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+     <br/>
+    </p>
+   </section>
+   <p style="text-indent: 0em;">
+    <br/>
+   </p>
+   <p style="text-indent: 0em;">
+    时间戳，是指格林威治时间1970年01月01日00时00分00秒(北京时间1970年01月01日08时00分00秒)起至现在的总秒数，能够唯一地标识某一刻的时间。那么我们怎么获取时间戳呢？
+   </p>
+   <p style="text-indent: 0em;">
+    <br/>
+   </p>
+   <p style="text-indent: 0em;">
+    在Stata中有一个命令叫做
+    <span style="color: rgb(255, 76, 0);">
+     <strong>
+      timestamp
+     </strong>
+    </span>
+    ，我们可以使用ssc命令安装
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="color: rgb(0, 209, 0);">
+     ssc install timestamp
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <br/>
+   </p>
+   <p style="text-indent: 0em;">
+    根据这个命令的help文件，我们要运行这个命令，还需要先安装两个命令：
+    <strong>
+     insheetjson
+    </strong>
+    和
+    <strong>
+     libjson
+    </strong>
+    。然后，我们可以运行这个命令了。例如我们要获取当前时间的时间戳：
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="color: rgb(0, 209, 0);">
+     timestamp
+    </span>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.25" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZdUEBscHDS5h55jVyiaIYrNNaSicia1Z2hPdXmggwDRYfhFEMnOp1cTyny6vrefwGrsMXkgQcof821A/0?wx_fmt=png" data-type="png" data-w="1384" src="%E6%97%B6%E9%97%B4%E6%88%B3%E7%9A%84%E8%AE%A1%E7%AE%97%E2%80%94%E2%80%94%E7%B3%BB%E7%BB%9F%E5%8F%82%E6%95%B0%E7%9A%84%E7%AE%80%E5%8D%95%E8%BF%90%E7%94%A8_files/640_005.jpg" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+   </p>
+   <p style="text-indent: 0em;">
+    <br/>
+   </p>
+   <p style="text-indent: 0em;">
+    我们可以看到，返回的结果显示时间戳的数据是从
+    <a style="color: rgb(0, 0, 0); text-decoration: none;">
+     <span style="color: rgb(0, 0, 0);">
+      http://www.convert-unix-time.com
+     </span>
+    </a>
+    这个网站获取的。获取的数据可以通过返回值来调用。
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="color: rgb(0, 209, 0);">
+     return list
+    </span>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.23491655969191272" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZdUEBscHDS5h55jVyiaIYrNtG4hfpsa47OM7zOUbIiaIwL0pbaO7qBtPkiaY7eW7FP42heyBu4C705w/0?wx_fmt=png" data-type="png" data-w="1558" src="%E6%97%B6%E9%97%B4%E6%88%B3%E7%9A%84%E8%AE%A1%E7%AE%97%E2%80%94%E2%80%94%E7%B3%BB%E7%BB%9F%E5%8F%82%E6%95%B0%E7%9A%84%E7%AE%80%E5%8D%95%E8%BF%90%E7%94%A8_files/640_006.jpg" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+   </p>
+   <p>
+    <br/>
+   </p>
+   <section class="" data-source="bj.96weixin.com">
+    <p>
+     <img _width="100%" class="" data-fail="0" data-ratio="0.06172839506172839" data-src="http://mmbiz.qpic.cn/mmbiz/yqVAqoZvDibFmQoNR6iaxQxSgCeqT5RVqMJPskOZwibpscACpabsMIWwo3JTOyarP4H3zpeCJ9kaEZNicNEmleja1Q/0?wx_fmt=png" data-w="486" src="%E6%97%B6%E9%97%B4%E6%88%B3%E7%9A%84%E8%AE%A1%E7%AE%97%E2%80%94%E2%80%94%E7%B3%BB%E7%BB%9F%E5%8F%82%E6%95%B0%E7%9A%84%E7%AE%80%E5%8D%95%E8%BF%90%E7%94%A8_files/640_004.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+     <br/>
+    </p>
+   </section>
+   <p>
+    <br/>
+   </p>
+   <p>
+    使
+用timestamp命令获取时间戳很方便，但存在一个问题：这个网页是国外的，有时访问国外网站速度慢，会导致获取的时间戳滞后，而有些网页链接或验证
+的时效性，有的甚至只有几秒钟，这就会导致网页无法抓取。那么我们还有什么方法获得时间戳呢？之前我们发了一篇推文——
+    <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247485828&amp;idx=1&amp;sn=f67efc720378798173649561a1c7b08a&amp;chksm=e9af412bded8c83dfabff2d09640c0285b57d2fb4de6722fda36df4abddadbb2a70a1bed439b&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247485828&amp;idx=1&amp;sn=f67efc720378798173649561a1c7b08a&amp;chksm=e9af412bded8c83dfabff2d09640c0285b57d2fb4de6722fda36df4abddadbb2a70a1bed439b&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); text-decoration: none;" target="_blank">
+     <strong>
+      <span style="color: rgb(0, 0, 0);">
+       朝花夕拾 | Stata的环境参数及提取
+      </span>
+     </strong>
+     <strong>
+      <span style="color: rgb(0, 0, 0);">
+      </span>
+     </strong>
+    </a>
+    。有的朋友留言说不清楚这些环境参数有什么用处。这里我们就可以用其中两个参数来计算时间戳——
+    <span style="color: rgb(255, 76, 0);">
+     <strong>
+      c(current_date)
+     </strong>
+    </span>
+    和
+    <strong>
+     <span style="color: rgb(255, 76, 0);">
+      c(current_time)
+     </span>
+    </strong>
+    。
+   </p>
+   <p>
+    <br/>
+   </p>
+   <p style="text-indent: 0em;">
+    在之前的推文中，我们介绍过了c(current_date)和c(current_time)返回的是当日的日期和当前的时间，例如：
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="color: rgb(0, 209, 0);">
+     di c(current_date)
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="color: rgb(0, 209, 0);">
+     di c(current_time)
+    </span>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.4534510433386838" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZdUEBscHDS5h55jVyiaIYrNJvQAwLnTLicEicTMr2ZEI6icrIK3Pr37Q0tVXf352Tz9hjqlLZSVnfJWQ/0?wx_fmt=png" data-type="png" data-w="1246" src="%E6%97%B6%E9%97%B4%E6%88%B3%E7%9A%84%E8%AE%A1%E7%AE%97%E2%80%94%E2%80%94%E7%B3%BB%E7%BB%9F%E5%8F%82%E6%95%B0%E7%9A%84%E7%AE%80%E5%8D%95%E8%BF%90%E7%94%A8_files/640.jpg" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+   </p>
+   <p>
+    <br/>
+   </p>
+   <p style="text-indent: 0em;">
+    我们也知道时间戳是格林威治时间1970年01月01日00时00分00秒(北京时间1970年01月01日08时00分00秒)起至现在的总秒数，那么我们就可以使用这两个参数来计算当前时间的时间戳。
+   </p>
+   <p style="text-indent: 0em;">
+    <br/>
+   </p>
+   <p style="text-indent: 0em;">
+    在Stata里面，有一个函数
+    <strong>
+     <span style="color: rgb(255, 76, 0);">
+      tc()
+     </span>
+    </strong>
+    可以帮助我们计算从1960年1月1日到给定时间的毫秒数，比如我们要查看当前时间，可以将tc()函数和两个系统参数很方便的结合在一起
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="color: rgb(0, 209, 0);">
+     disp tc(`c(current_date)' `c(current_time)')
+    </span>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.15203761755485892" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZdUEBscHDS5h55jVyiaIYrNTcV8DmvWLKhicfwsTgksQrpOPTto87RoOeyfXpy3mibtoWBgNdAhU44g/0?wx_fmt=png" data-type="png" data-w="1276" src="%E6%97%B6%E9%97%B4%E6%88%B3%E7%9A%84%E8%AE%A1%E7%AE%97%E2%80%94%E2%80%94%E7%B3%BB%E7%BB%9F%E5%8F%82%E6%95%B0%E7%9A%84%E7%AE%80%E5%8D%95%E8%BF%90%E7%94%A8_files/640.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+   </p>
+   <p style="text-indent: 0em;">
+    <br/>
+   </p>
+   <p style="text-indent: 0em;">
+    但是这里显示的是科学计数法的形式，我们想要一个长整型的结果，只需要把显示的格式加上去就可以了：
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="color: rgb(0, 209, 0);">
+     disp %15.0g tc(`c(current_date)' `c(current_time)')
+    </span>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.11579754601226994" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZdUEBscHDS5h55jVyiaIYrNTymAwP2MUCyvKTLddhcPh1uFOrBtbUib4pqygALMia9B9vAC7wvQJY2A/0?wx_fmt=png" data-type="png" data-w="1304" src="%E6%97%B6%E9%97%B4%E6%88%B3%E7%9A%84%E8%AE%A1%E7%AE%97%E2%80%94%E2%80%94%E7%B3%BB%E7%BB%9F%E5%8F%82%E6%95%B0%E7%9A%84%E7%AE%80%E5%8D%95%E8%BF%90%E7%94%A8_files/640_003.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+   </p>
+   <p>
+    <br/>
+   </p>
+   <p style="text-indent: 0em;">
+    我们要注意，这里显示的结果是毫秒数，我们需要转换成秒，需要除以1000，所以我们的程序应该这么写：
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="color: rgb(0, 209, 0);">
+     disp %12.0g tc(`c(current_date)' `c(current_time)')/1000
+    </span>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.12042253521126761" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZdUEBscHDS5h55jVyiaIYrNQwokVIficGSjoPoaX3KicPBgxibNmyjhZsszIGBia3O90YbPuHNewy50wQ/0?wx_fmt=png" data-type="png" data-w="1420" src="%E6%97%B6%E9%97%B4%E6%88%B3%E7%9A%84%E8%AE%A1%E7%AE%97%E2%80%94%E2%80%94%E7%B3%BB%E7%BB%9F%E5%8F%82%E6%95%B0%E7%9A%84%E7%AE%80%E5%8D%95%E8%BF%90%E7%94%A8_files/640_002.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+   </p>
+   <p>
+    <br/>
+   </p>
+   <p style="text-indent: 0em;">
+    由
+于我们调用了系统日期和时间，所以每次的结果都会有所区别。是不是这个数字就使我们要的时间戳呢？这里需要注意的是，Stata计算时间是从1960年
+01月01日00时00分00秒开始的，但是时间戳是格林威治时间1970年01月01日00时00分00秒(北京时间1970年01月01日08时00
+分00秒)起至现在的总秒数，所以我们这里得到的数字还要减去北京时间1960年01月01日00时00分00秒到1970年01月01日08时00分
+00秒的秒数。所以我们的程序应该写成：
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="color: rgb(0, 209, 0);">
+     disp %12.0g (tc(`c(current_date)' `c(current_time)')-tc(1 jan 1970 08:00:00))/1000
+    </span>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.07755695588948133" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZdUEBscHDS5h55jVyiaIYrNrwRaE7Sgq3I5hZ6xAINn1ibYRpazBRpjmRllias4mOMgOOLbaZqq8Dlg/0?wx_fmt=png" data-type="png" data-w="2063" src="%E6%97%B6%E9%97%B4%E6%88%B3%E7%9A%84%E8%AE%A1%E7%AE%97%E2%80%94%E2%80%94%E7%B3%BB%E7%BB%9F%E5%8F%82%E6%95%B0%E7%9A%84%E7%AE%80%E5%8D%95%E8%BF%90%E7%94%A8_files/640_002.jpg" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+   </p>
+   <p>
+    <br/>
+   </p>
+   <p>
+    这样，我们就可以计算出当前时间的时间戳了。但要注意的是不是所有需要时间戳的网页都需要的是当前的，我们还要进一步对网页进行分析。
+   </p>
+   <p>
+    <br/>
+   </p>
+   <section class="" data-source="bj.96weixin.com">
+    <section class="" data-source="bj.96weixin.com">
+     <p>
+      <img _width="100%" class="" data-fail="0" data-ratio="0.046875" data-src="http://mmbiz.qpic.cn/mmbiz/QKDxrVYehicdAibIVUpquF6TQUwXFg6dYCrLBEiasLaVyObib9LjK08qQ7IzkYKROO93uxoEnMSl8zRCWiaY7JwgZWg/0?wx_fmt=jpeg" data-w="640" src="%E6%97%B6%E9%97%B4%E6%88%B3%E7%9A%84%E8%AE%A1%E7%AE%97%E2%80%94%E2%80%94%E7%B3%BB%E7%BB%9F%E5%8F%82%E6%95%B0%E7%9A%84%E7%AE%80%E5%8D%95%E8%BF%90%E7%94%A8_files/640_003.jpg" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+     </p>
+    </section>
+    <p style="text-align: center;">
+     <br/>
+    </p>
+   </section>
+   <p style="max-width: 100%; min-height: 1em; color: rgb(62, 62, 62); font-family: 'MicroSoft YaHei'; white-space: normal; font-size: 16px; line-height: 25.6px; text-indent: 2em; box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    <span style="max-width: 100%; color: rgb(136, 136, 136); font-family: 微软雅黑; line-height: 23.27px; text-align: justify; text-indent: 2em; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     以上就是今天给大家分享的内容了，说得好就赏个铜板呗！有钱的捧个钱场，有人的捧个人场~。
+    </span>
+   </p>
+   <p>
+   </p>
+   <section style="max-width: 100%; box-sizing: border-box; color: rgb(62, 62, 62); font-family: 'MicroSoft YaHei'; font-size: 14px; white-space: normal; line-height: 2.2; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+     <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+      <section class="" style="max-width: 100%; box-sizing: border-box; line-height: 1.8; word-wrap: break-word !important;">
+       <section style="max-width: 100%; box-sizing: border-box; line-height: 25.6px; word-wrap: break-word !important;">
+        <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+         <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+          <section style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+           <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; font-size: 15px; line-height: 25.6px; text-align: justify; color: rgb(160, 160, 160); text-indent: 2em; font-family: 微软雅黑; word-wrap: break-word !important;">
+            <span style="max-width: 100%; color: rgb(122, 79, 214); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+             应广大粉丝要求，爬虫俱乐部的推文公众号打赏功能可以开发票啦，累计打赏超过1000元我们即可给您开具发票，发票类别为“咨询费”。用心做事，只为做您更贴心的小爬虫。第一批发票已经寄到各位小主的手中，大家快来给小爬虫打赏呀~
+            </span>
+           </p>
+           <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); text-align: right; box-sizing: border-box !important; word-wrap: break-word !important;">
+            <span style="max-width: 100%; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+             文字编辑：强宇曦
+            </span>
+           </p>
+           <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); text-align: right; box-sizing: border-box !important; word-wrap: break-word !important;">
+            <span style="max-width: 100%; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+             技术总编：刘贝贝
+            </span>
+           </p>
+           <hr style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+           <hr style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+           <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+            <strong style="max-width: 100%; text-indent: 0em; font-family: 微软雅黑; text-align: justify; color: rgb(136, 136, 136); line-height: 23.27px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+             往期推文推荐：
+            </strong>
+           </p>
+           <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+            <span style="max-width: 100%; font-family: 微软雅黑; line-height: 25.6px; text-align: justify; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+             1.
+            </span>
+            <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247485548&amp;idx=1&amp;sn=478ba30875877af79d97e9ed4eecaa7c&amp;chksm=e9af40c3ded8c9d5dc76879c0d21bb2e5e8fd182c59f2545c9879706403cafb260281dc13fce&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247485548&amp;idx=1&amp;sn=478ba30875877af79d97e9ed4eecaa7c&amp;chksm=e9af40c3ded8c9d5dc76879c0d21bb2e5e8fd182c59f2545c9879706403cafb260281dc13fce&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; font-family: 微软雅黑; line-height: 25.6px; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+             中国高校财经、管理与综合类期刊灌水排行榜
+            </a>
+           </p>
+           <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+            <span style="max-width: 100%; font-family: 微软雅黑; line-height: 25.6px; text-align: justify; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+             2.
+            </span>
+            <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484899&amp;idx=1&amp;sn=0da9bcae33696501a5eb8c8ab9c5b5ff&amp;chksm=e9af4d4cded8c45a84ed90d75464c3a866a79295f355f75e68943300fa58eb2ad1d18e016ef5&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484899&amp;idx=1&amp;sn=0da9bcae33696501a5eb8c8ab9c5b5ff&amp;chksm=e9af4d4cded8c45a84ed90d75464c3a866a79295f355f75e68943300fa58eb2ad1d18e016ef5&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; font-family: 微软雅黑; line-height: 25.6px; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+             关于RTF你不知道的命令
+            </a>
+           </p>
+           <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+            <span style="max-width: 100%; line-height: 25.6px; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+             3.
+             <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484941&amp;idx=1&amp;sn=f348ba26ed2e9c5c25efd14e3c26c506&amp;chksm=e9af4ea2ded8c7b4f0c98365323ca46337259f9ba58c9d2541b94898bcd450c162108ba9a577&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484941&amp;idx=1&amp;sn=f348ba26ed2e9c5c25efd14e3c26c506&amp;chksm=e9af4ea2ded8c7b4f0c98365323ca46337259f9ba58c9d2541b94898bcd450c162108ba9a577&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+              关于RTF你不知道的命令之番外篇
+             </a>
+            </span>
+           </p>
+           <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+            <span style="max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+             4.
+             <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484326&amp;idx=1&amp;sn=179a96c391bae0ff47e9f84b3e960aae&amp;chksm=e9af4b09ded8c21f705cc74ba9a18f996a6fed246222e51b404425e79a30b041bf2eef5c5d44&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484326&amp;idx=1&amp;sn=179a96c391bae0ff47e9f84b3e960aae&amp;chksm=e9af4b09ded8c21f705cc74ba9a18f996a6fed246222e51b404425e79a30b041bf2eef5c5d44&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+              免费事件研究，一片片从邮局寄来
+             </a>
+            </span>
+           </p>
+           <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+            <span style="max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+             5.
+            </span>
+            <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484452&amp;idx=1&amp;sn=c40cd805dafb50cf9c226cdd20550382&amp;chksm=e9af4c8bded8c59da87a75728c6600f0b6691846dfc071d9ee50d4d1424fd26bb696ed2ee0d4&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484452&amp;idx=1&amp;sn=c40cd805dafb50cf9c226cdd20550382&amp;chksm=e9af4c8bded8c59da87a75728c6600f0b6691846dfc071d9ee50d4d1424fd26bb696ed2ee0d4&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+             免费的股价同步性，一片片从邮局寄来
+            </a>
+           </p>
+           <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+            <span style="max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+             6.
+            </span>
+            <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484529&amp;idx=1&amp;sn=dace95be71022f51c515c28b252d1e7b&amp;chksm=e9af4cdeded8c5c87a91fb3a1a5caa55cc6fe961ab72c6734cd859b48239882b48756bd4ad5e&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484529&amp;idx=1&amp;sn=dace95be71022f51c515c28b252d1e7b&amp;chksm=e9af4cdeded8c5c87a91fb3a1a5caa55cc6fe961ab72c6734cd859b48239882b48756bd4ad5e&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+             Stata叫你回家听音乐了！
+            </a>
+           </p>
+           <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+            <span style="max-width: 100%; color: rgb(0, 0, 0); line-height: 1.4; font-family: 微软雅黑; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;">
+             7.
+            </span>
+            <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484866&amp;idx=1&amp;sn=9814dd7590f639877665d9a7be1a7596&amp;chksm=e9af4d6dded8c47bec92e4f77659fe8b2b6ec7502b6d380e34a3c67ef83165e103077abd3ee5&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484866&amp;idx=1&amp;sn=9814dd7590f639877665d9a7be1a7596&amp;chksm=e9af4d6dded8c47bec92e4f77659fe8b2b6ec7502b6d380e34a3c67ef83165e103077abd3ee5&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; line-height: 1.4; font-family: 微软雅黑; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+             一言不合就用stata写邮件（Outlook/Foxmail）
+            </a>
+           </p>
+           <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+            <span style="max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+             8.
+            </span>
+            <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484979&amp;idx=1&amp;sn=e572f2658ba8137832e3ae3aff2ce01a&amp;chksm=e9af4e9cded8c78a191dd0bcd06218c57a5492e4d23b1f7b0c564701a174337a4afe61a6b8e2&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484979&amp;idx=1&amp;sn=e572f2658ba8137832e3ae3aff2ce01a&amp;chksm=e9af4e9cded8c78a191dd0bcd06218c57a5492e4d23b1f7b0c564701a174337a4afe61a6b8e2&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+             听说你想知道怎么用stata画地图？
+            </a>
+           </p>
+           <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+            <span style="max-width: 100%; color: rgb(0, 0, 0); line-height: 1.4; font-family: 微软雅黑; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;">
+             9.
+            </span>
+            <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484233&amp;idx=1&amp;sn=104ca64b0bd3cf2dea046b11ea89e028&amp;chksm=e9af4be6ded8c2f005e28306aa9dab5cfcbca4020abb8296469fc5006c1eb32c6594c7b99a4b&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484233&amp;idx=1&amp;sn=104ca64b0bd3cf2dea046b11ea89e028&amp;chksm=e9af4be6ded8c2f005e28306aa9dab5cfcbca4020abb8296469fc5006c1eb32c6594c7b99a4b&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; line-height: 1.4; font-family: 微软雅黑; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+             I have a Stata, I have a python
+            </a>
+           </p>
+           <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+            <span style="max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+             10.
+            </span>
+            <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484789&amp;idx=1&amp;sn=5c52d2bba468ceb9392b440c43638a19&amp;chksm=e9af4ddaded8c4cc6bf486b21c87f0e3b17b79694bbc388741e0a1d9f5e8f6bd4134efede7f2&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484789&amp;idx=1&amp;sn=5c52d2bba468ceb9392b440c43638a19&amp;chksm=e9af4ddaded8c4cc6bf486b21c87f0e3b17b79694bbc388741e0a1d9f5e8f6bd4134efede7f2&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+             I have a Stata, I have a Python之二——pdf转word
+            </a>
+           </p>
+           <hr style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+           <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; font-size: 16px; line-height: 25.6px; word-wrap: break-word !important;">
+            <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+             <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+              <section style="max-width: 100%; box-sizing: border-box; font-size: 14px; line-height: 2.2; word-wrap: break-word !important;">
+               <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                 <section class="" style="max-width: 100%; box-sizing: border-box; line-height: 1.8; word-wrap: break-word !important;">
+                  <section style="max-width: 100%; box-sizing: border-box; line-height: 25.6px; word-wrap: break-word !important;">
+                   <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                    <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                     <section style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+                      <section style="margin-top: 10px; margin-bottom: 10px; max-width: 100%; box-sizing: border-box; line-height: 25.6px; font-size: 15px; font-family: 微软雅黑; text-align: center; color: rgb(120, 114, 114); font-stretch: normal; word-wrap: break-word !important;">
+                       <section style="padding-right: 1em; max-width: 100%; box-sizing: border-box; width: 556.36px; text-align: right; vertical-align: top; display: inline-block; word-wrap: break-word !important;">
+                        <section style="margin-right: -1em; max-width: 100%; box-sizing: border-box; text-align: left; vertical-align: bottom; display: inline-block; transform: rotate(0deg); word-wrap: break-word !important;">
+                         <section style="max-width: 100%; box-sizing: border-box; width: 0px; border-right-width: 0.8em; border-right-style: solid; border-right-color: rgb(1, 115, 164); border-bottom-width: 0.8em; border-bottom-style: solid; border-bottom-color: rgb(1, 115, 164); word-wrap: break-word !important; border-top-width: 0.8em !important; border-top-style: solid !important; border-top-color: transparent !important; border-left-width: 0.8em !important; border-left-style: solid !important; border-left-color: transparent !important;">
+                         </section>
+                         <section style="margin-top: -1em; margin-left: -0.18em; max-width: 100%; box-sizing: border-box; width: 0px; border-right-width: 0.8em; border-right-style: solid; border-right-color: rgb(255, 255, 255); border-bottom-width: 0.8em; border-bottom-style: solid; border-bottom-color: rgb(255, 255, 255); word-wrap: break-word !important; border-top-width: 0.8em !important; border-top-style: solid !important; border-top-color: transparent !important; border-left-width: 0.8em !important; border-left-style: solid !important; border-left-color: transparent !important;">
+                         </section>
+                        </section>
+                        <section style="margin-top: 0.3em; padding-bottom: 1em; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; background-color: rgb(1, 183, 204);">
+                         <section style="margin-top: -1em; margin-right: -1em; max-width: 100%; box-sizing: border-box; border: 0.2em solid rgb(1, 115, 164); width: 540.36px; display: inline-block; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+                          <section style="padding: 10px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                           <section powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                            <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                             <section style="max-width: 100%; box-sizing: border-box; text-align: center; word-wrap: break-word !important;">
+                              <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; line-height: 25.6px; word-wrap: break-word !important;">
+                               <span style="max-width: 100%; color: rgb(255, 41, 65); box-sizing: border-box !important; word-wrap: break-word !important;">
+                                <strong style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+                                 关于我们
+                                </strong>
+                               </span>
+                              </p>
+                              <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; text-align: left; line-height: 25.6px; word-wrap: break-word !important;">
+                               <span style="max-width: 100%; color: rgb(0, 0, 0); line-height: 1.6; box-sizing: border-box !important; word-wrap: break-word !important;">
+                                微信公众号“爬虫俱乐部”分享实用的stata命令，欢迎转载、打赏。爬虫俱乐部是由李春涛教授领导下的研究生及本科生组成的大数据分析和数据挖掘团队。
+                               </span>
+                              </p>
+                             </section>
+                            </section>
+                           </section>
+                          </section>
+                         </section>
+                        </section>
+                       </section>
+                      </section>
+                      <p style="max-width: 100%; min-height: 1em; box-sizing: border-box !important; word-wrap: break-word !important;">
+                       <span style="max-width: 100%; color: rgb(255, 76, 0); line-height: 25.6px; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;">
+                        此外，欢迎大家踊跃投稿，介绍一些关于stata的数据处理和分析技巧。
+                       </span>
+                       <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                      </p>
+                      <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;">
+                       <span style="max-width: 100%; color: rgb(255, 76, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                        投稿邮箱：
+                       </span>
+                       statatraining@163.com
+                      </p>
+                      <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;">
+                       <span style="max-width: 100%; color: rgb(255, 76, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                        投稿要求：
+                        <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                        1）必须原创，禁止抄袭；
+                        <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                        2）必须准确，详细，有例子，有截图；
+                        <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                        注意事项：
+                        <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                        1）所有投稿都会经过本公众号运营团队成员的审核，审核通过才可录用，一经录用，会在该推文里为作者署名，并有赏金分成。
+                        <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                        2）邮件请注明投稿，邮件名称为“投稿”+“推文名称”。
+                        <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                        <span style="max-width: 100%; color: rgb(122, 79, 214); box-sizing: border-box !important; word-wrap: break-word !important;">
+                         3）应广大读者要求，现开通有偿问答服务，如果大家遇到关于stata分析数据的问题，可以在公众号中提出，只需支付少量赏金，我们会在后期的推文里给予解答。
+                        </span>
+                       </span>
+                      </p>
+                     </section>
+                    </section>
+                   </section>
+                  </section>
+                  <p style="max-width: 100%; min-height: 1em; text-align: center; box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <img _width="100%" class="" data-fail="0" data-ratio="1" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhYE0k0faBcgXia019H7uYBVzf6PiaTnnkjzGYnLk7xUYpTCUTvVhQfapavZz4nptAvBUVAz1QO8etZQ/640?" data-type="jpeg" data-w="344" src="%E6%97%B6%E9%97%B4%E6%88%B3%E7%9A%84%E8%AE%A1%E7%AE%97%E2%80%94%E2%80%94%E7%B3%BB%E7%BB%9F%E5%8F%82%E6%95%B0%E7%9A%84%E7%AE%80%E5%8D%95%E8%BF%90%E7%94%A8_files/640_004.jpg" style="box-sizing: border-box !important; overflow-wrap: break-word !important; visibility: visible !important; width: 100% !important; height: auto !important;" width="100%"/>
+                  </p>
+                  <p style="max-width: 100%; min-height: 1em; line-height: 25.6px; text-align: center; box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <span style="max-width: 100%; color: rgb(120, 114, 114); font-family: 微软雅黑; font-size: 15px; letter-spacing: 2px; line-height: 19.2px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                    欢迎关注爬虫俱乐部
+                   </span>
+                  </p>
+                 </section>
+                </section>
+               </section>
+              </section>
+             </section>
+            </section>
+           </section>
+          </section>
+         </section>
+        </section>
+       </section>
+      </section>
+     </section>
+    </section>
+   </section>
+   <p>
+   </p>
+  </div>
+  <script nonce="6743717" type="text/javascript">
+   var first_sceen__time = (+new Date());
+
+                    if ("" == 1 && document.getElementById('js_content')) {
+                        document.getElementById('js_content').addEventListener("selectstart",function(e){ e.preventDefault(); });
+                    }
+
+                    
+                    (function(){
+                        if (navigator.userAgent.indexOf("WindowsWechat") != -1){
+                            var link = document.createElement('link');
+                            var head = document.getElementsByTagName('head')[0];
+                            link.rel = 'stylesheet';
+                            link.type = 'text/css';
+                            link.href = "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/page_mp_article_improve_winwx31619e.css";
+                            head.appendChild(link);
+                        }
+                    })();
+  </script>
+  <div class="ct_mpda_wrp" id="js_sponsor_ad_area" style="display:none;">
+  </div>
+  <div class="reward_area tc" id="js_reward_area" style="display:none;">
+   <p>
+    <a class="reward_access" href="##" id="js_reward_link">
+     赞赏
+    </a>
+   </p>
+   <div class="reward_area_inner" id="js_reward_inner" style="display: none; width: 578px;">
+    <p class="tips_global reward_user_tips">
+     <a href="##" id="js_reward_total">
+     </a>
+     人赞赏
+    </p>
+    <div class="reward_user_list" id="js_reward_list">
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="rich_media_tool" id="js_toobar3">
+  <div class="media_tool_meta tips_global meta_primary" id="js_read_area3" style="display:none;">
+   阅读
+   <span id="readNum3">
+   </span>
+  </div>
+  <span class="media_tool_meta meta_primary tips_global meta_praise" id="like3" style="display:none;">
+   <i class="icon_praise_gray">
+   </i>
+   <span class="praise_num" id="likeNum3">
+   </span>
+  </span>
+  <a class="media_tool_meta tips_global meta_extra" href="##" id="js_report_article3" style="display:none;">
+   投诉
+  </a>
+ </div>
+</div>
+</body></html>

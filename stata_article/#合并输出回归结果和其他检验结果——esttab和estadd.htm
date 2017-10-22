@@ -1,0 +1,1277 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body><div class="rich_media_area_primary" id="page-content">
+ <div id="img-content">
+  <h2 class="rich_media_title" id="activity-name">
+  </h2>
+  <div class="rich_media_meta_list" id="meta_content">
+  </div>
+  <div class="rich_media_content " id="js_content">
+   <p style="text-indent: 0em;">
+    <span style="text-indent: 0em; font-family: 宋体;">
+     在之前的
+    </span>
+    <span style="text-indent: 0em;">
+     RTF
+    </span>
+    <span style="text-indent: 0em; font-family: 宋体;">
+     系列推文中，我们已经介绍了如何使用
+    </span>
+    <span style="text-indent: 0em;">
+     rtf
+    </span>
+    <span style="text-indent: 0em; font-family: 宋体;">
+     相关命令新建和编辑文档，插入图片和利用
+    </span>
+    <span style="text-indent: 0em;">
+     esttab
+    </span>
+    <span style="text-indent: 0em; font-family: 宋体;">
+     和
+    </span>
+    <span style="text-indent: 0em;">
+     estpost
+    </span>
+    <span style="text-indent: 0em; font-family: 宋体;">
+     输出相关系数表等方法，今天我们介绍如何使用
+    </span>
+    <span style="text-indent: 0em; color: rgb(255, 104, 39);">
+     <strong>
+      esttab
+     </strong>
+    </span>
+    <span style="text-indent: 0em; font-family: 宋体;">
+     和
+    </span>
+    <strong style="text-indent: 0em;">
+     <span style="color: rgb(255, 104, 39);">
+      estadd
+     </span>
+    </strong>
+    <span style="text-indent: 0em; font-family: 宋体;">
+     将回归结果和其他检验结果合并输出的方法：
+    </span>
+   </p>
+   <p style="text-indent: 0em; line-height: normal;">
+    <span style="text-indent: 0em; font-family: 宋体;">
+     <br/>
+    </span>
+   </p>
+   <p>
+    <strong>
+     <span style="font-size:15px">
+     </span>
+    </strong>
+   </p>
+   <section class="" data-source="bj.96weixin.com">
+    <section style="display: flex; margin-top: 10px; margin-bottom: 10px;">
+     <section style="margin-right:15px;">
+      <span class="" style="display: inline-block; vertical-align: middle; width: 6px; height: 20px; border-top-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-style: solid none solid solid; border-top-color: rgb(249, 110, 87); border-bottom-color: rgb(249, 110, 87); border-left-color: rgb(249, 110, 87);">
+      </span>
+      <span class="" style="display: inline-block; vertical-align: middle; font-size: 18px; color: rgb(255, 255, 255); margin-right: 2px; margin-left: 2px; width: 30px; height: 30px; text-align: center; line-height: 30px; background: rgb(249, 110, 87);">
+       01
+      </span>
+      <span class="" style="display: inline-block; vertical-align: middle; width: 6px; height: 20px; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-style: solid solid solid none; border-top-color: rgb(249, 110, 87); border-right-color: rgb(249, 110, 87); border-bottom-color: rgb(249, 110, 87);">
+      </span>
+      <strong style="white-space: normal;">
+       <span style="font-size: 15px; font-family: 宋体;">
+        <span style="font-size: 16px;">
+         将豪斯曼检验结果添加在回归结果中
+        </span>
+       </span>
+      </strong>
+     </section>
+    </section>
+   </section>
+   <p style="text-indent: 0em;">
+    <span style="font-family:宋体">
+     在处理面板数据时，我们可以使用豪斯曼检验来确定应该使用固定效应还是随机效应模型，但是怎么把检验结果和回归结果放一起导出呢？
+    </span>
+   </p>
+   <p style="line-height: normal;">
+    <strong>
+     <br/>
+    </strong>
+   </p>
+   <p>
+    <strong>
+     clear
+    </strong>
+   </p>
+   <p>
+    <strong>
+     set more off
+    </strong>
+   </p>
+   <p>
+    <strong>
+     use http://www.stata-press.com/data/imeus/traffic.dta
+    </strong>
+    <span style="color: rgb(0, 209, 0);">
+     //
+     <span style="font-family: 宋体;">
+      获取网络数据
+     </span>
+    </span>
+   </p>
+   <p>
+    <strong>
+     xtset state year
+    </strong>
+   </p>
+   <p>
+    <strong>
+     est clear
+    </strong>
+   </p>
+   <p>
+    <strong>
+     xtreg fatal spircons unrate,fe
+    </strong>
+    <span style="color: rgb(0, 209, 0);">
+     //
+     <span style="font-family: 宋体;">
+      固定效应估计
+     </span>
+    </span>
+   </p>
+   <p>
+    <strong>
+     est store fe
+    </strong>
+    <span style="color: rgb(0, 209, 0);">
+     //
+     <span style="font-family: 宋体;">
+      储存估计结果
+     </span>
+    </span>
+   </p>
+   <p>
+    <strong>
+     xtreg fatal spircons unrate,re
+    </strong>
+    <span style="color: rgb(0, 209, 0);">
+     //
+     <span style="font-family: 宋体;">
+      随机效应估计
+     </span>
+    </span>
+   </p>
+   <p>
+    <strong>
+     est store re
+    </strong>
+    <span style="color: rgb(0, 209, 0);">
+     //
+     <span style="font-family: 宋体;">
+      储存估计结果
+     </span>
+    </span>
+   </p>
+   <p>
+    <strong>
+     hausman fe re
+    </strong>
+    <span style="color: rgb(0, 209, 0);">
+     //进行豪斯曼检验
+    </span>
+   </p>
+   <p style="line-height: normal;">
+    <span style="color: rgb(0, 209, 0);">
+     <br/>
+    </span>
+   </p>
+   <p>
+    <span style="color: rgb(0, 209, 0);">
+    </span>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.5080763582966226" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhasC0glcL32VMaXLBcxgUooPSRxy8DvPhIxjfJ24z4TTkFmZuALCBmiaO1h2myW4RgOtrzfp6bGoUg/0?wx_fmt=png" data-type="png" data-w="681" src="%E5%90%88%E5%B9%B6%E8%BE%93%E5%87%BA%E5%9B%9E%E5%BD%92%E7%BB%93%E6%9E%9C%E5%92%8C%E5%85%B6%E4%BB%96%E6%A3%80%E9%AA%8C%E7%BB%93%E6%9E%9C%E2%80%94%E2%80%94esttab%E5%92%8Cestadd_files/640_010.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+    <br/>
+   </p>
+   <p style="line-height: normal;">
+    <span style="color: rgb(0, 209, 0);">
+    </span>
+    <br/>
+   </p>
+   <p>
+    <span style="color: rgb(0, 209, 0);">
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="font-family:宋体">
+     关键的一步：利用
+    </span>
+    <span style="color: rgb(255, 104, 39);">
+     <strong>
+      estadd
+     </strong>
+    </span>
+    <span style="font-family:宋体">
+     命令将检验结果的
+    </span>
+    p
+    <span style="font-family:宋体">
+     值添加到储存结果中（
+    </span>
+    <strong>
+     estadd
+    </strong>
+    <span style="font-family:宋体">
+     命令请参考
+     <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247483755&amp;idx=1&amp;sn=9573822accdea7d7223f8d1f2930d79a&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247483755&amp;idx=1&amp;sn=9573822accdea7d7223f8d1f2930d79a&amp;scene=21#wechat_redirect" target="_blank">
+      esttab功能挖掘：“Yes”or“No”
+     </a>
+     、
+     <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484297&amp;idx=1&amp;sn=a2a0e732aac7035858904f70d3f97481&amp;chksm=e9af4b26ded8c230ec7d2c61c29313266c71bff3da49ab4f310f0f16dbc5d33f9b02ffb1a7c5&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484297&amp;idx=1&amp;sn=a2a0e732aac7035858904f70d3f97481&amp;chksm=e9af4b26ded8c230ec7d2c61c29313266c71bff3da49ab4f310f0f16dbc5d33f9b02ffb1a7c5&amp;scene=21#wechat_redirect" target="_blank">
+      我来存储估计结果，您来选择输出方式
+     </a>
+     ）
+    </span>
+   </p>
+   <p style="text-indent: 2em; line-height: normal;">
+    <span style="font-family:宋体">
+     <br/>
+    </span>
+   </p>
+   <p>
+    <strong>
+     estadd scalar Hausman_Test = r(p),replace
+    </strong>
+   </p>
+   <p style="line-height: normal;">
+    <span style="color: rgb(0, 209, 0);">
+     <br/>
+    </span>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.1559633027522936" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhasC0glcL32VMaXLBcxgUooNfun27JW4ghHWNcvEQviafkAX4ibDADhYnKliarNM2b7tXONzhygvYKicQ/0?wx_fmt=png" data-type="png" data-w="545" src="%E5%90%88%E5%B9%B6%E8%BE%93%E5%87%BA%E5%9B%9E%E5%BD%92%E7%BB%93%E6%9E%9C%E5%92%8C%E5%85%B6%E4%BB%96%E6%A3%80%E9%AA%8C%E7%BB%93%E6%9E%9C%E2%80%94%E2%80%94esttab%E5%92%8Cestadd_files/640_002.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+    <br/>
+   </p>
+   <p style="text-indent: 2em; line-height: normal;">
+    <span style="font-family:宋体">
+     <br/>
+    </span>
+   </p>
+   <p>
+    <span style="font-family:宋体">
+     接下来，我们利用
+    </span>
+    <span style="color: rgb(255, 104, 39);">
+     <strong>
+      esttab
+     </strong>
+    </span>
+    <span style="font-family:宋体">
+     命令中的
+    </span>
+    <strong>
+     scalars
+    </strong>
+    <span style="font-family:宋体">
+     选项，导出我们所添加的标量
+    </span>
+   </p>
+   <p style="line-height: normal;">
+    <strong>
+     <br/>
+    </strong>
+   </p>
+   <p>
+    <strong>
+     esttab fe re,scalars(N Hausman_Test) nonum mtitle(FE RE) b(%12.3f)
+    </strong>
+   </p>
+   <p style="line-height: normal;">
+    <br/>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.5894909688013136" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhasC0glcL32VMaXLBcxgUooz7j8crexIEngpUNH8mh3ATJu3VJDvLxzEHOlFTqv3q8q9hbicyo84fQ/0?wx_fmt=png" data-type="png" data-w="609" src="%E5%90%88%E5%B9%B6%E8%BE%93%E5%87%BA%E5%9B%9E%E5%BD%92%E7%BB%93%E6%9E%9C%E5%92%8C%E5%85%B6%E4%BB%96%E6%A3%80%E9%AA%8C%E7%BB%93%E6%9E%9C%E2%80%94%E2%80%94esttab%E5%92%8Cestadd_files/640_006.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+    <br/>
+   </p>
+   <p style="line-height: normal;">
+    <br/>
+   </p>
+   <p>
+    <span style="font-family:宋体">
+     如果需要将结果导入到
+    </span>
+    RTF
+    <span style="font-family:宋体">
+     文档中，我们只需改写
+    </span>
+    esttab
+    <span style="font-family:宋体">
+     命令环节，在输出之前，我们可以先利用程序在目标文档中设定表格标题：
+    </span>
+   </p>
+   <p style="line-height: normal;">
+    <span style="font-family:宋体">
+     <br/>
+    </span>
+   </p>
+   <p>
+    <strong>
+     tempname handle
+    </strong>
+   </p>
+   <p>
+    <strong>
+     rtfappend `handle' using d:/mytable.rtf,replace
+    </strong>
+    <span style="color: rgb(0, 209, 0);">
+     //
+     <span style="font-family: 宋体;">
+      如果需要新建一个
+     </span>
+     RTF
+     <span style="font-family: 宋体;">
+      文档，可以使用
+     </span>
+     <strong>
+      rtfopen
+     </strong>
+     <span style="font-family: 宋体;">
+      命令
+     </span>
+    </span>
+   </p>
+   <p>
+    <strong>
+     file write `handle' _n "\page" _n
+    </strong>
+    <span style="color: rgb(0, 209, 0);">
+     //
+     <span style="font-family: 宋体;">
+      另起一页
+     </span>
+    </span>
+   </p>
+   <p>
+    <strong>
+     file write `handle' "{\pard\b Regression Table 1 \par}" _n
+    </strong>
+   </p>
+   <p>
+    <strong>
+     rtfclose `handle'
+    </strong>
+   </p>
+   <p>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.29508196721311475" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhasC0glcL32VMaXLBcxgUoooO7qbGtZeflMJ8kQgxpIQnqiasFfqRWMdn7FrPFk0gEp1WssFgPehiaQ/0?wx_fmt=png" data-type="png" data-w="366" src="%E5%90%88%E5%B9%B6%E8%BE%93%E5%87%BA%E5%9B%9E%E5%BD%92%E7%BB%93%E6%9E%9C%E5%92%8C%E5%85%B6%E4%BB%96%E6%A3%80%E9%AA%8C%E7%BB%93%E6%9E%9C%E2%80%94%E2%80%94esttab%E5%92%8Cestadd_files/640_003.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+    <br/>
+   </p>
+   <p>
+    <strong>
+     esttab fe re using ,scalars(N Hausman_Test) nonum mtitle(FE RE) b(%12.3f)
+    </strong>
+   </p>
+   <p style="line-height: normal;">
+    <strong>
+     <br/>
+    </strong>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.5667244367417678" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhasC0glcL32VMaXLBcxgUoolJicbxmoGh7hz8dH4Qa6n9YcpTeNVgxrUKoXpwA3qeKA0zfMJDVeUQA/0?wx_fmt=png" data-type="png" data-w="577" src="%E5%90%88%E5%B9%B6%E8%BE%93%E5%87%BA%E5%9B%9E%E5%BD%92%E7%BB%93%E6%9E%9C%E5%92%8C%E5%85%B6%E4%BB%96%E6%A3%80%E9%AA%8C%E7%BB%93%E6%9E%9C%E2%80%94%E2%80%94esttab%E5%92%8Cestadd_files/640_008.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+    <br/>
+   </p>
+   <p style="line-height: normal;">
+    <br/>
+   </p>
+   <section class="" data-source="bj.96weixin.com">
+    <section style="display: flex; margin-top: 10px; margin-bottom: 10px;">
+     <section style="margin-right:15px;">
+      <span class="" style="display: inline-block; vertical-align: middle; width: 6px; height: 20px; border-top-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-style: solid none solid solid; border-top-color: rgb(249, 110, 87); border-bottom-color: rgb(249, 110, 87); border-left-color: rgb(249, 110, 87);">
+      </span>
+      <span class="" style="display: inline-block; vertical-align: middle; font-size: 18px; color: rgb(255, 255, 255); margin-right: 2px; margin-left: 2px; width: 30px; height: 30px; text-align: center; line-height: 30px; background: rgb(249, 110, 87);">
+       02
+      </span>
+      <span class="" style="display: inline-block; vertical-align: middle; width: 6px; height: 20px; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-style: solid solid solid none; border-top-color: rgb(249, 110, 87); border-right-color: rgb(249, 110, 87); border-bottom-color: rgb(249, 110, 87);">
+      </span>
+      <strong style="white-space: normal;">
+       <span style="font-size: 15px; font-family: 宋体;">
+        <span style="font-size: 16px;">
+         <strong>
+          在回归结果中添加
+          <span style="font-family: Calibri, sans-serif;">
+           t
+          </span>
+          检验结果
+         </strong>
+        </span>
+       </span>
+      </strong>
+     </section>
+    </section>
+   </section>
+   <p style="text-indent: 0em;">
+    <span style="text-indent: 0em; font-family: 宋体;">
+     如果我们需要检验分组回归某一系数的差异，并希望将检验的结果和回归结果一并输出，我们仍然可以使用
+    </span>
+    <span style="text-indent: 0em; color: rgb(255, 104, 39);">
+     <strong>
+      estadd
+     </strong>
+    </span>
+    <span style="text-indent: 0em; font-family: 宋体;">
+     命令，例如：
+    </span>
+    <br/>
+   </p>
+   <p style="text-indent: 0em; line-height: normal;">
+    <span style="font-family:宋体">
+     <br/>
+    </span>
+   </p>
+   <p>
+    <a name="OLE_LINK2">
+    </a>
+    <a name="OLE_LINK1" style="color: rgb(0, 0, 0); text-decoration: none;">
+     <span style="color: rgb(0, 0, 0);">
+      <strong>
+       clear
+      </strong>
+     </span>
+    </a>
+   </p>
+   <p>
+    <strong>
+     set more off
+    </strong>
+   </p>
+   <p>
+    <strong>
+     sysuse auto
+    </strong>
+   </p>
+   <p style="line-height: normal;">
+    <span style="font-family:宋体">
+     <br/>
+    </span>
+   </p>
+   <p>
+    <span style="font-family:宋体">
+     我们将样本分为国内制造和国外制造两组，并检验两组回归中
+    </span>
+    length
+    <span style="font-family:宋体">
+     系数的差异
+    </span>
+   </p>
+   <p style="line-height: normal;">
+    <strong>
+     <br/>
+    </strong>
+   </p>
+   <p>
+    <strong>
+     reg mpg weight price length if foreign
+    </strong>
+    <span style="color: rgb(0, 209, 0);">
+     //
+     <span style="font-family: 宋体;">
+      外国制造组
+     </span>
+    </span>
+   </p>
+   <p>
+    <strong>
+     local foreign_length=_b[length]
+    </strong>
+    <span style="color: rgb(0, 209, 0);">
+     //
+     <span style="font-family: 宋体;">
+      保存这一组的回归系数
+     </span>
+    </span>
+   </p>
+   <p>
+    <strong>
+     disp `foreign_length'
+    </strong>
+   </p>
+   <p style="line-height: normal;">
+    <br/>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.6200607902735562" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhasC0glcL32VMaXLBcxgUoofG7wYfskZ75pRguzCemF0FLA7EtUichGRFhKzPF2S8IVybon4XqBaCQ/0?wx_fmt=png" data-type="png" data-w="658" src="%E5%90%88%E5%B9%B6%E8%BE%93%E5%87%BA%E5%9B%9E%E5%BD%92%E7%BB%93%E6%9E%9C%E5%92%8C%E5%85%B6%E4%BB%96%E6%A3%80%E9%AA%8C%E7%BB%93%E6%9E%9C%E2%80%94%E2%80%94esttab%E5%92%8Cestadd_files/640_005.jpg" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+    <br/>
+   </p>
+   <p style="line-height: normal;">
+    <br/>
+   </p>
+   <p>
+    <strong>
+     est store m1
+    </strong>
+   </p>
+   <p>
+    <strong>
+     reg mpg weight price length if !foreign
+    </strong>
+    <span style="color: rgb(0, 209, 0);">
+     //
+     <span style="font-family: 宋体;">
+      国内制造组
+     </span>
+    </span>
+   </p>
+   <p>
+    <strong>
+     disp _b[length]
+    </strong>
+   </p>
+   <p>
+    <strong>
+     test _b[length]=`foreign_length'
+    </strong>
+    <span style="color: rgb(0, 209, 0);">
+     //
+     <span style="font-family: 宋体;">
+      对两个系数进行
+     </span>
+     t
+     <span style="font-family: 宋体;">
+      检验
+     </span>
+    </span>
+   </p>
+   <p style="line-height: normal;">
+    <br/>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.736998514115899" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhasC0glcL32VMaXLBcxgUooILLOxLSFdqfNg8BFReTeFevFlqy49lvrfAI0p1v2J6DNYldLU9ZJ0Q/0?wx_fmt=png" data-type="png" data-w="673" src="%E5%90%88%E5%B9%B6%E8%BE%93%E5%87%BA%E5%9B%9E%E5%BD%92%E7%BB%93%E6%9E%9C%E5%92%8C%E5%85%B6%E4%BB%96%E6%A3%80%E9%AA%8C%E7%BB%93%E6%9E%9C%E2%80%94%E2%80%94esttab%E5%92%8Cestadd_files/640_009.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+    <br/>
+   </p>
+   <p style="line-height: normal;">
+    <strong>
+     <br/>
+    </strong>
+   </p>
+   <p>
+    <strong>
+     scalar coef_diff = `foreign_length'-_b[length],replace
+    </strong>
+    <span style="color: rgb(0, 209, 0);">
+     //
+     <span style="font-family: 宋体;">
+      在回归结果中添加两个系数的差值
+     </span>
+    </span>
+   </p>
+   <p>
+    <strong>
+     estadd scalar p_diff =r(p),replace
+    </strong>
+    <span style="color: rgb(0, 209, 0);">
+     //
+     <span style="font-family: 宋体;">
+      在回归结果中添加
+     </span>
+     t
+     <span style="font-family: 宋体;">
+      检验的
+     </span>
+     p
+     <span style="font-family: 宋体;">
+      值
+     </span>
+    </span>
+   </p>
+   <p>
+    <strong>
+     est store m2
+    </strong>
+   </p>
+   <p>
+    <strong>
+     esttab m1 m2,scalars(N r2 coef_diff p_diff) nonum mtitle(foreign domestic) b(%12.3f)
+    </strong>
+   </p>
+   <p style="line-height: normal;">
+    <strong>
+     <br/>
+    </strong>
+   </p>
+   <p>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.6267409470752089" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhasC0glcL32VMaXLBcxgUoo1jWvZV6oADAlXv8ouVU9T0eYVzRa9RFYwwDXnPozJaWTNDoRTZSFwQ/0?wx_fmt=png" data-type="png" data-w="718" src="%E5%90%88%E5%B9%B6%E8%BE%93%E5%87%BA%E5%9B%9E%E5%BD%92%E7%BB%93%E6%9E%9C%E5%92%8C%E5%85%B6%E4%BB%96%E6%A3%80%E9%AA%8C%E7%BB%93%E6%9E%9C%E2%80%94%E2%80%94esttab%E5%92%8Cestadd_files/640_007.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+    <br/>
+   </p>
+   <p style="text-indent: 0em; line-height: normal;">
+    <span style="font-family:宋体">
+     <br/>
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="font-family:宋体">
+     同理，我们也可以直接选择输出到
+    </span>
+    RTF
+    <span style="font-family:宋体">
+     文档中：
+    </span>
+   </p>
+   <p style="line-height: normal;">
+    <strong>
+     <br/>
+    </strong>
+   </p>
+   <p>
+    <strong>
+     tempname handle
+    </strong>
+   </p>
+   <p>
+    <strong>
+     rtfappend `handle' using d:/mytable.rtf,replace
+    </strong>
+    <span style="color: rgb(0, 209, 0);">
+     //
+     <span style="font-family: 宋体;">
+      新建一个
+     </span>
+     RTF
+     <span style="font-family: 宋体;">
+      文档，可以使用
+     </span>
+     <strong>
+      rtfopen
+     </strong>
+     <span style="font-family: 宋体;">
+      命令
+     </span>
+    </span>
+   </p>
+   <p>
+    <strong>
+     file write `handle' _n "\page" _n
+    </strong>
+    <span style="color: rgb(0, 209, 0);">
+     //
+     <span style="font-family: 宋体;">
+      另起一页
+     </span>
+    </span>
+   </p>
+   <p>
+    <strong>
+     file write `handle' "{\pard\b Regression Table 2 \par}" _n
+    </strong>
+   </p>
+   <p>
+    <strong>
+     rtfclose `handle'
+    </strong>
+   </p>
+   <p>
+    <strong>
+     esttab m1 m2 using d:/mytable,rtf scalars(N r2 coef_diff p_diff) nonum mtitle(foreign domestic) b(%12.3f) append
+    </strong>
+   </p>
+   <p style="line-height: normal;">
+    <strong>
+     <br/>
+    </strong>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.8096385542168675" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhasC0glcL32VMaXLBcxgUooaiaKyUEnyW4CsY9ibib7c3W9dTpNy8g9NybWNyicfpyT5QXKa0icZ9Ih2Pg/0?wx_fmt=png" data-type="png" data-w="415" src="%E5%90%88%E5%B9%B6%E8%BE%93%E5%87%BA%E5%9B%9E%E5%BD%92%E7%BB%93%E6%9E%9C%E5%92%8C%E5%85%B6%E4%BB%96%E6%A3%80%E9%AA%8C%E7%BB%93%E6%9E%9C%E2%80%94%E2%80%94esttab%E5%92%8Cestadd_files/640_004.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+    <br/>
+   </p>
+   <p style="line-height: normal;">
+    <br/>
+   </p>
+   <section class="" data-source="bj.96weixin.com">
+    <section style="display: flex; margin-top: 10px; margin-bottom: 10px;">
+     <section style="margin-right:15px;">
+      <span class="" style="display: inline-block; vertical-align: middle; width: 6px; height: 20px; border-top-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-style: solid none solid solid; border-top-color: rgb(249, 110, 87); border-bottom-color: rgb(249, 110, 87); border-left-color: rgb(249, 110, 87);">
+      </span>
+      <span class="" style="display: inline-block; vertical-align: middle; font-size: 18px; color: rgb(255, 255, 255); margin-right: 2px; margin-left: 2px; width: 30px; height: 30px; text-align: center; line-height: 30px; background: rgb(249, 110, 87);">
+       03
+      </span>
+      <span class="" style="display: inline-block; vertical-align: middle; width: 6px; height: 20px; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-style: solid solid solid none; border-top-color: rgb(249, 110, 87); border-right-color: rgb(249, 110, 87); border-bottom-color: rgb(249, 110, 87);">
+      </span>
+      <strong style="white-space: normal;">
+       <span style="font-size: 15px; font-family: 宋体;">
+        <span style="font-size: 16px;">
+         <strong>
+          <strong>
+           用添加交互项方法检验系数差异并与回归结果合并输出
+          </strong>
+         </strong>
+        </span>
+       </span>
+      </strong>
+     </section>
+    </section>
+   </section>
+   <p>
+    <span style="font-family: 宋体;">
+     上面仅仅介绍了在回归结果中添加
+    </span>
+    t
+    <span style="font-family: 宋体;">
+     检验等结果的方法，但是对分组回归系数差异检验并不能简单的对两个系数进行
+    </span>
+    t
+    <span style="font-family: 宋体;">
+     检验。传统的做法是添加交互项，交互项的系数即为分组系数差异，具体如下：
+    </span>
+    <br/>
+   </p>
+   <p style="line-height: normal;">
+    <span style="font-family:宋体">
+     <br/>
+    </span>
+   </p>
+   <p>
+    <strong>
+     clear
+    </strong>
+   </p>
+   <p>
+    <strong>
+     set more off
+    </strong>
+   </p>
+   <p>
+    <strong>
+     sysuse auto
+    </strong>
+   </p>
+   <p style="text-indent: 0em; line-height: normal;">
+    <span style="font-family:宋体">
+     <br/>
+    </span>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="font-family:宋体">
+     同上，我们仍然检验国外和国内两组中
+    </span>
+    length
+    <span style="font-family:宋体">
+     对
+    </span>
+    price
+    <span style="font-family:宋体">
+     的回归系数的差异，
+    </span>
+   </p>
+   <p style="line-height: normal;">
+    <a name="OLE_LINK3">
+     <strong>
+      <br/>
+     </strong>
+    </a>
+   </p>
+   <p>
+    <a name="OLE_LINK3" style="color: rgb(0, 0, 0); text-decoration: none;">
+     <span style="color: rgb(0, 0, 0);">
+      <strong>
+       gen length_foreign=length*foreign
+      </strong>
+     </span>
+    </a>
+   </p>
+   <p>
+    <strong>
+     reg mpg weight price length foreign length_foreign
+    </strong>
+   </p>
+   <p>
+    <strong>
+     matrix diff=r(table)
+    </strong>
+    <span style="color: rgb(0, 209, 0);">
+     //
+     <span style="font-family: 宋体;">
+      将回归结果储存在矩阵中
+     </span>
+    </span>
+   </p>
+   <p style="line-height: normal;">
+    <span style="color: rgb(0, 209, 0); font-family: 宋体;">
+     <br/>
+    </span>
+   </p>
+   <p>
+    <span style="color: rgb(0, 209, 0); font-family: 宋体;">
+    </span>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.5276162790697675" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhasC0glcL32VMaXLBcxgUooxlqPGTjvlm5ibupsQwaINhZaunqa8qa9MXwDfE5tyEhPK9E7lE0mw9w/0?wx_fmt=png" data-type="png" data-w="688" src="%E5%90%88%E5%B9%B6%E8%BE%93%E5%87%BA%E5%9B%9E%E5%BD%92%E7%BB%93%E6%9E%9C%E5%92%8C%E5%85%B6%E4%BB%96%E6%A3%80%E9%AA%8C%E7%BB%93%E6%9E%9C%E2%80%94%E2%80%94esttab%E5%92%8Cestadd_files/640_004.jpg" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+    <br/>
+   </p>
+   <p style="line-height: normal;">
+    <span style="color: rgb(0, 209, 0); font-family: 宋体;">
+    </span>
+    <br/>
+   </p>
+   <p>
+    <strong>
+     reg mpg weight price length if foreign
+    </strong>
+   </p>
+   <p>
+    <strong>
+     est store m1
+    </strong>
+   </p>
+   <p>
+    <strong>
+     reg mpg weight price length if !foreign
+    </strong>
+   </p>
+   <p>
+    <strong>
+     estadd scalar coef_diff =diff[1,5],replace
+    </strong>
+    <span style="color: rgb(0, 209, 0);">
+     //
+     <span style="font-family: 宋体;">
+      将交互项的系数添加在输出结果中
+     </span>
+    </span>
+   </p>
+   <p>
+    <strong>
+     estadd scalar p_diff =diff[4,5],replace
+    </strong>
+    <span style="color: rgb(0, 209, 0);">
+     //
+     <span style="font-family: 宋体;">
+      将交互项的
+     </span>
+     p
+     <span style="font-family: 宋体;">
+      值添加在输出结果中
+     </span>
+    </span>
+   </p>
+   <p>
+    <strong>
+     est store m2
+    </strong>
+   </p>
+   <p>
+    <strong>
+     esttab m1 m2,scalars(N r2 coef_diff p_diff) nonum mtitle(foreign domestic) b(%12.3f)
+    </strong>
+   </p>
+   <p style="line-height: normal;">
+    <br/>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.6463768115942029" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhasC0glcL32VMaXLBcxgUoo4PekwIDJaLLE2TSoNiaFYwWvOXCfA4OBE7q2M5q3k59V9osYtWh8p1A/0?wx_fmt=png" data-type="png" data-w="690" src="%E5%90%88%E5%B9%B6%E8%BE%93%E5%87%BA%E5%9B%9E%E5%BD%92%E7%BB%93%E6%9E%9C%E5%92%8C%E5%85%B6%E4%BB%96%E6%A3%80%E9%AA%8C%E7%BB%93%E6%9E%9C%E2%80%94%E2%80%94esttab%E5%92%8Cestadd_files/640_005.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+    <br/>
+   </p>
+   <p style="line-height: normal;">
+    <br/>
+   </p>
+   <p style="text-indent: 0em;">
+    <span style="font-family:宋体">
+     同理，我们也可以直接选择输出到
+    </span>
+    RTF
+    <span style="font-family:宋体">
+     文档中：
+    </span>
+   </p>
+   <p style="text-indent: 0em; line-height: normal;">
+    <span style="font-family:宋体">
+     <br/>
+    </span>
+   </p>
+   <p>
+    <strong>
+     tempname handle
+    </strong>
+   </p>
+   <p>
+    <strong>
+     rtfappend `handle' using d:/mytable.rtf,replace
+    </strong>
+   </p>
+   <p>
+    <strong>
+     file write `handle' _n "\page" _n
+    </strong>
+    <span style="color: rgb(0, 209, 0);">
+     //
+     <span style="font-family: 宋体;">
+      另起一页
+     </span>
+    </span>
+   </p>
+   <p>
+    <strong>
+     file write `handle' "{\pard\b Regression Table 3 \par}" _n
+    </strong>
+   </p>
+   <p>
+    <strong>
+     rtfclose `handle'
+    </strong>
+   </p>
+   <p>
+    <strong>
+     esttab m1 m2 using d:/mytable,rtf scalars(N r2 coef_diff p_diff) nonum mtitle(foreign domestic) b(%12.3f) append
+    </strong>
+   </p>
+   <p style="line-height: normal;">
+    <strong>
+     <br/>
+    </strong>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.7432950191570882" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhasC0glcL32VMaXLBcxgUoo8rib05xIlMa71x2uvrlCWqicJLpjEmlTyxpuLlThiccibee3bjNNW1ic73A/0?wx_fmt=png" data-type="png" data-w="522" src="%E5%90%88%E5%B9%B6%E8%BE%93%E5%87%BA%E5%9B%9E%E5%BD%92%E7%BB%93%E6%9E%9C%E5%92%8C%E5%85%B6%E4%BB%96%E6%A3%80%E9%AA%8C%E7%BB%93%E6%9E%9C%E2%80%94%E2%80%94esttab%E5%92%8Cestadd_files/640.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+    <br/>
+   </p>
+   <p style="text-align: start; text-indent: 0px; line-height: normal;">
+    <span style="color: rgb(62, 62, 62); font-size: 14px; text-align: center; text-indent: 28px;  background-color: rgb(255, 255, 255);">
+     <br/>
+    </span>
+   </p>
+   <p style="text-align: start; text-indent: 0px;">
+    <span style="color: rgb(62, 62, 62); font-size: 14px; text-align: center; text-indent: 28px;  background-color: rgb(255, 255, 255);">
+     以上就是我们今天的分享，希望对诸位读者在导出实证结果中有些许的帮助，爬虫酱就很开心啦。
+    </span>
+   </p>
+   <p style="text-align: center; text-indent: 0px;">
+    <span style="color: rgb(62, 62, 62); text-align: center; text-indent: 28px; background-color: rgb(255, 255, 255); font-size: 16px;">
+     接下来我们关注一下全国空气质量
+    </span>
+   </p>
+   <p style="text-align: center; text-indent: 0px;">
+    <span style="font-family: 微软雅黑; color: rgb(62, 62, 62); text-align: center; text-indent: 28px; background-color: rgb(255, 255, 255); font-size: 16px;">
+     全国空气质量如下
+    </span>
+   </p>
+   <p style="text-align: center; text-indent: 0px;">
+    <span style="font-family: 微软雅黑; color: rgb(62, 62, 62); text-align: center; text-indent: 28px; background-color: rgb(255, 255, 255); font-size: 16px;">
+     <br/>
+    </span>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.75" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhasC0glcL32VMaXLBcxgUooBW0M4gRiaBkOgeFgxCZcWibK72yKgKJZJMlf6ibCajUiauQSGc9Jb6ibPpQ/0?wx_fmt=png" data-type="png" data-w="1200" src="%E5%90%88%E5%B9%B6%E8%BE%93%E5%87%BA%E5%9B%9E%E5%BD%92%E7%BB%93%E6%9E%9C%E5%92%8C%E5%85%B6%E4%BB%96%E6%A3%80%E9%AA%8C%E7%BB%93%E6%9E%9C%E2%80%94%E2%80%94esttab%E5%92%8Cestadd_files/640_002.jpg" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+   </p>
+   <p>
+    <br/>
+   </p>
+   <p style="text-align: center;">
+    <span style="color: rgb(62, 62, 62); text-align: center; text-indent: 28px; background-color: rgb(255, 255, 255); font-size: 16px;">
+     山东的西部小伙伴要保护好自己！
+    </span>
+   </p>
+   <p>
+    <br/>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.6923076923076923" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhasC0glcL32VMaXLBcxgUooQuummibCExzGbxEgz2l9TDIaU8lsicjYk35ibgTurn7Sic40rZeYqCpQMQ/0?wx_fmt=png" data-type="png" data-w="1300" src="%E5%90%88%E5%B9%B6%E8%BE%93%E5%87%BA%E5%9B%9E%E5%BD%92%E7%BB%93%E6%9E%9C%E5%92%8C%E5%85%B6%E4%BB%96%E6%A3%80%E9%AA%8C%E7%BB%93%E6%9E%9C%E2%80%94%E2%80%94esttab%E5%92%8Cestadd_files/640_003.jpg" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+   </p>
+   <p>
+    <br/>
+   </p>
+   <p style="text-align: center; text-indent: 0px;">
+    <span style="font-family: 微软雅黑; color: rgb(62, 62, 62); text-align: center; text-indent: 28px; background-color: rgb(255, 255, 255); font-size: 16px;">
+    </span>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; white-space: normal; line-height: 25.6px; font-size: 15px; text-align: justify; font-family: 微软雅黑; color: rgb(160, 160, 160); text-indent: 2em; background-color: rgb(255, 255, 255); word-wrap: break-word !important;">
+    <span style="max-width: 100%; color: rgb(136, 136, 136); line-height: 23.27px; text-indent: 2em; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     以上就是今天给大家分享的内容了，说得好就赏个铜板呗！有钱的捧个钱场，有人的捧个人场~，点赞打赏随您心意，么么哒~
+    </span>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; white-space: normal; line-height: 25.6px; font-size: 15px; text-align: justify; font-family: 微软雅黑; color: rgb(160, 160, 160); text-indent: 2em; background-color: rgb(255, 255, 255); word-wrap: break-word !important;">
+    <span style="max-width: 100%; color: rgb(122, 79, 214); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     应广大粉丝要求，爬虫俱乐部的推文公众号打赏功能可以开发票啦，累计打赏超过1000元我们即可给您开具发票，发票类别为“咨询费”。用心做事，只为做您更贴心的小爬虫。第一批发票已经寄到各位小主的手中，大家快来给小爬虫打赏呀~
+    </span>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; white-space: normal; line-height: 25.6px; font-size: 15px; text-align: right; font-family: 微软雅黑; color: rgb(160, 160, 160); text-indent: 2em; background-color: rgb(255, 255, 255); word-wrap: break-word !important;">
+    <span style="max-width: 100%; line-height: 28.8px; color: rgb(26, 25, 25); font-size: 14px; letter-spacing: 2px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     编辑 by强宇曦
+    </span>
+   </p>
+   <hr style="max-width: 100%; white-space: normal; line-height: 25.6px; font-size: 15px; text-align: justify; color: rgb(120, 114, 114); font-family: 微软雅黑; background-color: rgb(255, 255, 255); box-sizing: border-box !important; word-wrap: break-word !important;"/>
+   <hr style="max-width: 100%; white-space: normal; line-height: 25.6px; font-size: 15px; text-align: justify; color: rgb(120, 114, 114); font-family: 微软雅黑; background-color: rgb(255, 255, 255); box-sizing: border-box !important; word-wrap: break-word !important;"/>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; white-space: normal; line-height: 25.6px; font-size: 15px; text-align: justify; color: rgb(120, 114, 114); font-family: 微软雅黑; background-color: rgb(255, 255, 255); word-wrap: break-word !important;">
+    <span style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+     <strong style="max-width: 100%; color: rgb(136, 136, 136); line-height: 23.27px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+      往期推文推荐：
+     </strong>
+    </span>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; white-space: normal; line-height: 25.6px; font-size: 15px; text-align: justify; color: rgb(120, 114, 114); font-family: 微软雅黑; background-color: rgb(255, 255, 255); word-wrap: break-word !important;">
+    <span style="max-width: 100%; color: rgb(0, 0, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     1
+     <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484925&amp;idx=1&amp;sn=3cf4a7014566563f0ce57df21ba59fa7&amp;chksm=e9af4d52ded8c4440fc4c4bde29920f9112ceeb626161a0fdd520a84a85ced446fe201a8c52c&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484925&amp;idx=1&amp;sn=3cf4a7014566563f0ce57df21ba59fa7&amp;chksm=e9af4d52ded8c4440fc4c4bde29920f9112ceeb626161a0fdd520a84a85ced446fe201a8c52c&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+      .
+      <span style="max-width: 100%; text-align: center; line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important;">
+       独家Stata技术培训，千呼万唤始出来
+      </span>
+     </a>
+    </span>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; white-space: normal; text-align: justify; font-family: 微软雅黑; color: rgb(160, 160, 160); line-height: 24px; font-size: 12px; background-color: rgb(255, 255, 255); word-wrap: break-word !important;">
+    <span style="max-width: 100%; color: rgb(0, 0, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     2
+    </span>
+    <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484899&amp;idx=1&amp;sn=0da9bcae33696501a5eb8c8ab9c5b5ff&amp;chksm=e9af4d4cded8c45a84ed90d75464c3a866a79295f355f75e68943300fa58eb2ad1d18e016ef5&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484899&amp;idx=1&amp;sn=0da9bcae33696501a5eb8c8ab9c5b5ff&amp;chksm=e9af4d4cded8c45a84ed90d75464c3a866a79295f355f75e68943300fa58eb2ad1d18e016ef5&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+     <span style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+      .
+      <span style="max-width: 100%; text-align: center; line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important;">
+       关于RTF你不知道的命令
+      </span>
+     </span>
+    </a>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; white-space: normal; text-align: justify; font-family: 微软雅黑; color: rgb(160, 160, 160); line-height: 24px; font-size: 12px; background-color: rgb(255, 255, 255); word-wrap: break-word !important;">
+    <span style="max-width: 100%; color: rgb(0, 0, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     3
+    </span>
+    <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484941&amp;idx=1&amp;sn=f348ba26ed2e9c5c25efd14e3c26c506&amp;chksm=e9af4ea2ded8c7b4f0c98365323ca46337259f9ba58c9d2541b94898bcd450c162108ba9a577&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484941&amp;idx=1&amp;sn=f348ba26ed2e9c5c25efd14e3c26c506&amp;chksm=e9af4ea2ded8c7b4f0c98365323ca46337259f9ba58c9d2541b94898bcd450c162108ba9a577&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+     <span style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+      .
+      <span style="max-width: 100%; text-align: center; line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important;">
+       关于RTF你不知道的命令之番外篇
+      </span>
+     </span>
+    </a>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; white-space: normal; line-height: 25.6px; font-size: 15px; text-align: justify; color: rgb(120, 114, 114); font-family: 微软雅黑; background-color: rgb(255, 255, 255); word-wrap: break-word !important;">
+    <span style="max-width: 100%; color: rgb(0, 0, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     4
+     <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484326&amp;idx=1&amp;sn=179a96c391bae0ff47e9f84b3e960aae&amp;chksm=e9af4b09ded8c21f705cc74ba9a18f996a6fed246222e51b404425e79a30b041bf2eef5c5d44&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484326&amp;idx=1&amp;sn=179a96c391bae0ff47e9f84b3e960aae&amp;chksm=e9af4b09ded8c21f705cc74ba9a18f996a6fed246222e51b404425e79a30b041bf2eef5c5d44&amp;scene=21#wechat_redirect" style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+      .
+      <span style="max-width: 100%; text-align: center; color: rgb(0, 0, 0); line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important;">
+       免费事件研究，一片片从邮局寄来
+      </span>
+     </a>
+    </span>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; white-space: normal; line-height: 25.6px; font-size: 15px; text-align: justify; color: rgb(120, 114, 114); font-family: 微软雅黑; background-color: rgb(255, 255, 255); word-wrap: break-word !important;">
+    <span style="max-width: 100%; color: rgb(0, 0, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     5
+     <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484452&amp;idx=1&amp;sn=c40cd805dafb50cf9c226cdd20550382&amp;chksm=e9af4c8bded8c59da87a75728c6600f0b6691846dfc071d9ee50d4d1424fd26bb696ed2ee0d4&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484452&amp;idx=1&amp;sn=c40cd805dafb50cf9c226cdd20550382&amp;chksm=e9af4c8bded8c59da87a75728c6600f0b6691846dfc071d9ee50d4d1424fd26bb696ed2ee0d4&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+      .
+      <span style="max-width: 100%; text-align: center; line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important;">
+       免费的股价同步性，一片片从邮局寄来
+      </span>
+     </a>
+    </span>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; white-space: normal; line-height: 25.6px; font-size: 15px; text-align: justify; color: rgb(120, 114, 114); font-family: 微软雅黑; background-color: rgb(255, 255, 255); word-wrap: break-word !important;">
+    <span style="max-width: 100%; color: rgb(0, 0, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     6
+     <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484529&amp;idx=1&amp;sn=dace95be71022f51c515c28b252d1e7b&amp;chksm=e9af4cdeded8c5c87a91fb3a1a5caa55cc6fe961ab72c6734cd859b48239882b48756bd4ad5e&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484529&amp;idx=1&amp;sn=dace95be71022f51c515c28b252d1e7b&amp;chksm=e9af4cdeded8c5c87a91fb3a1a5caa55cc6fe961ab72c6734cd859b48239882b48756bd4ad5e&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+      .
+      <span style="max-width: 100%; text-align: center; line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important;">
+       Stata叫你回家听音乐了！
+      </span>
+     </a>
+    </span>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; white-space: normal; line-height: 25.6px; font-size: 15px; text-align: justify; color: rgb(120, 114, 114); font-family: 微软雅黑; background-color: rgb(255, 255, 255); word-wrap: break-word !important;">
+    <span style="max-width: 100%; color: rgb(0, 0, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     7
+     <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484866&amp;idx=1&amp;sn=9814dd7590f639877665d9a7be1a7596&amp;chksm=e9af4d6dded8c47bec92e4f77659fe8b2b6ec7502b6d380e34a3c67ef83165e103077abd3ee5&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484866&amp;idx=1&amp;sn=9814dd7590f639877665d9a7be1a7596&amp;chksm=e9af4d6dded8c47bec92e4f77659fe8b2b6ec7502b6d380e34a3c67ef83165e103077abd3ee5&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+      .
+      <span style="max-width: 100%; text-align: center; line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important;">
+       一言不合就用stata写邮件（Outlook/Foxmail）
+      </span>
+     </a>
+    </span>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; white-space: normal; line-height: 25.6px; font-size: 15px; text-align: justify; color: rgb(120, 114, 114); font-family: 微软雅黑; background-color: rgb(255, 255, 255); word-wrap: break-word !important;">
+    <span style="max-width: 100%; color: rgb(0, 0, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     8
+     <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484679&amp;idx=1&amp;sn=e5f040ae8ecf0727c59463106266759a&amp;chksm=e9af4da8ded8c4be3481faf21d25fa01b4d0157d79af6f5311aac5f12fe7b8bfa8e4b897a70c&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484679&amp;idx=1&amp;sn=e5f040ae8ecf0727c59463106266759a&amp;chksm=e9af4da8ded8c4be3481faf21d25fa01b4d0157d79af6f5311aac5f12fe7b8bfa8e4b897a70c&amp;scene=21#wechat_redirect" style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+      .
+      <span style="max-width: 100%; text-align: center; color: rgb(0, 0, 0); line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important;">
+       玩转stata之调用浏览器
+      </span>
+     </a>
+    </span>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; white-space: normal; line-height: 25.6px; font-size: 15px; text-align: justify; color: rgb(120, 114, 114); font-family: 微软雅黑; background-color: rgb(255, 255, 255); word-wrap: break-word !important;">
+    <span style="max-width: 100%; color: rgb(0, 0, 0); line-height: 25.6px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     9.
+    </span>
+    <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484233&amp;idx=1&amp;sn=104ca64b0bd3cf2dea046b11ea89e028&amp;chksm=e9af4be6ded8c2f005e28306aa9dab5cfcbca4020abb8296469fc5006c1eb32c6594c7b99a4b&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484233&amp;idx=1&amp;sn=104ca64b0bd3cf2dea046b11ea89e028&amp;chksm=e9af4be6ded8c2f005e28306aa9dab5cfcbca4020abb8296469fc5006c1eb32c6594c7b99a4b&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; line-height: 25.6px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+     I have a Stata, I have a python
+    </a>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; white-space: normal; line-height: 25.6px; font-size: 15px; text-align: justify; color: rgb(120, 114, 114); font-family: 微软雅黑; background-color: rgb(255, 255, 255); word-wrap: break-word !important;">
+    <span style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+     <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484789&amp;idx=1&amp;sn=5c52d2bba468ceb9392b440c43638a19&amp;chksm=e9af4ddaded8c4cc6bf486b21c87f0e3b17b79694bbc388741e0a1d9f5e8f6bd4134efede7f2&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484789&amp;idx=1&amp;sn=5c52d2bba468ceb9392b440c43638a19&amp;chksm=e9af4ddaded8c4cc6bf486b21c87f0e3b17b79694bbc388741e0a1d9f5e8f6bd4134efede7f2&amp;scene=21#wechat_redirect" style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+      <span style="max-width: 100%; color: rgb(0, 0, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+       10
+      </span>
+      <span style="max-width: 100%; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+       <span style="max-width: 100%; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+        .
+       </span>
+       <span style="max-width: 100%; color: rgb(0, 0, 0); line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important;">
+        I have a Stata, I have a Python之二——pdf转word
+       </span>
+      </span>
+     </a>
+    </span>
+   </p>
+   <hr style="max-width: 100%; color: rgb(62, 62, 62); text-align: center; white-space: normal; font-size: 16px; line-height: 25.6px; background-color: rgb(255, 255, 255); box-sizing: border-box !important; word-wrap: break-word !important;"/>
+   <hr style="max-width: 100%; color: rgb(62, 62, 62); text-align: center; white-space: normal; font-size: 16px; line-height: 25.6px; background-color: rgb(255, 255, 255); box-sizing: border-box !important; word-wrap: break-word !important;"/>
+   <p style="max-width: 100%; min-height: 1em; color: rgb(62, 62, 62); font-size: 14px; text-align: center; white-space: normal; background-color: rgb(255, 255, 255); line-height: normal; box-sizing: border-box !important; word-wrap: break-word !important;">
+    <br/>
+   </p>
+   <section style="margin-top: 10px; margin-bottom: 10px; max-width: 100%; box-sizing: border-box; text-align: center; white-space: normal; line-height: 25.6px; font-size: 15px; color: rgb(120, 114, 114); font-family: 微软雅黑; background-color: rgb(255, 255, 255); word-wrap: break-word !important;">
+    <section style="padding-right: 1em; max-width: 100%; box-sizing: border-box; width: 556.36px; text-align: right; vertical-align: top; display: inline-block; word-wrap: break-word !important;">
+     <section style="margin-right: -1em; max-width: 100%; box-sizing: border-box; text-align: left; vertical-align: bottom; display: inline-block; transform: rotate(0deg); word-wrap: break-word !important;">
+      <section style="max-width: 100%; box-sizing: border-box; width: 0px; border-right: 0.8em solid rgb(1, 115, 164); border-bottom: 0.8em solid rgb(1, 115, 164); word-wrap: break-word !important; border-top: 0.8em solid transparent !important; border-left: 0.8em solid transparent !important;">
+      </section>
+      <section style="margin-top: -1em; margin-left: -0.18em; max-width: 100%; box-sizing: border-box; width: 0px; border-right: 0.8em solid rgb(255, 255, 255); border-bottom: 0.8em solid rgb(255, 255, 255); word-wrap: break-word !important; border-top: 0.8em solid transparent !important; border-left: 0.8em solid transparent !important;">
+      </section>
+     </section>
+     <section style="margin-top: 0.3em; padding-bottom: 1em; max-width: 100%; box-sizing: border-box; background-color: rgb(1, 183, 204); word-wrap: break-word !important;">
+      <section style="margin-top: -1em; margin-right: -1em; max-width: 100%; box-sizing: border-box; border-width: 0.2em; border-style: solid; border-color: rgb(1, 115, 164); width: 540.36px; display: inline-block; background-color: rgb(255, 255, 255); word-wrap: break-word !important;">
+       <section style="padding: 10px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+        <section powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+         <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+          <section style="max-width: 100%; box-sizing: border-box; text-align: center; word-wrap: break-word !important;">
+           <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; line-height: 25.6px; word-wrap: break-word !important;">
+            <span style="max-width: 100%; color: rgb(255, 41, 65); box-sizing: border-box !important; word-wrap: break-word !important;">
+             <strong style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+              关于我们
+             </strong>
+            </span>
+           </p>
+           <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; text-align: left; line-height: 25.6px; word-wrap: break-word !important;">
+            <span style="max-width: 100%; color: rgb(0, 0, 0); line-height: 1.6; box-sizing: border-box !important; word-wrap: break-word !important;">
+             微信公众号“爬虫俱乐部”分享实用的stata命令，欢迎转载、打赏。爬虫俱乐部是由李春涛教授领导下的研究生及本科生组成的大数据分析和数据挖掘团队。
+            </span>
+           </p>
+          </section>
+         </section>
+        </section>
+       </section>
+      </section>
+     </section>
+    </section>
+   </section>
+   <p style="line-height: normal;">
+    <br/>
+   </p>
+   <p style="max-width: 100%; min-height: 1em; color: rgb(62, 62, 62); font-size: 14px; text-align: left; white-space: normal; background-color: rgb(255, 255, 255); text-indent: 0em; box-sizing: border-box !important; word-wrap: break-word !important;">
+    <span style="color: rgb(255, 41, 65); font-family: 微软雅黑; text-align: justify;">
+     此外，欢迎大家踊跃投稿，介绍一些关于stata的数据处理和分析技巧。
+    </span>
+    <br/>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; white-space: normal; line-height: 25.6px; font-size: 15px; text-align: justify; font-family: 微软雅黑; color: rgb(244, 22, 10); background-color: rgb(255, 255, 255); word-wrap: break-word !important;">
+    <span style="max-width: 100%; color: rgb(255, 41, 65); line-height: 23.27px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     投稿邮箱：xueyuan19920310@163.com
+    </span>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; white-space: normal; line-height: 25.6px; font-size: 15px; text-align: justify; font-family: 微软雅黑; color: rgb(244, 22, 10); background-color: rgb(255, 255, 255); word-wrap: break-word !important;">
+    <span style="max-width: 100%; color: rgb(255, 41, 65); line-height: 23.27px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     投稿要求：
+    </span>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; white-space: normal; line-height: 25.6px; font-size: 15px; text-align: justify; font-family: 微软雅黑; color: rgb(244, 22, 10); background-color: rgb(255, 255, 255); word-wrap: break-word !important;">
+    <span style="max-width: 100%; color: rgb(255, 41, 65); line-height: 23.27px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     1）必须原创，禁止抄袭；
+    </span>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; white-space: normal; line-height: 25.6px; font-size: 15px; text-align: justify; font-family: 微软雅黑; color: rgb(244, 22, 10); background-color: rgb(255, 255, 255); word-wrap: break-word !important;">
+    <span style="max-width: 100%; color: rgb(255, 41, 65); line-height: 23.27px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     2）必须准确，详细，有例子，有截图；
+    </span>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; white-space: normal; line-height: 25.6px; font-size: 15px; text-align: justify; font-family: 微软雅黑; color: rgb(244, 22, 10); background-color: rgb(255, 255, 255); word-wrap: break-word !important;">
+    <span style="max-width: 100%; color: rgb(255, 41, 65); line-height: 23.27px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     注意事项：
+    </span>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; white-space: normal; line-height: 25.6px; font-size: 15px; text-align: justify; font-family: 微软雅黑; color: rgb(244, 22, 10); background-color: rgb(255, 255, 255); word-wrap: break-word !important;">
+    <span style="max-width: 100%; color: rgb(255, 41, 65); line-height: 23.27px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     1）所有投稿都会经过本公众号运营团队成员的审核，审核通过才可录用，一经录用，会在该推文里为作者署名，并有赏金分成。
+    </span>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; white-space: normal; line-height: 25.6px; font-size: 15px; text-align: justify; font-family: 微软雅黑; color: rgb(244, 22, 10); background-color: rgb(255, 255, 255); word-wrap: break-word !important;">
+    <span style="max-width: 100%; color: rgb(255, 41, 65); line-height: 23.27px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     2）邮件请注明投稿，邮件名称为“投稿”+“推文名称”。
+    </span>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; white-space: normal; line-height: 25.6px; font-size: 15px; text-align: justify; font-family: 微软雅黑; color: rgb(244, 22, 10); background-color: rgb(255, 255, 255); word-wrap: break-word !important;">
+    <span style="max-width: 100%; color: rgb(216, 79, 169); line-height: 23.27px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     3）应广大读者要求，现开通有偿问答服务，如果大家遇到关于stata分析数据的问题，可以在公众号中提出，只需支付少量赏金，我们会在后期的推文里给予解答。
+    </span>
+   </p>
+   <p style="max-width: 100%; min-height: 1em; color: rgb(62, 62, 62); font-size: 14px; text-align: center; text-indent: 0em; white-space: normal; background-color: rgb(255, 255, 255); box-sizing: border-box !important; word-wrap: break-word !important;">
+    <img _width="100%" class="" data-fail="0" data-ratio="1" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhZqUISMchIJEE7OS8Zeg4QFgNICdGooIvMffqIjUibOYFZq4vtU5dVicfk2BczkmfP0vklsRthyqGHw/640?wx_fmt=jpeg" data-type="jpeg" data-w="430" src="%E5%90%88%E5%B9%B6%E8%BE%93%E5%87%BA%E5%9B%9E%E5%BD%92%E7%BB%93%E6%9E%9C%E5%92%8C%E5%85%B6%E4%BB%96%E6%A3%80%E9%AA%8C%E7%BB%93%E6%9E%9C%E2%80%94%E2%80%94esttab%E5%92%8Cestadd_files/640.jpg" style="box-sizing: border-box !important; overflow-wrap: break-word !important; visibility: visible !important; width: 100% !important; height: auto !important;" width="100%"/>
+    <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+   </p>
+   <p style="text-align: center;">
+    <span style="max-width: 100%; text-align: center;  background-color: rgb(255, 255, 255); color: rgb(120, 114, 114); font-family: 微软雅黑; font-size: 15px; letter-spacing: 2px; line-height: 19.2px; text-indent: 2em; box-sizing: border-box !important; word-wrap: break-word !important;">
+     欢迎关注爬虫俱乐部
+    </span>
+   </p>
+  </div>
+  <script nonce="73212100" type="text/javascript">
+   var first_sceen__time = (+new Date());
+
+                    if ("" == 1 && document.getElementById('js_content')) {
+                        document.getElementById('js_content').addEventListener("selectstart",function(e){ e.preventDefault(); });
+                    }
+
+                    
+                    (function(){
+                        if (navigator.userAgent.indexOf("WindowsWechat") != -1){
+                            var link = document.createElement('link');
+                            var head = document.getElementsByTagName('head')[0];
+                            link.rel = 'stylesheet';
+                            link.type = 'text/css';
+                            link.href = "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/page_mp_article_improve_winwx31619e.css";
+                            head.appendChild(link);
+                        }
+                    })();
+  </script>
+  <div class="ct_mpda_wrp" id="js_sponsor_ad_area" style="display:none;">
+  </div>
+  <div class="reward_area tc" id="js_reward_area" style="display:none;">
+   <p class="tips_global reward_tips">
+    说得好就赏个铜板呗！
+   </p>
+   <p>
+    <a class="reward_access" href="##" id="js_reward_link">
+     赞赏
+    </a>
+   </p>
+   <div class="reward_area_inner" id="js_reward_inner" style="display: none; width: 578px;">
+    <p class="tips_global reward_user_tips">
+     <a href="##" id="js_reward_total">
+     </a>
+     人赞赏
+    </p>
+    <div class="reward_user_list" id="js_reward_list">
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="rich_media_tool" id="js_toobar3">
+  <div class="media_tool_meta tips_global meta_primary" id="js_read_area3" style="display:none;">
+   阅读
+   <span id="readNum3">
+   </span>
+  </div>
+  <span class="media_tool_meta meta_primary tips_global meta_praise" id="like3" style="display:none;">
+   <i class="icon_praise_gray">
+   </i>
+   <span class="praise_num" id="likeNum3">
+   </span>
+  </span>
+  <a class="media_tool_meta tips_global meta_extra" href="##" id="js_report_article3" style="display:none;">
+   投诉
+  </a>
+ </div>
+</div>
+</body></html>

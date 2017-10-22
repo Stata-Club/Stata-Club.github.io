@@ -1,0 +1,856 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body><div class="rich_media_area_primary" id="page-content">
+ <div id="img-content">
+  <h2 class="rich_media_title" id="activity-name">
+  </h2>
+  <div class="rich_media_meta_list" id="meta_content">
+  </div>
+  <div class="rich_media_content " id="js_content">
+   <section style="box-sizing: border-box; background-color: rgb(255, 255, 255);">
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" text-align: center; margin-top: 10px; margin-bottom: 10px;  box-sizing: border-box; ">
+      <img class="" data-fail="0" data-ratio="0.046875" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhacxPmcNPan2XDwH1RkhEa5G32JKquLeWZQAGSKc1TZ1EVbfPgNicwGyj83n6h7qWUu1jyfF11BPOQ/0?wx_fmt=png" data-type="png" data-w="640" src="%E5%8F%8C%E9%87%8D%E5%B7%AE%E5%88%86%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B9%B3%E8%A1%8C%E8%B6%8B%E5%8A%BF%E5%81%87%E5%AE%9A%E5%A6%82%E4%BD%95%E6%A3%80%E9%AA%8C%EF%BC%9F%20%E2%80%94%E2%80%94coefplot%E5%91%BD%E4%BB%A4%E6%9D%A5%E5%91%8A%E8%AF%89%E4%BD%A0%EF%BC%88%E4%B8%80%EF%BC%89_files/640_005.png" style="vertical-align: middle; box-sizing: border-box; width: auto !important; height: auto !important; visibility: visible !important;"/>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        <strong>
+         双重差分模型（difference-in-differences）
+        </strong>
+        主
+要被用于社会学中的政策效果评估。其原理是基于一个反事实的框架来评估政策发生和不发生这两种情况下被观测因素y的变化。如果一个外生的政策冲击将样本分
+为两组—受政策干预的Treat组和未受政策干预的Control组，且在政策冲击前，Treat组和Control组的y没有显著差异，那么我们就可以
+将Control组在政策发生前后y的变化看作Treat组未受政策冲击时的状况（反事实的结果）。通过比较Treat组y的变化(D1)以及
+Control组y的变化（D2），我们就可以得到政策冲击的实际效果(DD=D1-D2)。
+       </p>
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        具体地，单一冲击时点的双重差分的模型如下：
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" text-align: center; margin-top: 10px; margin-bottom: 10px;  box-sizing: border-box; ">
+      <img class="" data-fail="0" data-ratio="0.07380073800738007" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhacxPmcNPan2XDwH1RkhEa5KCialgsqG1ksLbktRTaCpEoYebYes00fibM4KnRicdePpr5WicWSypqCiaA/0?wx_fmt=png" data-type="png" data-w="271" src="%E5%8F%8C%E9%87%8D%E5%B7%AE%E5%88%86%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B9%B3%E8%A1%8C%E8%B6%8B%E5%8A%BF%E5%81%87%E5%AE%9A%E5%A6%82%E4%BD%95%E6%A3%80%E9%AA%8C%EF%BC%9F%20%E2%80%94%E2%80%94coefplot%E5%91%BD%E4%BB%A4%E6%9D%A5%E5%91%8A%E8%AF%89%E4%BD%A0%EF%BC%88%E4%B8%80%EF%BC%89_files/640.png" style="vertical-align: middle; box-sizing: border-box; width: auto !important; height: auto !important; visibility: visible !important;"/>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        其中，Ti为政策虚拟变量；Ai为时间虚拟变量； Ti ×At为两者的交互项；b3即为我们需要的双重差分估计量。
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" text-align: center; margin-top: 10px; margin-bottom: 10px;  box-sizing: border-box; ">
+      <img class="" data-fail="0" data-ratio="0.7864077669902912" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhacxPmcNPan2XDwH1RkhEa5PzfA8PwYrxwg4UwWGibA9LXeADOHG2pzRdTnv0Z7ksvjHJUT6nahYJQ/0?wx_fmt=png" data-type="png" data-w="309" src="%E5%8F%8C%E9%87%8D%E5%B7%AE%E5%88%86%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B9%B3%E8%A1%8C%E8%B6%8B%E5%8A%BF%E5%81%87%E5%AE%9A%E5%A6%82%E4%BD%95%E6%A3%80%E9%AA%8C%EF%BC%9F%20%E2%80%94%E2%80%94coefplot%E5%91%BD%E4%BB%A4%E6%9D%A5%E5%91%8A%E8%AF%89%E4%BD%A0%EF%BC%88%E4%B8%80%EF%BC%89_files/640_002.png" style="vertical-align: middle; box-sizing: border-box; width: auto !important; height: auto !important; visibility: visible !important;"/>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        需要特别指出的是，只有在满足”政策冲击前Treat组和Control组的y没有显著差异”（即平行性假定）的条件下，得到的双重差分估计量才是无偏的。
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" text-align: center; margin-top: 10px; margin-bottom: 10px;  box-sizing: border-box; ">
+      <p>
+       <img _width="100%" class="" data-fail="0" data-ratio="0.7931596091205212" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhacxPmcNPan2XDwH1RkhEa5NVyy5C6nDoSJfticx1I5Ua16Bn5sOKFtrVHgYglEmoicCWzlDsU51Jcg/0?wx_fmt=png" data-type="png" data-w="614" src="%E5%8F%8C%E9%87%8D%E5%B7%AE%E5%88%86%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B9%B3%E8%A1%8C%E8%B6%8B%E5%8A%BF%E5%81%87%E5%AE%9A%E5%A6%82%E4%BD%95%E6%A3%80%E9%AA%8C%EF%BC%9F%20%E2%80%94%E2%80%94coefplot%E5%91%BD%E4%BB%A4%E6%9D%A5%E5%91%8A%E8%AF%89%E4%BD%A0%EF%BC%88%E4%B8%80%EF%BC%89_files/640_003.jpg" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+      </p>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" text-align: center; margin-top: 10px; margin-bottom: 10px;  box-sizing: border-box; ">
+      <img class="" data-fail="0" data-ratio="0.03125" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhacxPmcNPan2XDwH1RkhEa5mZ7D5fWjcQ0RQqvLPXSHgFiceIYxsOQEp0aNVM2RZsaEIlNAeSdvvEw/0?wx_fmt=png" data-type="png" data-w="640" src="%E5%8F%8C%E9%87%8D%E5%B7%AE%E5%88%86%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B9%B3%E8%A1%8C%E8%B6%8B%E5%8A%BF%E5%81%87%E5%AE%9A%E5%A6%82%E4%BD%95%E6%A3%80%E9%AA%8C%EF%BC%9F%20%E2%80%94%E2%80%94coefplot%E5%91%BD%E4%BB%A4%E6%9D%A5%E5%91%8A%E8%AF%89%E4%BD%A0%EF%BC%88%E4%B8%80%EF%BC%89_files/640_003.png" style="vertical-align: middle; box-sizing: border-box; width: auto !important; height: auto !important; visibility: visible !important;"/>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        下面我们就通过模拟数据来进一步介绍双重差分估计和平行性假定的检验：
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" margin: 10px 0%;  box-sizing: border-box; ">
+      <section class="" style="display: inline-block; vertical-align: middle; width: 16%; box-sizing: border-box;">
+       <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+        <section class="" style=" text-align: center; margin: 10px 0%;  box-sizing: border-box; ">
+         <img class="" data-fail="0" data-ratio="0.952" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhacxPmcNPan2XDwH1RkhEa527pqTw7l8uCWf1sh8oibPiceQu0Tu4scHqlibIKA5WZviaMwmM4Xwq7CUQ/0?wx_fmt=png" data-type="png" data-w="125" src="%E5%8F%8C%E9%87%8D%E5%B7%AE%E5%88%86%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B9%B3%E8%A1%8C%E8%B6%8B%E5%8A%BF%E5%81%87%E5%AE%9A%E5%A6%82%E4%BD%95%E6%A3%80%E9%AA%8C%EF%BC%9F%20%E2%80%94%E2%80%94coefplot%E5%91%BD%E4%BB%A4%E6%9D%A5%E5%91%8A%E8%AF%89%E4%BD%A0%EF%BC%88%E4%B8%80%EF%BC%89_files/640_006.png" style="vertical-align: middle; box-sizing: border-box; width: auto !important; height: auto !important; visibility: visible !important;"/>
+        </section>
+       </section>
+      </section>
+      <section class="" style="display: inline-block; vertical-align: middle; width: 68%; box-sizing: border-box;">
+       <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+        <section class="" style=" margin-top: 10px; margin-right: 0%; margin-left: 0%;  box-sizing: border-box; ">
+         <section class="" style="text-align: center; font-size: 22px; color: rgb(103, 104, 158); line-height: 1.4; box-sizing: border-box;">
+          <p style="box-sizing: border-box;">
+           <strong style="box-sizing: border-box;">
+            一、构造数据
+           </strong>
+          </p>
+         </section>
+        </section>
+       </section>
+      </section>
+      <section class="" style="display: inline-block; vertical-align: middle; width: 16%; box-sizing: border-box;">
+       <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+        <section class="" style=" text-align: center; margin: 10px 0%;  box-sizing: border-box; ">
+         <img class="" data-fail="0" data-ratio="1" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhacxPmcNPan2XDwH1RkhEa53XNZE4jOEKmxZsLnwBHMRAOGOichImdaG2U3icJTE2k8q44sPXpI22Vg/0?wx_fmt=png" data-type="png" data-w="120" src="%E5%8F%8C%E9%87%8D%E5%B7%AE%E5%88%86%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B9%B3%E8%A1%8C%E8%B6%8B%E5%8A%BF%E5%81%87%E5%AE%9A%E5%A6%82%E4%BD%95%E6%A3%80%E9%AA%8C%EF%BC%9F%20%E2%80%94%E2%80%94coefplot%E5%91%BD%E4%BB%A4%E6%9D%A5%E5%91%8A%E8%AF%89%E4%BD%A0%EF%BC%88%E4%B8%80%EF%BC%89_files/640_004.png" style="vertical-align: middle; box-sizing: border-box; width: auto !important; height: auto !important; visibility: visible !important;"/>
+        </section>
+       </section>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        1.首先我们构造观测值并生成随机数种子
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         clear
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         set more off
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         set obs 1000
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         set seed 123456789
+        </span>
+       </p>
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        2.构造面板数据，将1000个样本，分为两组：实验组(Treat==1)，对照组(Treat==0)
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         gen Treat=(uniform()&lt;=0.6)
+        </span>
+       </p>
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        3.根据随机数构造公司-年度数据
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         bysort Treat: gen int group=uniform()*90+Treat*90+1
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         bysort group: gen year=2016-_n+1
+        </span>
+       </p>
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        4.假定2012年，实验组(Treat==1)公司受到一个外生政策冲击
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         gen Post=(year&gt;=2012)
+        </span>
+       </p>
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        5.模拟被解释变量y，控制变量x1，x2
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         gen y=ln(1+uniform()*100)
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         replace y=y + ln(uniform()*10+rnormal()*3) if Treat==1 &amp; Post==1
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <br style="box-sizing: border-box;"/>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         gen x1=rnormal()*3
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         gen x2=rnormal()+uniform()
+        </span>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" text-align: center; margin-top: 10px; margin-bottom: 10px;  box-sizing: border-box; ">
+      <p>
+       <img _width="100%" class="" data-fail="0" data-ratio="0.9965753424657534" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhacxPmcNPan2XDwH1RkhEa5cUDNnnEFvia1aib4mFfvZ94K64S0wrhhdxicQ6ySFnSLduxh1Bg7MrStg/0?wx_fmt=png" data-type="png" data-w="584" src="%E5%8F%8C%E9%87%8D%E5%B7%AE%E5%88%86%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B9%B3%E8%A1%8C%E8%B6%8B%E5%8A%BF%E5%81%87%E5%AE%9A%E5%A6%82%E4%BD%95%E6%A3%80%E9%AA%8C%EF%BC%9F%20%E2%80%94%E2%80%94coefplot%E5%91%BD%E4%BB%A4%E6%9D%A5%E5%91%8A%E8%AF%89%E4%BD%A0%EF%BC%88%E4%B8%80%EF%BC%89_files/640_005.jpg" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+      </p>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        我们可以看到，公司id（group）、年份（year）、分组标识（Treat）、冲击发生标识（Post）、被解释变量（y）以及控制变量（x1, x2）已经生成。
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" margin: 10px 0%;  box-sizing: border-box; ">
+      <section class="" style="display: inline-block; vertical-align: middle; width: 16%; box-sizing: border-box;">
+       <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+        <section class="" style=" text-align: center; margin: 10px 0%;  box-sizing: border-box; ">
+         <img class="" data-fail="0" data-ratio="0.952" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhacxPmcNPan2XDwH1RkhEa527pqTw7l8uCWf1sh8oibPiceQu0Tu4scHqlibIKA5WZviaMwmM4Xwq7CUQ/0?wx_fmt=png" data-type="png" data-w="125" src="%E5%8F%8C%E9%87%8D%E5%B7%AE%E5%88%86%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B9%B3%E8%A1%8C%E8%B6%8B%E5%8A%BF%E5%81%87%E5%AE%9A%E5%A6%82%E4%BD%95%E6%A3%80%E9%AA%8C%EF%BC%9F%20%E2%80%94%E2%80%94coefplot%E5%91%BD%E4%BB%A4%E6%9D%A5%E5%91%8A%E8%AF%89%E4%BD%A0%EF%BC%88%E4%B8%80%EF%BC%89_files/640_006.png" style="vertical-align: middle; box-sizing: border-box; width: auto !important; height: auto !important; visibility: visible !important;"/>
+        </section>
+       </section>
+      </section>
+      <section class="" style="display: inline-block; vertical-align: middle; width: 68%; box-sizing: border-box;">
+       <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+        <section class="" style=" margin-top: 10px; margin-right: 0%; margin-left: 0%;  box-sizing: border-box; ">
+         <section class="" style="text-align: center; font-size: 22px; color: rgb(103, 104, 158); line-height: 1.4; box-sizing: border-box;">
+          <p style="box-sizing: border-box;">
+           <strong style="box-sizing: border-box;">
+            二、
+           </strong>
+           <strong style="box-sizing: border-box;">
+            <span style="letter-spacing: 0px; line-height: 1.4; box-sizing: border-box;">
+             双重差分模型估计
+            </span>
+           </strong>
+          </p>
+         </section>
+        </section>
+       </section>
+      </section>
+      <section class="" style="display: inline-block; vertical-align: middle; width: 16%; box-sizing: border-box;">
+       <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+        <section class="" style=" text-align: center; margin: 10px 0%;  box-sizing: border-box; ">
+         <img class="" data-fail="0" data-ratio="1" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhacxPmcNPan2XDwH1RkhEa53XNZE4jOEKmxZsLnwBHMRAOGOichImdaG2U3icJTE2k8q44sPXpI22Vg/0?wx_fmt=png" data-type="png" data-w="120" src="%E5%8F%8C%E9%87%8D%E5%B7%AE%E5%88%86%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B9%B3%E8%A1%8C%E8%B6%8B%E5%8A%BF%E5%81%87%E5%AE%9A%E5%A6%82%E4%BD%95%E6%A3%80%E9%AA%8C%EF%BC%9F%20%E2%80%94%E2%80%94coefplot%E5%91%BD%E4%BB%A4%E6%9D%A5%E5%91%8A%E8%AF%89%E4%BD%A0%EF%BC%88%E4%B8%80%EF%BC%89_files/640_004.png" style="vertical-align: middle; box-sizing: border-box; width: auto !important; height: auto !important; visibility: visible !important;"/>
+        </section>
+       </section>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         gen Treat_Post=Treat*Post
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         xi: regress y Treat Post Treat*Post x1 x2 i.year, vce(robust)
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         est store OLS_DID
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <br style="box-sizing: border-box;"/>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         xtset group year
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         xi: xtreg y Post Treat*Post x1 x2 i.year,fe vce(robust)
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         est store FE_DID
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <br style="box-sizing: border-box;"/>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         esttab OLS_DID FE_DID, ar2(%9.3f) b(%9.3f) t(%9.3f) nogap compress ///
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         indicate("Year=_Iyear*") star(* 0.1 ** 0.05 *** 0.01)
+        </span>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" text-align: center; margin-top: 10px; margin-bottom: 10px;  box-sizing: border-box; ">
+      <p>
+       <img _width="100%" class="" data-fail="0" data-ratio="1.2905405405405406" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhacxPmcNPan2XDwH1RkhEa59soictEHzBxUTG9IxxUeJkAvja2NkSMib87Wmf5KI7gZaOEIwAZxSN0A/0?wx_fmt=png" data-type="png" data-w="444" src="%E5%8F%8C%E9%87%8D%E5%B7%AE%E5%88%86%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B9%B3%E8%A1%8C%E8%B6%8B%E5%8A%BF%E5%81%87%E5%AE%9A%E5%A6%82%E4%BD%95%E6%A3%80%E9%AA%8C%EF%BC%9F%20%E2%80%94%E2%80%94coefplot%E5%91%BD%E4%BB%A4%E6%9D%A5%E5%91%8A%E8%AF%89%E4%BD%A0%EF%BC%88%E4%B8%80%EF%BC%89_files/640_004.jpg" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+      </p>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        结果显示交互项（Treat*Post）的系数显著为正，表明政策实施导致了y显著增加。
+        <span style="color: rgb(249, 110, 87); box-sizing: border-box;">
+         然而，此时我们还不能确切的说，这一政策效果的评估是准确的，
+        </span>
+        因为只有在对照组和实验组满足平行性假定的时候，Treat和post的交互项才是处理效应。因此平行趋势假定的重要性不言而喻。平行性假定的检验可以通过回归分析或者绘图的方式进行。
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" margin: 10px 0%;  box-sizing: border-box; ">
+      <section class="" style="display: inline-block; vertical-align: middle; width: 16%; box-sizing: border-box;">
+       <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+        <section class="" style=" text-align: center; margin: 10px 0%;  box-sizing: border-box; ">
+         <img class="" data-fail="0" data-ratio="0.952" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhacxPmcNPan2XDwH1RkhEa527pqTw7l8uCWf1sh8oibPiceQu0Tu4scHqlibIKA5WZviaMwmM4Xwq7CUQ/0?wx_fmt=png" data-type="png" data-w="125" src="%E5%8F%8C%E9%87%8D%E5%B7%AE%E5%88%86%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B9%B3%E8%A1%8C%E8%B6%8B%E5%8A%BF%E5%81%87%E5%AE%9A%E5%A6%82%E4%BD%95%E6%A3%80%E9%AA%8C%EF%BC%9F%20%E2%80%94%E2%80%94coefplot%E5%91%BD%E4%BB%A4%E6%9D%A5%E5%91%8A%E8%AF%89%E4%BD%A0%EF%BC%88%E4%B8%80%EF%BC%89_files/640_006.png" style="vertical-align: middle; box-sizing: border-box; width: auto !important; height: auto !important; visibility: visible !important;"/>
+        </section>
+       </section>
+      </section>
+      <section class="" style="display: inline-block; vertical-align: middle; width: 68%; box-sizing: border-box;">
+       <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+        <section class="" style=" margin-top: 10px; margin-right: 0%; margin-left: 0%;  box-sizing: border-box; ">
+         <section class="" style="text-align: center; font-size: 22px; color: rgb(103, 104, 158); line-height: 1.4; box-sizing: border-box;">
+          <p style="box-sizing: border-box;">
+           <strong style="box-sizing: border-box;">
+            三、
+           </strong>
+           <strong style="box-sizing: border-box;">
+            <span style="letter-spacing: 0px; line-height: 1.4; box-sizing: border-box;">
+             平行性假定和
+            </span>
+           </strong>
+          </p>
+          <p style="box-sizing: border-box;">
+           <strong style="box-sizing: border-box;">
+            <span style="letter-spacing: 0px; line-height: 1.4; box-sizing: border-box;">
+             动态效果分析
+            </span>
+           </strong>
+          </p>
+         </section>
+        </section>
+       </section>
+      </section>
+      <section class="" style="display: inline-block; vertical-align: middle; width: 16%; box-sizing: border-box;">
+       <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+        <section class="" style=" text-align: center; margin: 10px 0%;  box-sizing: border-box; ">
+         <img class="" data-fail="0" data-ratio="1" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhacxPmcNPan2XDwH1RkhEa53XNZE4jOEKmxZsLnwBHMRAOGOichImdaG2U3icJTE2k8q44sPXpI22Vg/0?wx_fmt=png" data-type="png" data-w="120" src="%E5%8F%8C%E9%87%8D%E5%B7%AE%E5%88%86%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B9%B3%E8%A1%8C%E8%B6%8B%E5%8A%BF%E5%81%87%E5%AE%9A%E5%A6%82%E4%BD%95%E6%A3%80%E9%AA%8C%EF%BC%9F%20%E2%80%94%E2%80%94coefplot%E5%91%BD%E4%BB%A4%E6%9D%A5%E5%91%8A%E8%AF%89%E4%BD%A0%EF%BC%88%E4%B8%80%EF%BC%89_files/640_004.png" style="vertical-align: middle; box-sizing: border-box; width: auto !important; height: auto !important; visibility: visible !important;"/>
+        </section>
+       </section>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         gen Dyear=year-2012
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         <br/>
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         gen Before2=(Dyear==-2 &amp; Treat==1)
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         lab var Before2 "2 Year Prior"
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         <br/>
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         gen Before1=(Dyear==-1 &amp; Treat==1)
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         lab var Before1 "1 Year Prior"
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         <br/>
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         gen Current=(Dyear==0 &amp; Treat==1)
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         lab var Current "Year of Adoption"
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <br style="box-sizing: border-box;"/>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         gen After1=(Dyear==1 &amp; Treat==1)
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         lab var After1 "1 Year After"
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         <br/>
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         gen After2=(Dyear==2 &amp; Treat==1)
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         lab var After2 "2 Year After"
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         <br/>
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         gen After3_=(Dyear&gt;=3 &amp; Treat==1)
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         lab var After3_ "3 or More Year After"
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         <br/>
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         xtset group year
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         xi:xtreg y Treat Post Before2 Before1 Current After1 ///
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         After2 After3_ x1 x2 i.year,fe vce(robust)
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(136, 136, 136);">
+         est store Dynamic
+        </span>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" text-align: center; margin-top: 10px; margin-bottom: 10px;  box-sizing: border-box; ">
+      <p>
+       <img _width="100%" class="" data-fail="0" data-ratio="0.7566137566137566" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhacxPmcNPan2XDwH1RkhEa53YIicxJKJLFEFrdYmRA3FVtoW7okVkEzCPkAUKhvgLemVw8CdqwfoGw/0?wx_fmt=png" data-type="png" data-w="945" src="%E5%8F%8C%E9%87%8D%E5%B7%AE%E5%88%86%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B9%B3%E8%A1%8C%E8%B6%8B%E5%8A%BF%E5%81%87%E5%AE%9A%E5%A6%82%E4%BD%95%E6%A3%80%E9%AA%8C%EF%BC%9F%20%E2%80%94%E2%80%94coefplot%E5%91%BD%E4%BB%A4%E6%9D%A5%E5%91%8A%E8%AF%89%E4%BD%A0%EF%BC%88%E4%B8%80%EF%BC%89_files/640_002.jpg" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+      </p>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        Before2，Before1
+均为虚拟变量，如果观测值是受到政策冲击前的第2年和第1年的数据，则该指标分别取1，否则取0；如果观测值是受到政策冲击当年的数据，则Current
+取值为1，否则取0；当观测值是受到政策冲击后的第1年、第2年、第3年的数据时，After1、After2、After3分别取1，否则取0。
+       </p>
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        我们看到Before2，Before1的系数均不显著，而Current、After1、After2、After3的系数均正向显著，说明双重差分模型满足平行趋势假定。
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        在下一期推文中我们将介绍关键部分，即
+        <strong>
+         如何使用
+         <span style="letter-spacing: 0px; line-height: 1.6; box-sizing: border-box;">
+          coefplot命令
+         </span>
+         <span style="letter-spacing: 0px; line-height: 1.6; box-sizing: border-box;">
+          输出图形
+         </span>
+        </strong>
+        <span style="letter-spacing: 0px; line-height: 1.6; box-sizing: border-box;">
+         ，
+         <span style="font-size: 14px; line-height: 25.2px; text-indent: 28px;  background-color: rgb(255, 255, 255);">
+          用图形来反映平行趋势假定
+         </span>
+        </span>
+        <span style="letter-spacing: 0px; line-height: 1.6; box-sizing: border-box;">
+         。预知后事如何，请继续关注我们的公众号哟~祝大家周末愉快！
+        </span>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" text-align: center; margin-top: 10px; margin-bottom: 10px;  box-sizing: border-box; ">
+      <img class="" data-ratio="0.00625" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhacxPmcNPan2XDwH1RkhEa5YUIRW4Dyl3LW8ZhLDibOujyqiclwXzrJsIuBhQ2uGCxH2D9H25pl44uw/0?wx_fmt=png" data-type="png" data-w="640" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" style="vertical-align: middle; box-sizing: border-box; width: 640px !important; height: 4px !important;"/>
+     </section>
+    </section>
+   </section>
+   <p style="font-size: 16px; white-space: normal; max-width: 100%; min-height: 1em; color: rgb(62, 62, 62); font-family: 微软雅黑; line-height: 24px; text-indent: 32px; box-sizing: border-box !important; word-wrap: break-word !important; background-image: initial; background-attachment: initial; background-color: rgb(255, 255, 255); background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">
+    <span style="max-width: 100%; text-align: justify; color: rgb(136, 136, 136); text-indent: 2em; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     以上就是今天给大家分享的内容了，说得好就赏个铜板呗！有钱的捧个钱场，有人的捧个人场~。
+    </span>
+   </p>
+   <p style="font-size: 16px; line-height: 25.6px; white-space: normal; max-width: 100%; min-height: 1em; color: rgb(62, 62, 62); font-family: 微软雅黑; text-indent: 2em; box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    <span style="max-width: 100%; text-align: justify; color: rgb(122, 79, 214); line-height: 25.6px; text-indent: 2em; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     应广大粉丝要求，爬虫俱乐部的推文公众号打赏功能可以开发票啦，累计打赏超过1000元我们即可给您开具发票，发票类别为“咨询费”。用心做事，只为做您更贴心的小爬虫。第一批发票已经寄到各位小主的手中，大家快来给小爬虫打赏呀~
+    </span>
+   </p>
+   <section style="font-size: 16px; line-height: 25.6px; white-space: normal; max-width: 100%; box-sizing: border-box; color: rgb(62, 62, 62); font-family: 微软雅黑; text-align: center; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    <section powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+     <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+      <section style="max-width: 100%; box-sizing: border-box; line-height: 1.8; font-size: 14px; word-wrap: break-word !important;">
+       <p style="max-width: 100%; min-height: 1em; text-align: right; line-height: 25.6px; text-indent: 28px; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;">
+        <span style="max-width: 100%; color: rgb(122, 79, 214); line-height: 25.6px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+        </span>
+        <span style="max-width: 100%; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+         文字编辑：徐苾雯
+        </span>
+       </p>
+       <p style="max-width: 100%; min-height: 1em; text-align: right; line-height: 25.6px; text-indent: 28px; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;">
+        <span style="max-width: 100%; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+         技术总编：刘贝贝
+        </span>
+       </p>
+       <hr style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+       <hr style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+       <p style="max-width: 100%; min-height: 1em; line-height: 25.6px; text-indent: 0em; font-size: 16px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important;">
+        <strong style="max-width: 100%; text-align: justify; color: rgb(136, 136, 136); line-height: 23.27px; text-indent: 0em; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+         往期推文推荐：
+        </strong>
+        <span style="max-width: 100%; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+        </span>
+       </p>
+       <p style="max-width: 100%; min-height: 1em; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important;">
+        <span style="max-width: 100%; font-size: 15px; box-sizing: border-box !important; word-wrap: break-word !important;">
+         1.
+        </span>
+        <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247486256&amp;idx=1&amp;sn=ac0e923153845a620ebcd57045f105a0&amp;chksm=e9af439fded8ca89ea91469c79d865dde3e12bfcfe55f4a8175785032a8ffdc5f24f8cdab400&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247486256&amp;idx=1&amp;sn=ac0e923153845a620ebcd57045f105a0&amp;chksm=e9af439fded8ca89ea91469c79d865dde3e12bfcfe55f4a8175785032a8ffdc5f24f8cdab400&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; font-size: 15px; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+         高校学术大神：你的导师上榜了吗？
+        </a>
+       </p>
+       <section powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; line-height: 25.6px; font-size: 16px; word-wrap: break-word !important;">
+        <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+         <section style="max-width: 100%; box-sizing: border-box; line-height: 1.8; font-size: 14px; word-wrap: break-word !important;">
+          <section style="max-width: 100%; box-sizing: border-box; line-height: 2.2; word-wrap: break-word !important;">
+           <section powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+            <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+             <section style="max-width: 100%; box-sizing: border-box; line-height: 1.8; word-wrap: break-word !important;">
+              <section style="max-width: 100%; box-sizing: border-box; line-height: 25.6px; word-wrap: break-word !important;">
+               <section powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                 <section style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+                  <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <span style="max-width: 100%; text-align: justify; color: rgb(0, 0, 0); line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                    2.
+                   </span>
+                   <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247485548&amp;idx=1&amp;sn=478ba30875877af79d97e9ed4eecaa7c&amp;chksm=e9af40c3ded8c9d5dc76879c0d21bb2e5e8fd182c59f2545c9879706403cafb260281dc13fce&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247485548&amp;idx=1&amp;sn=478ba30875877af79d97e9ed4eecaa7c&amp;chksm=e9af40c3ded8c9d5dc76879c0d21bb2e5e8fd182c59f2545c9879706403cafb260281dc13fce&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; text-align: justify; line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                    中国高校财经、管理与综合类期刊灌水排行榜
+                   </a>
+                   <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484899&amp;idx=1&amp;sn=0da9bcae33696501a5eb8c8ab9c5b5ff&amp;chksm=e9af4d4cded8c45a84ed90d75464c3a866a79295f355f75e68943300fa58eb2ad1d18e016ef5&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484899&amp;idx=1&amp;sn=0da9bcae33696501a5eb8c8ab9c5b5ff&amp;chksm=e9af4d4cded8c45a84ed90d75464c3a866a79295f355f75e68943300fa58eb2ad1d18e016ef5&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; text-align: justify; line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                   </a>
+                  </p>
+                  <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <span style="max-width: 100%; color: rgb(0, 0, 0); line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                    3.
+                    <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484941&amp;idx=1&amp;sn=f348ba26ed2e9c5c25efd14e3c26c506&amp;chksm=e9af4ea2ded8c7b4f0c98365323ca46337259f9ba58c9d2541b94898bcd450c162108ba9a577&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484941&amp;idx=1&amp;sn=f348ba26ed2e9c5c25efd14e3c26c506&amp;chksm=e9af4ea2ded8c7b4f0c98365323ca46337259f9ba58c9d2541b94898bcd450c162108ba9a577&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                     关于RTF你不知道的命令之番外篇
+                    </a>
+                   </span>
+                  </p>
+                  <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <span style="max-width: 100%; text-align: justify; color: rgb(0, 0, 0); line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                    4.
+                    <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484326&amp;idx=1&amp;sn=179a96c391bae0ff47e9f84b3e960aae&amp;chksm=e9af4b09ded8c21f705cc74ba9a18f996a6fed246222e51b404425e79a30b041bf2eef5c5d44&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484326&amp;idx=1&amp;sn=179a96c391bae0ff47e9f84b3e960aae&amp;chksm=e9af4b09ded8c21f705cc74ba9a18f996a6fed246222e51b404425e79a30b041bf2eef5c5d44&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                     免费事件研究，一片片从邮局寄来
+                    </a>
+                   </span>
+                  </p>
+                  <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <span style="max-width: 100%; text-align: justify; color: rgb(0, 0, 0); line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                    5.
+                   </span>
+                   <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484452&amp;idx=1&amp;sn=c40cd805dafb50cf9c226cdd20550382&amp;chksm=e9af4c8bded8c59da87a75728c6600f0b6691846dfc071d9ee50d4d1424fd26bb696ed2ee0d4&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484452&amp;idx=1&amp;sn=c40cd805dafb50cf9c226cdd20550382&amp;chksm=e9af4c8bded8c59da87a75728c6600f0b6691846dfc071d9ee50d4d1424fd26bb696ed2ee0d4&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; text-align: justify; line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                    免费的股价同步性，一片片从邮局寄来
+                   </a>
+                  </p>
+                  <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <span style="max-width: 100%; text-align: justify; color: rgb(0, 0, 0); line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                    6.
+                   </span>
+                   <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484529&amp;idx=1&amp;sn=dace95be71022f51c515c28b252d1e7b&amp;chksm=e9af4cdeded8c5c87a91fb3a1a5caa55cc6fe961ab72c6734cd859b48239882b48756bd4ad5e&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484529&amp;idx=1&amp;sn=dace95be71022f51c515c28b252d1e7b&amp;chksm=e9af4cdeded8c5c87a91fb3a1a5caa55cc6fe961ab72c6734cd859b48239882b48756bd4ad5e&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; text-align: justify; line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                    Stata叫你回家听音乐了！
+                   </a>
+                  </p>
+                  <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <span style="max-width: 100%; text-align: justify; color: rgb(0, 0, 0); line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important;">
+                    7.
+                   </span>
+                   <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484866&amp;idx=1&amp;sn=9814dd7590f639877665d9a7be1a7596&amp;chksm=e9af4d6dded8c47bec92e4f77659fe8b2b6ec7502b6d380e34a3c67ef83165e103077abd3ee5&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484866&amp;idx=1&amp;sn=9814dd7590f639877665d9a7be1a7596&amp;chksm=e9af4d6dded8c47bec92e4f77659fe8b2b6ec7502b6d380e34a3c67ef83165e103077abd3ee5&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; text-align: justify; line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                    一言不合就用stata写邮件（Outlook/Foxmail）
+                   </a>
+                  </p>
+                  <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <span style="max-width: 100%; text-align: justify; color: rgb(0, 0, 0); line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                    8.
+                   </span>
+                   <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484979&amp;idx=1&amp;sn=e572f2658ba8137832e3ae3aff2ce01a&amp;chksm=e9af4e9cded8c78a191dd0bcd06218c57a5492e4d23b1f7b0c564701a174337a4afe61a6b8e2&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484979&amp;idx=1&amp;sn=e572f2658ba8137832e3ae3aff2ce01a&amp;chksm=e9af4e9cded8c78a191dd0bcd06218c57a5492e4d23b1f7b0c564701a174337a4afe61a6b8e2&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; text-align: justify; line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                    听说你想知道怎么用stata画地图？
+                   </a>
+                  </p>
+                  <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <span style="max-width: 100%; text-align: justify; color: rgb(0, 0, 0); line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important;">
+                    9.
+                   </span>
+                   <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484233&amp;idx=1&amp;sn=104ca64b0bd3cf2dea046b11ea89e028&amp;chksm=e9af4be6ded8c2f005e28306aa9dab5cfcbca4020abb8296469fc5006c1eb32c6594c7b99a4b&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484233&amp;idx=1&amp;sn=104ca64b0bd3cf2dea046b11ea89e028&amp;chksm=e9af4be6ded8c2f005e28306aa9dab5cfcbca4020abb8296469fc5006c1eb32c6594c7b99a4b&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; text-align: justify; line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                    I have a Stata, I have a python
+                   </a>
+                  </p>
+                  <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <span style="max-width: 100%; text-align: justify; color: rgb(0, 0, 0); line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                    10.
+                   </span>
+                   <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484789&amp;idx=1&amp;sn=5c52d2bba468ceb9392b440c43638a19&amp;chksm=e9af4ddaded8c4cc6bf486b21c87f0e3b17b79694bbc388741e0a1d9f5e8f6bd4134efede7f2&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484789&amp;idx=1&amp;sn=5c52d2bba468ceb9392b440c43638a19&amp;chksm=e9af4ddaded8c4cc6bf486b21c87f0e3b17b79694bbc388741e0a1d9f5e8f6bd4134efede7f2&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; text-align: justify; line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                    I have a Stata, I have a Python之二——pdf转word
+                   </a>
+                  </p>
+                  <hr style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                  <hr style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                  <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                  </p>
+                 </section>
+                </section>
+               </section>
+              </section>
+             </section>
+            </section>
+           </section>
+          </section>
+         </section>
+        </section>
+       </section>
+       <section powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; line-height: 25.6px; font-size: 16px; word-wrap: break-word !important;">
+        <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+         <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+          <section style="max-width: 100%; box-sizing: border-box; line-height: 2.2; font-size: 14px; word-wrap: break-word !important;">
+           <section powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+            <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+             <section style="max-width: 100%; box-sizing: border-box; line-height: 1.8; word-wrap: break-word !important;">
+              <section style="max-width: 100%; box-sizing: border-box; line-height: 25.6px; word-wrap: break-word !important;">
+               <section powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                 <section style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+                  <section style="margin-top: 10px; margin-bottom: 10px; max-width: 100%; box-sizing: border-box; color: rgb(120, 114, 114); line-height: 25.6px; font-size: 15px; font-stretch: normal; word-wrap: break-word !important;">
+                   <section style="padding-right: 1em; max-width: 100%; box-sizing: border-box; width: 556.36px; text-align: right; vertical-align: top; display: inline-block; word-wrap: break-word !important;">
+                    <section style="margin-right: -1em; max-width: 100%; box-sizing: border-box; text-align: left; vertical-align: bottom; display: inline-block; transform: rotate(0deg); word-wrap: break-word !important;">
+                     <section style="max-width: 100%; box-sizing: border-box; width: 0px; border-right-color: rgb(1, 115, 164); border-bottom-color: rgb(1, 115, 164); border-right-width: 0.8em; border-bottom-width: 0.8em; border-right-style: solid; border-bottom-style: solid; word-wrap: break-word !important; border-top-color: transparent !important; border-left-color: transparent !important; border-top-width: 0.8em !important; border-left-width: 0.8em !important; border-top-style: solid !important; border-left-style: solid !important;">
+                     </section>
+                     <section style="margin-top: -1em; margin-left: -0.18em; max-width: 100%; box-sizing: border-box; width: 0px; border-right-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-right-width: 0.8em; border-bottom-width: 0.8em; border-right-style: solid; border-bottom-style: solid; word-wrap: break-word !important; border-top-color: transparent !important; border-left-color: transparent !important; border-top-width: 0.8em !important; border-left-width: 0.8em !important; border-top-style: solid !important; border-left-style: solid !important;">
+                     </section>
+                    </section>
+                    <section style="margin-top: 0.3em; padding-bottom: 1em; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; background-color: rgb(1, 183, 204);">
+                     <section style="margin-top: -1em; margin-right: -1em; max-width: 100%; box-sizing: border-box; border: 0.2em solid rgb(1, 115, 164); width: 540.36px; display: inline-block; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+                      <section style="padding: 10px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                       <section powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                        <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                         <section style="max-width: 100%; box-sizing: border-box; text-align: center; word-wrap: break-word !important;">
+                          <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; line-height: 25.6px; word-wrap: break-word !important;">
+                           <span style="max-width: 100%; color: rgb(255, 41, 65); box-sizing: border-box !important; word-wrap: break-word !important;">
+                            <strong style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+                             关于我们
+                            </strong>
+                           </span>
+                          </p>
+                          <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; text-align: left; line-height: 25.6px; word-wrap: break-word !important;">
+                           <span style="max-width: 100%; color: rgb(0, 0, 0); line-height: 1.6; box-sizing: border-box !important; word-wrap: break-word !important;">
+                            微信公众号“爬虫俱乐部”分享实用的stata命令，欢迎转载、打赏。爬虫俱乐部是由李春涛教授领导下的研究生及本科生组成的大数据分析和数据挖掘团队。
+                           </span>
+                          </p>
+                         </section>
+                        </section>
+                       </section>
+                      </section>
+                     </section>
+                    </section>
+                   </section>
+                  </section>
+                  <p style="max-width: 100%; min-height: 1em; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <span style="max-width: 100%; text-align: justify; color: rgb(255, 76, 0); line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                    此外，欢迎大家踊跃投稿，介绍一些关于stata的数据处理和分析技巧。
+                   </span>
+                  </p>
+                  <p style="max-width: 100%; min-height: 1em; text-align: left; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <span style="max-width: 100%; color: rgb(255, 76, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                    投稿邮箱：
+                   </span>
+                   statatraining@163.com
+                  </p>
+                  <p style="max-width: 100%; min-height: 1em; text-align: left; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                   <span style="max-width: 100%; color: rgb(255, 76, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                    投稿要求：
+                    <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                    1）必须原创，禁止抄袭；
+                    <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                    2）必须准确，详细，有例子，有截图；
+                    <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                    注意事项：
+                    <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                    1）所有投稿都会经过本公众号运营团队成员的审核，审核通过才可录用，一经录用，会在该推文里为作者署名，并有赏金分成。
+                    <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                    2）邮件请注明投稿，邮件名称为“投稿”+“推文名称”。
+                    <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                    <span style="max-width: 100%; color: rgb(122, 79, 214); box-sizing: border-box !important; word-wrap: break-word !important;">
+                     3）应广大读者要求，现开通有偿问答服务，如果大家遇到关于stata分析数据的问题，可以在公众号中提出，只需支付少量赏金，我们会在后期的推文里给予解答。
+                    </span>
+                   </span>
+                  </p>
+                 </section>
+                </section>
+               </section>
+              </section>
+              <p style="max-width: 100%; min-height: 1em; box-sizing: border-box !important; word-wrap: break-word !important;">
+               <img _width="556px" class="" data-fail="0" data-ratio="1" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhaWXvVQ75jWic8ZgzBHtCqoBqxqNuAHrRUqGSSdt9PXL1ibOiadXZDz2bHs7MsqI4tViaF9GoGceQ71Qw/640?wx_fmt=jpeg" data-type="jpeg" data-w="430" src="%E5%8F%8C%E9%87%8D%E5%B7%AE%E5%88%86%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%B9%B3%E8%A1%8C%E8%B6%8B%E5%8A%BF%E5%81%87%E5%AE%9A%E5%A6%82%E4%BD%95%E6%A3%80%E9%AA%8C%EF%BC%9F%20%E2%80%94%E2%80%94coefplot%E5%91%BD%E4%BB%A4%E6%9D%A5%E5%91%8A%E8%AF%89%E4%BD%A0%EF%BC%88%E4%B8%80%EF%BC%89_files/640.jpg" style="box-sizing: border-box !important; overflow-wrap: break-word !important; visibility: visible !important; width: 556px !important; height: auto !important;" width="100%"/>
+              </p>
+              <p style="max-width: 100%; min-height: 1em; line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important;">
+               <span style="max-width: 100%; color: rgb(120, 114, 114); line-height: 19.2px; letter-spacing: 2px; font-size: 15px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                欢迎关注爬虫俱乐部
+               </span>
+              </p>
+             </section>
+            </section>
+           </section>
+          </section>
+         </section>
+        </section>
+       </section>
+      </section>
+     </section>
+    </section>
+   </section>
+   <p>
+    <br/>
+   </p>
+  </div>
+  <script nonce="1471650949" type="text/javascript">
+   var first_sceen__time = (+new Date());
+
+                    if ("" == 1 && document.getElementById('js_content')) {
+                        document.getElementById('js_content').addEventListener("selectstart",function(e){ e.preventDefault(); });
+                    }
+
+                    
+                    (function(){
+                        if (navigator.userAgent.indexOf("WindowsWechat") != -1){
+                            var link = document.createElement('link');
+                            var head = document.getElementsByTagName('head')[0];
+                            link.rel = 'stylesheet';
+                            link.type = 'text/css';
+                            link.href = "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/page_mp_article_improve_winwx31619e.css";
+                            head.appendChild(link);
+                        }
+                    })();
+  </script>
+  <div class="ct_mpda_wrp" id="js_sponsor_ad_area" style="display:none;">
+  </div>
+  <div class="reward_area tc" id="js_reward_area" style="display:none;">
+   <p>
+    <a class="reward_access" href="##" id="js_reward_link">
+     赞赏
+    </a>
+   </p>
+   <div class="reward_area_inner" id="js_reward_inner" style="display: none; width: 578px;">
+    <p class="tips_global reward_user_tips">
+     <a href="##" id="js_reward_total">
+     </a>
+     人赞赏
+    </p>
+    <div class="reward_user_list" id="js_reward_list">
+    </div>
+   </div>
+  </div>
+  <div class="reward_qrcode_area reward_area tc" id="js_reward_qrcode" style="display:none;">
+   <p class="tips_global">
+    长按二维码向我转账
+   </p>
+   <p class="reward_tips">
+   </p>
+   <span class="reward_qrcode_img_wrp">
+    <img class="reward_qrcode_img" id="js_reward_qrcode_img"/>
+   </span>
+   <p class="tips_global">
+    受苹果公司新规定影响，微信 iOS 版的赞赏功能被关闭，可通过二维码转账支持公众号。
+   </p>
+  </div>
+ </div>
+ <div class="rich_media_tool" id="js_toobar3">
+  <div class="media_tool_meta tips_global meta_primary" id="js_read_area3" style="display:none;">
+   阅读
+   <span id="readNum3">
+   </span>
+  </div>
+  <span class="media_tool_meta meta_primary tips_global meta_praise" id="like3" style="display:none;">
+   <i class="icon_praise_gray">
+   </i>
+   <span class="praise_num" id="likeNum3">
+   </span>
+  </span>
+  <a class="media_tool_meta tips_global meta_extra" href="##" id="js_report_article3" style="display:none;">
+   投诉
+  </a>
+ </div>
+</div>
+</body></html>

@@ -1,0 +1,733 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body><div class="rich_media_area_primary" id="page-content">
+ <div id="img-content">
+  <h2 class="rich_media_title" id="activity-name">
+  </h2>
+  <div class="rich_media_meta_list" id="meta_content">
+  </div>
+  <div class="rich_media_content " id="js_content">
+   <section style="box-sizing: border-box; background-color: rgb(255, 255, 255);">
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        在之前的推文中，我们介绍过多个文件纵向合并的命令openall，非常方便快捷！而
+        <strong>
+         <span style="font-size: 16px;">
+          横向合并
+         </span>
+        </strong>
+        也有类似的命令，即mergemany。
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" margin-top: 0.5em; margin-bottom: 0.5em; text-align: center;  box-sizing: border-box; ">
+      <section class="" style="display: inline-block; width: 20em; height: 3em; line-height: 3.2em; box-sizing: border-box; background-image: url(http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhapvkGMeEFRSDML4FsXzypk8pgicvPNzYSKECBAnx8pYVnY8UdiclgHeusUVErvXM3FkWkeULn1Qia8g/0?wx_fmt=png); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;">
+       <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+        <section class="" style="   box-sizing: border-box; ">
+         <section class="" style="font-size: 24px; line-height: 1; box-sizing: border-box;">
+          <p style="box-sizing: border-box;">
+           <strong style="box-sizing: border-box;">
+            mergemany
+           </strong>
+          </p>
+         </section>
+        </section>
+       </section>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        在使用国泰安数据时，我们经常需要对下载好的数据按照证券代码、年份进行合并，一般都要一个一个的使用merge，相对繁琐，而
+        <strong>
+         <span style="color: rgb(255, 76, 0);">
+          mergemany
+         </span>
+        </strong>
+        这个命令则可以一次性横向合并多个文件。mergemany是merge命令的扩展，提供了多种方式将多个指定的数据文件合并。
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" margin: 2px 0%; text-align: center; transform: translate3d(0px, 0px, 0px); -webkit-transform: translate3d(0px, 0px, 0px); -moz-transform: translate3d(0px, 0px, 0px); -o-transform: translate3d(0px, 0px, 0px);  box-sizing: border-box; ">
+      <section class="" style="display: inline-block; vertical-align: middle; box-sizing: border-box;">
+       <section style="border-left-width: 2px; border-left-style: solid; border-color: rgb(249, 110, 87); border-top-width: 2px; border-top-style: solid; width: 12px; height: 12px; box-sizing: border-box;">
+       </section>
+       <section style="padding-right: 10px; padding-left: 10px; margin-top: -8px; margin-bottom: -8px; box-sizing: border-box;">
+        <section class="" style="box-sizing: border-box;">
+         <p style="box-sizing: border-box;">
+          <strong>
+           安装mergemany：
+          </strong>
+          ssc install mergemany
+         </p>
+        </section>
+       </section>
+       <section style="border-right-width: 2px; border-right-style: solid; border-color: rgb(249, 110, 87); margin-left: auto; border-bottom-width: 2px; border-bottom-style: solid; width: 12px; height: 12px; box-sizing: border-box;">
+       </section>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" margin-top: 2px; margin-right: 0%; margin-left: 0%;  box-sizing: border-box; ">
+      <section class="" style="width: 0.6em; display: inline-block; vertical-align: middle; box-sizing: border-box;">
+       <span style="width: 0.6em; height: 0.6em; display: block; opacity: 0.2; box-sizing: border-box; background-color: rgb(249, 110, 87);">
+       </span>
+       <span style="width: 0.6em; height: 0.6em; display: block; opacity: 0.6; margin-top: 2px; margin-bottom: 2px; box-sizing: border-box; background-color: rgb(249, 110, 87);">
+       </span>
+       <span style="width: 0.6em; height: 0.6em; display: block; opacity: 1; box-sizing: border-box; background-color: rgb(249, 110, 87);">
+       </span>
+      </section>
+      <section class="" style="display: inline-block; vertical-align: middle; font-size: 16px; padding-left: 5px; box-sizing: border-box;">
+       <p style="box-sizing: border-box;">
+        <strong style="box-sizing: border-box;">
+         方式一：列出全部文件名
+        </strong>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box;">
+        <strong>
+         <span style="font-size: 14px; box-sizing: border-box;">
+          语法：
+         </span>
+        </strong>
+        <span style="font-size: 14px; box-sizing: border-box;">
+         mergemany 1:1 filename1 filename2..., match(varlist) [options]
+        </span>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        我们以三大报表数据为例进行一对一合并。首先需要用宏扩展函数将下载好的数据从excel转成dta格式文件，之后用openall命令将各报表数据纵向合并（详见之前openall命令推文），接下来就需要用mergemany来横向合并三大表。
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; box-sizing: border-box;">
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(0, 122, 170);">
+         clear
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(0, 122, 170);">
+         set more off
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(0, 122, 170);">
+         cd "d:\stata\财务报表"
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(0, 122, 170);">
+         <br/>
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(0, 122, 170);">
+         mergemany 1:1 资产负债表 利润表 现金流量表, match(stkcd year)
+        </span>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" text-align: center; margin-right: 0%; margin-left: 0%;  box-sizing: border-box; ">
+      <p>
+       <img _width="100%" class="" data-fail="0" data-ratio="0.6364705882352941" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhapvkGMeEFRSDML4FsXzypkCy4p87ia3tWsvOIhUlBU0RYL9UEPnKwqSunBpEw6NFv4upGFAFe0Ezw/0?wx_fmt=png" data-type="png" data-w="850" src="%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E6%A8%AA%E5%90%91%E5%90%88%E5%B9%B6%E2%80%94%E2%80%94mergemany_files/640_003.jpg" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+      </p>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" text-align: center; margin-right: 0%; margin-left: 0%;  box-sizing: border-box; ">
+      <p>
+       <img _width="100%" class="" data-fail="0" data-ratio="0.8280542986425339" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhapvkGMeEFRSDML4FsXzypk0kqEsnRg0PVqLBrNHW2YOjMxd6bZ7IBYCIo8OYhYOicVuJ9NmQ730gg/0?wx_fmt=png" data-type="png" data-w="221" src="%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E6%A8%AA%E5%90%91%E5%90%88%E5%B9%B6%E2%80%94%E2%80%94mergemany_files/640.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+      </p>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        通过这个简单命令我们一次性合并了三个表，此时，我们变量有239个。
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        如果想要将合并后的数据保存为新的文件——财务报表，则可以加一个
+        <strong>
+         <span style="color: rgb(0, 0, 0);">
+          saving(filename)
+         </span>
+        </strong>
+        选项。
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; box-sizing: border-box;">
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(0, 122, 170);">
+         mergemany 1:1 资产负债表 利润表 现金流量表, match(stkcd year) saving(财务报表)
+        </span>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" text-align: center; margin-right: 0%; margin-left: 0%;  box-sizing: border-box; ">
+      <p>
+       <img _width="100%" class="" data-fail="0" data-ratio="0.2777777777777778" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhapvkGMeEFRSDML4FsXzypk12F4AfByGtx3VHNibkAsKlqSjrCBNe4qVaOec1RHgCgpxUxbuAgvUmQ/0?wx_fmt=png" data-type="png" data-w="630" src="%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E6%A8%AA%E5%90%91%E5%90%88%E5%B9%B6%E2%80%94%E2%80%94mergemany_files/640_002.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+      </p>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" text-align: center; margin-right: 0%; margin-left: 0%;  box-sizing: border-box; ">
+      <p>
+       <img _width="100%" class="" data-fail="0" data-ratio="0.910377358490566" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhapvkGMeEFRSDML4FsXzypkr8ibic5WVOV4ibykEcD8azC1q7RrNl3OAeENFJOObibPMX3PiaKUBLCPtyw/0?wx_fmt=png" data-type="png" data-w="212" src="%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E6%A8%AA%E5%90%91%E5%90%88%E5%B9%B6%E2%80%94%E2%80%94mergemany_files/640_003.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+      </p>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" margin-top: 2px; margin-right: 0%; margin-left: 0%;  box-sizing: border-box; ">
+      <section class="" style="width: 0.6em; display: inline-block; vertical-align: middle; box-sizing: border-box;">
+       <span style="width: 0.6em; height: 0.6em; display: block; opacity: 0.2; box-sizing: border-box; background-color: rgb(249, 110, 87);">
+       </span>
+       <span style="width: 0.6em; height: 0.6em; display: block; opacity: 0.6; margin-top: 2px; margin-bottom: 2px; box-sizing: border-box; background-color: rgb(249, 110, 87);">
+       </span>
+       <span style="width: 0.6em; height: 0.6em; display: block; opacity: 1; box-sizing: border-box; background-color: rgb(249, 110, 87);">
+       </span>
+      </section>
+      <section class="" style="display: inline-block; vertical-align: middle; font-size: 16px; padding-left: 5px; box-sizing: border-box;">
+       <p style="box-sizing: border-box;">
+        <strong style="box-sizing: border-box;">
+         方式二：
+         <span style="letter-spacing: 0px; line-height: 1.6; box-sizing: border-box;">
+          合并当前目录下的所有文件
+         </span>
+        </strong>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box;">
+        <strong>
+         语法：
+        </strong>
+        mergemany 1:1 all, match(varlist) all [options]
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        仍以三大报表为例，合并财务报表目录下的所有文件。
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; box-sizing: border-box;">
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(0, 122, 170);">
+         clear
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(0, 122, 170);">
+         set more off
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(0, 122, 170);">
+         cd "d:\stata\财务报表"
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <br style="box-sizing: border-box;"/>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(0, 122, 170);">
+         mergemany 1:1 all, match(stkcd year) all saving(财务报表)
+        </span>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" text-align: center; margin-right: 0%; margin-left: 0%;  box-sizing: border-box; ">
+      <p>
+       <img _width="100%" class="" data-fail="0" data-ratio="0.54911131898971" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhapvkGMeEFRSDML4FsXzypk6sfWBUVibVtDJBc0ic6zggLicAZg1Bp3L79O7ZhniahkTVtDoibOfxzO6OA/0?wx_fmt=png" data-type="png" data-w="1069" src="%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E6%A8%AA%E5%90%91%E5%90%88%E5%B9%B6%E2%80%94%E2%80%94mergemany_files/640_005.jpg" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+      </p>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" text-align: center; margin-right: 0%; margin-left: 0%;  box-sizing: border-box; ">
+      <p>
+       <img _width="100%" class="" data-fail="0" data-ratio="0.8935185185185185" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhapvkGMeEFRSDML4FsXzypkYtlvc7K8Hn2fSOmqJwnrP1sOgyfneeYGvsymqVj2Zfu6OAS19erGJw/0?wx_fmt=png" data-type="png" data-w="216" src="%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E6%A8%AA%E5%90%91%E5%90%88%E5%B9%B6%E2%80%94%E2%80%94mergemany_files/640_004.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+      </p>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" margin-top: 2px; margin-right: 0%; margin-left: 0%;  box-sizing: border-box; ">
+      <section class="" style="width: 0.6em; display: inline-block; vertical-align: middle; box-sizing: border-box;">
+       <span style="width: 0.6em; height: 0.6em; display: block; opacity: 0.2; box-sizing: border-box; background-color: rgb(249, 110, 87);">
+       </span>
+       <span style="width: 0.6em; height: 0.6em; display: block; opacity: 0.6; margin-top: 2px; margin-bottom: 2px; box-sizing: border-box; background-color: rgb(249, 110, 87);">
+       </span>
+       <span style="width: 0.6em; height: 0.6em; display: block; opacity: 1; box-sizing: border-box; background-color: rgb(249, 110, 87);">
+       </span>
+      </section>
+      <section class="" style="display: inline-block; vertical-align: middle; font-size: 16px; padding-left: 5px; box-sizing: border-box;">
+       <p style="box-sizing: border-box;">
+        <strong style="box-sizing: border-box;">
+         方式三：使用文件名的数字后缀
+        </strong>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        当文件有相同前缀不同后缀（例如file1，file2，file3 ...）情况下，可以使用数字后缀。在这种情况下后缀将作为参数列出，并且必须指定选项numeric（numlist）。
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box;">
+        <strong>
+         语法：
+        </strong>
+        mergemany 1:1 fileprefix, match(varlist) numerical(numlist) [options]
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        <span style="font-size: 14px; box-sizing: border-box;">
+         以auto为例：
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="font-size: 14px; box-sizing: border-box; color: rgb(0, 122, 170);">
+         clear
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="font-size: 14px; box-sizing: border-box; color: rgb(0, 122, 170);">
+         set more off
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="font-size: 14px; box-sizing: border-box; color: rgb(0, 122, 170);">
+         cd "d:\stata"
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="font-size: 14px; box-sizing: border-box; color: rgb(0, 122, 170);">
+         <br style="box-sizing: border-box;"/>
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="font-size: 14px; box-sizing: border-box; color: rgb(0, 122, 170);">
+         mkdir auto
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="font-size: 14px; box-sizing: border-box; color: rgb(0, 122, 170);">
+         cd auto
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="font-size: 14px; box-sizing: border-box; color: rgb(0, 122, 170);">
+         webuse autosize
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="font-size: 14px; box-sizing: border-box; color: rgb(0, 122, 170);">
+         save auto1
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="font-size: 14px; box-sizing: border-box; color: rgb(0, 122, 170);">
+         webuse autoexpense
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="font-size: 14px; box-sizing: border-box; color: rgb(0, 122, 170);">
+         save auto2
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="font-size: 14px; box-sizing: border-box; color: rgb(0, 122, 170);">
+         webuse auto
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="font-size: 14px; box-sizing: border-box; color: rgb(0, 122, 170);">
+         save auto3
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <br style="box-sizing: border-box;"/>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="font-size: 14px; box-sizing: border-box; color: rgb(0, 122, 170);">
+         mergemany 1:1 auto, match(make) numerical(1(1)3)
+        </span>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" text-align: center; margin-right: 0%; margin-left: 0%;  box-sizing: border-box; ">
+      <p>
+       <img _width="100%" class="" data-fail="0" data-ratio="0.7216624685138538" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhapvkGMeEFRSDML4FsXzypkjonHxFfFywEfxOSs8ImXouFia7Ks6wmwH1QX1GlY31lazy3bxeB5yag/0?wx_fmt=png" data-type="png" data-w="794" src="%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E6%A8%AA%E5%90%91%E5%90%88%E5%B9%B6%E2%80%94%E2%80%94mergemany_files/640_004.jpg" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+      </p>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        mergemany同样适用于一对多，多对一，多对多的情况，更多精彩请help mergemany。
+       </p>
+       <hr/>
+      </section>
+     </section>
+    </section>
+   </section>
+   <p style="margin-top: 5px; margin-bottom: 5px; max-width: 100%; min-height: 1em; color: rgb(62, 62, 62); white-space: normal; font-family: 'MicroSoft YaHei'; font-size: 14px; line-height: normal; text-align: center; box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    接下来报告空气质量
+    <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+   </p>
+   <p style="margin-top: 5px; margin-bottom: 5px; max-width: 100%; min-height: 1em; color: rgb(62, 62, 62); white-space: normal; font-family: 'MicroSoft YaHei'; font-size: 14px; line-height: normal; text-align: center; box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    全国空气质量如下图
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.75" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhapvkGMeEFRSDML4FsXzypk2A2Eib6jATt1WiaBiciatpfJYIPganTe4ARZp3JUcQH4Dbt41nU7TxfnTQ/0?wx_fmt=png" data-type="png" data-w="1200" src="%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E6%A8%AA%E5%90%91%E5%90%88%E5%B9%B6%E2%80%94%E2%80%94mergemany_files/640_006.jpg" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+   </p>
+   <p style="margin-top: 5px; margin-bottom: 5px; max-width: 100%; min-height: 1em; color: rgb(62, 62, 62); white-space: normal; font-family: 'MicroSoft YaHei'; font-size: 14px; line-height: normal; text-align: center; box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    比一比，瞧一瞧
+   </p>
+   <p style="margin-top: 5px; margin-bottom: 5px; max-width: 100%; min-height: 1em; color: rgb(62, 62, 62); white-space: normal; font-family: 'MicroSoft YaHei'; font-size: 14px; line-height: normal; text-align: center; box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    河北空气最糟糕
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="0.6923076923076923" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhapvkGMeEFRSDML4FsXzypkdicggia0MgP5RWxkkiaYHU1zAcJ4If9OLiaM7jfQ9iao9yQ5LW9SicMsTgOw/0?wx_fmt=png" data-type="png" data-w="1300" src="%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E6%A8%AA%E5%90%91%E5%90%88%E5%B9%B6%E2%80%94%E2%80%94mergemany_files/640_002.jpg" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; line-height: 25.6px; white-space: normal; text-align: justify; color: rgb(160, 160, 160); text-indent: 2em; font-family: 微软雅黑; font-size: 15px; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    <span style="max-width: 100%; color: rgb(136, 136, 136); line-height: 23.27px; text-indent: 2em; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     以上就是今天给大家分享的内容了，说得好就赏个铜板呗！有钱的捧个钱场，有人的捧个人场~，点赞打赏随您心意，么么哒~
+    </span>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; line-height: 25.6px; white-space: normal; text-align: justify; color: rgb(160, 160, 160); text-indent: 2em; font-family: 微软雅黑; font-size: 15px; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    <span style="max-width: 100%; color: rgb(122, 79, 214); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     应广大粉丝要求，爬虫俱乐部的推文公众号打赏功能可以开发票啦，累计打赏超过1000元我们即可给您开具发票，发票类别为“咨询费”。用心做事，只为做您更贴心的小爬虫。第一批发票已经寄到各位小主的手中，大家快来给小爬虫打赏呀~
+    </span>
+   </p>
+   <p style="max-width: 100%; min-height: 1em; color: rgb(62, 62, 62); font-size: 16px; line-height: 25.6px; white-space: normal; text-align: right; box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    <span style="max-width: 100%; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     编辑by徐苾雯
+    </span>
+   </p>
+   <hr style="max-width: 100%; color: rgb(62, 62, 62); font-size: 16px; line-height: 25.6px; white-space: normal; box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(255, 255, 255);"/>
+   <hr style="max-width: 100%; color: rgb(62, 62, 62); font-size: 16px; line-height: 25.6px; white-space: normal; box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(255, 255, 255);"/>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; line-height: 25.6px; white-space: normal; font-size: 15px; font-family: 微软雅黑; text-align: justify; color: rgb(120, 114, 114); font-stretch: normal; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    <span style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+     <strong style="max-width: 100%; color: rgb(136, 136, 136); line-height: 23.27px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+      往期推文推荐：
+     </strong>
+    </span>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; line-height: 25.6px; white-space: normal; font-size: 15px; font-family: 微软雅黑; text-align: justify; color: rgb(120, 114, 114); font-stretch: normal; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247485148&amp;idx=1&amp;sn=049e186770a9b325685ec57f2b8e0e99&amp;chksm=e9af4e73ded8c765add5a027217b703f611a830bd599cbd37e7edfa2759e621aa2827544076c&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247485148&amp;idx=1&amp;sn=049e186770a9b325685ec57f2b8e0e99&amp;chksm=e9af4e73ded8c765add5a027217b703f611a830bd599cbd37e7edfa2759e621aa2827544076c&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; text-align: center; line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+     <span style="max-width: 100%; line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important;">
+      1.
+     </span>
+    </a>
+    <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247485148&amp;idx=1&amp;sn=049e186770a9b325685ec57f2b8e0e99&amp;chksm=e9af4e73ded8c765add5a027217b703f611a830bd599cbd37e7edfa2759e621aa2827544076c&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247485148&amp;idx=1&amp;sn=049e186770a9b325685ec57f2b8e0e99&amp;chksm=e9af4e73ded8c765add5a027217b703f611a830bd599cbd37e7edfa2759e621aa2827544076c&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; text-align: center; line-height: 1.4; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+     <span style="max-width: 100%; line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important;">
+      合并输出回归结果和其他检验结果——esttab和estadd
+     </span>
+    </a>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; white-space: normal; font-size: 12px; line-height: 24px; font-family: 微软雅黑; text-align: justify; color: rgb(160, 160, 160); font-stretch: normal; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    <span style="max-width: 100%; color: rgb(0, 0, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     2
+    </span>
+    <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484899&amp;idx=1&amp;sn=0da9bcae33696501a5eb8c8ab9c5b5ff&amp;chksm=e9af4d4cded8c45a84ed90d75464c3a866a79295f355f75e68943300fa58eb2ad1d18e016ef5&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484899&amp;idx=1&amp;sn=0da9bcae33696501a5eb8c8ab9c5b5ff&amp;chksm=e9af4d4cded8c45a84ed90d75464c3a866a79295f355f75e68943300fa58eb2ad1d18e016ef5&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+     <span style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+      .
+      <span style="max-width: 100%; text-align: center; line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important;">
+       关于RTF你不知道的命令
+      </span>
+     </span>
+    </a>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; white-space: normal; font-size: 12px; line-height: 24px; font-family: 微软雅黑; text-align: justify; color: rgb(160, 160, 160); font-stretch: normal; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    <span style="max-width: 100%; color: rgb(0, 0, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     3
+    </span>
+    <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484941&amp;idx=1&amp;sn=f348ba26ed2e9c5c25efd14e3c26c506&amp;chksm=e9af4ea2ded8c7b4f0c98365323ca46337259f9ba58c9d2541b94898bcd450c162108ba9a577&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484941&amp;idx=1&amp;sn=f348ba26ed2e9c5c25efd14e3c26c506&amp;chksm=e9af4ea2ded8c7b4f0c98365323ca46337259f9ba58c9d2541b94898bcd450c162108ba9a577&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+     <span style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+      .
+      <span style="max-width: 100%; text-align: center; line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important;">
+       关于RTF你不知道的命令之番外篇
+      </span>
+     </span>
+    </a>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; line-height: 25.6px; white-space: normal; font-size: 15px; font-family: 微软雅黑; text-align: justify; color: rgb(120, 114, 114); font-stretch: normal; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    <span style="max-width: 100%; color: rgb(0, 0, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     4
+     <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484326&amp;idx=1&amp;sn=179a96c391bae0ff47e9f84b3e960aae&amp;chksm=e9af4b09ded8c21f705cc74ba9a18f996a6fed246222e51b404425e79a30b041bf2eef5c5d44&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484326&amp;idx=1&amp;sn=179a96c391bae0ff47e9f84b3e960aae&amp;chksm=e9af4b09ded8c21f705cc74ba9a18f996a6fed246222e51b404425e79a30b041bf2eef5c5d44&amp;scene=21#wechat_redirect" style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+      .
+      <span style="max-width: 100%; text-align: center; color: rgb(0, 0, 0); line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important;">
+       免费事件研究，一片片从邮局寄来
+      </span>
+     </a>
+    </span>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; line-height: 25.6px; white-space: normal; font-size: 15px; font-family: 微软雅黑; text-align: justify; color: rgb(120, 114, 114); font-stretch: normal; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    <span style="max-width: 100%; color: rgb(0, 0, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     5
+     <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484452&amp;idx=1&amp;sn=c40cd805dafb50cf9c226cdd20550382&amp;chksm=e9af4c8bded8c59da87a75728c6600f0b6691846dfc071d9ee50d4d1424fd26bb696ed2ee0d4&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484452&amp;idx=1&amp;sn=c40cd805dafb50cf9c226cdd20550382&amp;chksm=e9af4c8bded8c59da87a75728c6600f0b6691846dfc071d9ee50d4d1424fd26bb696ed2ee0d4&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+      .
+      <span style="max-width: 100%; text-align: center; line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important;">
+       免费的股价同步性，一片片从邮局寄来
+      </span>
+     </a>
+    </span>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; line-height: 25.6px; white-space: normal; font-size: 15px; font-family: 微软雅黑; text-align: justify; color: rgb(120, 114, 114); font-stretch: normal; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    <span style="max-width: 100%; color: rgb(0, 0, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     6
+     <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484529&amp;idx=1&amp;sn=dace95be71022f51c515c28b252d1e7b&amp;chksm=e9af4cdeded8c5c87a91fb3a1a5caa55cc6fe961ab72c6734cd859b48239882b48756bd4ad5e&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484529&amp;idx=1&amp;sn=dace95be71022f51c515c28b252d1e7b&amp;chksm=e9af4cdeded8c5c87a91fb3a1a5caa55cc6fe961ab72c6734cd859b48239882b48756bd4ad5e&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+      .
+      <span style="max-width: 100%; text-align: center; line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important;">
+       Stata叫你回家听音乐了！
+      </span>
+     </a>
+    </span>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; line-height: 25.6px; white-space: normal; font-size: 15px; font-family: 微软雅黑; text-align: justify; color: rgb(120, 114, 114); font-stretch: normal; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    <span style="max-width: 100%; color: rgb(0, 0, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     7
+     <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484866&amp;idx=1&amp;sn=9814dd7590f639877665d9a7be1a7596&amp;chksm=e9af4d6dded8c47bec92e4f77659fe8b2b6ec7502b6d380e34a3c67ef83165e103077abd3ee5&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484866&amp;idx=1&amp;sn=9814dd7590f639877665d9a7be1a7596&amp;chksm=e9af4d6dded8c47bec92e4f77659fe8b2b6ec7502b6d380e34a3c67ef83165e103077abd3ee5&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+      .
+      <span style="max-width: 100%; text-align: center; line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important;">
+       一言不合就用stata写邮件（Outlook/Foxmail）
+      </span>
+     </a>
+    </span>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; line-height: 25.6px; white-space: normal; font-size: 15px; font-family: 微软雅黑; text-align: justify; color: rgb(120, 114, 114); font-stretch: normal; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    <span style="max-width: 100%; color: rgb(0, 0, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     8
+     <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484679&amp;idx=1&amp;sn=e5f040ae8ecf0727c59463106266759a&amp;chksm=e9af4da8ded8c4be3481faf21d25fa01b4d0157d79af6f5311aac5f12fe7b8bfa8e4b897a70c&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484679&amp;idx=1&amp;sn=e5f040ae8ecf0727c59463106266759a&amp;chksm=e9af4da8ded8c4be3481faf21d25fa01b4d0157d79af6f5311aac5f12fe7b8bfa8e4b897a70c&amp;scene=21#wechat_redirect" style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+      .
+      <span style="max-width: 100%; text-align: center; color: rgb(0, 0, 0); line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important;">
+       玩转stata之调用浏览器
+      </span>
+     </a>
+    </span>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; line-height: 25.6px; white-space: normal; font-size: 15px; font-family: 微软雅黑; text-align: justify; color: rgb(120, 114, 114); font-stretch: normal; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    <span style="max-width: 100%; color: rgb(0, 0, 0); line-height: 25.6px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     9.
+    </span>
+    <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484233&amp;idx=1&amp;sn=104ca64b0bd3cf2dea046b11ea89e028&amp;chksm=e9af4be6ded8c2f005e28306aa9dab5cfcbca4020abb8296469fc5006c1eb32c6594c7b99a4b&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484233&amp;idx=1&amp;sn=104ca64b0bd3cf2dea046b11ea89e028&amp;chksm=e9af4be6ded8c2f005e28306aa9dab5cfcbca4020abb8296469fc5006c1eb32c6594c7b99a4b&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; line-height: 25.6px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+     I have a Stata, I have a python
+    </a>
+   </p>
+   <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; line-height: 25.6px; white-space: normal; font-size: 15px; font-family: 微软雅黑; text-align: justify; color: rgb(120, 114, 114); font-stretch: normal; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    <span style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+     <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484789&amp;idx=1&amp;sn=5c52d2bba468ceb9392b440c43638a19&amp;chksm=e9af4ddaded8c4cc6bf486b21c87f0e3b17b79694bbc388741e0a1d9f5e8f6bd4134efede7f2&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484789&amp;idx=1&amp;sn=5c52d2bba468ceb9392b440c43638a19&amp;chksm=e9af4ddaded8c4cc6bf486b21c87f0e3b17b79694bbc388741e0a1d9f5e8f6bd4134efede7f2&amp;scene=21#wechat_redirect" style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+      <span style="max-width: 100%; color: rgb(0, 0, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+       10
+      </span>
+      <span style="max-width: 100%; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+       <span style="max-width: 100%; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+        .
+       </span>
+       <span style="max-width: 100%; color: rgb(0, 0, 0); line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important;">
+        I have a Stata, I have a Python之二——pdf转word
+       </span>
+      </span>
+     </a>
+    </span>
+   </p>
+   <hr style="max-width: 100%; color: rgb(62, 62, 62); font-size: 16px; line-height: 25.6px; white-space: normal; box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(255, 255, 255);"/>
+   <hr style="max-width: 100%; color: rgb(62, 62, 62); font-size: 16px; line-height: 25.6px; white-space: normal; box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(255, 255, 255);"/>
+   <p style="max-width: 100%; min-height: 1em; color: rgb(62, 62, 62); font-size: 16px; line-height: 25.6px; white-space: normal; box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    <br/>
+   </p>
+   <section style="margin-top: 10px; margin-bottom: 10px; max-width: 100%; box-sizing: border-box; line-height: 25.6px; white-space: normal; font-size: 15px; font-family: 微软雅黑; text-align: center; color: rgb(120, 114, 114); font-stretch: normal; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    <section style="padding-right: 1em; max-width: 100%; box-sizing: border-box; width: 556.36px; text-align: right; vertical-align: top; display: inline-block; word-wrap: break-word !important;">
+     <section style="margin-right: -1em; max-width: 100%; box-sizing: border-box; text-align: left; vertical-align: bottom; display: inline-block; transform: rotate(0deg); word-wrap: break-word !important;">
+      <section style="max-width: 100%; box-sizing: border-box; width: 0px; border-right-color: rgb(1, 115, 164); border-bottom-color: rgb(1, 115, 164); border-right-width: 0.8em; border-bottom-width: 0.8em; border-right-style: solid; border-bottom-style: solid; word-wrap: break-word !important; border-top-color: transparent !important; border-left-color: transparent !important; border-top-width: 0.8em !important; border-left-width: 0.8em !important; border-top-style: solid !important; border-left-style: solid !important;">
+      </section>
+      <section style="margin-top: -1em; margin-left: -0.18em; max-width: 100%; box-sizing: border-box; width: 0px; border-right-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-right-width: 0.8em; border-bottom-width: 0.8em; border-right-style: solid; border-bottom-style: solid; word-wrap: break-word !important; border-top-color: transparent !important; border-left-color: transparent !important; border-top-width: 0.8em !important; border-left-width: 0.8em !important; border-top-style: solid !important; border-left-style: solid !important;">
+      </section>
+     </section>
+     <section style="margin-top: 0.3em; padding-bottom: 1em; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; background-color: rgb(1, 183, 204);">
+      <section style="margin-top: -1em; margin-right: -1em; max-width: 100%; box-sizing: border-box; border: 0.2em solid rgb(1, 115, 164); width: 540.36px; display: inline-block; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+       <section style="padding: 10px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+        <section powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+         <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+          <section style="max-width: 100%; box-sizing: border-box; text-align: center; word-wrap: break-word !important;">
+           <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; line-height: 25.6px; word-wrap: break-word !important;">
+            <span style="max-width: 100%; color: rgb(255, 41, 65); box-sizing: border-box !important; word-wrap: break-word !important;">
+             <strong style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+              关于我们
+             </strong>
+            </span>
+           </p>
+           <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; text-align: left; line-height: 25.6px; word-wrap: break-word !important;">
+            <span style="max-width: 100%; color: rgb(0, 0, 0); line-height: 1.6; box-sizing: border-box !important; word-wrap: break-word !important;">
+             微信公众号“爬虫俱乐部”分享实用的stata命令，欢迎转载、打赏。爬虫俱乐部是由李春涛教授领导下的研究生及本科生组成的大数据分析和数据挖掘团队。
+            </span>
+           </p>
+          </section>
+         </section>
+        </section>
+       </section>
+      </section>
+     </section>
+    </section>
+   </section>
+   <p>
+    <span style="color: rgb(255, 76, 0); font-size: 14px; line-height: 25.6px; background-color: rgb(255, 255, 255);">
+     此外，欢迎大家踊跃投稿，介绍一些关于stata的数据处理和分析技巧。
+    </span>
+    <br/>
+   </p>
+   <p style="max-width: 100%; min-height: 1em; color: rgb(62, 62, 62); font-size: 16px; line-height: 25.6px; white-space: normal; box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+    <span style="max-width: 100%; color: rgb(255, 76, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     投稿邮箱：
+    </span>
+    <a style="color: rgb(255, 76, 0); max-width: 100%; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     xueyuan19920310@163.com
+    </a>
+    <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+    <span style="max-width: 100%; color: rgb(255, 76, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+     投稿要求：
+     <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+     1）必须原创，禁止抄袭；
+     <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+     2）必须准确，详细，有例子，有截图；
+     <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+     注意事项：
+     <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+     1）所有投稿都会经过本公众号运营团队成员的审核，审核通过才可录用，一经录用，会在该推文里为作者署名，并有赏金分成。
+     <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+     2）邮件请注明投稿，邮件名称为“投稿”+“推文名称”。
+     <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+     <span style="max-width: 100%; color: rgb(122, 79, 214); box-sizing: border-box !important; word-wrap: break-word !important;">
+      3）应广大读者要求，现开通有偿问答服务，如果大家遇到关于stata分析数据的问题，可以在公众号中提出，只需支付少量赏金，我们会在后期的推文里给予解答。
+     </span>
+    </span>
+   </p>
+   <p>
+    <img _width="100%" class="" data-fail="0" data-ratio="1" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhZqUISMchIJEE7OS8Zeg4QFgNICdGooIvMffqIjUibOYFZq4vtU5dVicfk2BczkmfP0vklsRthyqGHw/0?wx_fmt=jpeg" data-type="jpeg" data-w="430" src="%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E6%A8%AA%E5%90%91%E5%90%88%E5%B9%B6%E2%80%94%E2%80%94mergemany_files/640.jpg" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+   </p>
+   <p style="text-align: center;">
+    <span style="color: rgb(120, 114, 114); font-family: 微软雅黑; font-size: 15px; letter-spacing: 2px; line-height: 19.2px; text-align: center;  background-color: rgb(255, 255, 255);">
+     欢迎关注爬虫俱乐部
+    </span>
+   </p>
+  </div>
+  <script nonce="1198917461" type="text/javascript">
+   var first_sceen__time = (+new Date());
+
+                    if ("" == 1 && document.getElementById('js_content')) {
+                        document.getElementById('js_content').addEventListener("selectstart",function(e){ e.preventDefault(); });
+                    }
+
+                    
+                    (function(){
+                        if (navigator.userAgent.indexOf("WindowsWechat") != -1){
+                            var link = document.createElement('link');
+                            var head = document.getElementsByTagName('head')[0];
+                            link.rel = 'stylesheet';
+                            link.type = 'text/css';
+                            link.href = "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/page_mp_article_improve_winwx31619e.css";
+                            head.appendChild(link);
+                        }
+                    })();
+  </script>
+  <div class="ct_mpda_wrp" id="js_sponsor_ad_area" style="display:none;">
+  </div>
+  <div class="reward_area tc" id="js_reward_area" style="display:none;">
+   <p>
+    <a class="reward_access" href="##" id="js_reward_link">
+     赞赏
+    </a>
+   </p>
+   <div class="reward_area_inner" id="js_reward_inner" style="display: none; width: 578px;">
+    <p class="tips_global reward_user_tips">
+     <a href="##" id="js_reward_total">
+     </a>
+     人赞赏
+    </p>
+    <div class="reward_user_list" id="js_reward_list">
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="rich_media_tool" id="js_toobar3">
+  <div class="media_tool_meta tips_global meta_primary" id="js_read_area3" style="display:none;">
+   阅读
+   <span id="readNum3">
+   </span>
+  </div>
+  <span class="media_tool_meta meta_primary tips_global meta_praise" id="like3" style="display:none;">
+   <i class="icon_praise_gray">
+   </i>
+   <span class="praise_num" id="likeNum3">
+   </span>
+  </span>
+  <a class="media_tool_meta tips_global meta_extra" href="##" id="js_report_article3" style="display:none;">
+   投诉
+  </a>
+ </div>
+</div>
+</body></html>

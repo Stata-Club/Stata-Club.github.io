@@ -1,0 +1,800 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body><div class="rich_media_area_primary" id="page-content">
+ <div id="img-content">
+  <h2 class="rich_media_title" id="activity-name">
+  </h2>
+  <div class="rich_media_meta_list" id="meta_content">
+  </div>
+  <div class="rich_media_content " id="js_content">
+   <section style="box-sizing: border-box; background-color: rgb(255, 255, 255);">
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" text-align: center; margin-top: 10px; margin-bottom: 10px;  box-sizing: border-box; ">
+      <img _width="27%" class="" data-fail="0" data-ratio="1" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZl72IqqaAnoicicygxT4ib7hBB9pzehIl3mWjh9t3bsLNAFDNX8JVbzLV4Ib3DLQoHFWOWlXiaKWic7Fw/0?wx_fmt=png" data-type="png" data-w="163" src="%E6%B5%85%E8%B0%88%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D%E6%A8%A1%E5%BC%8F%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E6%87%92%E6%83%B0%E6%A8%A1%E5%BC%8F_files/640_008.png" style="vertical-align: middle; box-sizing: border-box; width: 27% !important; height: auto !important; visibility: visible !important;" width="27%"/>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" margin-top: 10px; margin-bottom: 10px;  box-sizing: border-box; ">
+      <section class="" style="padding: 10px; box-sizing: border-box; background-color: rgb(239, 239, 239);">
+       <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+        <section class="" style=" transform: translate3d(0px, 0px, 0px); -webkit-transform: translate3d(0px, 0px, 0px); -moz-transform: translate3d(0px, 0px, 0px); -o-transform: translate3d(0px, 0px, 0px); margin: 10px 0%;  box-sizing: border-box; ">
+         <section class="" style="font-size: 12px; color: rgb(130, 100, 74); line-height: 1.6; letter-spacing: 1px; padding-right: 10px; padding-left: 10px; box-sizing: border-box;">
+          <p style="box-sizing: border-box;">
+           <span style="font-size: 14px;">
+            哈喽，诸君安。在上篇推文中，我们讲了正则表达式匹配模式中的贪婪模式，那么与贪婪模式相对应的就是懒惰模式。接下来，小编就给大家介绍一下正则表达式匹配的懒惰模式。
+           </span>
+          </p>
+         </section>
+        </section>
+       </section>
+      </section>
+      <section class="" style="width: 100%; text-align: right; margin-top: -4px; box-sizing: border-box;">
+       <section style="width: 50px; height: 4px; box-sizing: border-box; background-color: rgb(125, 106, 96);">
+       </section>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        <br/>
+       </p>
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        <span style="font-size: 14px;">
+         经过笔者测试，在Stata14之前，Stata正则表达式的三个字符串函数
+         <span style="font-size: 14px; color: rgb(0, 82, 255);">
+          regexm()
+         </span>
+         、
+         <span style="font-size: 14px; color: rgb(0, 82, 255);">
+          regexs()
+         </span>
+         与
+         <span style="font-size: 14px; color: rgb(0, 82, 255);">
+          regexr()
+         </span>
+         不具备懒惰匹配模式。在Stata14以及新出的stata15中，以
+         <span style="font-size: 14px; color: rgb(0, 82, 255);">
+          ustr
+         </span>
+         开头的四个字符串函数才可以使用懒惰模式。之前的推文也介绍过，Stata14之前的版本只能使用以下正则表达式元字符：
+         <span style="font-size: 14px; color: rgb(255, 41, 65);">
+          “[]”、“a-z”、“.”、“*”、“+”、“?”、“^”、“$”、“|”、“()”
+         </span>
+         ，其他元字符只能在stata14、stata15中使用。可见Stata14、Stata15的正则表达式比起之前版本确实强大了很多，因此笔者也更推荐使用Stata14和Stata15对字符串进行处理。
+        </span>
+       </p>
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        <span style="font-size: 14px;">
+         当
+使用除“{n}”之外的数量元字符后面跟上“?”元字符时，会进入正则表达式匹配的懒惰模式，也称非贪婪模式。在懒惰模式下，首先看字符串中的第一个字符
+是否与正则表达式匹配，如果单独这一个字符没有匹配成功，就读入下一个字符，组成两个字符的字符串，如果还是没有匹配成功，继续读入下一个字符。如果直到
+读入整个字符串都没有实现匹配，就返回从第二个字符开始，重复上述的工作。直到匹配成功或者全部尝试过后也没有匹配出任何字符。用“懒惰”这个词，也可以
+把这个模式解释为：从头开始一个字符一个字符地吃，能少吃绝不多吃，直接匹配成功为止。
+        </span>
+       </p>
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        <span style="font-size: 14px;">
+         <br/>
+        </span>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" margin-top: 10px; margin-bottom: 10px; transform: translate3d(0px, 0px, 0px); -webkit-transform: translate3d(0px, 0px, 0px); -moz-transform: translate3d(0px, 0px, 0px); -o-transform: translate3d(0px, 0px, 0px);  box-sizing: border-box; ">
+      <img _width="40%" class="" data-fail="0" data-ratio="0.15" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZl72IqqaAnoicicygxT4ib7hBsJGSYxlLx4kRMwVaTcRdOVyzGq7YlnqaHOQsVaUyVbCBYqnzrdGEmg/0?wx_fmt=png" data-type="png" data-w="200" src="%E6%B5%85%E8%B0%88%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D%E6%A8%A1%E5%BC%8F%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E6%87%92%E6%83%B0%E6%A8%A1%E5%BC%8F_files/640_002.png" style="vertical-align: middle; box-sizing: border-box; width: 40% !important; height: auto !important; visibility: visible !important;" width="40%"/>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        <span style="font-size: 14px;">
+         例如，正则表达式re符合懒惰模式，对字符串“abc”进行匹配。
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(255, 41, 65);">
+         <span style="color: rgb(255, 41, 65); font-size: 14px;">
+          1、
+         </span>
+        </span>
+        <span style="font-size: 14px;">
+         首先字符串“abc”的第一个字符“a”进行匹配；
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(255, 41, 65);">
+         <span style="font-size: 14px;">
+          2、
+         </span>
+        </span>
+        <span style="font-size: 14px;">
+         如果匹配不上，加上下一个字符“b”，对“ab”进行匹配；
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(255, 41, 65);">
+         <span style="font-size: 14px;">
+          3、
+         </span>
+        </span>
+        <span style="font-size: 14px;">
+         如果匹配不上，加上下一个字符“c”，对“abc”进行匹配；
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(255, 41, 65);">
+         <span style="font-size: 14px;">
+          4、
+         </span>
+        </span>
+        <span style="font-size: 14px;">
+         如果匹配不上，将“abc”第一个字符“a”去掉，对字符串“bc”第一个字符“b”进行匹配；
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(255, 41, 65);">
+         <span style="font-size: 14px;">
+          5、
+         </span>
+        </span>
+        <span style="font-size: 14px;">
+         如果匹配不上，加上下一个字符“c”，对“bc”进行匹配；
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(255, 41, 65);">
+         <span style="font-size: 14px;">
+          6、
+         </span>
+        </span>
+        <span style="font-size: 14px;">
+         如果匹配不上，去掉“bc”中的第一个字符“b”，对“c”进行匹配。
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="font-size: 14px;">
+         下面我们用一个例子来展示一下懒惰模式：
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(0, 209, 0);">
+         <span style="font-size: 14px;">
+          clear
+         </span>
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(0, 209, 0);">
+         <span style="color: rgb(0, 209, 0); font-size: 14px;">
+          set obs 10
+         </span>
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(0, 209, 0);">
+         <span style="color: rgb(0, 209, 0); font-size: 14px;">
+          gen v = "A" + "B" * (_n - 1)
+         </span>
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(0, 209, 0);">
+         <span style="color: rgb(0, 209, 0); font-size: 14px;">
+          gen v1 = ustrregexs(0) if ustrregexm(v, "AB*?")
+         </span>
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(0, 209, 0);">
+         <span style="color: rgb(0, 209, 0); font-size: 14px;">
+          gen v2 = ustrregexs(0) if ustrregexm(v, "AB+?")
+         </span>
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(0, 209, 0);">
+         <span style="color: rgb(0, 209, 0); font-size: 14px;">
+          gen v3 = ustrregexs(0) if ustrregexm(v, "AB??")
+         </span>
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(0, 209, 0);">
+         <span style="color: rgb(0, 209, 0); font-size: 14px;">
+          gen v4 = ustrregexs(0) if ustrregexm(v, "AB{1,3}?")
+         </span>
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(0, 209, 0);">
+         <span style="color: rgb(0, 209, 0); font-size: 14px;">
+          gen v5 = ustrregexs(0) if ustrregexm(v, "AB{3,}?")
+         </span>
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(0, 209, 0);">
+         <span style="color: rgb(0, 209, 0); font-size: 14px;">
+          list, sep(0)
+         </span>
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="font-size: 14px;">
+         程序执行结果如下：
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="font-size: 14px;">
+        </span>
+       </p>
+       <p>
+        <img _width="100%" class="" data-fail="0" data-ratio="0.711645101663586" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZl72IqqaAnoicicygxT4ib7hBfSU7QgtaHDFric4n7wBJnONwCEsPLskdXRmibZFMiaaHgEjPzwFIeZfZA/0?wx_fmt=png" data-type="png" data-w="541" src="%E6%B5%85%E8%B0%88%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D%E6%A8%A1%E5%BC%8F%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E6%87%92%E6%83%B0%E6%A8%A1%E5%BC%8F_files/640_005.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+       </p>
+       <p style="box-sizing: border-box;">
+        <br/>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" margin-top: 10px; margin-bottom: 10px; transform: translate3d(0px, 0px, 0px); -webkit-transform: translate3d(0px, 0px, 0px); -moz-transform: translate3d(0px, 0px, 0px); -o-transform: translate3d(0px, 0px, 0px);  box-sizing: border-box; ">
+      <img _width="40%" class="" data-fail="0" data-ratio="0.15" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZl72IqqaAnoicicygxT4ib7hBqHjRN3RAFZ5SHIROCGLPYR96hiactfKBrfEUsLdPNKLF0kx2VWjy8xQ/0?wx_fmt=png" data-type="png" data-w="200" src="%E6%B5%85%E8%B0%88%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D%E6%A8%A1%E5%BC%8F%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E6%87%92%E6%83%B0%E6%A8%A1%E5%BC%8F_files/640_009.png" style="vertical-align: middle; box-sizing: border-box; width: 40% !important; height: auto !important; visibility: visible !important;" width="40%"/>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        <span style="font-size: 14px;">
+         首先，变量v1是正则表达式
+         <span style="font-size: 14px; color: rgb(255, 41, 65);">
+          "AB*?"
+         </span>
+         的
+匹配结果，元字符“*”之后跟着“?”元字符，便会进入正则表达式的懒惰模式。我们以变量v中第一条观测值“A”和最后一条观测值
+“ABBBBBBBBB”为例。对于“A”，正则表达式“AB*?”首先对字符串“A”的第一个字符（即“A”）进行匹配，匹配成功，这时候事实上对
+“B”匹配了0次；对于“ABBBBBBBBB”，正则表达式“AB*?”首先对字符串“ABBBBBBBBB”的第一个字符“A”进行匹配，匹配成功，
+这里对字符“B”也是匹配了0次；
+        </span>
+       </p>
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        <span style="font-size: 14px;">
+         <br/>
+        </span>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" margin-top: 10px; margin-bottom: 10px; transform: translate3d(0px, 0px, 0px); -webkit-transform: translate3d(0px, 0px, 0px); -moz-transform: translate3d(0px, 0px, 0px); -o-transform: translate3d(0px, 0px, 0px);  box-sizing: border-box; ">
+      <img _width="40%" class="" data-fail="0" data-ratio="0.15" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZl72IqqaAnoicicygxT4ib7hBBquxGODBvnmJ7NgdsksuADOku4B2Rbp3oFiaSP3qEakia3AJMLUqC4lg/0?wx_fmt=png" data-type="png" data-w="200" src="%E6%B5%85%E8%B0%88%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D%E6%A8%A1%E5%BC%8F%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E6%87%92%E6%83%B0%E6%A8%A1%E5%BC%8F_files/640_004.png" style="vertical-align: middle; box-sizing: border-box; width: 40% !important; height: auto !important; visibility: visible !important;" width="40%"/>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        <span style="font-size: 14px;">
+         v2是正则表达式
+         <span style="font-size: 14px; color: rgb(255, 41, 65);">
+          “AB+?”
+         </span>
+         的
+匹配结果，与“AB*?”不同的是这里对字符“B”至少匹配一次，因为元字符“+”表示对前一个字符或子表达式匹配一次或多次；所以对变量v中“A”进行
+匹配时，首先匹配字符串“A”中的第一个字符“A”，因为至少对“B”匹配一次，所以匹配不成功；对字符串“ABBBBBBBBB”进行匹配时，首先对字
+符串的第一个字符“A”进行匹配，匹配不成功，然后加上下一个字符“B”，变为“AB”，即匹配成功，对“B”匹配了1次，“AB”即为匹配结果。
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="font-size: 14px;">
+         <br/>
+        </span>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" margin-top: 10px; margin-bottom: 10px; transform: translate3d(0px, 0px, 0px); -webkit-transform: translate3d(0px, 0px, 0px); -moz-transform: translate3d(0px, 0px, 0px); -o-transform: translate3d(0px, 0px, 0px);  box-sizing: border-box; ">
+      <img _width="40%" class="" data-fail="0" data-ratio="0.15" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZl72IqqaAnoicicygxT4ib7hBVbFYubPOibORqNibqmvawDvLe9mUW4cwV5vOib7XINjsmh4VncOTq4viaQ/0?wx_fmt=png" data-type="png" data-w="200" src="%E6%B5%85%E8%B0%88%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D%E6%A8%A1%E5%BC%8F%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E6%87%92%E6%83%B0%E6%A8%A1%E5%BC%8F_files/640_010.png" style="vertical-align: middle; box-sizing: border-box; width: 40% !important; height: auto !important; visibility: visible !important;" width="40%"/>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        <span style="font-size: 14px;">
+         v3是正则表达式
+         <span style="font-size: 14px; color: rgb(255, 41, 65);">
+          “AB??”
+         </span>
+         的
+匹配结果，元字符“?”表示对前一个字符或子表达式匹配0次或1次，后边跟上元字符“?”也会进入正则表达式的懒惰模式。我们还以“A”和
+“ABBBBBBBBB”为例。首先，对于字符串“A”进行匹配时，首先对字符串的第一个字符“A”进行匹配，匹配成功，这时候对字符“B”匹配了0次；
+对“ABBBBBBBBB”进行匹配时，首先匹配字符串“ABBBBBBBBB”的第一个字符“A”，匹配成功，这时候对字符B也匹配了0次，匹配结果为
+“A”。
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="font-size: 14px;">
+         <br/>
+        </span>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" margin-top: 10px; margin-bottom: 10px; transform: translate3d(0px, 0px, 0px); -webkit-transform: translate3d(0px, 0px, 0px); -moz-transform: translate3d(0px, 0px, 0px); -o-transform: translate3d(0px, 0px, 0px);  box-sizing: border-box; ">
+      <img _width="40%" class="" data-fail="0" data-ratio="0.15" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZl72IqqaAnoicicygxT4ib7hBuJdbD7XQWxdtKWkssCy1slkoJhnzayxOELB9mdXkeqNyp86xdib6c8g/0?wx_fmt=png" data-type="png" data-w="200" src="%E6%B5%85%E8%B0%88%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D%E6%A8%A1%E5%BC%8F%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E6%87%92%E6%83%B0%E6%A8%A1%E5%BC%8F_files/640_006.png" style="vertical-align: middle; box-sizing: border-box; width: 40% !important; height: auto !important; visibility: visible !important;" width="40%"/>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        <span style="font-size: 14px;">
+         v4是正则表达式
+         <span style="font-size: 14px; color: rgb(255, 41, 65);">
+          “AB{1,3}?”
+         </span>
+         的
+匹配结果，元字符“{n1,n2}”表示对前一个字符或子表达式匹配至少n1次，至多n2次,后边跟上元字符“?”同样也会进入正则表达式的懒惰匹配模
+式。所以在对“A”进行匹配时，首先，把字符串的第一个字符“A”进行匹配，因为至少对字符“B”匹配1次，所以匹配不成功；对于
+“ABBBBBBBBB”，同样先对字符串“ABBBBBBBBB”中的第一个字符串“A”进行匹配，由于对字符“B”至少匹配1次，所以匹配不成功，接
+着按懒惰模式的匹配法则，加上后一个字符“B”，变为“AB”，匹配成功，这时候对字符“B”匹配了1次。
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="font-size: 14px;">
+         <br/>
+        </span>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" margin-top: 10px; margin-bottom: 10px; transform: translate3d(0px, 0px, 0px); -webkit-transform: translate3d(0px, 0px, 0px); -moz-transform: translate3d(0px, 0px, 0px); -o-transform: translate3d(0px, 0px, 0px);  box-sizing: border-box; ">
+      <img _width="40%" class="" data-fail="0" data-ratio="0.15" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZl72IqqaAnoicicygxT4ib7hBsJGSYxlLx4kRMwVaTcRdOVyzGq7YlnqaHOQsVaUyVbCBYqnzrdGEmg/0?wx_fmt=png" data-type="png" data-w="200" src="%E6%B5%85%E8%B0%88%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D%E6%A8%A1%E5%BC%8F%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E6%87%92%E6%83%B0%E6%A8%A1%E5%BC%8F_files/640_002.png" style="vertical-align: middle; box-sizing: border-box; width: 40% !important; height: auto !important; visibility: visible !important;" width="40%"/>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        <span style="font-size: 14px;">
+         变量v5是正则表达式
+         <span style="font-size: 14px; color: rgb(255, 41, 65);">
+          AB{3,}
+         </span>
+         的
+匹配结果，元字符{n,}表示对前一个字符或子表达式匹配至少n次（此例中即表示至少匹配3次），加上元字符“?”便会进入懒惰模式。对“A”进行匹配
+时，因为至少对字符“B”匹配3次，所以匹配不成功；对于字符串“ABBBBBBBBB”匹配时，首先，匹配字符串“ABBBBBBBBB”的第一个字符
+“A”，匹配不成功，然后加上后一个字符“B”，变为“AB”，仍然匹配不成功，然后再加后一个字符“B”，变为“ABB”，还是匹配不成功，接着加后边
+一个字符“B”，变为“ABBB”，匹配成功，这时候对字符“B”匹配了3次。
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="font-size: 14px;">
+         <br/>
+        </span>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" text-align: center; margin-top: 10px; margin-bottom: 10px;  box-sizing: border-box; ">
+      <img _width="24%" class="" data-fail="0" data-ratio="1.2925531914893618" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZl72IqqaAnoicicygxT4ib7hB1nuXVIBDzTyjtSVmv4gSdTEDvlCHv1TMcsp4SHJRhkCJXfEibtv3aSw/0?wx_fmt=png" data-type="png" data-w="188" src="%E6%B5%85%E8%B0%88%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D%E6%A8%A1%E5%BC%8F%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E6%87%92%E6%83%B0%E6%A8%A1%E5%BC%8F_files/640_007.png" style="vertical-align: middle; box-sizing: border-box; width: 24% !important; height: auto !important; visibility: visible !important;" width="24%"/>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        <span style="font-size: 14px;">
+         和
+贪婪模式一样，这里也需要注意一点，懒惰模式并不是说我们匹配出的就是整个字符串中所能匹配到的最短的子字符串，其匹配顺序为先尝试匹配字符串中的第一个
+字符，然后依次读入下一个字符...也就是说在懒惰匹配模式下，匹配出的实际上也是从尽可能靠近字符串开头的位置开始的，与正则表达式相匹配的最短的字符
+串。我们以下边一个例子为例：
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(0, 209, 0);">
+         <span style="font-size: 14px;">
+          clear
+         </span>
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(0, 209, 0);">
+         <span style="color: rgb(0, 209, 0); font-size: 14px;">
+          set obs 1
+         </span>
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(0, 209, 0);">
+         <span style="color: rgb(0, 209, 0); font-size: 14px;">
+          gen str v = "aaaaab"
+         </span>
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(0, 209, 0);">
+         <span style="color: rgb(0, 209, 0); font-size: 14px;">
+          gen v1 = ustrregexs(0) if ustrregexm(v, "a+?b")list
+         </span>
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(0, 209, 0);">
+         <span style="color: rgb(0, 209, 0); font-size: 14px;">
+          list
+         </span>
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(0, 209, 0);">
+         <span style="color: rgb(0, 209, 0); font-size: 14px;">
+         </span>
+        </span>
+       </p>
+       <p style="text-align: center;">
+        <img class="" data-fail="0" data-ratio="0.8187919463087249" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZl72IqqaAnoicicygxT4ib7hBOIceRnxKDfwUdkTXX78gkuBvAJMwicb8f6UM1WrPMwUZkMOcWfZ0qyg/0?wx_fmt=png" data-type="png" data-w="298" src="%E6%B5%85%E8%B0%88%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D%E6%A8%A1%E5%BC%8F%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E6%87%92%E6%83%B0%E6%A8%A1%E5%BC%8F_files/640_003.png" style="width: auto !important; height: auto !important; visibility: visible !important;"/>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(0, 209, 0);">
+         <span style="color: rgb(0, 209, 0); font-size: 14px;">
+         </span>
+        </span>
+        <br/>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="font-size: 14px;">
+         可
+以发现，在懒惰模式下匹配的并不是整个字符串中最短的子字符串“ab”，而是以靠近字符串开头位置开始，与正则表达式相匹配的最短字符串
+“aaaaab”。它的匹配过程为：首先，元字符“+”是一个数量元字符，表示匹配前一个字符或子表达式至少一次，其后跟元字符“?”便会进入懒惰模式，
+首先匹配字符串的第一个字符“a”，因为整个正则表达式匹配的是多个“a”，后边紧跟着“b”，因此单个字符“a”匹配不成功，接着往后边加上下一个字符
+“a”，变为“aa”，仍然匹配不成功......直到加上最后一个字符“b”，变为字符串“aaaaab”，匹配成功，这时候对“a”匹配了5次。
+        </span>
+       </p>
+       <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+        <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+         <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+          <section class="" style="max-width: 100%; box-sizing: border-box; font-size: 14px; line-height: 1.8; word-wrap: break-word !important;">
+           <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; text-indent: 2em; word-wrap: break-word !important;">
+            <br/>
+           </p>
+          </section>
+         </section>
+        </section>
+        <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+         <section class="" style="margin-top: 10px; margin-bottom: 10px; max-width: 100%; box-sizing: border-box; text-align: center; word-wrap: break-word !important;">
+          <img _width="auto" class="" data-fail="0" data-ratio="0.08176100628930817" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZ7H7TSB0hicMfpAe1UBBS1cg85xdfm1sUOviaaSia8Mb6uHEbQtWx7aibI6gBxa54ly0mXMTHcB3uIUw/640?wx_fmt=png" data-type="png" data-w="636" src="%E6%B5%85%E8%B0%88%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D%E6%A8%A1%E5%BC%8F%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E6%87%92%E6%83%B0%E6%A8%A1%E5%BC%8F_files/640.png" style="box-sizing: border-box; vertical-align: middle; overflow-wrap: break-word !important; visibility: visible !important; width: auto !important; height: auto !important;"/>
+         </section>
+        </section>
+       </section>
+       <p style="max-width: 100%; min-height: 1em; line-height: 25.6px; text-indent: 28px; box-sizing: border-box !important; word-wrap: break-word !important;">
+        <span style="max-width: 100%; color: rgb(136, 136, 136); font-family: 微软雅黑; font-size: 14px; line-height: 24px; text-align: justify; text-indent: 2em; box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+         以上就是今天给大家分享的内容了，说得好就赏个铜板呗！有钱的捧个钱场，有人的捧个人场~。
+        </span>
+       </p>
+       <p style="max-width: 100%; min-height: 1em; line-height: 25.6px; font-family: 微软雅黑; text-indent: 2em; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+        <span style="max-width: 100%; text-align: justify; color: rgb(122, 79, 214); line-height: 25.6px; text-indent: 2em; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+         应广大粉丝要求，爬虫俱乐部的推文公众号打赏功能可以开发票啦，累计打赏超过1000元我们即可给您开具发票，发票类别为“咨询费”。用心做事，只为做您更贴心的小爬虫。第一批发票已经寄到各位小主的手中，大家快来给小爬虫打赏呀~
+        </span>
+       </p>
+       <section style="max-width: 100%; box-sizing: border-box; line-height: 25.6px; font-family: 微软雅黑; text-align: center; word-wrap: break-word !important; overflow-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+        <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+         <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+          <section style="max-width: 100%; box-sizing: border-box; line-height: 1.8; font-size: 14px; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+           <p style="max-width: 100%; min-height: 1em; text-align: right; line-height: 25.6px; text-indent: 28px; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+            <span style="max-width: 100%; color: rgb(122, 79, 214); line-height: 25.6px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+            </span>
+            <span style="max-width: 100%; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+             文字编辑：司海涛
+            </span>
+           </p>
+           <p style="max-width: 100%; min-height: 1em; text-align: right; line-height: 25.6px; text-indent: 28px; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+            <span style="max-width: 100%; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+             技术总编：刘贝贝
+            </span>
+           </p>
+           <hr style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+           <hr style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+           <p style="max-width: 100%; min-height: 1em; line-height: 25.6px; text-indent: 0em; font-size: 16px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+            <strong style="max-width: 100%; text-align: justify; color: rgb(136, 136, 136); line-height: 23.27px; text-indent: 0em; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+             往期推文推荐：
+            </strong>
+            <span style="max-width: 100%; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+            </span>
+           </p>
+           <p style="max-width: 100%; min-height: 1em; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+            <span style="max-width: 100%; font-size: 15px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+             1.
+            </span>
+            <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247486256&amp;idx=1&amp;sn=ac0e923153845a620ebcd57045f105a0&amp;chksm=e9af439fded8ca89ea91469c79d865dde3e12bfcfe55f4a8175785032a8ffdc5f24f8cdab400&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; font-size: 15px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;" target="_blank">
+             高校学术大神：你的导师上榜了吗？
+            </a>
+           </p>
+           <section style="max-width: 100%; box-sizing: border-box; line-height: 25.6px; font-size: 16px; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+            <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+             <section style="max-width: 100%; box-sizing: border-box; line-height: 1.8; font-size: 14px; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+              <section style="max-width: 100%; box-sizing: border-box; line-height: 2.2; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+               <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                 <section style="max-width: 100%; box-sizing: border-box; line-height: 1.8; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                  <section style="max-width: 100%; box-sizing: border-box; line-height: 25.6px; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                   <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                    <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                     <section style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                      <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                       <span style="max-width: 100%; text-align: justify; color: rgb(0, 0, 0); line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                        2.
+                       </span>
+                       <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247485548&amp;idx=1&amp;sn=478ba30875877af79d97e9ed4eecaa7c&amp;chksm=e9af40c3ded8c9d5dc76879c0d21bb2e5e8fd182c59f2545c9879706403cafb260281dc13fce&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; text-align: justify; line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;" target="_blank">
+                        中国高校财经、管理与综合类期刊灌水排行榜
+                       </a>
+                      </p>
+                      <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                       <span style="max-width: 100%; color: rgb(0, 0, 0); line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                        3.
+                        <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484941&amp;idx=1&amp;sn=f348ba26ed2e9c5c25efd14e3c26c506&amp;chksm=e9af4ea2ded8c7b4f0c98365323ca46337259f9ba58c9d2541b94898bcd450c162108ba9a577&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;" target="_blank">
+                         关于RTF你不知道的命令之番外篇
+                        </a>
+                       </span>
+                      </p>
+                      <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                       <span style="max-width: 100%; text-align: justify; color: rgb(0, 0, 0); line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                        4.
+                        <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484326&amp;idx=1&amp;sn=179a96c391bae0ff47e9f84b3e960aae&amp;chksm=e9af4b09ded8c21f705cc74ba9a18f996a6fed246222e51b404425e79a30b041bf2eef5c5d44&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;" target="_blank">
+                         免费事件研究，一片片从邮局寄来
+                        </a>
+                       </span>
+                      </p>
+                      <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                       <span style="max-width: 100%; text-align: justify; color: rgb(0, 0, 0); line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                        5.
+                       </span>
+                       <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484452&amp;idx=1&amp;sn=c40cd805dafb50cf9c226cdd20550382&amp;chksm=e9af4c8bded8c59da87a75728c6600f0b6691846dfc071d9ee50d4d1424fd26bb696ed2ee0d4&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; text-align: justify; line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;" target="_blank">
+                        免费的股价同步性，一片片从邮局寄来
+                       </a>
+                      </p>
+                      <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                       <span style="max-width: 100%; text-align: justify; color: rgb(0, 0, 0); line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                        6.
+                       </span>
+                       <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484529&amp;idx=1&amp;sn=dace95be71022f51c515c28b252d1e7b&amp;chksm=e9af4cdeded8c5c87a91fb3a1a5caa55cc6fe961ab72c6734cd859b48239882b48756bd4ad5e&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; text-align: justify; line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;" target="_blank">
+                        Stata叫你回家听音乐了！
+                       </a>
+                      </p>
+                      <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                       <span style="max-width: 100%; text-align: justify; color: rgb(0, 0, 0); line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                        7.
+                       </span>
+                       <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484866&amp;idx=1&amp;sn=9814dd7590f639877665d9a7be1a7596&amp;chksm=e9af4d6dded8c47bec92e4f77659fe8b2b6ec7502b6d380e34a3c67ef83165e103077abd3ee5&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; text-align: justify; line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;" target="_blank">
+                        一言不合就用stata写邮件（Outlook/Foxmail）
+                       </a>
+                      </p>
+                      <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                       <span style="max-width: 100%; text-align: justify; color: rgb(0, 0, 0); line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                        8.
+                       </span>
+                       <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484979&amp;idx=1&amp;sn=e572f2658ba8137832e3ae3aff2ce01a&amp;chksm=e9af4e9cded8c78a191dd0bcd06218c57a5492e4d23b1f7b0c564701a174337a4afe61a6b8e2&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; text-align: justify; line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;" target="_blank">
+                        听说你想知道怎么用stata画地图？
+                       </a>
+                      </p>
+                      <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                       <span style="max-width: 100%; text-align: justify; color: rgb(0, 0, 0); line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                        9.
+                       </span>
+                       <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484233&amp;idx=1&amp;sn=104ca64b0bd3cf2dea046b11ea89e028&amp;chksm=e9af4be6ded8c2f005e28306aa9dab5cfcbca4020abb8296469fc5006c1eb32c6594c7b99a4b&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; text-align: justify; line-height: 1.4; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;" target="_blank">
+                        I have a Stata, I have a python
+                       </a>
+                      </p>
+                      <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                       <span style="max-width: 100%; text-align: justify; color: rgb(0, 0, 0); line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                        10.
+                       </span>
+                       <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484789&amp;idx=1&amp;sn=5c52d2bba468ceb9392b440c43638a19&amp;chksm=e9af4ddaded8c4cc6bf486b21c87f0e3b17b79694bbc388741e0a1d9f5e8f6bd4134efede7f2&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; text-align: justify; line-height: 24px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;" target="_blank">
+                        I have a Stata, I have a Python之二——pdf转word
+                       </a>
+                      </p>
+                      <hr style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+                      <hr style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+                      <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                       <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+                      </p>
+                     </section>
+                    </section>
+                   </section>
+                  </section>
+                 </section>
+                </section>
+               </section>
+              </section>
+             </section>
+            </section>
+           </section>
+           <section style="max-width: 100%; box-sizing: border-box; line-height: 25.6px; font-size: 16px; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+            <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+             <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+              <section style="max-width: 100%; box-sizing: border-box; line-height: 2.2; font-size: 14px; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+               <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                 <section style="max-width: 100%; box-sizing: border-box; line-height: 1.8; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                  <section style="max-width: 100%; box-sizing: border-box; line-height: 25.6px; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                   <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                    <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                     <section style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                      <section style="margin-top: 10px; margin-bottom: 10px; max-width: 100%; box-sizing: border-box; color: rgb(120, 114, 114); line-height: 25.6px; font-size: 15px; font-stretch: normal; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                       <section style="padding-right: 1em; max-width: 100%; box-sizing: border-box; width: 556.36px; text-align: right; vertical-align: top; display: inline-block; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                        <section style="margin-right: -1em; max-width: 100%; box-sizing: border-box; text-align: left; vertical-align: bottom; display: inline-block; transform: rotate(0deg); word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                         <section style="max-width: 100%; box-sizing: border-box; width: 0px; border-right-width: 0.8em; border-right-style: solid; border-right-color: rgb(1, 115, 164); border-bottom-width: 0.8em; border-bottom-style: solid; border-bottom-color: rgb(1, 115, 164); word-wrap: break-word !important; overflow-wrap: break-word !important; border-top-width: 0.8em !important; border-top-style: solid !important; border-top-color: transparent !important; border-left-width: 0.8em !important; border-left-style: solid !important; border-left-color: transparent !important;">
+                         </section>
+                         <section style="margin-top: -1em; margin-left: -0.18em; max-width: 100%; box-sizing: border-box; width: 0px; border-right-width: 0.8em; border-right-style: solid; border-right-color: rgb(255, 255, 255); border-bottom-width: 0.8em; border-bottom-style: solid; border-bottom-color: rgb(255, 255, 255); word-wrap: break-word !important; overflow-wrap: break-word !important; border-top-width: 0.8em !important; border-top-style: solid !important; border-top-color: transparent !important; border-left-width: 0.8em !important; border-left-style: solid !important; border-left-color: transparent !important;">
+                         </section>
+                        </section>
+                        <section style="margin-top: 0.3em; padding-bottom: 1em; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important; background-color: rgb(1, 183, 204);">
+                         <section style="margin-top: -1em; margin-right: -1em; max-width: 100%; box-sizing: border-box; border: 0.2em solid rgb(1, 115, 164); width: 540.36px; display: inline-block; word-wrap: break-word !important; overflow-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+                          <section style="padding: 10px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                           <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                            <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                             <section style="max-width: 100%; box-sizing: border-box; text-align: center; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                              <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; line-height: 25.6px; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                               <span style="max-width: 100%; color: rgb(255, 41, 65); box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                                <strong style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                                 关于我们
+                                </strong>
+                               </span>
+                              </p>
+                              <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; text-align: left; line-height: 25.6px; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                               <span style="max-width: 100%; color: rgb(0, 0, 0); line-height: 1.6; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                                微信公众号“爬虫俱乐部”分享实用的stata命令，欢迎转载、打赏。爬虫俱乐部是由李春涛教授领导下的研究生及本科生组成的大数据分析和数据挖掘团队。
+                               </span>
+                              </p>
+                             </section>
+                            </section>
+                           </section>
+                          </section>
+                         </section>
+                        </section>
+                       </section>
+                      </section>
+                      <p style="max-width: 100%; min-height: 1em; text-align: left; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                       <span style="max-width: 100%; text-align: justify; color: rgb(255, 76, 0); line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                        此外，欢迎大家踊跃投稿，介绍一些关于stata的数据处理和分析技巧。
+                       </span>
+                      </p>
+                      <p style="max-width: 100%; min-height: 1em; text-align: left; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                       <span style="max-width: 100%; color: rgb(255, 76, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                        投稿邮箱：
+                       </span>
+                       statatraining@163.com
+                      </p>
+                      <p style="max-width: 100%; min-height: 1em; text-align: left; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                       <span style="max-width: 100%; color: rgb(255, 76, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                        投稿要求：
+                        <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+                        1）必须原创，禁止抄袭；
+                        <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+                        2）必须准确，详细，有例子，有截图；
+                        <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+                        注意事项：
+                        <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+                        1）所有投稿都会经过本公众号运营团队成员的审核，审核通过才可录用，一经录用，会在该推文里为作者署名，并有赏金分成。
+                        <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+                        2）邮件请注明投稿，邮件名称为“投稿”+“推文名称”。
+                        <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+                        <span style="max-width: 100%; color: rgb(122, 79, 214); box-sizing: border-box !important; word-wrap: break-word !important;">
+                         3）应广大读者要求，现开通有偿问答服务，如果大家遇到关于stata分析数据的问题，可以在公众号中提出，只需支付少量赏金，我们会在后期的推文里给予解答。
+                        </span>
+                       </span>
+                      </p>
+                     </section>
+                    </section>
+                   </section>
+                  </section>
+                  <p style="max-width: 100%; min-height: 1em; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                   <img _width="556px" class="" data-fail="0" data-ratio="1" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhaWXvVQ75jWic8ZgzBHtCqoBqxqNuAHrRUqGSSdt9PXL1ibOiadXZDz2bHs7MsqI4tViaF9GoGceQ71Qw/640?wx_fmt=jpeg" data-type="jpeg" data-w="430" src="%E6%B5%85%E8%B0%88%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D%E6%A8%A1%E5%BC%8F%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E6%87%92%E6%83%B0%E6%A8%A1%E5%BC%8F_files/640.jpg" style="box-sizing: border-box !important; overflow-wrap: break-word !important; visibility: visible !important; width: 556px !important; height: auto !important;" width="556px"/>
+                  </p>
+                  <p style="max-width: 100%; min-height: 1em; line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                   <span style="max-width: 100%; color: rgb(120, 114, 114); line-height: 19.2px; letter-spacing: 2px; font-size: 15px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                    欢迎关注爬虫俱乐部
+                   </span>
+                   <span style="max-width: 100%; line-height: 1.6; text-indent: 28px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                   </span>
+                   <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; line-height: 1.6;">
+                   </span>
+                   <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+                   </span>
+                  </p>
+                 </section>
+                </section>
+               </section>
+              </section>
+             </section>
+            </section>
+           </section>
+          </section>
+         </section>
+        </section>
+       </section>
+       <p>
+        <br/>
+       </p>
+      </section>
+     </section>
+    </section>
+   </section>
+  </div>
+  <script nonce="1329311273" type="text/javascript">
+   var first_sceen__time = (+new Date());
+
+                    if ("" == 1 && document.getElementById('js_content')) {
+                        document.getElementById('js_content').addEventListener("selectstart",function(e){ e.preventDefault(); });
+                    }
+
+                    
+                    (function(){
+                        if (navigator.userAgent.indexOf("WindowsWechat") != -1){
+                            var link = document.createElement('link');
+                            var head = document.getElementsByTagName('head')[0];
+                            link.rel = 'stylesheet';
+                            link.type = 'text/css';
+                            link.href = "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/page_mp_article_improve_winwx31619e.css";
+                            head.appendChild(link);
+                        }
+                    })();
+  </script>
+  <div class="ct_mpda_wrp" id="js_sponsor_ad_area" style="display:none;">
+  </div>
+  <div class="reward_area tc" id="js_reward_area" style="display:none;">
+   <p>
+    <a class="reward_access" href="##" id="js_reward_link">
+     赞赏
+    </a>
+   </p>
+   <div class="reward_area_inner" id="js_reward_inner" style="display: none; width: 578px;">
+    <p class="tips_global reward_user_tips">
+     <a href="##" id="js_reward_total">
+     </a>
+     人赞赏
+    </p>
+    <div class="reward_user_list" id="js_reward_list">
+    </div>
+   </div>
+  </div>
+  <div class="reward_qrcode_area reward_area tc" id="js_reward_qrcode" style="display:none;">
+   <p class="tips_global">
+    长按二维码向我转账
+   </p>
+   <p class="reward_tips">
+   </p>
+   <span class="reward_qrcode_img_wrp">
+    <img class="reward_qrcode_img" id="js_reward_qrcode_img"/>
+   </span>
+   <p class="tips_global">
+    受苹果公司新规定影响，微信 iOS 版的赞赏功能被关闭，可通过二维码转账支持公众号。
+   </p>
+  </div>
+ </div>
+ <div class="rich_media_tool" id="js_toobar3">
+  <div class="media_tool_meta tips_global meta_primary" id="js_read_area3" style="display:none;">
+   阅读
+   <span id="readNum3">
+   </span>
+  </div>
+  <span class="media_tool_meta meta_primary tips_global meta_praise" id="like3" style="display:none;">
+   <i class="icon_praise_gray">
+   </i>
+   <span class="praise_num" id="likeNum3">
+   </span>
+  </span>
+  <a class="media_tool_meta tips_global meta_extra" href="##" id="js_report_article3" style="display:none;">
+   投诉
+  </a>
+ </div>
+</div>
+</body></html>

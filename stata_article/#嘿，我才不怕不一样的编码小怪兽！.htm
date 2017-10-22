@@ -1,0 +1,627 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body><div class="rich_media_area_primary" id="page-content">
+ <div id="img-content">
+  <h2 class="rich_media_title" id="activity-name">
+  </h2>
+  <div class="rich_media_meta_list" id="meta_content">
+  </div>
+  <div class="rich_media_content " id="js_content">
+   <section style="box-sizing: border-box; background-color: rgb(255, 255, 255);">
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        <span style="line-height: 1.8; text-indent: 2em;">
+        </span>
+       </p>
+       <section style="box-sizing: border-box; background-color: rgb(255, 255, 255);">
+        <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+         <section class="" style=" text-align: center; margin-top: 10px; margin-bottom: 10px;  box-sizing: border-box; ">
+          <img class="" data-fail="0" data-ratio="0.2671875" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhZQkl7UM5miczMe1svyfcxdibHzDHpWR47V8BlicODkTT58Q10uwE5p5BtUvKUfkduDK1UAxVJLp76oA/0?wx_fmt=jpeg" data-type="jpeg" data-w="640" src="%E5%98%BF%EF%BC%8C%E6%88%91%E6%89%8D%E4%B8%8D%E6%80%95%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E7%BC%96%E7%A0%81%E5%B0%8F%E6%80%AA%E5%85%BD%EF%BC%81_files/640_007.jpg" style="vertical-align: middle; box-sizing: border-box; width: auto !important; height: auto !important; visibility: visible !important;"/>
+         </section>
+        </section>
+        <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+         <section class="" style=" text-align: center; margin-top: 10px; margin-bottom: 10px;  box-sizing: border-box; ">
+          <img class="" data-fail="0" data-ratio="0.0390625" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZQkl7UM5miczMe1svyfcxdibu6uI0XYqAZqaP8k6mJUflib7ibstrPbtZlicia7Nd8gsWUr9BR1DicEyxPw/0?wx_fmt=png" data-type="png" data-w="640" src="%E5%98%BF%EF%BC%8C%E6%88%91%E6%89%8D%E4%B8%8D%E6%80%95%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E7%BC%96%E7%A0%81%E5%B0%8F%E6%80%AA%E5%85%BD%EF%BC%81_files/640_002.png" style="vertical-align: middle; box-sizing: border-box; width: auto !important; height: auto !important; visibility: visible !important;"/>
+         </section>
+        </section>
+       </section>
+       <p style="box-sizing: border-box; text-indent: 2em; text-align: left;">
+        <span style="line-height: 1.8; text-indent: 2em;">
+         不知道诸位读者是否和小编一样，在用stata的时候总是遇到因为stata版本不同，文档打开造成乱码的问题。这是因为stata13或更低版本的使用的是ASCII编码，而stata14使用的是UNICODE（统一码、万国码）编码。在我们的之前的朝花夕拾文章《
+         <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247485587&amp;idx=1&amp;sn=f0c0c3eb65e1743cca59f0df7bd07307&amp;chksm=e9af403cded8c92af0cd6de27deea5b5e35fde00ff30ffbd7d756778681593314c10600ac23a&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247485587&amp;idx=1&amp;sn=f0c0c3eb65e1743cca59f0df7bd07307&amp;chksm=e9af403cded8c92af0cd6de27deea5b5e35fde00ff30ffbd7d756778681593314c10600ac23a&amp;scene=21#wechat_redirect" target="_blank">
+          识得庐山真面目—unicode命令
+         </a>
+         》中有过详细介绍。今天，小编就来和大家分享几个好用的小命令，让不同的编码再也不成为你数据整理中的扰人的小怪兽！
+        </span>
+       </p>
+       <p style="box-sizing: border-box; text-align: center; text-indent: 0em;">
+        <img _width="40%" class="" data-fail="0" data-ratio="0.17263843648208468" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZQkl7UM5miczMe1svyfcxdibvcJ2ib85Tl4RVI2ia1rjTMjuBBzYtgLuXv4gjNf4x5C69C0WFehQ6e2Q/0?wx_fmt=png" data-type="png" data-w="614" src="%E5%98%BF%EF%BC%8C%E6%88%91%E6%89%8D%E4%B8%8D%E6%80%95%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E7%BC%96%E7%A0%81%E5%B0%8F%E6%80%AA%E5%85%BD%EF%BC%81_files/640_004.png" style="text-indent: 2em; line-height: 1.8; text-align: center; vertical-align: middle; box-sizing: border-box; width: 40% !important; height: auto !important; visibility: visible !important;" width="40%"/>
+       </p>
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        <span style="text-indent: 2em; line-height: 1.8;">
+         首先我们来说一说：
+        </span>
+        <br/>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        <strong>
+         什么是ASCII？
+        </strong>
+       </p>
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        ASCII
+是用来表示英文字符的一种编码规范。每个ASCII字符占用1个字节，因此，ASCII编码可以表示的最大字符数是255（00H—FFH）。这对于英文
+而言，是没有问题的，一般只什么用到前128个(00H--7FH,最高位为0)。而最高位为1的另128个字符（80H—FFH）被称为“扩展
+ASCII”，一般用来存放英文的制表符、部分音标字符等等的一些其它符号。
+       </p>
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        <strong>
+         什么是UNICODE？
+        </strong>
+       </p>
+       <p style="box-sizing: border-box; text-indent: 2em; text-align: left;">
+        Unicode与ASCII一样也是一种字符编码方法，它占用两个字节（0000H—FFFFH）,容纳65536个字符，这完全可以容纳全世界所有语言文字的编码。在Unicode里，所有的字符都按一个字符来处理，它们都有一个唯一的Unicode码。
+       </p>
+       <p style="box-sizing: border-box; text-align: center; text-indent: 0em;">
+        <img _width="60%" class="" data-fail="0" data-ratio="0.12614259597806216" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZQkl7UM5miczMe1svyfcxdibPrs6gO5CjNFB1CDOSgYqAhCGN6iafYdAbdzrYVQhOfwQHknIicNnsjYw/0?wx_fmt=png" data-type="png" data-w="547" src="%E5%98%BF%EF%BC%8C%E6%88%91%E6%89%8D%E4%B8%8D%E6%80%95%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E7%BC%96%E7%A0%81%E5%B0%8F%E6%80%AA%E5%85%BD%EF%BC%81_files/640_003.png" style="text-align: center; line-height: 1.8; vertical-align: middle; box-sizing: border-box; width: 60% !important; height: auto !important; visibility: visible !important;" width="60%"/>
+       </p>
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        <span style="text-indent: 2em; line-height: 1.8;">
+         首先需要安装命令
+        </span>
+        <strong style="text-indent: 2em; line-height: 1.8;">
+         <span style="color: rgb(255, 79, 121);">
+          unicode2ascii
+         </span>
+        </strong>
+        <span style="text-indent: 2em; line-height: 1.8;">
+         ：
+        </span>
+        <br/>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-align: center;">
+        <span style="color: rgb(255, 79, 121);">
+         ssc install unicode2ascii
+        </span>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        我们help一下可以看到以下三个命令：
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" text-align: center; margin-top: 10px; margin-bottom: 10px;  box-sizing: border-box; ">
+      <p>
+       <img _width="100%" class="" data-fail="0" data-ratio="0.1646153846153846" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZQkl7UM5miczMe1svyfcxdibvNPQsQib5lEDYV5PWWravWxDjY832zKvIA0SKyg0F95oYGb2nWHvU2g/0?wx_fmt=png" data-type="png" data-w="650" src="%E5%98%BF%EF%BC%8C%E6%88%91%E6%89%8D%E4%B8%8D%E6%80%95%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E7%BC%96%E7%A0%81%E5%B0%8F%E6%80%AA%E5%85%BD%EF%BC%81_files/640_005.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+      </p>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box;">
+        简单解释一下就是：
+       </p>
+       <p style="box-sizing: border-box;">
+        <strong style="text-indent: 2em; line-height: 1.8;">
+         whichencoding
+        </strong>
+        <span style="text-indent: 2em; line-height: 1.8;">
+         检查Stata数据集和文本文件的编码
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <strong style="text-indent: 2em; line-height: 1.8;">
+         ascii2unicod
+        </strong>
+        <strong style="text-indent: 2em; line-height: 1.8;">
+         e
+        </strong>
+        <span style="text-indent: 2em; line-height: 1.8;">
+         将数据集和文本文件从ASCII转换为Unicode编码
+        </span>
+       </p>
+       <p style="box-sizing: border-box; text-indent: 0em; text-align: left;">
+        <strong>
+         unicode2ascii
+        </strong>
+        将数据集和文本文件从Unicode转换为ASCII编码
+       </p>
+       <p style="box-sizing: border-box; text-align: center; text-indent: 0em;">
+        <img _width="40%" class="" data-fail="0" data-ratio="0.17263843648208468" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZQkl7UM5miczMe1svyfcxdibvcJ2ib85Tl4RVI2ia1rjTMjuBBzYtgLuXv4gjNf4x5C69C0WFehQ6e2Q/0?wx_fmt=png" data-type="png" data-w="614" src="%E5%98%BF%EF%BC%8C%E6%88%91%E6%89%8D%E4%B8%8D%E6%80%95%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E7%BC%96%E7%A0%81%E5%B0%8F%E6%80%AA%E5%85%BD%EF%BC%81_files/640_004.png" style="text-align: center; line-height: 1.8; vertical-align: middle; box-sizing: border-box; width: 40% !important; height: auto !important; visibility: visible !important;" width="40%"/>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(255, 79, 121);">
+         <strong>
+          whichencoding：
+         </strong>
+        </span>
+        <br/>
+       </p>
+       <p style="box-sizing: border-box;">
+        <strong style="box-sizing: border-box;">
+         语法：
+        </strong>
+        whichencoding filespec [ , detail nodata]
+       </p>
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        这个命令的用法实在简单，就是whichencoding后面加上文件名就好啦，上例子：
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(255, 79, 121);">
+         cd "F:\数据示例"
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(255, 79, 121);">
+         whichencoding *.dta *.do
+        </span>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" text-align: center; margin-top: 10px; margin-bottom: 10px;  box-sizing: border-box; ">
+      <p>
+       <img _width="100%" class="" data-fail="0" data-ratio="0.34944237918215615" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhZQkl7UM5miczMe1svyfcxdibpyWNrgibWkoDoEB0iajVJ7WzakEfMianPJaUkUibY7rXHlyfzMDYIP6RWw/0?wx_fmt=jpeg" data-type="jpeg" data-w="538" src="%E5%98%BF%EF%BC%8C%E6%88%91%E6%89%8D%E4%B8%8D%E6%80%95%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E7%BC%96%E7%A0%81%E5%B0%8F%E6%80%AA%E5%85%BD%EF%BC%81_files/640_008.jpg" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+      </p>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        在这里我们就可以看到在两个dta文件和两个do文件中，有一个文件包含纯ASCII编码字符，一个文件包含扩展ASCII编码字符，两个文件包含Unicode编码字符。
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        具有纯ASCII字符的文件是不需要转换的，但是在我的文件中有一个文件包含扩展ASCII字符，这说明我们可以用stata14打开，但是会出现一些字符无法正确显示的情况，这时候我们就需要运用到ascii2unicode命令将它们转换为Unicode啦。
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" text-align: center; margin-top: 10px; margin-bottom: 10px;  box-sizing: border-box; ">
+      <p>
+       <img _width="100%" class="" data-fail="0" data-ratio="0.2075098814229249" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhZQkl7UM5miczMe1svyfcxdibWPR3WZ1YZBGNDNg67W21POUYoZyiaESj0xk5yd31CoeSng1F8wr5ibZw/0?wx_fmt=jpeg" data-type="jpeg" data-w="506" src="%E5%98%BF%EF%BC%8C%E6%88%91%E6%89%8D%E4%B8%8D%E6%80%95%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E7%BC%96%E7%A0%81%E5%B0%8F%E6%80%AA%E5%85%BD%EF%BC%81_files/640_006.jpg" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+      </p>
+      <p>
+       <img _width="40%" class="" data-fail="0" data-ratio="0.17263843648208468" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZQkl7UM5miczMe1svyfcxdibvcJ2ib85Tl4RVI2ia1rjTMjuBBzYtgLuXv4gjNf4x5C69C0WFehQ6e2Q/0?wx_fmt=png" data-type="png" data-w="614" src="%E5%98%BF%EF%BC%8C%E6%88%91%E6%89%8D%E4%B8%8D%E6%80%95%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E7%BC%96%E7%A0%81%E5%B0%8F%E6%80%AA%E5%85%BD%EF%BC%81_files/640_004.png" style="font-size: 14px; line-height: 1.8; vertical-align: middle; box-sizing: border-box; width: 40% !important; height: auto !important; visibility: visible !important;" width="40%"/>
+       <br/>
+      </p>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box;">
+        <strong>
+         <span style="color: rgb(255, 79, 121);">
+          ascii2unicode：
+         </span>
+        </strong>
+        <br/>
+       </p>
+       <p style="box-sizing: border-box;">
+        <strong style="box-sizing: border-box;">
+         语法：
+        </strong>
+        ascii2unicode filespec [ , encoding() suffix() detail nodata replace]
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(255, 79, 121);">
+         cd "F:\数据示例"
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(255, 79, 121);">
+         ascii2unicode *.dta *.do , encoding(gb18030)
+        </span>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p>
+        <img _width="100%" class="" data-fail="0" data-ratio="0.36717428087986465" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhZQkl7UM5miczMe1svyfcxdibmxoDHGBpgONXZDv0evyf2I5xdOKp7XzZdxxZR73fOEwOo3pfFhIvtA/0?wx_fmt=jpeg" data-type="jpeg" data-w="591" src="%E5%98%BF%EF%BC%8C%E6%88%91%E6%89%8D%E4%B8%8D%E6%80%95%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E7%BC%96%E7%A0%81%E5%B0%8F%E6%80%AA%E5%85%BD%EF%BC%81_files/640_005.jpg" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+       </p>
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        左侧为源文件，右侧为结果文件，比较两列可以发现结果文件与源文件有着相同的名称，其中三个是相同的文件，但是有一个文件从ASCII转换为Unicode码，这一个文件的源文件名称通过包含后缀而改变。对于do-files和其他文本文件，默认后缀为_asc。
+       </p>
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        我们看到，用14版本的stata打开13版本的do文件也不会有乱码的问题了。
+       </p>
+       <p>
+        <img _width="100%" class="" data-fail="0" data-ratio="0.542997542997543" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhZQkl7UM5miczMe1svyfcxdibvJGNnkEx4MjCdLutPe3qxEyknCsH95tRE3jr1l7mgWVItQ527EgU0A/0?wx_fmt=jpeg" data-type="jpeg" data-w="407" src="%E5%98%BF%EF%BC%8C%E6%88%91%E6%89%8D%E4%B8%8D%E6%80%95%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E7%BC%96%E7%A0%81%E5%B0%8F%E6%80%AA%E5%85%BD%EF%BC%81_files/640_004.jpg" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+       </p>
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        前面的结果中我们可以看到有一个文件包含Unicode编码字符。如果需要，我们可以使用saveascii将文件保存为Stata 11,12或13可以打开的版本，在我们之前的推文《
+        <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247485440&amp;idx=1&amp;sn=56d7fd2aded933dd74e55b1442fa7800&amp;chksm=e9af40afded8c9b9ca7dcaa2fe60a86d4a06646bc90a3160eb81f953b2731c591bbd5fed4223&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247485440&amp;idx=1&amp;sn=56d7fd2aded933dd74e55b1442fa7800&amp;chksm=e9af40afded8c9b9ca7dcaa2fe60a86d4a06646bc90a3160eb81f953b2731c591bbd5fed4223&amp;scene=21#wechat_redirect" target="_blank">
+         你会用saveascii保存数据吗
+        </a>
+        》中已经介绍过saveascii的用法，但是针对于dta文件，那么我们的do文件应该用什么呢？是时候让unicode2ascii命令闪亮登场了。
+       </p>
+       <p style="box-sizing: border-box; text-indent: 0em; text-align: center;">
+        <img _width="40%" class="" data-fail="0" data-ratio="0.17263843648208468" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZQkl7UM5miczMe1svyfcxdibvcJ2ib85Tl4RVI2ia1rjTMjuBBzYtgLuXv4gjNf4x5C69C0WFehQ6e2Q/0?wx_fmt=png" data-type="png" data-w="614" src="%E5%98%BF%EF%BC%8C%E6%88%91%E6%89%8D%E4%B8%8D%E6%80%95%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E7%BC%96%E7%A0%81%E5%B0%8F%E6%80%AA%E5%85%BD%EF%BC%81_files/640_004.png" style="text-align: center; line-height: 1.8; vertical-align: middle; box-sizing: border-box; width: 40% !important; height: auto !important; visibility: visible !important;" width="40%"/>
+       </p>
+       <p style="box-sizing: border-box; text-indent: 0em;">
+        <strong style="line-height: 1.8;">
+         <span style="color: rgb(255, 79, 121);">
+          unicode2ascii：
+         </span>
+        </strong>
+        <br/>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p style="box-sizing: border-box;">
+        <strong style="box-sizing: border-box;">
+         语法：
+        </strong>
+        unicode2ascii filespec [ , encoding() version() suffix() detail nodata replace]
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(255, 79, 121);">
+         cd "F:\数据示例"
+        </span>
+       </p>
+       <p style="box-sizing: border-box;">
+        <span style="color: rgb(255, 79, 121);">
+         unicode2ascii *.dta *.do , encoding(
+         <span style="color: rgb(255, 79, 121); font-size: 14px; line-height: 25.2px;  background-color: rgb(255, 255, 255);">
+          gb18030
+         </span>
+         )
+        </span>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="font-size: 14px; line-height: 1.8; box-sizing: border-box;">
+       <p>
+        <img _width="100%" class="" data-fail="0" data-ratio="0.3942652329749104" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhZQkl7UM5miczMe1svyfcxdib9Lyct4E9BiaCwiaecMicX60N3icMicPfpnovxyD2xnV5ayMnMaZGokrnehg/0?wx_fmt=jpeg" data-type="jpeg" data-w="558" src="%E5%98%BF%EF%BC%8C%E6%88%91%E6%89%8D%E4%B8%8D%E6%80%95%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E7%BC%96%E7%A0%81%E5%B0%8F%E6%80%AA%E5%85%BD%EF%BC%81_files/640_003.jpg" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+       </p>
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        数
+据中包含需要用stata13版本打开的一个dta文件和一个do文件，我们可以将它们从Unicode转换为ASCII。从结果中我们可以看到，左侧同
+样列出源文件，右侧列出结果文件。源数据集文件名前面是它们的版本，do-file和其他文本文件前面是“unc”或“asc”，以指示它们的编码。如果
+指示了转换，就会在结果文件名中添加后缀啦。
+       </p>
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        同样，我们用13版本的stata打开14版本的do文件也是无压力的。
+       </p>
+       <p>
+        <img _width="100%" class="" data-fail="0" data-ratio="0.5498938428874734" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhZQkl7UM5miczMe1svyfcxdibmB4xRo2ATagJGOPIcKtSSfaPBIsrfAxtUjToCYIjSiahOsEMzLCoA8Q/0?wx_fmt=jpeg" data-type="jpeg" data-w="471" src="%E5%98%BF%EF%BC%8C%E6%88%91%E6%89%8D%E4%B8%8D%E6%80%95%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E7%BC%96%E7%A0%81%E5%B0%8F%E6%80%AA%E5%85%BD%EF%BC%81_files/640_002.jpg" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+       </p>
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        有了这几个小命令，你还怕整理数据的时候ASCII编码&amp;UNICODE编码，高版本&amp;低版本stata傻傻弄不清吗？
+       </p>
+       <p>
+        <img _width="100%" class="" data-fail="0" data-ratio="0.30095238095238097" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZQkl7UM5miczMe1svyfcxdibR4Mw4h7vpSCElFkB2SBx7rmxSIialbdAQL1VFv9vicdIxHrSy7DpVb8A/0?wx_fmt=png" data-type="png" data-w="525" src="%E5%98%BF%EF%BC%8C%E6%88%91%E6%89%8D%E4%B8%8D%E6%80%95%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E7%BC%96%E7%A0%81%E5%B0%8F%E6%80%AA%E5%85%BD%EF%BC%81_files/640.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+       </p>
+       <p style="max-width: 100%; min-height: 1em; color: rgb(62, 62, 62); font-size: 16px; line-height: 25.6px; white-space: normal; text-indent: 2em; box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+        <span style="max-width: 100%; color: rgb(136, 136, 136); font-family: 微软雅黑; line-height: 23.27px; text-align: justify; text-indent: 2em; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+         以上就是今天给大家分享的内容了，说得好就赏个铜板呗！有钱的捧个钱场，有人的捧个人场~。
+        </span>
+       </p>
+       <section style="max-width: 100%; box-sizing: border-box; color: rgb(62, 62, 62); white-space: normal; font-size: 14px; line-height: 2.2; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+        <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+         <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+          <section class="" style="max-width: 100%; box-sizing: border-box; line-height: 1.8; word-wrap: break-word !important;">
+           <section style="max-width: 100%; box-sizing: border-box; line-height: 25.6px; word-wrap: break-word !important;">
+            <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+             <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+              <section style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+               <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; font-size: 15px; line-height: 25.6px; text-align: justify; color: rgb(160, 160, 160); text-indent: 2em; font-family: 微软雅黑; word-wrap: break-word !important;">
+                <span style="max-width: 100%; color: rgb(122, 79, 214); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                 应广大粉丝要求，爬虫俱乐部的推文公众号打赏功能可以开发票啦，累计打赏超过1000元我们即可给您开具发票，发票类别为“咨询费”。用心做事，只为做您更贴心的小爬虫。第一批发票已经寄到各位小主的手中，大家快来给小爬虫打赏呀~
+                </span>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); text-align: right; box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="max-width: 100%; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                 文字编辑：徐苾雯
+                </span>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); text-align: right; box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="max-width: 100%; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                 技术总编：刘贝贝
+                </span>
+               </p>
+               <hr/>
+               <hr/>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); text-align: left; box-sizing: border-box !important; word-wrap: break-word !important;">
+                <strong style="text-indent: 0em; font-family: 微软雅黑; text-align: justify; max-width: 100%; color: rgb(136, 136, 136); line-height: 23.27px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                 往期推文推荐：
+                </strong>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); text-align: left; box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="font-family: 微软雅黑; line-height: 25.6px; text-align: justify; max-width: 100%; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+                 1.
+                </span>
+                <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247485548&amp;idx=1&amp;sn=478ba30875877af79d97e9ed4eecaa7c&amp;chksm=e9af40c3ded8c9d5dc76879c0d21bb2e5e8fd182c59f2545c9879706403cafb260281dc13fce&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247485548&amp;idx=1&amp;sn=478ba30875877af79d97e9ed4eecaa7c&amp;chksm=e9af40c3ded8c9d5dc76879c0d21bb2e5e8fd182c59f2545c9879706403cafb260281dc13fce&amp;scene=21#wechat_redirect" style="font-family: 微软雅黑; line-height: 25.6px; text-align: justify; color: rgb(0, 0, 0); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                 中国高校财经、管理与综合类期刊灌水排行榜
+                </a>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); text-align: left; box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="font-family: 微软雅黑; line-height: 25.6px; text-align: justify; max-width: 100%; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+                 2.
+                </span>
+                <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484899&amp;idx=1&amp;sn=0da9bcae33696501a5eb8c8ab9c5b5ff&amp;chksm=e9af4d4cded8c45a84ed90d75464c3a866a79295f355f75e68943300fa58eb2ad1d18e016ef5&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484899&amp;idx=1&amp;sn=0da9bcae33696501a5eb8c8ab9c5b5ff&amp;chksm=e9af4d4cded8c45a84ed90d75464c3a866a79295f355f75e68943300fa58eb2ad1d18e016ef5&amp;scene=21#wechat_redirect" style="font-family: 微软雅黑; line-height: 25.6px; text-align: justify; color: rgb(0, 0, 0); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                 关于RTF你不知道的命令
+                </a>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); text-align: left; box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="line-height: 25.6px; max-width: 100%; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+                 3.
+                </span>
+                <span style="line-height: 25.6px; color: rgb(0, 0, 0); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+                 <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484941&amp;idx=1&amp;sn=f348ba26ed2e9c5c25efd14e3c26c506&amp;chksm=e9af4ea2ded8c7b4f0c98365323ca46337259f9ba58c9d2541b94898bcd450c162108ba9a577&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484941&amp;idx=1&amp;sn=f348ba26ed2e9c5c25efd14e3c26c506&amp;chksm=e9af4ea2ded8c7b4f0c98365323ca46337259f9ba58c9d2541b94898bcd450c162108ba9a577&amp;scene=21#wechat_redirect" style="line-height: 25.6px; color: rgb(0, 0, 0); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                  关于RTF你不知道的命令之番外篇
+                 </a>
+                </span>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); text-align: left; box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="font-family: 微软雅黑; line-height: 24px; text-align: justify; max-width: 100%; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+                 4.
+                </span>
+                <span style="font-family: 微软雅黑; line-height: 24px; text-align: justify; max-width: 100%; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+                 <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484326&amp;idx=1&amp;sn=179a96c391bae0ff47e9f84b3e960aae&amp;chksm=e9af4b09ded8c21f705cc74ba9a18f996a6fed246222e51b404425e79a30b041bf2eef5c5d44&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484326&amp;idx=1&amp;sn=179a96c391bae0ff47e9f84b3e960aae&amp;chksm=e9af4b09ded8c21f705cc74ba9a18f996a6fed246222e51b404425e79a30b041bf2eef5c5d44&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                  免费事件研究，一片片从邮局寄来
+                 </a>
+                </span>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); text-align: left; box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="font-family: 微软雅黑; line-height: 24px; text-align: justify; max-width: 100%; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+                 5.
+                </span>
+                <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484452&amp;idx=1&amp;sn=c40cd805dafb50cf9c226cdd20550382&amp;chksm=e9af4c8bded8c59da87a75728c6600f0b6691846dfc071d9ee50d4d1424fd26bb696ed2ee0d4&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484452&amp;idx=1&amp;sn=c40cd805dafb50cf9c226cdd20550382&amp;chksm=e9af4c8bded8c59da87a75728c6600f0b6691846dfc071d9ee50d4d1424fd26bb696ed2ee0d4&amp;scene=21#wechat_redirect" style="font-family: 微软雅黑; line-height: 24px; text-align: justify; color: rgb(0, 0, 0); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                 免费的股价同步性，一片片从邮局寄来
+                </a>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); text-align: left; box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="font-family: 微软雅黑; line-height: 24px; text-align: justify; max-width: 100%; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+                 6.
+                </span>
+                <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484529&amp;idx=1&amp;sn=dace95be71022f51c515c28b252d1e7b&amp;chksm=e9af4cdeded8c5c87a91fb3a1a5caa55cc6fe961ab72c6734cd859b48239882b48756bd4ad5e&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484529&amp;idx=1&amp;sn=dace95be71022f51c515c28b252d1e7b&amp;chksm=e9af4cdeded8c5c87a91fb3a1a5caa55cc6fe961ab72c6734cd859b48239882b48756bd4ad5e&amp;scene=21#wechat_redirect" style="font-family: 微软雅黑; line-height: 24px; text-align: justify; color: rgb(0, 0, 0); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                 Stata叫你回家听音乐了！
+                </a>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); text-align: left; box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="color: rgb(0, 0, 0); line-height: 1.4; font-family: 微软雅黑; text-align: justify;">
+                 7.
+                </span>
+                <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484866&amp;idx=1&amp;sn=9814dd7590f639877665d9a7be1a7596&amp;chksm=e9af4d6dded8c47bec92e4f77659fe8b2b6ec7502b6d380e34a3c67ef83165e103077abd3ee5&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484866&amp;idx=1&amp;sn=9814dd7590f639877665d9a7be1a7596&amp;chksm=e9af4d6dded8c47bec92e4f77659fe8b2b6ec7502b6d380e34a3c67ef83165e103077abd3ee5&amp;scene=21#wechat_redirect" style="line-height: 1.4; font-family: 微软雅黑; text-align: justify; color: rgb(0, 0, 0); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                 一言不合就用stata写邮件（Outlook/Foxmail）
+                </a>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); text-align: left; box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="font-family: 微软雅黑; line-height: 24px; text-align: justify; max-width: 100%; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+                 8.
+                </span>
+                <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484979&amp;idx=1&amp;sn=e572f2658ba8137832e3ae3aff2ce01a&amp;chksm=e9af4e9cded8c78a191dd0bcd06218c57a5492e4d23b1f7b0c564701a174337a4afe61a6b8e2&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484979&amp;idx=1&amp;sn=e572f2658ba8137832e3ae3aff2ce01a&amp;chksm=e9af4e9cded8c78a191dd0bcd06218c57a5492e4d23b1f7b0c564701a174337a4afe61a6b8e2&amp;scene=21#wechat_redirect" style="font-family: 微软雅黑; line-height: 24px; text-align: justify; color: rgb(0, 0, 0); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                 听说你想知道怎么用stata画地图？
+                </a>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); text-align: left; box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="color: rgb(0, 0, 0); line-height: 1.4; font-family: 微软雅黑; text-align: justify;">
+                 9.
+                </span>
+                <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484233&amp;idx=1&amp;sn=104ca64b0bd3cf2dea046b11ea89e028&amp;chksm=e9af4be6ded8c2f005e28306aa9dab5cfcbca4020abb8296469fc5006c1eb32c6594c7b99a4b&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484233&amp;idx=1&amp;sn=104ca64b0bd3cf2dea046b11ea89e028&amp;chksm=e9af4be6ded8c2f005e28306aa9dab5cfcbca4020abb8296469fc5006c1eb32c6594c7b99a4b&amp;scene=21#wechat_redirect" style="line-height: 1.4; font-family: 微软雅黑; text-align: justify; color: rgb(0, 0, 0); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                 I have a Stata, I have a python
+                </a>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); text-align: left; box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="font-family: 微软雅黑; line-height: 24px; text-align: justify; max-width: 100%; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+                 10.
+                </span>
+                <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484789&amp;idx=1&amp;sn=5c52d2bba468ceb9392b440c43638a19&amp;chksm=e9af4ddaded8c4cc6bf486b21c87f0e3b17b79694bbc388741e0a1d9f5e8f6bd4134efede7f2&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484789&amp;idx=1&amp;sn=5c52d2bba468ceb9392b440c43638a19&amp;chksm=e9af4ddaded8c4cc6bf486b21c87f0e3b17b79694bbc388741e0a1d9f5e8f6bd4134efede7f2&amp;scene=21#wechat_redirect" style="font-family: 微软雅黑; line-height: 24px; text-align: justify; color: rgb(0, 0, 0); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                 I have a Stata, I have a Python之二——pdf转word
+                </a>
+               </p>
+               <hr/>
+               <hr/>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); text-align: left; box-sizing: border-box !important; word-wrap: break-word !important;">
+                <br/>
+               </p>
+              </section>
+             </section>
+            </section>
+           </section>
+          </section>
+         </section>
+        </section>
+       </section>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="box-sizing: border-box;">
+       <section style="max-width: 100%; box-sizing: border-box; font-size: 14px; line-height: 2.2; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+        <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+         <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+          <section class="" style="max-width: 100%; box-sizing: border-box; line-height: 1.8; word-wrap: break-word !important;">
+           <section style="max-width: 100%; box-sizing: border-box; line-height: 25.6px; word-wrap: break-word !important;">
+            <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+             <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+              <section style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+               <section style="margin-top: 10px; margin-bottom: 10px; max-width: 100%; box-sizing: border-box; line-height: 25.6px; font-size: 15px; font-family: 微软雅黑; text-align: center; color: rgb(120, 114, 114); font-stretch: normal; word-wrap: break-word !important;">
+                <section style="padding-right: 1em; max-width: 100%; box-sizing: border-box; width: 556.36px; text-align: right; vertical-align: top; display: inline-block; word-wrap: break-word !important;">
+                 <section style="margin-right: -1em; max-width: 100%; box-sizing: border-box; text-align: left; vertical-align: bottom; display: inline-block; transform: rotate(0deg); word-wrap: break-word !important;">
+                  <section style="max-width: 100%; box-sizing: border-box; width: 0px; border-right-width: 0.8em; border-right-style: solid; border-right-color: rgb(1, 115, 164); border-bottom-width: 0.8em; border-bottom-style: solid; border-bottom-color: rgb(1, 115, 164); word-wrap: break-word !important; border-top-width: 0.8em !important; border-top-style: solid !important; border-top-color: transparent !important; border-left-width: 0.8em !important; border-left-style: solid !important; border-left-color: transparent !important;">
+                  </section>
+                  <section style="margin-top: -1em; margin-left: -0.18em; max-width: 100%; box-sizing: border-box; width: 0px; border-right-width: 0.8em; border-right-style: solid; border-right-color: rgb(255, 255, 255); border-bottom-width: 0.8em; border-bottom-style: solid; border-bottom-color: rgb(255, 255, 255); word-wrap: break-word !important; border-top-width: 0.8em !important; border-top-style: solid !important; border-top-color: transparent !important; border-left-width: 0.8em !important; border-left-style: solid !important; border-left-color: transparent !important;">
+                  </section>
+                 </section>
+                 <section style="margin-top: 0.3em; padding-bottom: 1em; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; background-color: rgb(1, 183, 204);">
+                  <section style="margin-top: -1em; margin-right: -1em; max-width: 100%; box-sizing: border-box; border: 0.2em solid rgb(1, 115, 164); width: 540.36px; display: inline-block; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+                   <section style="padding: 10px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                    <section powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                     <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                      <section style="max-width: 100%; box-sizing: border-box; text-align: center; word-wrap: break-word !important;">
+                       <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; line-height: 25.6px; word-wrap: break-word !important;">
+                        <span style="max-width: 100%; color: rgb(255, 41, 65); box-sizing: border-box !important; word-wrap: break-word !important;">
+                         <strong style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+                          关于我们
+                         </strong>
+                        </span>
+                       </p>
+                       <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; text-align: left; line-height: 25.6px; word-wrap: break-word !important;">
+                        <span style="max-width: 100%; color: rgb(0, 0, 0); line-height: 1.6; box-sizing: border-box !important; word-wrap: break-word !important;">
+                         微信公众号“爬虫俱乐部”分享实用的stata命令，欢迎转载、打赏。爬虫俱乐部是由李春涛教授领导下的研究生及本科生组成的大数据分析和数据挖掘团队。
+                        </span>
+                       </p>
+                      </section>
+                     </section>
+                    </section>
+                   </section>
+                  </section>
+                 </section>
+                </section>
+               </section>
+               <p style="max-width: 100%; min-height: 1em; box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="max-width: 100%; color: rgb(255, 76, 0); line-height: 25.6px; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;">
+                 此外，欢迎大家踊跃投稿，介绍一些关于stata的数据处理和分析技巧。
+                </span>
+                <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="max-width: 100%; color: rgb(255, 76, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                 投稿邮箱：
+                </span>
+                statatraining@163.com
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="max-width: 100%; color: rgb(255, 76, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                 投稿要求：
+                 <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                 1）必须原创，禁止抄袭；
+                 <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                 2）必须准确，详细，有例子，有截图；
+                 <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                 注意事项：
+                 <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                 1）所有投稿都会经过本公众号运营团队成员的审核，审核通过才可录用，一经录用，会在该推文里为作者署名，并有赏金分成。
+                 <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                 2）邮件请注明投稿，邮件名称为“投稿”+“推文名称”。
+                 <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                 <span style="max-width: 100%; color: rgb(122, 79, 214); box-sizing: border-box !important; word-wrap: break-word !important;">
+                  3）应广大读者要求，现开通有偿问答服务，如果大家遇到关于stata分析数据的问题，可以在公众号中提出，只需支付少量赏金，我们会在后期的推文里给予解答。
+                 </span>
+                </span>
+               </p>
+              </section>
+             </section>
+            </section>
+           </section>
+           <p style="max-width: 100%; min-height: 1em; text-align: center; box-sizing: border-box !important; word-wrap: break-word !important;">
+            <img _width="100%" class="" data-fail="0" data-ratio="1" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhYE0k0faBcgXia019H7uYBVzf6PiaTnnkjzGYnLk7xUYpTCUTvVhQfapavZz4nptAvBUVAz1QO8etZQ/0?" data-type="jpeg" data-w="344" src="%E5%98%BF%EF%BC%8C%E6%88%91%E6%89%8D%E4%B8%8D%E6%80%95%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E7%BC%96%E7%A0%81%E5%B0%8F%E6%80%AA%E5%85%BD%EF%BC%81_files/640.jpg" style="box-sizing: border-box !important; overflow-wrap: break-word !important; width: 100% !important; height: auto !important; visibility: visible !important;" width="100%"/>
+           </p>
+           <p style="max-width: 100%; min-height: 1em; line-height: 25.6px; text-align: center; box-sizing: border-box !important; word-wrap: break-word !important;">
+            <span style="max-width: 100%; color: rgb(120, 114, 114); font-family: 微软雅黑; font-size: 15px; letter-spacing: 2px; line-height: 19.2px; box-sizing: border-box !important; word-wrap: break-word !important;">
+             欢迎关注爬虫俱乐部
+            </span>
+           </p>
+          </section>
+         </section>
+        </section>
+       </section>
+      </section>
+     </section>
+    </section>
+   </section>
+  </div>
+  <script nonce="620739156" type="text/javascript">
+   var first_sceen__time = (+new Date());
+
+                    if ("" == 1 && document.getElementById('js_content')) {
+                        document.getElementById('js_content').addEventListener("selectstart",function(e){ e.preventDefault(); });
+                    }
+
+                    
+                    (function(){
+                        if (navigator.userAgent.indexOf("WindowsWechat") != -1){
+                            var link = document.createElement('link');
+                            var head = document.getElementsByTagName('head')[0];
+                            link.rel = 'stylesheet';
+                            link.type = 'text/css';
+                            link.href = "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/page_mp_article_improve_winwx31619e.css";
+                            head.appendChild(link);
+                        }
+                    })();
+  </script>
+  <div class="ct_mpda_wrp" id="js_sponsor_ad_area" style="display:none;">
+  </div>
+  <div class="reward_area tc" id="js_reward_area" style="display:none;">
+   <p>
+    <a class="reward_access" href="##" id="js_reward_link">
+     赞赏
+    </a>
+   </p>
+   <div class="reward_area_inner" id="js_reward_inner" style="display: none; width: 578px;">
+    <p class="tips_global reward_user_tips">
+     <a href="##" id="js_reward_total">
+     </a>
+     人赞赏
+    </p>
+    <div class="reward_user_list" id="js_reward_list">
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="rich_media_tool" id="js_toobar3">
+  <div class="media_tool_meta tips_global meta_primary" id="js_read_area3" style="display:none;">
+   阅读
+   <span id="readNum3">
+   </span>
+  </div>
+  <span class="media_tool_meta meta_primary tips_global meta_praise" id="like3" style="display:none;">
+   <i class="icon_praise_gray">
+   </i>
+   <span class="praise_num" id="likeNum3">
+   </span>
+  </span>
+  <a class="media_tool_meta tips_global meta_extra" href="##" id="js_report_article3" style="display:none;">
+   投诉
+  </a>
+ </div>
+</div>
+</body></html>

@@ -1,0 +1,870 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body><div class="rich_media_area_primary" id="page-content">
+ <div id="img-content">
+  <h2 class="rich_media_title" id="activity-name">
+  </h2>
+  <div class="rich_media_meta_list" id="meta_content">
+  </div>
+  <div class="rich_media_content " id="js_content">
+   <section style="background-color: rgb(255, 255, 255); box-sizing: border-box;">
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" margin-top: 0.5em; margin-bottom: 0.5em; text-align: center;  box-sizing: border-box; ">
+      <section class="" style="display: inline-block; vertical-align: top; width: 0px; margin-top: 0.4em; border-left: 0.8em solid rgb(71, 193, 168); border-top: 0.8em solid rgb(71, 193, 168); border-right: 0.8em solid transparent !important; border-bottom: 0.8em solid transparent !important; box-sizing: border-box;">
+      </section>
+      <section class="" style="display: inline-block; vertical-align: top; max-width: 80% !important; box-sizing: border-box;">
+       <section class="" powered-by="xiumi.us" style="box-sizing: border-box;">
+        <section class="" style=" margin: 10px 0%;  box-sizing: border-box; ">
+         <section class="" style="text-align: justify; box-sizing: border-box;">
+          <p style="white-space: normal; box-sizing: border-box;">
+           <span style="color: rgb(255, 0, 0); font-size: 18px;">
+            大大大大大新闻
+           </span>
+           ————自公众号推送视频讲解环节以来，深受广大读者朋友的喜爱。近日向我们提问的粉丝也是大幅增加呐！为了便捷管理相关信息，提高工作效率，我们对提问方式做了略微调整哟~提问者需点击推文底部“
+           <span style="color: rgb(255, 0, 0);">
+            阅读原文
+           </span>
+           ”下载爬虫俱乐部用户问题登记表并按要求填写后发送至邮箱
+           <span style="color: rgb(255, 0, 0);">
+            statatraining@163.com
+           </span>
+           ，我们会及时为您解答哟~
+          </p>
+         </section>
+        </section>
+       </section>
+      </section>
+      <section class="" style="display: inline-block; vertical-align: bottom; width: 0px; margin-bottom: 0.3em; border-right: 0.8em solid rgb(71, 193, 168); border-bottom: 0.8em solid rgb(71, 193, 168); border-left: 0.8em solid transparent !important; border-top: 0.8em solid transparent !important; box-sizing: border-box;">
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" text-align: center; margin-top: 10px; margin-bottom: 10px;  box-sizing: border-box; ">
+      <img _width="100%" class="" data-fail="0" data-ratio="0.0421875" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZv59MnFm7HwqQnwmVf34hqlJCAtYlS39EOlMzqOxoNicMqs4ceMaCVNia6aTeLUgZPf4OGdsAThibkQ/0?wx_fmt=png" data-type="png" data-w="640" src="%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E4%BB%80%E4%B9%88%E7%9A%84%E6%9C%80%E5%A4%B4%E7%96%BC%E4%BA%86_files/640_005.png" style="vertical-align: middle; box-sizing: border-box; width: 100% !important; height: auto !important; visibility: visible !important;"/>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        可爱的童鞋们，开学已经快一周了，小编无奈地发现早上不提前去教室占座就得坐最后一排，头疼；上完课去随缘餐厅吃饭，人头涌动，头疼；想要抢个国庆的火车票，余票0张，头疼；下午上完课去西苑觅食，想吃个黄石土豆，摊位前已经排满了人，头疼。
+       </p>
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        最近小编在学stata的过程中，又弄不清关于字符编码的问题，头疼。所以固执的爬虫君决定写两篇推文好好把关于字符编码的问题给弄清楚。
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        在接下来的两篇推文中，我们将频繁地接触到
+        <span style="color: rgb(255, 104, 39);">
+         字节
+        </span>
+        ，
+        <span style="color: rgb(255, 104, 39);">
+         字符
+        </span>
+        ，
+        <span style="color: rgb(255, 104, 39);">
+         基础ASCII编码
+        </span>
+        ，
+        <span style="color: rgb(255, 104, 39);">
+         扩展ASCII码
+        </span>
+        ，
+        <span style="color: rgb(255, 104, 39);">
+         unicode
+        </span>
+        ，
+        <span style="color: rgb(255, 104, 39);">
+         utf-8
+        </span>
+        。所以在推文的开头，小编就给大家介绍一下这些的概念。
+       </p>
+       <section style="background-color: rgb(255, 255, 255); box-sizing: border-box;">
+        <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+         <section class="" style=" margin-top: 0.5em; margin-bottom: 0.5em; text-align: center;  box-sizing: border-box; ">
+          <section class="" style="display: inline-block; box-sizing: border-box;">
+           <section style="width: 9px; height: 9px; float: left; border-top: 2px solid rgb(71, 193, 168); border-left: 2px solid rgb(71, 193, 168); box-sizing: border-box;">
+           </section>
+           <section style="width: 9px; height: 9px; float: right; border-top: 2px solid rgb(71, 193, 168); border-right: 2px solid rgb(71, 193, 168); box-sizing: border-box;">
+           </section>
+           <section style="clear: both; box-sizing: border-box;">
+           </section>
+           <section style="margin-top: -5px; margin-bottom: -5px; padding-right: 4px; padding-left: 4px; box-sizing: border-box;">
+            <section class="" style="border-width: 2px; border-style: solid; border-color: rgb(71, 193, 168); background-color: rgb(254, 255, 255); font-size: 19px; padding-right: 10px; padding-left: 10px; box-sizing: border-box;">
+             <p style="clear: none; box-sizing: border-box;">
+              字节与字符
+             </p>
+            </section>
+           </section>
+           <section style="width: 9px; height: 9px; float: left; border-bottom: 2px solid rgb(71, 193, 168); border-left: 2px solid rgb(71, 193, 168); box-sizing: border-box;">
+           </section>
+          </section>
+         </section>
+        </section>
+       </section>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="box-sizing: border-box;">
+       <p style="text-indent: 2em;">
+        在计算机内部，所有的信息最终都表示为一个二进制的字符串。每一个二进制位（bit）有0和1两种状态，因此八个二进制位就可以组合出256种状态，这被称为一个字节（byte）。所以
+        <span style="color: rgb(255, 0, 0);">
+         字节
+        </span>
+        是一种计量单位，是计算机信息技术用于计量存储容量的一种计量单位。
+       </p>
+       <p style="text-indent: 2em;">
+        <span style="color: rgb(255, 0, 0);">
+         字符
+        </span>
+        是计算机中使用的文字和符号，比如1、A、%……—*（）——+等等。所以字节与字符不是一个位面的概念喔。
+       </p>
+       <section style="background-color: rgb(255, 255, 255); box-sizing: border-box;">
+        <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+         <section class="" style=" margin-top: 0.5em; margin-bottom: 0.5em; text-align: center;  box-sizing: border-box; ">
+          <section class="" style="display: inline-block; box-sizing: border-box;">
+           <section style="width: 9px; height: 9px; float: left; border-top: 2px solid rgb(71, 193, 168); border-left: 2px solid rgb(71, 193, 168); box-sizing: border-box;">
+           </section>
+           <section style="width: 9px; height: 9px; float: right; border-top: 2px solid rgb(71, 193, 168); border-right: 2px solid rgb(71, 193, 168); box-sizing: border-box;">
+           </section>
+           <section style="clear: both; box-sizing: border-box;">
+           </section>
+           <section style="margin-top: -5px; margin-bottom: -5px; padding-right: 4px; padding-left: 4px; box-sizing: border-box;">
+            <section class="" style="border-width: 2px; border-style: solid; border-color: rgb(71, 193, 168); background-color: rgb(254, 255, 255); font-size: 19px; padding-right: 10px; padding-left: 10px; box-sizing: border-box;">
+             <p style="clear: none; box-sizing: border-box;">
+              ASCII编码
+             </p>
+            </section>
+           </section>
+           <section style="width: 9px; height: 9px; float: left; border-bottom: 2px solid rgb(71, 193, 168); border-left: 2px solid rgb(71, 193, 168); box-sizing: border-box;">
+           </section>
+          </section>
+         </section>
+        </section>
+       </section>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        首先，ASCII码包括
+        <span style="color: rgb(255, 0, 0);">
+         基础ASCII码
+        </span>
+        （0-127）和
+        <span style="color: rgb(255, 0, 0);">
+         扩展ASCII码
+        </span>
+        （128-255）。基础ASCII码，使用7 位二进制数（剩下的1位二进制为0）来表示所有的大写和小写字母，数字0 到9、标点符号，以及在美式英语中使用的
+        <span style="color: rgb(255, 104, 39);">
+         特殊控制字符
+        </span>
+        （第0～31号及第127号，如：换行、回车、换页、删除等）。英语使用这128个符号编码就够了，但是用来表示其他语言是远远不够的，于是一些欧洲国家利用字节中最高位编入新的符号，以再附加128 个特殊符号字符、外来语字母和图形符号。
+       </p>
+       <section style="background-color: rgb(255, 255, 255); box-sizing: border-box;">
+        <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+         <section class="" style=" margin-top: 0.5em; margin-bottom: 0.5em; text-align: center;  box-sizing: border-box; ">
+          <section class="" style="display: inline-block; box-sizing: border-box;">
+           <section style="width: 9px; height: 9px; float: left; border-top: 2px solid rgb(71, 193, 168); border-left: 2px solid rgb(71, 193, 168); box-sizing: border-box;">
+           </section>
+           <section style="width: 9px; height: 9px; float: right; border-top: 2px solid rgb(71, 193, 168); border-right: 2px solid rgb(71, 193, 168); box-sizing: border-box;">
+           </section>
+           <section style="clear: both; box-sizing: border-box;">
+           </section>
+           <section style="margin-top: -5px; margin-bottom: -5px; padding-right: 4px; padding-left: 4px; box-sizing: border-box;">
+            <section class="" style="border-width: 2px; border-style: solid; border-color: rgb(71, 193, 168); background-color: rgb(254, 255, 255); font-size: 19px; padding-right: 10px; padding-left: 10px; box-sizing: border-box;">
+             <p style="clear: none; box-sizing: border-box;">
+              unicode编码
+             </p>
+            </section>
+           </section>
+           <section style="width: 9px; height: 9px; float: left; border-bottom: 2px solid rgb(71, 193, 168); border-left: 2px solid rgb(71, 193, 168); box-sizing: border-box;">
+           </section>
+          </section>
+         </section>
+        </section>
+       </section>
+       <p style="text-indent: 2em;">
+        可是世界上存在着多种编码方式，这就容易造成乱码，于是
+        <span style="color: rgb(255, 0, 0);">
+         unicode
+        </span>
+        就产生了。
+        <span style="color: rgb(255, 0, 0);">
+         unicode
+        </span>
+        是一个很大的集合，可以容纳100多万个符号，它将世界上所有的字符都纳入了其中，每一个符号都给予一个独一无二的编码，在
+        <span style="color: rgb(255, 0, 0);">
+         unicode
+        </span>
+        编码中，一般情况下，一个字符占用两个字节。我们已经知道，英文字母只用一个字节表示就够了，如果
+        <span style="color: rgb(255, 0, 0);">
+         unicode
+        </span>
+        统一规定，每个符号用三个或四个字节表示，那么每个英文字母前都必然有二到三个字节是0，这对于存储空间来说是极大的浪费，文本文件的大小会因此大出二三倍，这是难以接受的。
+       </p>
+       <section style="background-color: rgb(255, 255, 255); box-sizing: border-box;">
+        <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+         <section class="" style=" margin-top: 0.5em; margin-bottom: 0.5em; text-align: center;  box-sizing: border-box; ">
+          <section class="" style="display: inline-block; box-sizing: border-box;">
+           <section style="width: 9px; height: 9px; float: left; border-top: 2px solid rgb(71, 193, 168); border-left: 2px solid rgb(71, 193, 168); box-sizing: border-box;">
+           </section>
+           <section style="width: 9px; height: 9px; float: right; border-top: 2px solid rgb(71, 193, 168); border-right: 2px solid rgb(71, 193, 168); box-sizing: border-box;">
+           </section>
+           <section style="clear: both; box-sizing: border-box;">
+           </section>
+           <section style="margin-top: -5px; margin-bottom: -5px; padding-right: 4px; padding-left: 4px; box-sizing: border-box;">
+            <section class="" style="border-width: 2px; border-style: solid; border-color: rgb(71, 193, 168); background-color: rgb(254, 255, 255); font-size: 19px; padding-right: 10px; padding-left: 10px; box-sizing: border-box;">
+             <p style="clear: none; box-sizing: border-box;">
+              utf-8编码
+             </p>
+            </section>
+           </section>
+           <section style="width: 9px; height: 9px; float: left; border-bottom: 2px solid rgb(71, 193, 168); border-left: 2px solid rgb(71, 193, 168); box-sizing: border-box;">
+           </section>
+           <section style="width: 9px; height: 9px; float: right; border-bottom: 2px solid rgb(71, 193, 168); border-right: 2px solid rgb(71, 193, 168); box-sizing: border-box;">
+           </section>
+           <section style="clear: both; box-sizing: border-box;">
+           </section>
+          </section>
+         </section>
+        </section>
+       </section>
+       <p style="text-indent: 2em;">
+        本着节约的精神，又出现了把unicode编码转化为可变长编码的
+        <span style="color: rgb(255, 0, 0);">
+         utf-8
+        </span>
+        编
+码，它可以根据不同的符号而变化字节长度，当字符在基础ASCII码的范围时，就用一个字节表示，保留了ASCII字符一个字节的编码做为它的一部分；当
+字符在扩展ASCII码的范围时，就用两个字节。值得注意的是在unicode中，一个中文字符（中文符号及大部分常用汉字）占2个字节，而
+        <span style="color: rgb(255, 0, 0);">
+         utf-8
+        </span>
+        一个中文字符（中文符号及大部分常用汉字）占3个字节。从unicode到uft-8并不是直接的对应，而是要过一些算法和规则来转换。
+       </p>
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        <span style="color: rgb(255, 0, 0); font-size: 18px;">
+         注：
+        </span>
+        从
+        <span style="color: rgb(255, 0, 0);">
+         stata14
+        </span>
+        开始用的是
+        <span style="color: rgb(255, 0, 0);">
+         utf-8
+        </span>
+        编码。并且，在utf-8编码中，
+        <span style="color: rgb(255, 104, 39);">
+         基础ASCII编码
+        </span>
+        中的字符只占一个字节，
+        <span style="color: rgb(255, 104, 39);">
+         扩展ASCII编码
+        </span>
+        中的字符占两个字节，大部分
+        <span style="color: rgb(255, 104, 39);">
+         常用汉字
+        </span>
+        占三个字节，对于比较复杂的汉字（如扩展B、扩展C等）占4个字节。
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" text-align: center; margin-top: 10px; margin-bottom: 10px;  box-sizing: border-box; ">
+      <img class="" data-ratio="0.00625" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZv59MnFm7HwqQnwmVf34hqYX2kbzuwt2v3BrPy7OhurTiaz09B5ZqTbDFbaIIFVwOBw8iccboykmwQ/0?wx_fmt=png" data-type="png" data-w="640" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" style="vertical-align: middle; box-sizing: border-box; width: 640px !important; height: 4px !important;"/>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        往期相关推文“
+        <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247486787&amp;idx=1&amp;sn=8da73f13f82d5e57e3de849596f14e49&amp;chksm=e9af45ecded8ccfa5e80839dbad4cafc7a4fbbdfe65fe5b2f571cad18627c9c2bb2a58d42b38&amp;scene=21#wechat_redirect" target="_blank">
+         识得庐山真面目—详解ASCII编码
+        </a>
+        ”， “
+        <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247485701&amp;idx=1&amp;sn=6f774cdffbfa5d7c987f5dc83f17032a&amp;chksm=e9af41aaded8c8bcbd616e3e78926f20cec3db1447c08e142ba43ea5983bbf28cbbbdc20c80b&amp;scene=21#wechat_redirect" target="_blank">
+         嘿，我才不怕不一样的编码小怪兽！”
+        </a>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        接下来就给大家介绍与之相关的strlen(),ustrlen(),udstrlen()。
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" margin-top: 10px; margin-bottom: 10px; text-align: center;  box-sizing: border-box; ">
+      <section class="" style="display: inline-block; margin-bottom: 7px; margin-top: 7px; line-height: 1.2; background-color: rgb(71, 193, 168); box-sizing: border-box;">
+       <section class="" style="display: inline-block; vertical-align: top; border-width: 2px; border-style: solid; border-color: rgb(71, 193, 168); padding: 2px 8px; background-color: rgb(255, 255, 255); font-size: 19px; margin: -7px 5px; box-sizing: border-box;">
+        <p style="box-sizing: border-box;">
+         一、strlen(s)
+        </p>
+       </section>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        <span style="color: rgb(255, 0, 0);">
+         strlen()
+        </span>
+        是建立在
+        <span style="color: rgb(255, 104, 39);">
+         字节
+        </span>
+        的基础上，它适用于计算字符串s所占的字节长度。在上面已经介绍了，在utf-8编码中，基础ASCII编码中的字符只占一个字节，扩展ASCII编码中的字符占两个字节，大部分常用汉字占三个字节：
+       </p>
+       <p style="text-align: center;">
+        <img _width="auto" class="" data-fail="0" data-ratio="0.5836177474402731" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZv59MnFm7HwqQnwmVf34hqRNequ2Bv8W8XWIoKE55Pd08K0Ue3t2ZChsb973y03QjBXdruFVH7bw/0?wx_fmt=png" data-type="png" data-w="293" src="%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E4%BB%80%E4%B9%88%E7%9A%84%E6%9C%80%E5%A4%B4%E7%96%BC%E4%BA%86_files/640.png" style="width: auto !important; height: auto !important; visibility: visible !important;"/>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" margin-top: 10px; margin-bottom: 10px; text-align: center;  box-sizing: border-box; ">
+      <section class="" style="display: inline-block; margin-bottom: 7px; margin-top: 7px; line-height: 1.2; background-color: rgb(71, 193, 168); box-sizing: border-box;">
+       <section class="" style="display: inline-block; vertical-align: top; border-width: 2px; border-style: solid; border-color: rgb(71, 193, 168); padding: 2px 8px; background-color: rgb(255, 255, 255); font-size: 19px; margin: -7px 5px; box-sizing: border-box;">
+        <p style="box-sizing: border-box;">
+         二、ustrlen(s)
+        </p>
+       </section>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        <span style="color: rgb(255, 0, 0);">
+         utrlen()
+        </span>
+        是建立在
+        <span style="color: rgb(255, 104, 39);">
+         unicode
+        </span>
+        的基础上，输出的是字符串s的总字符数。在推文的最开始，我们已经介绍了unicode编码，无论什么符号，它都只算一个字符，即输出的结果为字符串所占的字符个数。
+       </p>
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        比如我们的字符串内容为“Aß爬虫俱乐部”，我们来计算一下它所占的字符个数：
+       </p>
+       <p style="text-align: center;">
+        <img class="" data-fail="0" data-ratio="0.2469437652811736" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZv59MnFm7HwqQnwmVf34hqE6Qwj9xMoyNMbG0tapzAK23hqeu7xibRIH7QcFgpNLTQ1rXwAweFiaaw/0?wx_fmt=png" data-type="png" data-w="409" src="%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E4%BB%80%E4%B9%88%E7%9A%84%E6%9C%80%E5%A4%B4%E7%96%BC%E4%BA%86_files/640_003.png" style="width: auto !important; height: auto !important; visibility: visible !important;"/>
+       </p>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style=" margin-top: 10px; margin-bottom: 10px; text-align: center;  box-sizing: border-box; ">
+      <section class="" style="display: inline-block; margin-bottom: 7px; margin-top: 7px; line-height: 1.2; background-color: rgb(71, 193, 168); box-sizing: border-box;">
+       <section class="" style="display: inline-block; vertical-align: top; border-width: 2px; border-style: solid; border-color: rgb(71, 193, 168); padding: 2px 8px; background-color: rgb(255, 255, 255); font-size: 19px; margin: -7px 5px; box-sizing: border-box;">
+        <p style="box-sizing: border-box;">
+         三、udstrlen(s)
+        </p>
+       </section>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+     <section class="" style="   box-sizing: border-box; ">
+      <section class="" style="box-sizing: border-box;">
+       <p style="box-sizing: border-box; text-indent: 2em;">
+        同样，
+        <span style="color: rgb(255, 0, 0);">
+         udstrlen()
+        </span>
+        也是建立在
+        <span style="color: rgb(255, 104, 39);">
+         unicode
+        </span>
+        的基础上，输出的是在Stata结果窗口中显示字符串s所需显示的列数。ASCII编码与扩展ASCII编码都只占一列的显示空间，汉字等复杂字符占两列的显示空间。
+       </p>
+       <p style="text-align: center;">
+        <img class="" data-fail="0" data-ratio="0.5297805642633229" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZv59MnFm7HwqQnwmVf34hqVdoMiaq4F3HY8uYzdy8icneI3xcE9UGDg2MjHu5GT5NticuwcicQictF9icw/0?wx_fmt=png" data-type="png" data-w="319" src="%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E4%BB%80%E4%B9%88%E7%9A%84%E6%9C%80%E5%A4%B4%E7%96%BC%E4%BA%86_files/640_004.png" style="width: auto !important; height: auto !important; visibility: visible !important;"/>
+       </p>
+       <section style="max-width: 100%; box-sizing: border-box; background-color: rgb(255, 255, 255); word-wrap: break-word !important;">
+        <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+         <section class="" style="margin-top: 10px; max-width: 100%; box-sizing: border-box; text-align: center; word-wrap: break-word !important;">
+          <img _width="133.594px" class="__bg_gif " data-fail="0" data-order="0" data-ratio="0.4663978" data-src="https://mmbiz.qpic.cn/mmbiz_gif/ACviaWTBFxhbRfBiapAJ5KOP7As8zpp5J3vYQyWhLDEZ8HueD6Vr9mdcHK16UOydLblx37vymnFdZk9ia8jlArZ0Q/0?wx_fmt=gif" data-type="gif" data-w="744" src="%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E4%BB%80%E4%B9%88%E7%9A%84%E6%9C%80%E5%A4%B4%E7%96%BC%E4%BA%86_files/0.gif" style="box-sizing: border-box; vertical-align: middle; overflow-wrap: break-word !important; visibility: visible !important; width: 133.594px !important; height: auto !important;" width="20%"/>
+         </section>
+        </section>
+       </section>
+       <p>
+        <br/>
+       </p>
+       <section style="max-width: 100%; box-sizing: border-box; color: rgb(62, 62, 62); word-wrap: break-word !important;">
+        <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+         <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+          <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+           <p style="max-width: 100%; min-height: 1em; box-sizing: border-box !important; word-wrap: break-word !important;">
+            <strong style="max-width: 100%; line-height: 25.6px; text-indent: 32px; box-sizing: border-box !important; word-wrap: break-word !important;">
+             <span style="max-width: 100%; color: rgb(255, 76, 65); box-sizing: border-box !important; word-wrap: break-word !important;">
+              什么
+             </span>
+            </strong>
+            <span style="max-width: 100%; line-height: 25.6px; text-indent: 32px; box-sizing: border-box !important; word-wrap: break-word !important;">
+             ？！没看懂！！不要紧！！戳下面，听爬虫小将的详细
+            </span>
+            <strong style="max-width: 100%; line-height: 25.6px; text-indent: 32px; box-sizing: border-box !important; word-wrap: break-word !important;">
+             <span style="max-width: 100%; color: rgb(255, 76, 65); box-sizing: border-box !important; word-wrap: break-word !important;">
+              讲解
+             </span>
+            </strong>
+            <span style="max-width: 100%; line-height: 25.6px; text-indent: 32px; box-sizing: border-box !important; word-wrap: break-word !important;">
+             ，也欢迎大家的
+            </span>
+            <strong style="max-width: 100%; line-height: 25.6px; text-indent: 32px; box-sizing: border-box !important; word-wrap: break-word !important;">
+             <span style="max-width: 100%; color: rgb(255, 76, 65); box-sizing: border-box !important; word-wrap: break-word !important;">
+              批评指正
+             </span>
+            </strong>
+            <span style="max-width: 100%; line-height: 25.6px; text-indent: 32px; box-sizing: border-box !important; word-wrap: break-word !important;">
+             哟！
+            </span>
+           </p>
+           <p style="max-width: 100%; min-height: 1em; box-sizing: border-box !important; word-wrap: break-word !important;">
+            <span style="max-width: 100%; line-height: 25.6px; text-indent: 32px; box-sizing: border-box !important; word-wrap: break-word !important;">
+             <iframe allowfullscreen="" class="video_iframe" data-ratio="1.7647058823529411" data-src="https://v.qq.com/iframe/player.html?vid=j0547gmpy61&amp;width=670&amp;height=376.875&amp;auto=0" data-vh="376.875" data-vidtype="2" data-vw="670" data-w="480" frameborder="0" height="376.875" scrolling="no" src="%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E4%BB%80%E4%B9%88%E7%9A%84%E6%9C%80%E5%A4%B4%E7%96%BC%E4%BA%86_files/player.htm" style="display: block; width: 670px !important; height: 376.875px !important; overflow: hidden;" width="670">
+             </iframe>
+             <br/>
+            </span>
+           </p>
+          </section>
+         </section>
+        </section>
+        <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+         <section class="" style="margin-top: 10px; margin-bottom: 10px; max-width: 100%; box-sizing: border-box; text-align: center; word-wrap: break-word !important;">
+          <img _width="auto" class="" data-fail="0" data-ratio="0.081761" data-src="https://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhbQdcz0o5vYQFqgJey0HCW5tno07Z2afqhwsqnYVgjTgZAUMG8PspCQDhF1AYyRiarFk7xvRmLYT3Q/640?wx_fmt=png" data-type="png" data-w="636" src="%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E4%BB%80%E4%B9%88%E7%9A%84%E6%9C%80%E5%A4%B4%E7%96%BC%E4%BA%86_files/640_002.png" style="box-sizing: border-box; vertical-align: middle; overflow-wrap: break-word !important; visibility: visible !important; width: auto !important; height: auto !important;" width="auto"/>
+         </section>
+        </section>
+       </section>
+       <p style="max-width: 100%; min-height: 1em; color: rgb(62, 62, 62); box-sizing: border-box !important; word-wrap: break-word !important;">
+        <span style="max-width: 100%; color: rgb(136, 136, 136); font-size: 14px; line-height: 24px; text-align: justify; text-indent: 2em; box-sizing: border-box !important; word-wrap: break-word !important;">
+         以上就是今天给大家分享的内容了，说得好就赏个铜板呗！有钱的捧个钱场，有人的捧个人场~。
+         <span style="max-width: 100%; text-indent: 2em; color: rgb(255, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+          另外，我们开通了苹果手机打赏通道，只要扫描下方的二维码，就可以打赏啦！
+         </span>
+        </span>
+       </p>
+       <p style="max-width: 100%; min-height: 1em; text-align: center; box-sizing: border-box !important; word-wrap: break-word !important;">
+        <img _width="auto" class="" data-fail="0" data-ratio="0.993421052631579" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhaMzrYsBwblNhdIH59E1ia7cYPNFDjuVY1pxl56ZBTuTDDPUl143UNhOhSrolXicJepxS4MibJCQibANQ/640?wx_fmt=jpeg" data-type="jpeg" data-w="304" src="%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E4%BB%80%E4%B9%88%E7%9A%84%E6%9C%80%E5%A4%B4%E7%96%BC%E4%BA%86_files/640.jpg" style="box-sizing: border-box !important; overflow-wrap: break-word !important; visibility: visible !important; width: auto !important; height: auto !important;"/>
+       </p>
+       <p style="max-width: 100%; min-height: 1em; color: rgb(62, 62, 62); box-sizing: border-box !important; word-wrap: break-word !important;">
+        <span style="max-width: 100%; color: rgb(122, 79, 214); line-height: 25.6px; text-indent: 2em; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+         应广大粉丝要求，爬虫俱乐部的推文公众号打赏功能可以开发票啦，累计打赏超过1000元我们即可给您开具发票，发票类别为“咨询费”。用心做事，只为做您更贴心的小爬虫。第一批发票已经寄到各位小主的手中，大家快来给小爬虫打赏呀~
+        </span>
+       </p>
+       <section style="max-width: 100%; box-sizing: border-box; color: rgb(62, 62, 62); word-wrap: break-word !important;">
+        <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+         <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+          <section style="max-width: 100%; box-sizing: border-box; line-height: 1.8; font-size: 14px; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+           <p style="max-width: 100%; min-height: 1em; text-align: right; line-height: 25.6px; text-indent: 28px; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+            <span style="max-width: 100%; color: rgb(122, 79, 214); line-height: 25.6px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+            </span>
+            <span style="max-width: 100%; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+             文字编辑：徐露露
+            </span>
+           </p>
+           <p style="max-width: 100%; min-height: 1em; text-align: right; line-height: 25.6px; text-indent: 28px; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+            <span style="max-width: 100%; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+             技术总编：刘贝贝
+            </span>
+           </p>
+           <hr style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+           <hr style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+           <p style="max-width: 100%; min-height: 1em; line-height: 25.6px; text-indent: 0em; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+            <strong style="max-width: 100%; text-align: justify; color: rgb(136, 136, 136); line-height: 23.27px; text-indent: 0em; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+             往期推文推荐：
+            </strong>
+           </p>
+           <p style="max-width: 100%; min-height: 1em; box-sizing: border-box !important; word-wrap: break-word !important;">
+            <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247486256&amp;idx=1&amp;sn=ac0e923153845a620ebcd57045f105a0&amp;chksm=e9af439fded8ca89ea91469c79d865dde3e12bfcfe55f4a8175785032a8ffdc5f24f8cdab400&amp;scene=21#wechat_redirect" se_prerender_url="complete" style="color: rgb(67, 149, 245); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+             <span style="max-width: 100%; font-family: 宋体; letter-spacing: 0px; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial; box-sizing: border-box !important; word-wrap: break-word !important;">
+              1.
+             </span>
+             <span style="max-width: 100%; font-family: 宋体; letter-spacing: 0px; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial; box-sizing: border-box !important; word-wrap: break-word !important;">
+              <span style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+               高校学术大神：你的导师上榜了吗？
+              </span>
+             </span>
+            </a>
+           </p>
+           <p style="max-width: 100%; min-height: 1em; box-sizing: border-box !important; word-wrap: break-word !important;">
+            <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+             <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247485548&amp;idx=1&amp;sn=478ba30875877af79d97e9ed4eecaa7c&amp;chksm=e9af40c3ded8c9d5dc76879c0d21bb2e5e8fd182c59f2545c9879706403cafb260281dc13fce&amp;scene=21#wechat_redirect" se_prerender_url="complete" style="color: rgb(67, 149, 245); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+              2.中国高校财经、管理与综合类期刊灌水排行榜
+             </a>
+            </span>
+           </p>
+           <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+            <section style="max-width: 100%; box-sizing: border-box; line-height: 1.8; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+             <section style="max-width: 100%; box-sizing: border-box; line-height: 2.2; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+              <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+               <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                <section style="max-width: 100%; box-sizing: border-box; line-height: 1.8; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                 <section style="max-width: 100%; box-sizing: border-box; line-height: 25.6px; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                  <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                   <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                    <section style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                     <p style="max-width: 100%; min-height: 1em; box-sizing: border-box !important; word-wrap: break-word !important;">
+                      <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247486698&amp;idx=1&amp;sn=95d0e860c87c7254a51b0e65114f5848&amp;chksm=e9af4445ded8cd538712732188f65dd4c557920dc2405052bb5778110b46402fb23b79745fc3&amp;scene=21#wechat_redirect" style="color: rgb(67, 149, 245); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                       <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+                        3.
+                       </span>
+                       <span style="max-width: 100%; font-family: Calibri; box-sizing: border-box !important; word-wrap: break-word !important;">
+                        <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+                         命令
+                        </span>
+                        sum2docx
+                        <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+                         输出统计量表到
+                        </span>
+                        <span style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+                         docx
+                        </span>
+                        <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+                         文件
+                        </span>
+                       </span>
+                      </a>
+                     </p>
+                     <p style="max-width: 100%; min-height: 1em; box-sizing: border-box !important; word-wrap: break-word !important;">
+                      <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247486710&amp;idx=1&amp;sn=97c12964ed829e2c30ac72347fc109b2&amp;chksm=e9af4459ded8cd4fb10fe8ffcbeef68b312db891922a635cbe8b62ac025a2b1abccafbf66c03&amp;scene=21#wechat_redirect" style="color: rgb(67, 149, 245); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                       <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+                        4.
+                       </span>
+                       <span style="max-width: 100%; font-family: Calibri; box-sizing: border-box !important; word-wrap: break-word !important;">
+                        <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+                         用
+                        </span>
+                        reg2docx
+                        <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+                         报告你的实证结果吧！
+                        </span>
+                       </span>
+                      </a>
+                     </p>
+                     <p style="max-width: 100%; min-height: 1em; box-sizing: border-box !important; word-wrap: break-word !important;">
+                      <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247486567&amp;idx=1&amp;sn=c3b56ac12d813442f01cfaa6970da36b&amp;chksm=e9af44c8ded8cdde15f06d39e7faab8a71f052e2b9cc4d94e4b197acd951dcfdb7e44390fdde&amp;scene=21#wechat_redirect" se_prerender_url="complete" style="color: rgb(67, 149, 245); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                       <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+                        5.
+                       </span>
+                       <span style="max-width: 100%; font-family: Calibri; box-sizing: border-box !important; word-wrap: break-word !important;">
+                        <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+                         爬虫俱乐部又出新命令了
+                        </span>
+                        ——wordconvert
+                        <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+                         转换你的
+                        </span>
+                        <span style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+                         word
+                        </span>
+                        <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+                         文件
+                        </span>
+                       </span>
+                      </a>
+                     </p>
+                     <p style="max-width: 100%; min-height: 1em; box-sizing: border-box !important; word-wrap: break-word !important;">
+                      <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247486583&amp;idx=1&amp;sn=98496838754a0401b895492b6c61edc4&amp;chksm=e9af44d8ded8cdce452eb3286576fc6fe26302aeccbe959ed0aa79489e2f2f210cc76dd16da1&amp;scene=21#wechat_redirect" style="color: rgb(67, 149, 245); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                       <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+                        6.
+                       </span>
+                       <span style="max-width: 100%; font-family: Calibri; box-sizing: border-box !important; word-wrap: break-word !important;">
+                        putdocx+wordconvert—
+                        <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+                         将实证结果输出到
+                        </span>
+                        <span style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+                         Word
+                        </span>
+                        <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+                         （
+                        </span>
+                        <span style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+                         .docx
+                        </span>
+                        <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+                         ）文档
+                        </span>
+                       </span>
+                      </a>
+                     </p>
+                     <p style="max-width: 100%; min-height: 1em; box-sizing: border-box !important; word-wrap: break-word !important;">
+                      <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247486622&amp;idx=1&amp;sn=45b3cdca22143ed67078801da64d4692&amp;chksm=e9af4431ded8cd277f623efdcc3db2beccd248dc4045e96fa46b857c33d313afbcf9030580c9&amp;scene=21#wechat_redirect" style="color: rgb(67, 149, 245); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                       <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+                        7.
+                       </span>
+                       <span style="max-width: 100%; font-family: Calibri; box-sizing: border-box !important; word-wrap: break-word !important;">
+                        Stata 15
+                        <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+                         之
+                        </span>
+                        <span style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+                         Markdown——
+                        </span>
+                        <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+                         没有做不到，只有想不到！
+                        </span>
+                       </span>
+                      </a>
+                     </p>
+                     <p style="max-width: 100%; min-height: 1em; box-sizing: border-box !important; word-wrap: break-word !important;">
+                      <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247486751&amp;idx=1&amp;sn=15872235104653eea2d6ec4b13a27209&amp;chksm=e9af45b0ded8cca676a904c1d00648ee810db5113c19a2f14fbf8b2fab4ee2758c15f795d8e2&amp;scene=21#wechat_redirect" se_prerender_url="complete" style="color: rgb(67, 149, 245); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                       <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+                        8.
+                       </span>
+                       <span style="max-width: 100%; font-family: Calibri; box-sizing: border-box !important; word-wrap: break-word !important;">
+                        <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+                         矩阵和宏的故事
+                        </span>
+                       </span>
+                      </a>
+                     </p>
+                     <p style="max-width: 100%; min-height: 1em; box-sizing: border-box !important; word-wrap: break-word !important;">
+                      <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247486754&amp;idx=1&amp;sn=eb79c291fa13c01af7363a1825ba3fc9&amp;chksm=e9af458dded8cc9b1125010efeedd0a31818dac0b8475ea3514e48839e9e502454088357459d&amp;scene=21#wechat_redirect" style="color: rgb(67, 149, 245); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                       <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+                        9.
+                       </span>
+                       <span style="max-width: 100%; font-family: Calibri; box-sizing: border-box !important; word-wrap: break-word !important;">
+                        shellout
+                        <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+                         ，
+                        </span>
+                        <span style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+                         open anything
+                        </span>
+                       </span>
+                      </a>
+                     </p>
+                     <p style="max-width: 100%; min-height: 1em; box-sizing: border-box !important; word-wrap: break-word !important;">
+                      <a href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247486767&amp;idx=1&amp;sn=18a079c151b81ad577ca7d724cc259e0&amp;chksm=e9af4580ded8cc96f410741d445e853e7f012a5b7be4aab7507a86fbde8108df271bf80df6ae&amp;scene=21#wechat_redirect" se_prerender_url="complete" style="color: rgb(67, 149, 245); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                       <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+                        10.
+                       </span>
+                       <span style="max-width: 100%; font-family: Calibri; box-sizing: border-box !important; word-wrap: break-word !important;">
+                        Putpdf--
+                        <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+                         神奇的转换工具
+                        </span>
+                       </span>
+                      </a>
+                     </p>
+                     <hr style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+                     <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                      <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                     </p>
+                    </section>
+                   </section>
+                  </section>
+                 </section>
+                </section>
+               </section>
+              </section>
+             </section>
+            </section>
+           </section>
+           <section style="max-width: 100%; box-sizing: border-box; line-height: 25.6px; font-size: 16px; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+            <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+             <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+              <section style="max-width: 100%; box-sizing: border-box; line-height: 2.2; font-size: 14px; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+               <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                 <section style="max-width: 100%; box-sizing: border-box; line-height: 1.8; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                  <section style="max-width: 100%; box-sizing: border-box; white-space: normal; widows: 1; font-family: 微软雅黑; line-height: 25.6px; background-color: rgb(255, 255, 255); word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                   <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                    <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                     <section style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                      <section style="margin-top: 10px; margin-bottom: 10px; max-width: 100%; box-sizing: border-box; color: rgb(120, 114, 114); line-height: 25.6px; font-size: 15px; font-stretch: normal; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                       <section style="padding-right: 1em; max-width: 100%; box-sizing: border-box; width: 556.36px; text-align: right; vertical-align: top; display: inline-block; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                        <section style="margin-right: -1em; max-width: 100%; box-sizing: border-box; text-align: left; vertical-align: bottom; display: inline-block; transform: rotate(0deg); word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                         <section style="max-width: 100%; box-sizing: border-box; width: 0px; border-right: 0.8em solid rgb(1, 115, 164); border-bottom: 0.8em solid rgb(1, 115, 164); word-wrap: break-word !important; overflow-wrap: break-word !important; border-top: 0.8em solid transparent !important; border-left: 0.8em solid transparent !important;">
+                         </section>
+                         <section style="margin-top: -1em; margin-left: -0.18em; max-width: 100%; box-sizing: border-box; width: 0px; border-right: 0.8em solid rgb(255, 255, 255); border-bottom: 0.8em solid rgb(255, 255, 255); word-wrap: break-word !important; overflow-wrap: break-word !important; border-top: 0.8em solid transparent !important; border-left: 0.8em solid transparent !important;">
+                         </section>
+                        </section>
+                        <section style="margin-top: 0.3em; padding-bottom: 1em; max-width: 100%; box-sizing: border-box; background-color: rgb(1, 183, 204); word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                         <section style="margin-top: -1em; margin-right: -1em; max-width: 100%; box-sizing: border-box; border-width: 0.2em; border-style: solid; border-color: rgb(1, 115, 164); width: 540.36px; display: inline-block; background-color: rgb(255, 255, 255); word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                          <section style="padding: 10px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                           <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                            <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                             <section style="max-width: 100%; box-sizing: border-box; text-align: center; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                              <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; line-height: 25.6px; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                               <span style="max-width: 100%; color: rgb(255, 41, 65); box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                                <strong style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                                 关于我们
+                                </strong>
+                               </span>
+                              </p>
+                              <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; text-align: left; line-height: 25.6px; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                               <span style="max-width: 100%; color: rgb(0, 0, 0); line-height: 1.6; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                                微信公众号“爬虫俱乐部”分享实用的stata命令，欢迎转载、打赏。爬虫俱乐部是由李春涛教授领导下的研究生及本科生组成的大数据分析和数据挖掘团队。
+                               </span>
+                              </p>
+                             </section>
+                            </section>
+                           </section>
+                          </section>
+                         </section>
+                        </section>
+                       </section>
+                      </section>
+                      <p style="max-width: 100%; min-height: 1em; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                       <span style="max-width: 100%; text-align: justify; color: rgb(255, 76, 0); line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                        此外，欢迎大家踊跃投稿，介绍一些关于stata的数据处理和分析技巧。
+                       </span>
+                      </p>
+                      <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                       <span style="max-width: 100%; color: rgb(255, 76, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                        投稿邮箱：
+                       </span>
+                       statatraining@163.com
+                      </p>
+                      <p style="max-width: 100%; min-height: 1em; color: rgb(117, 114, 114); line-height: 25.6px; font-size: 15px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                       <span style="max-width: 100%; color: rgb(255, 76, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                        投稿要求：
+                        <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+                        1）必须原创，禁止抄袭；
+                        <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+                        2）必须准确，详细，有例子，有截图；
+                        <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+                        注意事项：
+                        <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+                        1）所有投稿都会经过本公众号运营团队成员的审核，审核通过才可录用，一经录用，会在该推文里为作者署名，并有赏金分成。
+                        <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+                        2）邮件请注明投稿，邮件名称为“投稿”+“推文名称”。
+                        <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;"/>
+                        <span style="max-width: 100%; color: rgb(122, 79, 214); box-sizing: border-box !important; word-wrap: break-word !important;">
+                         3）应广大读者要求，现开通有偿问答服务，如果大家遇到关于stata分析数据的问题，可以在公众号中提出，只需支付少量赏金，我们会在后期的推文里给予解答。
+                        </span>
+                       </span>
+                      </p>
+                     </section>
+                    </section>
+                   </section>
+                  </section>
+                  <p style="max-width: 100%; min-height: 1em; line-height: 25.2px; white-space: normal; widows: 1; font-family: 微软雅黑; background-color: rgb(255, 255, 255); box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                   <img _width="668px" class="" data-fail="0" data-ratio="1" data-s="300,640" data-src="https://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhaWXvVQ75jWic8ZgzBHtCqoBqxqNuAHrRUqGSSdt9PXL1ibOiadXZDz2bHs7MsqI4tViaF9GoGceQ71Qw/640?wx_fmt=jpeg" data-type="jpeg" data-w="430" src="%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E4%BB%80%E4%B9%88%E7%9A%84%E6%9C%80%E5%A4%B4%E7%96%BC%E4%BA%86_files/640_002.jpg" style="box-sizing: border-box !important; overflow-wrap: break-word !important; visibility: visible !important; width: 668px !important; height: auto !important;" width="556px"/>
+                  </p>
+                  <p style="max-width: 100%; min-height: 1em; white-space: normal; widows: 1; font-family: 微软雅黑; line-height: 25.6px; text-align: center; background-color: rgb(255, 255, 255); box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                   <span style="max-width: 100%; color: rgb(120, 114, 114); line-height: 19.2px; letter-spacing: 2px; font-size: 15px; box-sizing: border-box !important; word-wrap: break-word !important; overflow-wrap: break-word !important;">
+                    欢迎关注爬虫俱乐部
+                   </span>
+                  </p>
+                 </section>
+                </section>
+               </section>
+              </section>
+             </section>
+            </section>
+           </section>
+          </section>
+         </section>
+        </section>
+       </section>
+      </section>
+     </section>
+    </section>
+   </section>
+  </div>
+  <script nonce="1464938765" type="text/javascript">
+   var first_sceen__time = (+new Date());
+
+                    if ("" == 1 && document.getElementById('js_content')) {
+                        document.getElementById('js_content').addEventListener("selectstart",function(e){ e.preventDefault(); });
+                    }
+
+                    
+                    (function(){
+                        if (navigator.userAgent.indexOf("WindowsWechat") != -1){
+                            var link = document.createElement('link');
+                            var head = document.getElementsByTagName('head')[0];
+                            link.rel = 'stylesheet';
+                            link.type = 'text/css';
+                            link.href = "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/page_mp_article_improve_winwx31619e.css";
+                            head.appendChild(link);
+                        }
+                    })();
+  </script>
+  <div class="ct_mpda_wrp" id="js_sponsor_ad_area" style="display:none;">
+  </div>
+  <div class="reward_area tc" id="js_reward_area" style="display:none;">
+   <p class="tips_global reward_tips">
+    您的打赏是我们的动力~
+   </p>
+   <p>
+    <a class="reward_access" href="##" id="js_reward_link">
+     赞赏
+    </a>
+   </p>
+   <div class="reward_area_inner" id="js_reward_inner" style="display: none; width: 578px;">
+    <p class="tips_global reward_user_tips">
+     <a href="##" id="js_reward_total">
+     </a>
+     人赞赏
+    </p>
+    <div class="reward_user_list" id="js_reward_list">
+    </div>
+   </div>
+  </div>
+  <div class="reward_qrcode_area reward_area tc" id="js_reward_qrcode" style="display:none;">
+   <p class="tips_global">
+    长按二维码向我转账
+   </p>
+   <p class="reward_tips">
+    您的打赏是我们的动力~
+   </p>
+   <span class="reward_qrcode_img_wrp">
+    <img class="reward_qrcode_img" id="js_reward_qrcode_img"/>
+   </span>
+   <p class="tips_global">
+    受苹果公司新规定影响，微信 iOS 版的赞赏功能被关闭，可通过二维码转账支持公众号。
+   </p>
+  </div>
+ </div>
+ <div class="rich_media_tool" id="js_toobar3" style="display: none;">
+  <a class="media_tool_meta meta_primary" href="##" id="js_view_source">
+   阅读原文
+  </a>
+  <div class="media_tool_meta tips_global meta_primary" id="js_read_area3" style="display:none;">
+   阅读
+   <span id="readNum3">
+   </span>
+  </div>
+  <span class="media_tool_meta meta_primary tips_global meta_praise" id="like3" style="display:none;">
+   <i class="icon_praise_gray">
+   </i>
+   <span class="praise_num" id="likeNum3">
+   </span>
+  </span>
+  <a class="media_tool_meta tips_global meta_extra" href="##" id="js_report_article3" style="display:none;">
+   投诉
+  </a>
+ </div>
+ <div class="rich_media_tool" id="js_sg_bar">
+  <a class="media_tool_meta meta_primary" href="https://pan.baidu.com/s/1o7VP9Ey" target="_blank">
+   阅读原文
+  </a>
+ </div>
+</div>
+</body></html>

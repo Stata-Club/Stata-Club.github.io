@@ -1,0 +1,719 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body><div class="rich_media_area_primary" id="page-content">
+ <div id="img-content">
+  <h2 class="rich_media_title" id="activity-name">
+  </h2>
+  <div class="rich_media_meta_list" id="meta_content">
+  </div>
+  <div class="rich_media_content " id="js_content">
+   <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; color: rgb(62, 62, 62); font-size: 16px; line-height: 25.6px; white-space: normal; word-wrap: break-word !important;">
+    <section style="box-sizing: border-box; background-color: rgb(255, 255, 255);">
+     <section class="" powered-by="xiumi.us" style="   box-sizing: border-box; ">
+      <section class="" style=" text-align: center; margin-right: 0%; margin-bottom: 10px; margin-left: 0%; transform: translate3d(0px, 0px, 0px); -webkit-transform: translate3d(0px, 0px, 0px);  box-sizing: border-box; ">
+       <img _width="30%" class="" data-fail="0" data-ratio="0.7383177570093458" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZf82psbicXGiaF73kAul5de11UJjWkj1BRSagCwO9mylRBVIYhc6qHfY51BVtz2wSyGBMeMd7spJyg/0?wx_fmt=png" data-type="png" data-w="107" src="%E6%B7%B7%E6%90%AD%E5%9B%BE%E5%BD%A2_files/640_005.png" style="vertical-align: middle; box-sizing: border-box; width: 30% !important; height: auto !important; visibility: visible !important;" width="30%"/>
+      </section>
+     </section>
+    </section>
+    <p style="text-indent: 2em;">
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      哈喽，诸君安。在之前的推文中，我们介绍了散点图和柱状图的画法，可是怎么把两个图形放在一个图中呢？这就是所谓的图形混搭，这个问题迟迟没有介绍，但是好菜不怕晚！今天，小编就给大家解决这个问题。
+     </span>
+    </p>
+    <p style="text-indent: 2em;">
+     <br/>
+    </p>
+    <p>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      首先，导入数据：
+     </span>
+    </p>
+    <p>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 209, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      ·import excel using D:\Stata14\爬虫俱乐部\河南省2016经济发展大数据.xlsx,firstrow clear
+     </span>
+    </p>
+    <p>
+     <span style="font-family: Calibri; font-size: 14px;">
+     </span>
+    </p>
+    <p>
+     <img _width="100%" class="" data-fail="0" data-ratio="0.49141630901287553" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZT4pibDibj7cOVxCJcXhaia24q8sN1libG58P2miaIv1IZE2h69xWeyzC9muxbAcAib4ag9M0cx8m1l7fA/0?wx_fmt=png" data-type="png" data-w="466" src="%E6%B7%B7%E6%90%AD%E5%9B%BE%E5%BD%A2_files/640_003.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+    </p>
+    <p>
+     <span style="font-family: Calibri; font-size: 14px;">
+     </span>
+    </p>
+    <p>
+     <span style="font-family: 宋体; font-size: 14px;">
+      目的导向：利用上述数据作出以下图形：
+     </span>
+    </p>
+    <p>
+     <span style="font-family: 宋体; font-size: 14px;">
+     </span>
+    </p>
+    <p>
+     <img _width="100%" class="" data-fail="0" data-ratio="0.7262357414448669" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZT4pibDibj7cOVxCJcXhaia24Sibicb9deWLPYdIWNVzPicXsLib0ibNkzdhVNBMUE32AjIOHRiaMfPqq3ZjQ/0?wx_fmt=gif" data-type="gif" data-w="526" src="%E6%B7%B7%E6%90%AD%E5%9B%BE%E5%BD%A2_files/640_002.jpg" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+    </p>
+    <p style="text-indent: 28px">
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      绘制柱状图和散点图的部分我们已经解决了。而把两种图形放到一个图中需要用到双坐标轴。所有作图命令的选项中都包含了
+      <span style="max-width: 100%; font-family: 华文楷体; color: rgb(255, 41, 65);">
+       axis_choice_options
+      </span>
+      这一项，其有
+      <span style="max-width: 100%; font-family: 华文楷体; color: rgb(255, 41, 65);">
+       yaxis
+      </span>
+      和
+      <span style="max-width: 100%; font-family: 华文楷体; color: rgb(255, 41, 65);">
+       xaxis
+      </span>
+      两个选项。
+     </span>
+    </p>
+    <p style="text-indent: 2em;">
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      我们以y轴为例，用yaxis是在确定y轴的相对位置，yaxis(2)表示左侧，yaxis(1)表示右侧。（当你在选择项中使用yaixs(1)时，对应的ylabel和ytitle要在子选择项使用aixs(1)与之对应）
+     </span>
+    </p>
+    <p style="text-indent: 28px">
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(255, 41, 65); box-sizing: border-box !important; word-wrap: break-word !important;">
+      注意：
+     </span>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      两种画图命令是通过命令中的 “||”连接在一起的。“||”之前的所有命令对应一个图，之后的所有命令对应另一个图。“||”与两个命令之间有没有空格都可以。
+     </span>
+    </p>
+    <p>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      程序如下：
+     </span>
+    </p>
+    <p>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      <br/>
+     </span>
+    </p>
+    <p>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 209, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      ·twoway bar 一般公共预算收入 year,yaxis(2) ylabel(,axis(2)) ytitle(亿元,axis(2)) ||
+      <span style="max-width: 100%; font-family: 华文楷体; line-height: 25.6000003814697px;">
+      </span>
+      ///
+     </span>
+    </p>
+    <p>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 209, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      scatter 增速 year,yaxis(1) ylabel(,axis(1)) c(l) xlabel(2010(1)2016) ytitle(%,axis(1))
+     </span>
+    </p>
+    <p>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 209, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+     </span>
+    </p>
+    <p style="text-indent: 28px; text-align: left;">
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      显
+然“||”之前的命令做柱状图，之后的命令做散点图。柱状图命令中yaxis(2)表示柱状图相对散点图而言纵坐标在左侧，ylabel、ytitle的
+选择项axis(2)对应左侧纵坐标轴，并对左侧的纵坐标轴进行刻度和坐标轴名称的设定。同理，散点图命令中yaxis(1)表示散点图相对于柱状图而言
+纵坐标在右侧, ylabel、ytitle的选择项axis(1)对应右侧纵坐标轴，并对右侧的纵坐标轴进行刻度和坐标轴名称的设定。
+     </span>
+    </p>
+    <p style="text-indent: 28px; text-align: left;">
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+     </span>
+    </p>
+    <p>
+     <img class="" data-fail="0" data-ratio="0.7268588770864947" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZf82psbicXGiaF73kAul5de1Autjib5X1C74xO5ZTGNuv8HArosE6rmmb6qrTPm4HkguXP3SjQfJPRg/0?wx_fmt=png" data-type="png" data-w="659" src="%E6%B7%B7%E6%90%AD%E5%9B%BE%E5%BD%A2_files/640_004.png" style="width: auto !important; height: auto !important; visibility: visible !important;"/>
+    </p>
+    <p style="text-indent: 28px">
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      到此，我们已经介绍了柱状图、散点图的绘制方法以及如何在一个图中绘制两种图形，结合之前推文中的介绍，我们通过以下程序作出目标图形：
+     </span>
+    </p>
+    <p>
+     <br/>
+    </p>
+    <p>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 209, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      ·twoway bar 一般公共预算收入 year,yaxis(2) color(midblue)  barwidth(0.3) ///
+     </span>
+    </p>
+    <p>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 209, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      ylabel(0(500)3500,axis(2)
+ angle(horizontal)) ytitle(亿元,axis(2) orientation(horizontal) 
+placement(north)) || ///
+     </span>
+    </p>
+    <p>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 209, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      scatter 增速 year,m(T) mc(midgreen) lc(midgreen)  lwidth(0.5) yaxis(1) c(l) ///
+     </span>
+    </p>
+    <p>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 209, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      mlabel("
+增速") mlabposition(12) mlabcolor(black) xlabel(2010(1)2016) 
+ylabel(0(5)25,axis(1) angle(horizontal) format(%9.1f)) ytitle(%,axis(1) 
+placement(north))
+     </span>
+    </p>
+    <p>
+     <br/>
+    </p>
+    <p>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      运行结果如图所示：
+     </span>
+    </p>
+    <p>
+     <span style="color: rgb(0, 0, 0); font-family: 华文楷体; text-indent: 14px; line-height: 25.6000003814697px;">
+     </span>
+    </p>
+    <p>
+     <img _width="100%" class="" data-fail="0" data-ratio="0.7268588770864947" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZf82psbicXGiaF73kAul5de1znHaHNJ4OmchQ4mETtzhfeheq2ia9jP8FEfVw9Sqt7f8icB4wP8lWYPg/0?wx_fmt=png" data-type="png" data-w="659" src="%E6%B7%B7%E6%90%AD%E5%9B%BE%E5%BD%A2_files/640_002.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+    </p>
+    <p style="text-indent: 2em;">
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      好了，已经很接近目标图形，目标图形的图例在上方，而上图的图例在下方。如何改变图例的位置呢？接下来，我们讲一下图例的设定：
+     </span>
+    </p>
+    <p>
+     <span style="color: rgb(0, 82, 255); line-height: 25.6000003814697px; font-family: 华文楷体;">
+      legend([contents] [location])
+     </span>
+     <br/>
+    </p>
+    <p>
+     <span style="color: rgb(0, 0, 0); font-family: 华文楷体; line-height: 25.6000003814697px;">
+      legend包括两部分：
+      <span style="color: rgb(255, 41, 65); font-family: 华文楷体; line-height: 25.6000003814697px;">
+       contents
+      </span>
+      为图例内容；
+      <span style="color: rgb(255, 41, 65); font-family: 华文楷体; line-height: 25.6000003814697px;">
+       location
+      </span>
+      为图例位置。
+     </span>
+    </p>
+    <h1 class="" style="margin-top: 1em; max-width: 100%; white-space: normal; font-family: 'MicroSoft YaHei'; color: rgb(95, 127, 110); line-height: 28px; height: 28px; border-color: rgb(95, 127, 110); box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+     <span class="" style="margin-right: 10px; padding-right: 8px; padding-left: 8px; max-width: 100%; color: rgb(255, 255, 255); border-radius: 3px; display: inline-block; height: 28px; top: -1px; box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(95, 127, 110);">
+      01
+     </span>
+     <span style="font-size: 18px;">
+      <strong style="color: rgb(95, 127, 110); max-width: 100%; line-height: 1.6; box-sizing: border-box !important; word-wrap: break-word !important;">
+       <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+        设定图例的边框和底纹颜色：contents中region(roptions)选项。
+       </span>
+      </strong>
+     </span>
+    </h1>
+    <h1 class="" style="margin-top: 1em; max-width: 100%; white-space: normal; font-family: 'MicroSoft YaHei'; color: rgb(95, 127, 110); line-height: 28px; height: 28px; border-color: rgb(95, 127, 110); box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+     <span style="color: rgb(0, 0, 0); font-family: 华文楷体;">
+      <br/>
+     </span>
+    </h1>
+    <h1 class="" style="margin-top: 1em; max-width: 100%; white-space: normal; font-family: 'MicroSoft YaHei'; color: rgb(95, 127, 110); line-height: 28px; height: 28px; border-color: rgb(95, 127, 110); box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+     <span style="color: rgb(0, 0, 0); font-family: 华文楷体;">
+      其中roptions包括：
+     </span>
+    </h1>
+    <h1 class="" style="margin-top: 1em; max-width: 100%; white-space: normal; font-family: 'MicroSoft YaHei'; color: rgb(95, 127, 110); line-height: 28px; height: 28px; border-color: rgb(95, 127, 110); box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(255, 41, 65); box-sizing: border-box !important; word-wrap: break-word !important;">
+      （1）
+     </span>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      style(areastyle)整个图例区域的样式；
+     </span>
+    </h1>
+    <p>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(255, 41, 65); box-sizing: border-box !important; word-wrap: break-word !important;">
+      （2）
+     </span>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      color(colorstyle)图例的边框线和填充区域的颜色；
+     </span>
+    </p>
+    <p>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(255, 41, 65); box-sizing: border-box !important; word-wrap: break-word !important;">
+      （3）
+     </span>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      fcolor(colorstyle)图例填充区域的颜色；
+     </span>
+    </p>
+    <p>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(255, 41, 65); box-sizing: border-box !important; word-wrap: break-word !important;">
+      （4）
+     </span>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      lstyle(linestyle)图例的边框整体样式，包括边框的颜色、厚度和样式。
+     </span>
+    </p>
+    <p>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(255, 41, 65); box-sizing: border-box !important; word-wrap: break-word !important;">
+      （5）
+     </span>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      lcolor(colorstyle)图例边框颜色；
+     </span>
+    </p>
+    <p>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(255, 41, 65); box-sizing: border-box !important; word-wrap: break-word !important;">
+      （6）
+     </span>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      lwidth(linewidthstyle)图例边框厚度；
+     </span>
+    </p>
+    <p>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(255, 41, 65); box-sizing: border-box !important; word-wrap: break-word !important;">
+      （7）
+     </span>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      lpattern(linepatternstyle)图例边框线的样式；
+     </span>
+    </p>
+    <p>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(255, 41, 65); box-sizing: border-box !important; word-wrap: break-word !important;">
+      （8）
+     </span>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      margin(marginstyle)图例到边框的距离。
+     </span>
+    </p>
+    <p>
+     <span style="max-width: 100%; font-family: 华文楷体; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+      <br/>
+     </span>
+    </p>
+    <p>
+     <span style="color: rgb(0, 0, 0); font-family: 华文楷体; line-height: 25.6000003814697px;">
+     </span>
+    </p>
+    <h1 class="" style="margin-top: 1em; white-space: normal; max-width: 100%; font-family: 'MicroSoft YaHei'; color: rgb(95, 127, 110); line-height: 28px; height: 28px; border-color: rgb(95, 127, 110); box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+     <span class="" style="margin-right: 10px; padding-right: 8px; padding-left: 8px; max-width: 100%; color: rgb(255, 255, 255); border-radius: 3px; display: inline-block; height: 28px; top: -1px; box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(95, 127, 110);">
+      02
+     </span>
+     <span style="font-size: 18px;">
+      <strong style="max-width: 100%; line-height: 1.6; box-sizing: border-box !important; word-wrap: break-word !important;">
+       <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+        设定图例的位置
+       </span>
+      </strong>
+      <strong style="max-width: 100%; line-height: 1.6; box-sizing: border-box !important; word-wrap: break-word !important;">
+       <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+        ;l
+       </span>
+      </strong>
+      <strong style="max-width: 100%; line-height: 1.6; box-sizing: border-box !important; word-wrap: break-word !important;">
+       <span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">
+        ocation选项
+       </span>
+      </strong>
+     </span>
+    </h1>
+    <p>
+     <strong style="max-width: 100%; line-height: 1.6; box-sizing: border-box !important; word-wrap: break-word !important;">
+      <span style="max-width: 100%; font-family: 宋体; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+       <br/>
+      </span>
+     </strong>
+    </p>
+    <p>
+     <span style="color: rgb(255, 41, 65); font-family: 华文楷体; text-indent: 28px; line-height: 25.6000003814697px;">
+      (1)
+      <span style="color: rgb(0, 0, 0); font-family: 华文楷体; text-indent: 28px; line-height: 25.6000003814697px;">
+       off和on，分别表示关闭图例和显示图例。
+      </span>
+     </span>
+    </p>
+    <p>
+     <span style="color: rgb(255, 41, 65); font-family: 华文楷体; text-indent: 28px; line-height: 25.6000003814697px;">
+      (2)
+     </span>
+     <span style="color: rgb(0, 0, 0); font-family: 华文楷体; text-indent: 28px; line-height: 25.6000003814697px;">
+      position(clockposstyle)图例出现的位置，clockposstyle 取0-12，分别代表钟表刻度的位置，比如pos(12)表示图例在图的正上方。
+     </span>
+    </p>
+    <p>
+     <br/>
+    </p>
+    <p style="text-indent: 2em;">
+     <span style="color: rgb(0, 0, 0); font-family: 华文楷体; text-indent: 28px; line-height: 25.6000003814697px;">
+      ok，到这里，我们作图的基本命令介绍完毕，整个作图程序如下：
+     </span>
+    </p>
+    <p style="text-indent: 2em;">
+     <span style="color: rgb(0, 0, 0); font-family: 华文楷体; text-indent: 28px; line-height: 25.6000003814697px;">
+      <br/>
+     </span>
+    </p>
+    <p>
+     <span style="color: rgb(0, 209, 0); font-family: 华文楷体; text-indent: 28px; line-height: 25.6000003814697px;">
+      ·twoway bar 一般公共预算收入 year,yaxis(2) color(midblue)  barwidth(0.3) ///
+     </span>
+    </p>
+    <p>
+     <span style="color: rgb(0, 209, 0); font-family: 华文楷体; text-indent: 28px; line-height: 25.6000003814697px;">
+      ylabel(0(500)3500,axis(2)
+ angle(horizontal)) ytitle(亿元,axis(2) orientation(horizontal) 
+placement(north)) || ///
+     </span>
+    </p>
+    <p>
+     <span style="color: rgb(0, 209, 0); font-family: 华文楷体; text-indent: 28px; line-height: 25.6000003814697px;">
+      scatter 增速 year,m(T) mc(midgreen) lc(midgreen)  lwidth(0.5) yaxis(1) c(l) ///
+     </span>
+    </p>
+    <p>
+     <span style="color: rgb(0, 209, 0); font-family: 华文楷体; text-indent: 28px; line-height: 25.6000003814697px;">
+      mlabel("
+增速") mlabposition(12) mlabcolor(black) xlabel(2010(1)2016) 
+ylabel(0(5)25,axis(1) angle(horizontal) format(%9.1f)) ytitle(%,axis(1) 
+placement(north)) ///
+     </span>
+    </p>
+    <p>
+     <span style="color: rgb(0, 209, 0); font-family: 华文楷体; text-indent: 28px; line-height: 25.6000003814697px;">
+      legend(on  position(12) region(color(none)))
+     </span>
+    </p>
+    <p>
+     <span style="color: rgb(0, 209, 0); font-family: 华文楷体; text-indent: 28px; line-height: 25.6000003814697px;">
+      <br/>
+     </span>
+    </p>
+    <p style="text-indent: 0em;">
+     <span style="color: rgb(0, 0, 0); font-family: 华文楷体; text-indent: 28px; line-height: 25.6000003814697px;">
+      运行结果如图所示：
+     </span>
+    </p>
+    <p>
+     <span style="color: rgb(0, 0, 0); font-family: 华文楷体; text-indent: 28px; line-height: 25.6000003814697px;">
+     </span>
+    </p>
+    <p>
+     <img _width="100%" class="" data-fail="0" data-ratio="0.7268588770864947" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZf82psbicXGiaF73kAul5de1znHaHNJ4OmchQ4mETtzhfeheq2ia9jP8FEfVw9Sqt7f8icB4wP8lWYPg/0?wx_fmt=png" data-type="png" data-w="659" src="%E6%B7%B7%E6%90%AD%E5%9B%BE%E5%BD%A2_files/640_002.png" style="width: 100% !important; height: auto !important; visibility: visible !important;"/>
+    </p>
+    <p>
+     <br/>
+    </p>
+    <p>
+     <br/>
+    </p>
+    <p>
+     <br/>
+    </p>
+    <p style="margin-top: 5px; margin-bottom: 5px; max-width: 100%; min-height: 1em; font-family: 'MicroSoft YaHei'; font-size: 14px; line-height: normal; text-indent: 0em; text-align: center; box-sizing: border-box !important; word-wrap: break-word !important;">
+     <span style="max-width: 100%; font-size: 16px; font-family: 华文楷体; box-sizing: border-box !important; word-wrap: break-word !important;">
+      <img _width="670px" class="" data-fail="0" data-ratio="0.10507246376811594" data-src="http://mmbiz.qpic.cn/mmbiz_png/ACviaWTBFxhZT4pibDibj7cOVxCJcXhaia2446lMswxJdzt7sXqzWHTQqMpAicDm1Qg21XbDCIlOttwJtfYpSqkjzLw/640?wx_fmt=png" data-type="png" data-w="552" src="%E6%B7%B7%E6%90%AD%E5%9B%BE%E5%BD%A2_files/640.png" style="display: inline; box-sizing: border-box !important; overflow-wrap: break-word !important; visibility: visible !important; width: 670px !important; height: auto !important;" title="大树分割线" width="100%"/>
+     </span>
+    </p>
+    <p>
+     <br/>
+    </p>
+    <p>
+     <br/>
+    </p>
+    <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; line-height: 25.6px; word-wrap: break-word !important;">
+     <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+      <section class="" style="max-width: 100%; box-sizing: border-box; font-size: 14px; line-height: 1.8; word-wrap: break-word !important;">
+       <p style="max-width: 100%; min-height: 1em; font-size: 16px; line-height: 25.6px; text-indent: 2em; box-sizing: border-box !important; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+        <span style="max-width: 100%; color: rgb(136, 136, 136); font-family: 微软雅黑; line-height: 23.27px; text-align: justify; text-indent: 2em; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+         以上就是今天给大家分享的内容了，说得好就赏个铜板呗！有钱的捧个钱场，有人的捧个人场~。
+        </span>
+       </p>
+       <section style="max-width: 100%; box-sizing: border-box; line-height: 2.2; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+        <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+         <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+          <section class="" style="max-width: 100%; box-sizing: border-box; line-height: 1.8; word-wrap: break-word !important;">
+           <section style="max-width: 100%; box-sizing: border-box; line-height: 25.6px; word-wrap: break-word !important;">
+            <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+             <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+              <section style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+               <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; font-size: 15px; line-height: 25.6px; text-align: justify; color: rgb(160, 160, 160); text-indent: 2em; font-family: 微软雅黑; word-wrap: break-word !important;">
+                <span style="max-width: 100%; color: rgb(122, 79, 214); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                 应广大粉丝要求，爬虫俱乐部的推文公众号打赏功能可以开发票啦，累计打赏超过1000元我们即可给您开具发票，发票类别为“咨询费”。用心做事，只为做您更贴心的小爬虫。第一批发票已经寄到各位小主的手中，大家快来给小爬虫打赏呀~
+                </span>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); text-align: right; box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="max-width: 100%; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                 文字编辑：司海涛
+                </span>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); text-align: right; box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="max-width: 100%; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                 技术总编：刘贝贝
+                </span>
+               </p>
+               <hr style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+               <hr style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+                <strong style="max-width: 100%; text-indent: 0em; font-family: 微软雅黑; text-align: justify; color: rgb(136, 136, 136); line-height: 23.27px; font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                 往期推文推荐：
+                </strong>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="max-width: 100%; font-family: 微软雅黑; line-height: 25.6px; text-align: justify; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+                 1.
+                </span>
+                <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247485548&amp;idx=1&amp;sn=478ba30875877af79d97e9ed4eecaa7c&amp;chksm=e9af40c3ded8c9d5dc76879c0d21bb2e5e8fd182c59f2545c9879706403cafb260281dc13fce&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247485548&amp;idx=1&amp;sn=478ba30875877af79d97e9ed4eecaa7c&amp;chksm=e9af40c3ded8c9d5dc76879c0d21bb2e5e8fd182c59f2545c9879706403cafb260281dc13fce&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; font-family: 微软雅黑; line-height: 25.6px; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                 中国高校财经、管理与综合类期刊灌水排行榜
+                </a>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="max-width: 100%; font-family: 微软雅黑; line-height: 25.6px; text-align: justify; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+                 2.
+                </span>
+                <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484899&amp;idx=1&amp;sn=0da9bcae33696501a5eb8c8ab9c5b5ff&amp;chksm=e9af4d4cded8c45a84ed90d75464c3a866a79295f355f75e68943300fa58eb2ad1d18e016ef5&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484899&amp;idx=1&amp;sn=0da9bcae33696501a5eb8c8ab9c5b5ff&amp;chksm=e9af4d4cded8c45a84ed90d75464c3a866a79295f355f75e68943300fa58eb2ad1d18e016ef5&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; font-family: 微软雅黑; line-height: 25.6px; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                 关于RTF你不知道的命令
+                </a>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="max-width: 100%; line-height: 25.6px; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+                 3.
+                 <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484941&amp;idx=1&amp;sn=f348ba26ed2e9c5c25efd14e3c26c506&amp;chksm=e9af4ea2ded8c7b4f0c98365323ca46337259f9ba58c9d2541b94898bcd450c162108ba9a577&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484941&amp;idx=1&amp;sn=f348ba26ed2e9c5c25efd14e3c26c506&amp;chksm=e9af4ea2ded8c7b4f0c98365323ca46337259f9ba58c9d2541b94898bcd450c162108ba9a577&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; line-height: 25.6px; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                  关于RTF你不知道的命令之番外篇
+                 </a>
+                </span>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+                 4.
+                 <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484326&amp;idx=1&amp;sn=179a96c391bae0ff47e9f84b3e960aae&amp;chksm=e9af4b09ded8c21f705cc74ba9a18f996a6fed246222e51b404425e79a30b041bf2eef5c5d44&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484326&amp;idx=1&amp;sn=179a96c391bae0ff47e9f84b3e960aae&amp;chksm=e9af4b09ded8c21f705cc74ba9a18f996a6fed246222e51b404425e79a30b041bf2eef5c5d44&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                  免费事件研究，一片片从邮局寄来
+                 </a>
+                </span>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+                 5.
+                </span>
+                <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484452&amp;idx=1&amp;sn=c40cd805dafb50cf9c226cdd20550382&amp;chksm=e9af4c8bded8c59da87a75728c6600f0b6691846dfc071d9ee50d4d1424fd26bb696ed2ee0d4&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484452&amp;idx=1&amp;sn=c40cd805dafb50cf9c226cdd20550382&amp;chksm=e9af4c8bded8c59da87a75728c6600f0b6691846dfc071d9ee50d4d1424fd26bb696ed2ee0d4&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                 免费的股价同步性，一片片从邮局寄来
+                </a>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+                 6.
+                </span>
+                <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484529&amp;idx=1&amp;sn=dace95be71022f51c515c28b252d1e7b&amp;chksm=e9af4cdeded8c5c87a91fb3a1a5caa55cc6fe961ab72c6734cd859b48239882b48756bd4ad5e&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484529&amp;idx=1&amp;sn=dace95be71022f51c515c28b252d1e7b&amp;chksm=e9af4cdeded8c5c87a91fb3a1a5caa55cc6fe961ab72c6734cd859b48239882b48756bd4ad5e&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                 Stata叫你回家听音乐了！
+                </a>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="max-width: 100%; color: rgb(0, 0, 0); line-height: 1.4; font-family: 微软雅黑; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;">
+                 7.
+                </span>
+                <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484866&amp;idx=1&amp;sn=9814dd7590f639877665d9a7be1a7596&amp;chksm=e9af4d6dded8c47bec92e4f77659fe8b2b6ec7502b6d380e34a3c67ef83165e103077abd3ee5&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484866&amp;idx=1&amp;sn=9814dd7590f639877665d9a7be1a7596&amp;chksm=e9af4d6dded8c47bec92e4f77659fe8b2b6ec7502b6d380e34a3c67ef83165e103077abd3ee5&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; line-height: 1.4; font-family: 微软雅黑; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                 一言不合就用stata写邮件（Outlook/Foxmail）
+                </a>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+                 8.
+                </span>
+                <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484979&amp;idx=1&amp;sn=e572f2658ba8137832e3ae3aff2ce01a&amp;chksm=e9af4e9cded8c78a191dd0bcd06218c57a5492e4d23b1f7b0c564701a174337a4afe61a6b8e2&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484979&amp;idx=1&amp;sn=e572f2658ba8137832e3ae3aff2ce01a&amp;chksm=e9af4e9cded8c78a191dd0bcd06218c57a5492e4d23b1f7b0c564701a174337a4afe61a6b8e2&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                 听说你想知道怎么用stata画地图？
+                </a>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="max-width: 100%; color: rgb(0, 0, 0); line-height: 1.4; font-family: 微软雅黑; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;">
+                 9.
+                </span>
+                <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484233&amp;idx=1&amp;sn=104ca64b0bd3cf2dea046b11ea89e028&amp;chksm=e9af4be6ded8c2f005e28306aa9dab5cfcbca4020abb8296469fc5006c1eb32c6594c7b99a4b&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484233&amp;idx=1&amp;sn=104ca64b0bd3cf2dea046b11ea89e028&amp;chksm=e9af4be6ded8c2f005e28306aa9dab5cfcbca4020abb8296469fc5006c1eb32c6594c7b99a4b&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; line-height: 1.4; font-family: 微软雅黑; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                 I have a Stata, I have a python
+                </a>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">
+                 10.
+                </span>
+                <a data_ue_src="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484789&amp;idx=1&amp;sn=5c52d2bba468ceb9392b440c43638a19&amp;chksm=e9af4ddaded8c4cc6bf486b21c87f0e3b17b79694bbc388741e0a1d9f5e8f6bd4134efede7f2&amp;scene=21#wechat_redirect" href="http://mp.weixin.qq.com/s?__biz=MzI0NzU3MDg4MA==&amp;mid=2247484789&amp;idx=1&amp;sn=5c52d2bba468ceb9392b440c43638a19&amp;chksm=e9af4ddaded8c4cc6bf486b21c87f0e3b17b79694bbc388741e0a1d9f5e8f6bd4134efede7f2&amp;scene=21#wechat_redirect" style="color: rgb(0, 0, 0); max-width: 100%; font-family: 微软雅黑; line-height: 24px; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;" target="_blank">
+                 I have a Stata, I have a Python之二——pdf转word
+                </a>
+               </p>
+               <hr style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+               <hr style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); box-sizing: border-box !important; word-wrap: break-word !important;">
+                <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+               </p>
+              </section>
+             </section>
+            </section>
+           </section>
+          </section>
+         </section>
+        </section>
+       </section>
+      </section>
+     </section>
+    </section>
+    <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; line-height: 25.6px; word-wrap: break-word !important;">
+     <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+      <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+       <section style="max-width: 100%; box-sizing: border-box; font-size: 14px; line-height: 2.2; word-wrap: break-word !important; background-color: rgb(255, 255, 255);">
+        <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+         <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+          <section class="" style="max-width: 100%; box-sizing: border-box; line-height: 1.8; word-wrap: break-word !important;">
+           <section style="max-width: 100%; box-sizing: border-box; line-height: 25.6px; word-wrap: break-word !important;">
+            <section class="" powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+             <section class="" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+              <section style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+               <section style="margin-top: 10px; margin-bottom: 10px; max-width: 100%; box-sizing: border-box; line-height: 25.6px; font-size: 15px; font-family: 微软雅黑; text-align: center; color: rgb(120, 114, 114); font-stretch: normal; word-wrap: break-word !important;">
+                <section style="padding-right: 1em; max-width: 100%; box-sizing: border-box; width: 556.36px; text-align: right; vertical-align: top; display: inline-block; word-wrap: break-word !important;">
+                 <section style="margin-right: -1em; max-width: 100%; box-sizing: border-box; text-align: left; vertical-align: bottom; display: inline-block; transform: rotate(0deg); word-wrap: break-word !important;">
+                  <section style="max-width: 100%; box-sizing: border-box; width: 0px; border-right-width: 0.8em; border-right-style: solid; border-right-color: rgb(1, 115, 164); border-bottom-width: 0.8em; border-bottom-style: solid; border-bottom-color: rgb(1, 115, 164); word-wrap: break-word !important; border-top-width: 0.8em !important; border-top-style: solid !important; border-top-color: transparent !important; border-left-width: 0.8em !important; border-left-style: solid !important; border-left-color: transparent !important;">
+                  </section>
+                  <section style="margin-top: -1em; margin-left: -0.18em; max-width: 100%; box-sizing: border-box; width: 0px; border-right-width: 0.8em; border-right-style: solid; border-right-color: rgb(255, 255, 255); border-bottom-width: 0.8em; border-bottom-style: solid; border-bottom-color: rgb(255, 255, 255); word-wrap: break-word !important; border-top-width: 0.8em !important; border-top-style: solid !important; border-top-color: transparent !important; border-left-width: 0.8em !important; border-left-style: solid !important; border-left-color: transparent !important;">
+                  </section>
+                 </section>
+                 <section style="margin-top: 0.3em; padding-bottom: 1em; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; background-color: rgb(1, 183, 204);">
+                  <section style="margin-top: -1em; margin-right: -1em; max-width: 100%; box-sizing: border-box; border-width: 0.2em; border-style: solid; border-color: rgb(1, 115, 164); width: 540.36px; display: inline-block; background-color: rgb(255, 255, 255); word-wrap: break-word !important;">
+                   <section style="padding: 10px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                    <section powered-by="xiumi.us" style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                     <section style="max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">
+                      <section style="max-width: 100%; box-sizing: border-box; text-align: center; word-wrap: break-word !important;">
+                       <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; line-height: 25.6px; word-wrap: break-word !important;">
+                        <span style="max-width: 100%; color: rgb(255, 41, 65); box-sizing: border-box !important; word-wrap: break-word !important;">
+                         <strong style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+                          关于我们
+                         </strong>
+                        </span>
+                       </p>
+                       <p style="max-width: 100%; box-sizing: border-box; min-height: 1em; text-align: left; line-height: 25.6px; word-wrap: break-word !important;">
+                        <span style="max-width: 100%; color: rgb(0, 0, 0); line-height: 1.6; box-sizing: border-box !important; word-wrap: break-word !important;">
+                         微信公众号“爬虫俱乐部”分享实用的stata命令，欢迎转载、打赏。爬虫俱乐部是由李春涛教授领导下的研究生及本科生组成的大数据分析和数据挖掘团队。
+                        </span>
+                       </p>
+                      </section>
+                     </section>
+                    </section>
+                   </section>
+                  </section>
+                 </section>
+                </section>
+               </section>
+               <p style="max-width: 100%; min-height: 1em; box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="max-width: 100%; color: rgb(255, 76, 0); line-height: 25.6px; text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;">
+                 此外，欢迎大家踊跃投稿，介绍一些关于stata的数据处理和分析技巧。
+                </span>
+                <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="max-width: 100%; color: rgb(255, 76, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                 投稿邮箱：
+                </span>
+                statatraining@163.com
+               </p>
+               <p style="max-width: 100%; min-height: 1em; font-size: 15px; line-height: 25.6px; color: rgb(117, 114, 114); text-align: justify; box-sizing: border-box !important; word-wrap: break-word !important;">
+                <span style="max-width: 100%; color: rgb(255, 76, 0); font-size: 14px; box-sizing: border-box !important; word-wrap: break-word !important;">
+                 投稿要求：
+                 <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                 1）必须原创，禁止抄袭；
+                 <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                 2）必须准确，详细，有例子，有截图；
+                 <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                 注意事项：
+                 <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                 1）所有投稿都会经过本公众号运营团队成员的审核，审核通过才可录用，一经录用，会在该推文里为作者署名，并有赏金分成。
+                 <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                 2）邮件请注明投稿，邮件名称为“投稿”+“推文名称”。
+                 <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+                 <span style="max-width: 100%; color: rgb(122, 79, 214);">
+                  3）应广大读者要求，现开通有偿问答服务，如果大家遇到关于stata分析数据的问题，可以在公众号中提出，只需支付少量赏金，我们会在后期的推文里给予解答。
+                 </span>
+                </span>
+               </p>
+              </section>
+             </section>
+            </section>
+           </section>
+           <p style="max-width: 100%; min-height: 1em; text-align: center; box-sizing: border-box !important; word-wrap: break-word !important;">
+            <img _width="556px" class="" data-fail="0" data-ratio="1" data-s="300,640" data-src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhYE0k0faBcgXia019H7uYBVzf6PiaTnnkjzGYnLk7xUYpTCUTvVhQfapavZz4nptAvBUVAz1QO8etZQ/640?" data-type="jpeg" data-w="344" src="%E6%B7%B7%E6%90%AD%E5%9B%BE%E5%BD%A2_files/640.jpg" style="box-sizing: border-box !important; overflow-wrap: break-word !important; visibility: visible !important; width: 556px !important; height: auto !important;" width="100%"/>
+           </p>
+           <p style="max-width: 100%; min-height: 1em; line-height: 25.6px; text-align: center; box-sizing: border-box !important; word-wrap: break-word !important;">
+            <span style="max-width: 100%; color: rgb(120, 114, 114); font-family: 微软雅黑; font-size: 15px; letter-spacing: 2px; line-height: 19.2px; box-sizing: border-box !important; word-wrap: break-word !important;">
+             欢迎关注爬虫俱乐部
+            </span>
+           </p>
+          </section>
+         </section>
+        </section>
+       </section>
+      </section>
+     </section>
+    </section>
+    <p>
+     <br/>
+    </p>
+    <p>
+     <br/>
+    </p>
+    <p style="max-width: 100%; min-height: 1em; box-sizing: border-box !important; word-wrap: break-word !important;">
+     <br style="max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"/>
+    </p>
+    <p style="text-indent: 2em;">
+     <br/>
+    </p>
+   </section>
+  </div>
+  <script nonce="1436138713" type="text/javascript">
+   var first_sceen__time = (+new Date());
+
+                    if ("" == 1 && document.getElementById('js_content')) {
+                        document.getElementById('js_content').addEventListener("selectstart",function(e){ e.preventDefault(); });
+                    }
+
+                    
+                    (function(){
+                        if (navigator.userAgent.indexOf("WindowsWechat") != -1){
+                            var link = document.createElement('link');
+                            var head = document.getElementsByTagName('head')[0];
+                            link.rel = 'stylesheet';
+                            link.type = 'text/css';
+                            link.href = "//res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/appmsg/page_mp_article_improve_winwx31619e.css";
+                            head.appendChild(link);
+                        }
+                    })();
+  </script>
+  <div class="ct_mpda_wrp" id="js_sponsor_ad_area" style="display:none;">
+  </div>
+  <div class="reward_area tc" id="js_reward_area" style="display:none;">
+   <p>
+    <a class="reward_access" href="##" id="js_reward_link">
+     赞赏
+    </a>
+   </p>
+   <div class="reward_area_inner" id="js_reward_inner" style="display: none; width: 578px;">
+    <p class="tips_global reward_user_tips">
+     <a href="##" id="js_reward_total">
+     </a>
+     人赞赏
+    </p>
+    <div class="reward_user_list" id="js_reward_list">
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="rich_media_tool" id="js_toobar3">
+  <div class="media_tool_meta tips_global meta_primary" id="js_read_area3" style="display:none;">
+   阅读
+   <span id="readNum3">
+   </span>
+  </div>
+  <span class="media_tool_meta meta_primary tips_global meta_praise" id="like3" style="display:none;">
+   <i class="icon_praise_gray">
+   </i>
+   <span class="praise_num" id="likeNum3">
+   </span>
+  </span>
+  <a class="media_tool_meta tips_global meta_extra" href="##" id="js_report_article3" style="display:none;">
+   投诉
+  </a>
+ </div>
+</div>
+</body></html>
