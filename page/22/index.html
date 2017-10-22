@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>Stata-Club</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="Stata-Club">
 <meta property="og:url" content="http://yoursite.com/page/22/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Stata-Club">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Stata-Club">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Stata-Club" type="application/atom+xml">
   
 
   
@@ -144,27 +144,6 @@
                       };
                   </script>
                 
-                  
-                    <div class="item">
-                  
-                    <img id="carousel-img3" src="https://source.unsplash.com/collection/954550/1920x1080">
-                  </div>
-
-                  <!-- 自适应大图 -->
-                  <script>
-                      var img3 = new Image();
-                      var imageTag3 = document.getElementById("carousel-img3");
-                      img3.src = imageTag3.src;
-                      img3.onload=function(){
-                        if (img3.width / img3.height <= document.body.clientWidth / document.body.clientHeight) {
-                          imageTag3.style.width = document.body.clientWidth + "px";
-                        } else {
-                          imageTag3.style.height = document.body.clientHeight + "px";
-                          imageTag3.style.marginLeft = -(document.body.clientHeight * img3.width / img3.height - document.body.clientWidth) / 2 + "px";
-                        }
-                      };
-                  </script>
-                
             </div>
 
             <!-- Controls -->
@@ -231,13 +210,16 @@
     
 
     
-      <div id="homelogo" class="homelogo"> 
+      <div id="homelogo" class="homelogo" style="background: rgba(255,255,255,1);"> 
     
 
         
-          
-            <img id="homelogoimg" src="/css/images/blacklogo.png" >
-          
+          <div class="homelogoback"  style="border: 1px solid #404040;" >
+            <h1><a href="#content" id="logo">Stata-Club</a></h1>
+            <h3></h3>
+            <h5>John Doe</h5>
+            <!-- <p><a href="https://github.com/iTimeTraveler" target="_blank">Github</a></p> -->
+          </div>
         
     
     </div>
@@ -249,17 +231,14 @@
  <!-- home_logo_image居中 -->
  
     <script>
-        var img = new Image();
         var homelogodiv = document.getElementById("homelogo");
-        img.src = document.getElementById("homelogoimg").src;
-        img.onload=function(){
-          if (img.width > document.body.clientWidth) {
-            document.getElementById("homelogoimg").style.width = document.body.clientWidth + "px";
-            homelogodiv.style.marginLeft = document.body.clientWidth * -0.5 + "px";
-          } else {
-            homelogodiv.style.marginLeft = img.width * -0.5 + "px";
-          }
-        };
+        if (document.all.homelogo.offsetWidth > document.body.clientWidth) {
+          homelogodiv.style.width = document.body.clientWidth + "px";
+          homelogodiv.style.marginLeft = document.body.clientWidth * -0.5 + "px";
+        } else {
+          homelogodiv.style.width = homelogodiv.clientWidth  + "px";
+          homelogodiv.style.marginLeft = (homelogodiv.clientWidth)  * -0.5 + "px";
+        }
     </script>
   
 
@@ -450,57 +429,6 @@ var subWeb = document.frames ? document.frames["iframepage"].doc......  -->
 <!-- Table of Contents -->
 
   
-    <article id="post-空气质量地图--你的家乡还好吗？"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2016/11/21/空气质量地图--你的家乡还好吗？/">空气质量地图--你的家乡还好吗？</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2016/11/21/空气质量地图--你的家乡还好吗？/" class="article-date">
-	  <time datetime="2016-11-20T16:00:00.000Z" itemprop="datePublished">2016-11-21</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/推文/">推文</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>空气质量地图–你的家乡还好吗？<br><img src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhZo0GiaUHvYp5cqBNkBZyTNJHPYEYlaiaThZXGDgbHWnicRH42xVdbibezw7HzanmqnL2Yq4wwjtjWA6w/0?wx_fmt.jpeg" style="width: 60%; height: auto;">
-        <!-- 空气质量地图–你的家乡还好吗？友情提示：如果您的终端浏览效果不好，可以访问这里，谢谢！
-
-
-function iFrameHeight() {
-var ifm= document.getElementById("iframepage");
-var subWeb = document.frames ? document.frames["iframepage"].document : ifm.c......  -->
-        <p class="article-more-link">
-          <a href="/2016/11/21/空气质量地图--你的家乡还好吗？/#more">阅读全文</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
     <article id="post-【有问必答】绘图的奥秘你知道吗？"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -537,6 +465,57 @@ var ifm= document.getElementById("iframepage");
 var subWeb = document.frames ? document.frames["iframepage"].document : ifm.......  -->
         <p class="article-more-link">
           <a href="/2016/11/21/【有问必答】绘图的奥秘你知道吗？/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
+    <article id="post-空气质量地图--你的家乡还好吗？"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2016/11/21/空气质量地图--你的家乡还好吗？/">空气质量地图--你的家乡还好吗？</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2016/11/21/空气质量地图--你的家乡还好吗？/" class="article-date">
+	  <time datetime="2016-11-20T16:00:00.000Z" itemprop="datePublished">2016-11-21</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/推文/">推文</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>空气质量地图–你的家乡还好吗？<br><img src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhZo0GiaUHvYp5cqBNkBZyTNJHPYEYlaiaThZXGDgbHWnicRH42xVdbibezw7HzanmqnL2Yq4wwjtjWA6w/0?wx_fmt.jpeg" style="width: 60%; height: auto;">
+        <!-- 空气质量地图–你的家乡还好吗？友情提示：如果您的终端浏览效果不好，可以访问这里，谢谢！
+
+
+function iFrameHeight() {
+var ifm= document.getElementById("iframepage");
+var subWeb = document.frames ? document.frames["iframepage"].document : ifm.c......  -->
+        <p class="article-more-link">
+          <a href="/2016/11/21/空气质量地图--你的家乡还好吗？/#more">阅读全文</a>
         </p>
       
     </div>
@@ -830,7 +809,7 @@ var subWeb = document.frames ? document.frames["iframepage"].d......  -->
   <div class="container">
       	<div class="row">
 	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
-	      <p id="copyRightEn">Copyright &copy; 2017 - 2017 Hexo All Rights Reserved.</p>
+	      <p id="copyRightEn">Copyright &copy; 2017 - 2017 Stata-Club All Rights Reserved.</p>
 	      
 	      
     		<p class="busuanzi_uv">
@@ -985,7 +964,7 @@ var subWeb = document.frames ? document.frames["iframepage"].d......  -->
         </div>
          <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
           <div class="panel-body">
-            Hexo
+            Stata-Club
           </div>
           <div class="panel-body">
             Copyright © 2017 John Doe All Rights Reserved.
