@@ -1,0 +1,4 @@
+v 1
+d sum2docx Author: Chuntao LI, Yuan XUE
+
+p SUM2DOCX: Stata module to report summary statistics to formatted table in DOCX file.

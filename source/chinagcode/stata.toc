@@ -1,0 +1,4 @@
+v 1
+d chinagcode Author: Chuntao LI, Yuan XUE
+
+p chinagcode for the stata user to extract longitude and latitude for a given Chinese address.

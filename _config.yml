@@ -28,6 +28,21 @@ i18n_dir: :lang
 skip_render:
 - stata_article/**
 - about/**
+- chinafin/**
+- chinagcode/**
+- cnintraday/**
+- cnstock/**
+- cntrade/**
+- corr2docx/**
+- eventstudy/**
+- psemail/**
+- reg2docx/**
+- subinfile/**
+- sum2docx/**
+- t2docx/**
+- ttable2/**
+- wordconvert/**
+
 
 # Writing
 new_post_name: :title.md # File name of new posts

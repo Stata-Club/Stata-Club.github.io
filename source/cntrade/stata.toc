@@ -1,0 +1,4 @@
+v 1
+d cntrade Author: Chuntao Li & Xuan Zhang
+
+p CNTRADE: Stata module to retrieve Chinese stock market quotations from NetEase.

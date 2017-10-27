@@ -1,5 +1,5 @@
 ---
-title: 我来告诉你stata命令有多少
+title: 
 date: 2017-01-09
 categories: 推文
 ---

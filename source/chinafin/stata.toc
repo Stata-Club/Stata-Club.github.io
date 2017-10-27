@@ -1,0 +1,4 @@
+v 1
+d chinafin Author: Xuan Zhang & Chuntao Li & Cheng Pan
+
+p CHINAFIN: Stata module to retrieve Chinese listed firms' financial data.
