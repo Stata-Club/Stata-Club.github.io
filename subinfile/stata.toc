@@ -1,0 +1,4 @@
+v 1
+d subinfile Author: Chuntao Li & Yuan Xue & Rong GAO
+
+p SUBINFILE: Stata module to perform byte-based substitution for the contents of a text-formatted file.

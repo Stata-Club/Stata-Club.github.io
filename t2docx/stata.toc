@@ -1,0 +1,4 @@
+v 1
+d t2docx Author: Chuntao Li &Haitao Si&Zhengxuan Zhao
+
+p T2DOCX: Stata module to report Mean Comparison for variables between two groups with formatted table output in DOCX file.

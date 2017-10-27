@@ -1,0 +1,4 @@
+v 1
+d corr2docx Author: Chuntao Li & Zijian Li & Yuan Xue
+
+p CORR2DOCX: Stata module to report Pearson & Spearman correlation coefficients to formatted table in DOCX file.

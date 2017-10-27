@@ -1,0 +1,4 @@
+v 1
+d cnstock Author: Chuntao Li & Zijian Li & Yuan Xue
+
+p "CNSTOCK: Stata module to download stock names and codes for Chinese listed companies.

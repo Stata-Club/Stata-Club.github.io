@@ -1,0 +1,4 @@
+v 1
+d psemail Author: Xuan Zhang & Dongliang Cui & Chuntao Li
+
+p PSEMAIL: Stata module to send email from within Stata for Windows environment.
