@@ -1,10 +1,10 @@
 ---
-title: log #记录你与STATA的点点滴滴
+title: log 记录你与STATA的点点滴滴
 date: 2017-10-30
 tag: log
 categories: 推文
 ---
-log #记录你与STATA的点点滴滴
+log 记录你与STATA的点点滴滴
 <img src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhbHlLGmM8d00hDXfhA5Qy50ibfO6sUIJZbibY4ZMQSsZlibmmaG7jQFvaZbqMk29OTUllSMj3Reiaaoqw/0?wx_fmt.jpeg" style="width: 60%; height: auto;"/><!--more-->
 友情提示：如果您的终端浏览效果不好，可以访问[这里](https://stata-club.github.io/stata_article/2017-10-30.html)，谢谢！
 <iframe src="https://stata-club.github.io/stata_article/2017-10-30.html" id="iframepage" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="100%" onLoad="iFrameHeight()"></iframe>
