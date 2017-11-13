@@ -1,1036 +1,552 @@
 <!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
 <html>
+<!--<![endif]-->
+
 <head>
-  <meta charset="utf-8">
-  
-  <title>Stata-Club</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  
-  
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Stata-Club</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <!-- Bootstrap Styles -->
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" media="screen">
+    <!-- Awesome Icons Styles -->
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.css" media="screen">
+    <!-- Awesome Icons Styles -->
+    <link type="text/css" rel="stylesheet" href="css/et-line.css" media="screen">
+    <!-- Css Styles -->
+    <link type="text/css" rel="stylesheet" href="style.css" media="screen">
+    <link type="text/css" rel="stylesheet" href="style-portfolio.css" media="screen">
+    <link type="text/css" rel="stylesheet" href="css/pro-bars.min.css" media="screen">
+    <link type="text/css" rel="stylesheet" href="css/animate.min.css" media="screen">
+    <link type="text/css" rel="stylesheet" href="css/rotator.css" media="screen">
+    <!-- Google Font Styles -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat+Subrayada:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Nothing+You+Could+Do' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     <meta name="baidu-site-verification" content="L2BVRPuUKp" />
-  
     <script type="text/javascript">
     var _hmt = _hmt || [];
     (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?1765848e85b7d83b0f9869707cfd8e9f";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1765848e85b7d83b0f9869707cfd8e9f";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
     })();
-  </script>
-  
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Stata-Club">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Stata-Club">
-<meta property="og:locale" content="zh-CN">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Stata-Club">
-  
-    <link rel="alternate" href="/atom.xml" title="Stata-Club" type="application/atom+xml">
-  
-
-  
-
-  <link rel="icon" href="/css/images/favicon.jpg">
-  <link rel="apple-touch-icon" href="/css/images/favicon.jpg">
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
-  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-  <style type="text/css">
-    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
-    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
-    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
-    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
-  <link rel="stylesheet" href="/css/style.css">
-
-  <script src="/js/jquery-3.1.1.min.js"></script>
-  <script src="/js/bootstrap.js"></script>
-
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.css" >
-
-  
-    <link rel="stylesheet" href="/css/home.css" >
-  
-
-  
-
-  
-
-  
-  
-  
-    <link rel="stylesheet" href="/css/vdonate.css" >
-  
-
+    </script>
+    <!-- Support for HTML5 -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    <!-- Enable media queries on older bgeneral_rowsers -->
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>  <![endif]-->
 </head>
 
-
-
-  <body>
-
-
-  
-    <header id="header">
-
-	<!-- 背景图模式 -->
-	
-
-    
-      <div id="intrologo" class="intro-logo" style="background-position:center; background-repeat:no-repeat; background-image: url(); background-size: auto 100%;">
-
-      <!-- Support rolling -->  
-        
-        <section class="awSlider">
-          <div class="carousel slide carousel-fade " data-ride="carousel">
-
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-               
-                  
-                    <div class="item active">
-                  
-                    <img id="carousel-img0" src="/css/images/1.jpg">
-                  </div>
-
-                  <!-- 自适应大图 -->
-                  <script>
-                      var img0 = new Image();
-                      var imageTag0 = document.getElementById("carousel-img0");
-                      img0.src = imageTag0.src;
-                      img0.onload=function(){
-                        if (img0.width / img0.height <= document.body.clientWidth / document.body.clientHeight) {
-                          imageTag0.style.width = document.body.clientWidth + "px";
-                        } else {
-                          imageTag0.style.height = document.body.clientHeight + "px";
-                          imageTag0.style.marginLeft = -(document.body.clientHeight * img0.width / img0.height - document.body.clientWidth) / 2 + "px";
-                        }
-                      };
-                  </script>
-                
-                  
-                    <div class="item">
-                  
-                    <img id="carousel-img1" src="/css/images/index.png">
-                  </div>
-
-                  <!-- 自适应大图 -->
-                  <script>
-                      var img1 = new Image();
-                      var imageTag1 = document.getElementById("carousel-img1");
-                      img1.src = imageTag1.src;
-                      img1.onload=function(){
-                        if (img1.width / img1.height <= document.body.clientWidth / document.body.clientHeight) {
-                          imageTag1.style.width = document.body.clientWidth + "px";
-                        } else {
-                          imageTag1.style.height = document.body.clientHeight + "px";
-                          imageTag1.style.marginLeft = -(document.body.clientHeight * img1.width / img1.height - document.body.clientWidth) / 2 + "px";
-                        }
-                      };
-                  </script>
-                
-                  
-                    <div class="item">
-                  
-                    <img id="carousel-img2" src="/css/images/2.jpg">
-                  </div>
-
-                  <!-- 自适应大图 -->
-                  <script>
-                      var img2 = new Image();
-                      var imageTag2 = document.getElementById("carousel-img2");
-                      img2.src = imageTag2.src;
-                      img2.onload=function(){
-                        if (img2.width / img2.height <= document.body.clientWidth / document.body.clientHeight) {
-                          imageTag2.style.width = document.body.clientWidth + "px";
-                        } else {
-                          imageTag2.style.height = document.body.clientHeight + "px";
-                          imageTag2.style.marginLeft = -(document.body.clientHeight * img2.width / img2.height - document.body.clientWidth) / 2 + "px";
-                        }
-                      };
-                  </script>
-                
+<body id="custom">
+    <div id="wrapper">
+        <div class="container">
+            <header id="Home" class="header">
+                <div class="menu-wrapper">
+                    <nav id="navigation" class="navbar navbar-default" role="navigation">
+                        <div class="navbar-inner">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <i class="fa fa-bars fa-2x"></i>
+                                </button>
+                                <a id="brand" class="navbar-brand" href="https://Stata-Club.github.io"><img src="images/index_副本.png" alt="Stata-Club"></a>
+                            </div>
+                            <div class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav navbar-right" id="nav">
+                                    <li class="current"><a href="#Home" title="">主页</a></li>
+                                    <li><a href="#team_member">成员介绍</a></li>
+                                    <li><a href="#article" title="">推文展示</a></li>
+                                    <li><a href="#example" title="">案例展示</a></li>
+                                    <li><a href="#library" title="">程序开源</a></li>
+                                    <li><a href="#program" title="">特色命令</a></li>
+                                    <li><a href="#learn" title="">编程培训</a></li>
+                                    <li><a href="#QA" title="">有问必答</a></li>
+                                    <li><a href="#contact" title="">联系我们</a></li>
+                                </ul>
+                            </div>
+                            <!-- end navbar-collapse collapse -->
+                        </div>
+                        <!-- nav -->
+                    </nav>
+                    <!-- end navigation -->
+                </div>
+                <!-- menu wrapper -->
+            </header>
+            <!-- end header -->
+        </div>
+        <!-- end container -->
+        <div id="page_header">
+            <div id="parallax" class="parallax bgback bg" style="background-image: url('images/index.png');" data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20"></div>
+            <div class="container text-center header-part">
+                <h2 class="header-text"><span class="rotate">大数据抓取, Stata处理 </span> 一站式服务 </h2>
+                <div class="angle-down">
+                    <a href="#team_member">
+                      <i class="fa fa-angle-double-down fa-4x wow animated fadeInDown" data-wow-iteration="infinite" ></i>
+                    </a>
+                </div>
             </div>
+        </div>
+        <!-- end page_header -->
+        <script src="jquery.min.js"></script>
+        <div class="white-wrapper">
+            <div class="container">
+                <div class="tagline makepadding clearfix">
+                    <h1>爬虫俱乐部简介</h1>
+                    <p class="lead">欢迎来到爬虫俱乐部！</p>
+                    <p class="lead">爬虫俱乐部是由李春涛教授领导下的研究生及本科生组成的大数据分析和数据挖掘团队。</p>
+                    <p class="lead">团队学术与技术并重，并对外提供高效的数据挖掘及处理服务。</p>
+                </div>
+                <!-- end tagline -->
+            </div>
+            <div id="team_member">
+                <div class="container">
+                    <div class="title text-center">
+                        <h3 class="title-text">成员介绍</h3>
+                        <p class="lead">爬虫俱乐部有诸多优秀爬虫工程师</p>
+                        <p class="lead">他们不仅在技术上服务同侪，分享经验，更有着很好的学术造诣。</p>
+                        <div class="btn-blk"><a href="https://Stata-Club.github.io/staff" class="pm-rounded-btn">点击了解更多</a></div>
+                        <hr>
+                    </div>
+                    <div class="row">
+                    <div class="team_list">
 
-            <!-- Controls -->
-            <a class="left carousel-control" href=".carousel" role="button" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-              <span class="sr-only">Geri</span>
-            </a>
-            <a class="right carousel-control" href=".carousel" role="button" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-              <span class="sr-only">İleri</span>
-            </a>
-          </div>
-        </section>
-        <script>
-          $('section.awSlider .carousel').carousel({
-              pause: '',
-              interval: 5000
-          });
-          var startImage = $('section.awSlider .item.active > img').attr('src');
-          $('section.awSlider .carousel').on('slid.bs.carousel', function () {
-              var bscn = $(this).find('.item.active > img').attr('src');
-              $('section.awSlider > img').attr('src', bscn);
-          });
-        </script>
-      
+                        <div class="wow animated zoomIn" data-wow-delay=".5s">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <div class="team_member practice-box">
+                                    <div class="entry">
+                                        <img class="img-responsive" src="https://stata-club.github.io/staff/index/lichuntao.jpg" alt="">
+                                    </div>
+                                    <!-- end entry -->
+                                    <h3>李春涛教授<span>|</span> <small>爬虫俱乐部创始人</small></h3>
+                                    <p>中南财经政法大学教授</p>
+                                </div>
+                                <!-- end team_member -->
+                            </div>
+                            <!-- end col-lg-3 -->
+                        </div>
+                        <div class="wow animated zoomIn">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 first">
+                                <div class="team_member practice-box">
+                                    <div class="entry">
+                                        <img class="img-responsive" src="https://stata-club.github.io/staff/index/xueyuan.jpg" alt="">
+                                    </div>
+                                    <!-- end entry -->
+                                    <h3>薛原 <span>|</span> <small>爬虫俱乐部高级成员</small></h3>
+                                    <p>擅长Stata编程、字符串处理、网络爬虫等技术</p>
+                                </div>
+                                <!-- end team_member -->
+                            </div>
+                            <!-- end col-lg-3 -->
+                        </div>
+                        <div class="wow animated zoomIn" data-wow-delay="1s">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <div class="team_member practice-box">
+                                    <div class="entry">
+                                        <img class="img-responsive" src="https://stata-club.github.io/staff/index/liubeibei.jpg" alt="">
+                                    </div>
+                                    <!-- end entry -->
+                                    <h3>刘贝贝<span>|</span> <small>爬虫俱乐部技术指导</small></h3>
+                                    <p>Stata数据处理、图形绘画和数据挖掘</p>
+                                </div>
+                                <!-- end team_member -->
+                            </div>
+                            <!-- end col-lg-3 -->
+                        </div>
+                        <div class="wow animated zoomIn" data-wow-delay="1s">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <div class="team_member practice-box">
+                                    <div class="entry">
+                                        <img class="img-responsive" src="https://stata-club.github.io/staff/index/zhoupeng.png" alt="">
+                                    </div>
+                                    <!-- end entry -->
+                                    <h3>周鹏<span>|</span> <small>香港大学中国金融研究中心研究助理</small></h3>
+                                    <p>Stata回归分析、Mata网络数据挖掘。</p>
+                                </div>
+                                <!-- end team_member -->
+                            </div>
+                            <!-- end col-lg-3 -->
+                        </div>
+                    </div>
+                        <!-- End of .portfolio-items -->
+                    </div>
+                    <!-- end row -->
+                </div>
+                <!-- end portfolio_wrapper -->
+            </div>
+            <div id="article">
+                <div class="wow animated fadeInLeft">
+                    <div class="title text-center ">
+                        <h3 class="title-text">推文展示</h3>
+                        <div class="btn-blk"><a href="https://Stata-Club.github.io/categories/推文" class="pm-rounded-btn">点击了解更多</a></div>
+                        <hr>
+                        <em class="lead">爬虫俱乐部以微信公众号为主平台，多平台同步更新关于Stata的最新最热命令与案例，同时我们热枕期盼您的投稿，并有丰厚稿费。</em>
+                    </div>
+                    <br>
+                </div>            
+            </div>
+            <div class="footer">
+            </div>
+            <div id="example">
+                <div class="wow animated fadeInLeft">
+                    <div class="title text-center ">
+                        <h3 class="title-text">案例展示</h3>
+                        <div class="btn-blk"><a href="https://Stata-Club.github.io/example" class="pm-rounded-btn">点击了解更多</a></div>
+                        <hr>
+                        <em class="lead">在众多爬虫俱乐部对外服务的项目中，我们选取了其中的精彩案例供大家浏览</em>
+                    </div>
+                    <br>
+                </div>
+                        <div class="portfolio-items">
+                            <div class="item-blog col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                <ul>
+                                    <li class="img_item">
+                                        <div class="caption8 ctn_blue">
+                                            <h3>土地市场网</h3>
+                                            <p>土地市场网是一个项目</p>
+                                        </div>
+                                        <img class="img-responsive" src="https://stata-club.github.io/example/index/tudi.png" alt="" />
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="item-blog col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                <ul>
+                                    <li class="img_item">
+                                        <div class="caption8 ctn_green">
+                                            <h3>中国知网</h3>
+                                            <p>balabala</p>
+                                        </div>
+                                        <img class="img-responsive" src="https://stata-club.github.io/example/index/CNKI.png" alt="" />
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="item-blog col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                <ul>
+                                    <li class="img_item">
+                                        <div class="caption8 ctn_brown">
+                                            <h3>全国寺庙统计</h3>
+                                            <p>bala</p>
+                                        </div>
+                                        <img class="img-responsive" src="https://stata-club.github.io/example/index/temple.jpg" alt="" />
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+            </div>
+            <div id="library">
+                <div class="container">
+                    <div class="title text-center">
+                        <h3 class="title-text">程序开源</h3>
+                        <p class="lead">爬虫俱乐部在研究、分享Stata知识的过程中，逐步积累了质量上乘的do文档与数据，我们本着分享、开源的精神，将其发布出来，供大家下载使用。</p>
+                        <div class="btn-blk"><a href="https://Stata-Club.github.io/do" class="pm-rounded-btn">点击了解更多</a></div>
+                        <hr>
+                    </div>
+                    <!-- end row -->
+                </div>
+                <!-- end portfolio_wrapper -->
+            </div>
+            <div class="footer">
+            </div>
+            <div id="program">
+                <div class="container">
+                    <div class="title text-center">
+                        <h3 class="title-text">特色命令</h3>
+                        <p class="lead">爬虫俱乐部的成员在分享、传播Stata技能的过程中，开发了迅捷又实用的一系列命令，您在本站或通过ssc install均可下载</p>
+                        <div class="btn-blk"><a href="https://Stata-Club.github.io/program" class="pm-rounded-btn">点击了解更多</a></div>
+                        <hr>
+                    </div>
+                    <div class="row">
+                    <div class="team_list">
+                        <div class="wow animated zoomIn">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 first">
+                                <div class="team_member practice-box">
+                                    <div class="entry">
+                                        <img class="img-responsive" src="https://Stata-Club.github.io/program/index/cnstock.png" alt="">
+                                    </div>
+                                    <!-- end entry -->
+                                    <h3>cnstock<span>|</span> <small>一键抓取中国股票信息</small></h3>
+                                    <p>一键抓取</p>
+                                </div>
+                                <!-- end team_member -->
+                            </div>
+                            <!-- end col-lg-3 -->
+                        </div>
+                        <div class="wow animated zoomIn" data-wow-delay=".5s">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <div class="team_member practice-box">
+                                    <div class="entry">
+                                        <img class="img-responsive" src="https://Stata-Club.github.io/program/index/chinagcode.png" alt="">
+                                    </div>
+                                    <!-- end entry -->
+                                    <h3>chinagcode<span>|</span> <small>一键实现经纬度与地点转换</small></h3>
+                                    <p>支持批量操作</p>
+                                </div>
+                                <!-- end team_member -->
+                            </div>
+                            <!-- end col-lg-3 -->
+                        </div>
+                        <div class="wow animated zoomIn" data-wow-delay="1s">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <div class="team_member practice-box">
+                                    <div class="entry">
+                                        <img class="img-responsive" src="https://Stata-Club.github.io/program/index/subinfile.png" alt="">
+                                    </div>
+                                    <!-- end entry -->
+                                    <h3>subinfile<span>|</span> <small>Stata爬虫必备神器</small></h3>
+                                    <p>对爬取下来的文件进行极速处理</p>
+                                </div>
+                                <!-- end team_member -->
+                            </div>
+                            <!-- end col-lg-3 -->
+                        </div>
+                        <div class="wow animated zoomIn" data-wow-delay="1s">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <div class="team_member practice-box">
+                                    <div class="entry">
+                                        <img class="img-responsive" src="https://Stata-Club.github.io/program/index/sum2docx.png" alt="">
+                                    </div>
+                                    <!-- end entry -->
+                                    <h3>sum2docx<span>|</span> <small>stata结果输出的利器</small></h3>
+                                    <p></p>
+                                </div>
+                                <!-- end team_member -->
+                            </div>
+                            <!-- end col-lg-3 -->
+                        </div>
+                    </div>
+                        <!-- End of .portfolio-items -->
+                    </div>
+                    <!-- end row -->
+                </div>
+                <!-- end portfolio_wrapper -->
+            </div>
+            <div id="learn">
+                <div class="container">
+                    <div class="title text-center">
+                        <h3 class="title-text">编程培训</h3>
+                        <p class="lead">爬虫俱乐部每年会定期在全国各个城市举办Stata编程培训营活动，现场教授关于Stata的各项实用技能，详情会在爬虫俱乐部公众号中发布，本站亦可在消息通知一栏中获取。</p>
+                        <div class="btn-blk"><a href="https://Stata-Club.github.io/learn" class="pm-rounded-btn">点击了解更多</a></div>
+                        <hr>
+                    </div>
+                    <div class="row">
+                    <div class="team_list">
+                        <div class="wow animated zoomIn">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 first">
+                                <div class="team_member practice-box">
+                                    <div class="entry">
+                                        <img class="img-responsive" src="https://Stata-Club.github.io/learn/index/1.jpg" alt="">
+                                    </div>
+                                    <!-- end entry -->
+                                    <h3>北京站<span>|</span> <small>爬虫俱乐部编程训练营</small></h3>
+                                    <p></p>
+                                </div>
+                                <!-- end team_member -->
+                            </div>
+                            <!-- end col-lg-3 -->
+                        </div>
+                        <div class="wow animated zoomIn" data-wow-delay=".5s">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <div class="team_member practice-box">
+                                    <div class="entry">
+                                        <img class="img-responsive" src="https://Stata-Club.github.io/learn/index/2.jpg" alt="">
+                                    </div>
+                                    <!-- end entry -->
+                                    <h3>武汉站<span>|</span> <small>爬虫俱乐部编程训练营</small></h3>
+                                    <p></p>
+                                </div>
+                                <!-- end team_member -->
+                            </div>
+                            <!-- end col-lg-3 -->
+                        </div>
+                        <div class="wow animated zoomIn" data-wow-delay="1s">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <div class="team_member practice-box">
+                                    <div class="entry">
+                                        <img class="img-responsive" src="https://Stata-Club.github.io/learn/index/1.jpg" alt="">
+                                    </div>
+                                    <!-- end entry -->
+                                    <h3>郑州站<span>|</span> <small>爬虫俱乐部编程训练营</small></h3>
+                                    <p></p>
+                                </div>
+                                <!-- end team_member -->
+                            </div>
+                            <!-- end col-lg-3 -->
+                        </div>
+                        <div class="wow animated zoomIn" data-wow-delay="1s">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <div class="team_member practice-box">
+                                    <div class="entry">
+                                        <img class="img-responsive" src="https://Stata-Club.github.io/learn/index/2.jpg" alt="">
+                                    </div>
+                                    <!-- end entry -->
+                                    <h3>温州站<span>|</span> <small>爬虫俱乐部编程训练营</small></h3>
+                                    <p></p>
+                                </div>
+                                <!-- end team_member -->
+                            </div>
+                            <!-- end col-lg-3 -->
+                        </div>
+                    </div>
+                        <!-- End of .portfolio-items -->
+                    </div>
+                    <!-- end row -->
+                </div>
+                <!-- end portfolio_wrapper -->
+            </div>
+            <div id="QA">
+                <div class="container">
+                    <div class="title text-center">
+                        <h3 class="title-text">有问必答</h3>
+                        <p class="lead">需要爬虫俱乐部的帮助？计量、数据清洗、爬取都不在话下。点击下方按钮下载问题登记表，发送至邮箱 statatraining@163.com ，我们会有专门的数据工程师与您对接项目，完成需求</p>
+                        <div class="btn-blk"><a href="https://Stata-Club.github.io/learn/index/stata-club登记表.docx" class="pm-rounded-btn">点击获取登记表</a></div>
+                        <hr>
+                    </div>
 
-    
- 
+                    <!-- end row -->
+                </div>
+                <!-- end portfolio_wrapper -->
+            </div>
+            <!-- Contact -->
+            <div id="contact">
+                <div class="title text-center">
+                    <h3 class="title-text">Contact us</h3>
+                    <em class="lead">For better service , you're bound to contact us.</em>
+                    <hr>
+                </div>
+            </div>
+            <div class="wow animated zoomIn" data-wow-delay="1s" style="margin-bottom: -8px;">
+            </div>
+            <footer class="footer">
+                <div class="container">
+                    <div class="widget col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="title">
+                            <h3><span>爬虫俱乐部使命</span></h3>
 
-
-    <canvas width="100%" height="100%"></canvas>
-    <script>
-      var c = document.getElementsByTagName('canvas')[0],
-          x = c.getContext('2d'),
-          w = window.innerWidth,
-          h = window.innerHeight,
-          pr = window.devicePixelRatio || 1,
-          f = 90,
-          q,
-          m = Math,
-          r = 0,
-          u = m.PI*2,
-          v = m.cos,
-          z = m.random
-      c.width = w*pr
-      c.height = h*pr
-      x.scale(pr, pr)
-      x.globalAlpha = 0.6
-
-      <!-- 折线Polyline背景 -->
-      
-		 function redraw(){
-		 	var pattern = Trianglify({
-				width: window.innerWidth,
-				height: window.innerHeight
-			});
-            pattern.canvas(c)
-        }
-        document.getElementById("intrologo").onclick = redraw
-        document.getElementById("intrologo").ontouchstart = redraw
-		redraw()
-      
-    </script>
-    
-
-    
-      <div id="homelogo" class="homelogo" style="background: rgba(255,255,255,1);"> 
-    
-
-        
-          <div class="homelogoback"  style="border: 1px solid #404040;" >
-            <h1><a href="#content" id="logo">Stata-Club</a></h1>
-            <h3></h3>
-            <h5>爬虫俱乐部</h5>
-            <!-- <p><a href="https://github.com/iTimeTraveler" target="_blank">Github</a></p> -->
-          </div>
-        
-    
+                        <h3><span>数据说话</span></h3>
+                        </div>
+                        <br>
+                        
+                    </div>
+                    <!-- end widget -->
+                    <div class="widget col-lg-6 col-md-6 col-sm-6 col-xs-12" style="text-align:center;">
+                        <div class="title">
+                            <h3>Contact Us.</h3>
+                        </div>
+                        <div class="contact_widget row">
+                            <div id="message">微信公众号： 爬虫俱乐部</div>
+                            
+                                <div>
+                                    <img src="images/erweima.jpg">
+                                </div>
+                            
+                        </div>
+                        <!-- end contact_widget -->
+                    </div>
+                    <!-- end widget -->
+                    <div class="widget col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="title">
+                            <h3>Keep in Touch.</h3>
+                        </div>
+                        <ul class="contact_details">
+                            <li><i class="fa fa-map-marker"></i> <span>湖北省武汉市中南财经政法大学</span></li>
+                            <li><i class="fa fa-envelope"></i> <span>statatraining@163.com</span></li>
+                        </ul>
+                    </div>
+                    <!-- end widget -->
+                </div>
+                <!-- end container -->
+            </footer>
+            <!-- end footer -->
+        </div>
     </div>
-  </div>
-
-  <!-- 自适应主页背景大图 -->
-  
-
- <!-- home_logo_image居中 -->
- 
+    <!-- Main Scripts-->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/jquery.nav.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/rotator.js"></script>
+    <script type="text/javascript">
+    $('a').click(function() {
+        $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 500);
+        return false;
+    });
+    </script>
     <script>
-        var homelogodiv = document.getElementById("homelogo");
-        if (document.all.homelogo.offsetWidth > document.body.clientWidth) {
-          homelogodiv.style.width = document.body.clientWidth + "px";
-          homelogodiv.style.marginLeft = document.body.clientWidth * -0.5 + "px";
+    $(document).ready(function() {
+        $('#nav').onePageNav();
+
+        $('.do').click(function(e) {
+            $('#section-4').append('<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+            e.preventDefault();
+        });
+    });
+    </script>
+    <script type="text/javascript">
+    $(document).on('click', '.panel-heading span.clickable', function(e) {
+        var $this = $(this);
+        if (!$this.hasClass('panel-collapsed')) {
+            $this.parents('.panel').find('.panel-body').slideUp();
+            $this.addClass('panel-collapsed');
+            $this.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
         } else {
-          homelogodiv.style.width = homelogodiv.clientWidth  + "px";
-          homelogodiv.style.marginLeft = (homelogodiv.clientWidth)  * -0.5 + "px";
+            $this.parents('.panel').find('.panel-body').slideDown();
+            $this.removeClass('panel-collapsed');
+            $this.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
         }
+    });
+    $(document).on('click', '.panel div.clickable', function(e) {
+        var $this = $(this);
+        if (!$this.hasClass('panel-collapsed')) {
+            $this.parents('.panel').find('.panel-body').slideUp();
+            $this.addClass('panel-collapsed');
+            $this.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+        } else {
+            $this.parents('.panel').find('.panel-body').slideDown();
+            $this.removeClass('panel-collapsed');
+            $this.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+        }
+    });
+    $(document).ready(function() {
+        $('.panel-heading span.clickable').click();
+        $('.panel div.clickable').click();
+    });
     </script>
-  
-
-  <div class="intro-navigate">
-      <p class="navigater-list">
-        
-          <a id="beautifont" class="main-nav-link" href="/">首页</a>
-        
-          <a id="beautifont" class="main-nav-link" href="/categories/程序图书馆">程序图书馆</a>
-        
-          <a id="beautifont" class="main-nav-link" href="/categories/推文">推文</a>
-        
-          <a id="beautifont" class="main-nav-link" href="/categories/数据">数据</a>
-        
-          <a id="beautifont" class="main-nav-link" href="/staff">staff</a>
-        
-          <a id="beautifont" class="main-nav-link" href="/about">关于我们</a>
-        
-      </p>
-  </div>
-
-</header>
-  
-  <div id="container">
-    <div id="wrap">
-      
-            
-      <div id="content" class="outer">
-        
-          <section id="main" style="float:none;">
-  
-    <article id="post-时间函数——从毫秒计算其他单位的时间（1）"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/推文/时间函数——从毫秒计算其他单位的时间（1）/">时间函数——从毫秒计算其他单位的时间（1）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/推文/时间函数——从毫秒计算其他单位的时间（1）/" class="article-date">
-	  <time datetime="2017-11-05T16:00:00.000Z" itemprop="datePublished">2017-11-06</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/推文/">推文</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>时间函数——从毫秒计算其他单位的时间（1）<br><img src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhZJw9P3JmZ6t9JUz4B50I5gfoYjibiccR37iasFuWWCpnw0wdlB5OnIY3oGnUO7bMtGNUD2eicqwszANw/0?wx_fmt.jpeg" style="width: 60%; height: auto;">
-        <!-- 时间函数——从毫秒计算其他单位的时间（1）友情提示：如果您的终端浏览效果不好，可以访问这里，谢谢！
-
-
-function iFrameHeight() {
-var ifm= document.getElementById("iframepage");
-var subWeb = document.frames ? document.frames["iframepage"].document :......  -->
-        <p class="article-more-link">
-          <a href="/推文/时间函数——从毫秒计算其他单位的时间（1）/#more">阅读全文</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-听说你想知道st_data()函数的用法"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/推文/听说你想知道st_data()函数的用法/">听说你想知道st_data()函数的用法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/推文/听说你想知道st_data()函数的用法/" class="article-date">
-	  <time datetime="2017-11-03T16:00:00.000Z" itemprop="datePublished">2017-11-04</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/推文/">推文</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>听说你想知道st_data()函数的用法<br><img src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhZDekNemnqDFy5a3VYMdLTWwBCQ6SqpjI9yU6UMvibCTqE4icGPq24Pdyic5QbOo4yXaibx6ww4vel2jA/0?wx_fmt.jpeg" style="width: 60%; height: auto;">
-        <!-- 听说你想知道st_data()函数的用法友情提示：如果您的终端浏览效果不好，可以访问这里，谢谢！
-
-
-function iFrameHeight() {
-var ifm= document.getElementById("iframepage");
-var subWeb = document.frames ? document.frames["iframepage"].document : ......  -->
-        <p class="article-more-link">
-          <a href="/推文/听说你想知道st_data()函数的用法/#more">阅读全文</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/st-data/">st_data</a></li></ul>
-
-
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-【Seminar 3】风险容忍度与企业创新"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/推文/【Seminar 3】风险容忍度与企业创新/">【Seminar 3】风险容忍度与企业创新</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/推文/【Seminar 3】风险容忍度与企业创新/" class="article-date">
-	  <time datetime="2017-11-02T16:00:00.000Z" itemprop="datePublished">2017-11-03</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/推文/">推文</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>【Seminar 3】风险容忍度与企业创新<br><img src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhZmOiciaNNlU1IibcU7EO60MibnnnicYhHWdYc8ubPeAKhbb5pQ80ib2yTg85iaLsTRBJT87A96OJFh2DC7g/0?wx_fmt.jpeg" style="width: 60%; height: auto;">
-        <!-- 【Seminar 3】风险容忍度与企业创新友情提示：如果您的终端浏览效果不好，可以访问这里，谢谢！
-
-
-function iFrameHeight() {
-var ifm= document.getElementById("iframepage");
-var subWeb = document.frames ? document.frames["iframepage"].document :......  -->
-        <p class="article-more-link">
-          <a href="/推文/【Seminar 3】风险容忍度与企业创新/#more">阅读全文</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Seminar/">Seminar</a></li></ul>
-
-
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-千变万化——format"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/推文/千变万化——format/">千变万化——format</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/推文/千变万化——format/" class="article-date">
-	  <time datetime="2017-10-31T16:00:00.000Z" itemprop="datePublished">2017-11-01</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/推文/">推文</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>千变万化——format<br><img src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhYo0ORCqDVx0prVicuwxLbz8nZ9hqeHYLicEpqhJpXFKQKrfSsiaic2Pu8PFKs7xdZ5TZ3THJAeOpAU9A/0?wx_fmt.jpeg" style="width: 60%; height: auto;">
-        <!-- 千变万化——format友情提示：如果您的终端浏览效果不好，可以访问这里，谢谢！
-
-
-function iFrameHeight() {
-var ifm= document.getElementById("iframepage");
-var subWeb = document.frames ? document.frames["iframepage"].document : ifm.cont......  -->
-        <p class="article-more-link">
-          <a href="/推文/千变万化——format/#more">阅读全文</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/format/">format</a></li></ul>
-
-
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-log记录你与STATA的点点滴滴"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/推文/log记录你与STATA的点点滴滴/">log 记录你与STATA的点点滴滴</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/推文/log记录你与STATA的点点滴滴/" class="article-date">
-	  <time datetime="2017-10-29T16:00:00.000Z" itemprop="datePublished">2017-10-30</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/推文/">推文</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>log 记录你与STATA的点点滴滴<br><img src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhbHlLGmM8d00hDXfhA5Qy50ibfO6sUIJZbibY4ZMQSsZlibmmaG7jQFvaZbqMk29OTUllSMj3Reiaaoqw/0?wx_fmt.jpeg" style="width: 60%; height: auto;">
-        <!-- log 记录你与STATA的点点滴滴友情提示：如果您的终端浏览效果不好，可以访问这里，谢谢！
-
-
-function iFrameHeight() {
-var ifm= document.getElementById("iframepage");
-var subWeb = document.frames ? document.frames["iframepage"].document : if......  -->
-        <p class="article-more-link">
-          <a href="/推文/log记录你与STATA的点点滴滴/#more">阅读全文</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/log/">log</a></li></ul>
-
-
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-如何从日期格式为%tm的日期中提取年月"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/推文/如何从日期格式为%tm的日期中提取年月/">如何从日期格式为%tm的日期中提取年月</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/推文/如何从日期格式为%tm的日期中提取年月/" class="article-date">
-	  <time datetime="2017-10-28T16:00:00.000Z" itemprop="datePublished">2017-10-29</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/推文/">推文</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>如何从日期格式为%tm的日期中提取年月<br><img src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhYrlMBOGNruqVy1eApNB9Jd9bf8FGzCQtntBMneb0FImwDPMetSKibg7KK0IJCtWoFZNibiaUftpH15A/0?wx_fmt.jpeg" style="width: 60%; height: auto;">
-        <!-- 如何从日期格式为%tm的日期中提取年月友情提示：如果您的终端浏览效果不好，可以访问这里，谢谢！
-
-
-function iFrameHeight() {
-var ifm= document.getElementById("iframepage");
-var subWeb = document.frames ? document.frames["iframepage"].document : i......  -->
-        <p class="article-more-link">
-          <a href="/推文/如何从日期格式为%tm的日期中提取年月/#more">阅读全文</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tm/">tm</a></li></ul>
-
-
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-【Seminar 2】CEO过度自信与企业投资"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/推文/【Seminar 2】CEO过度自信与企业投资/">【Seminar 2】CEO过度自信与企业投资</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/推文/【Seminar 2】CEO过度自信与企业投资/" class="article-date">
-	  <time datetime="2017-10-26T16:00:00.000Z" itemprop="datePublished">2017-10-27</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/推文/">推文</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>【Seminar 2】CEO过度自信与企业投资<br><img src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhYL7cNBEbJ8RrF26xGWGFgmM4q5m2jSwDLhd2A7jgicPGIGLXCYAYdVRVobibWWAr6WlzcylHWlyoYA/0?wx_fmt.jpeg" style="width: 60%; height: auto;">
-        <!-- 【Seminar 2】CEO过度自信与企业投资友情提示：如果您的终端浏览效果不好，可以访问这里，谢谢！
-
-
-function iFrameHeight() {
-var ifm= document.getElementById("iframepage");
-var subWeb = document.frames ? document.frames["iframepage"].document......  -->
-        <p class="article-more-link">
-          <a href="/推文/【Seminar 2】CEO过度自信与企业投资/#more">阅读全文</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Seminar/">Seminar</a></li></ul>
-
-
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-如何在Mata中进行网页分析"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/推文/如何在Mata中进行网页分析/">如何在Mata中进行网页分析</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/推文/如何在Mata中进行网页分析/" class="article-date">
-	  <time datetime="2017-10-24T16:00:00.000Z" itemprop="datePublished">2017-10-25</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/推文/">推文</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>如何在Mata中进行网页分析<br><img src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhbgcI0nq3JWhiaRcxgTqgJQuibibrd9PoIo4TKribVnZcXqKfibtzxWicf8FHovXD9g04UKYUEje790hVkQ/0?wx_fmt.jpeg" style="width: 60%; height: auto;">
-        <!-- 如何在Mata中进行网页分析友情提示：如果您的终端浏览效果不好，可以访问这里，谢谢！
-
-
-function iFrameHeight() {
-var ifm= document.getElementById("iframepage");
-var subWeb = document.frames ? document.frames["iframepage"].document : ifm.co......  -->
-        <p class="article-more-link">
-          <a href="/推文/如何在Mata中进行网页分析/#more">阅读全文</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mata/">Mata</a></li></ul>
-
-
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-让do文件更直观易懂的两个小方法"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/推文/让do文件更直观易懂的两个小方法/">让do文件更直观易懂的两个小方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/推文/让do文件更直观易懂的两个小方法/" class="article-date">
-	  <time datetime="2017-10-22T16:00:00.000Z" itemprop="datePublished">2017-10-23</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/推文/">推文</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>让do文件更直观易懂的两个小方法<br><img src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhZtY6hQdec7iaibiaDRhziczUksN0mCMGHu9WOCE88FVHP0BtLp5kHicvb9Pt7icQWKricicbVGzlzKvJPjfw/0?wx_fmt.jpeg" style="width: 60%; height: auto;">
-        <!-- 让do文件更直观易懂的两个小方法友情提示：如果您的终端浏览效果不好，可以访问这里，谢谢！
-
-
-function iFrameHeight() {
-var ifm= document.getElementById("iframepage");
-var subWeb = document.frames ? document.frames["iframepage"].document : ifm.......  -->
-        <p class="article-more-link">
-          <a href="/推文/让do文件更直观易懂的两个小方法/#more">阅读全文</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/do/">do</a></li></ul>
-
-
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-时间函数Clock(s1,s2[,Y])--时间戳中的应用"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/推文/时间函数Clock(s1,s2[,Y])--时间戳中的应用/">时间函数Clock(s1,s2[,Y])--时间戳中的应用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/推文/时间函数Clock(s1,s2[,Y])--时间戳中的应用/" class="article-date">
-	  <time datetime="2017-10-21T16:00:00.000Z" itemprop="datePublished">2017-10-22</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/推文/">推文</a>
-
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>时间函数Clock(s1,s2[,Y])–时间戳中的应用<br><img src="http://mmbiz.qpic.cn/mmbiz_jpg/ACviaWTBFxhZYFRpuvdTwofwG5fJUxRyVKGupF4Xaial4OHvDKIU1ic6YaFbuPibdNVAOPJel7Qia2WD59zP4ibnRXMw/0?wx_fmt.jpeg" style="width: 60%; height: auto;">
-        <!-- 时间函数Clock(s1,s2[,Y])–时间戳中的应用友情提示：如果您的终端浏览效果不好，可以访问这里，谢谢！
-
-
-function iFrameHeight() {
-var ifm= document.getElementById("iframepage");
-var subWeb = document.frames ? document.frames["iframepage"].doc......  -->
-        <p class="article-more-link">
-          <a href="/推文/时间函数Clock(s1,s2[,Y])--时间戳中的应用/#more">阅读全文</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Clock/">Clock</a></li></ul>
-
-
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
-  </nav>
-
-</section>
-        
-      </div>
-      
-        <div align="center" style="margin-top: 30px;"><hr class="hr" style="margin:0px; height:3px;"></div>
-      
-      <footer id="footer">
-  
-
-  <div class="container">
-      	<div class="row">
-	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
-	      <p id="copyRightEn">Copyright &copy; 2017 - 2017 Stata-Club All Rights Reserved.</p>
-	      
-	      
-    		<p class="busuanzi_uv">
-				访客数 : <span id="busuanzi_value_site_uv"></span> |  
-				访问量 : <span id="busuanzi_value_site_pv"></span>
-		    </p>
-  		   
-		</div>
-
-		
-  </div>
-</footer>
-
-
-<!-- min height -->
-
-<script>
-    var wrapdiv = document.getElementById("wrap");
-    var contentdiv = document.getElementById("content");
-    var allheader = document.getElementById("allheader");
-
-    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
-    if (allheader != null) {
-      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
-    } else {
-      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
-    }
-</script>
-    </div>
-    <!-- <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">home</a>
-  
-    <a href="/categories/程序图书馆" class="mobile-nav-link">library</a>
-  
-    <a href="/categories/推文" class="mobile-nav-link">tweets</a>
-  
-    <a href="/categories/数据" class="mobile-nav-link">data</a>
-  
-    <a href="/staff" class="mobile-nav-link">staff</a>
-  
-    <a href="/about" class="mobile-nav-link">about</a>
-  
-</nav> -->
-    
-
-<!-- mathjax config similar to math.stackexchange -->
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
+    <script>
+    new WOW().init();
+    </script>
+    <script type="text/javascript">
+    $(".rotate").textrotator({
+        animation: "flip", // You can pick the way it animates when rotating through words. Options are dissolve (default), fade, flip, flipUp, flipCube, flipCubeUp and spin.
+        separator: ",", // If you don't want commas to be the separator, you can define a new separator (|, &, * etc.) by yourself using this field.
+        speed: 3000 // How many milliseconds until the next word show.
     });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
+    </script>
+    <script type="text/javascript">
+    // Close the navbar if collapsed (small screen) when clicking on a menu link
+    // From edit 2 on
+    // http://stackoverflow.com/questions/14203279/bootstrap-close-responsive-menu-on-click/23171593#23171593
+    $(function() {
+        $('.navbar-collapse ul li a:not(.dropdown-toggle)').bind('click touchstart', function() {
+            $('.navbar-toggle:visible').click();
+        });
     });
-</script>
-
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/scripts.js"></script>
-
-
-  <script src="/js/home.js"></script>
-
-
-
-
-
-
-
-
-
-
-	<div style="display: none;">
-    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
-  </div>
-
-
-
-	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-	</script>
-
-
-
-	<script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?{{ theme.baidu_analytics }}";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-
-  </div>
-
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-title" id="myModalLabel">设置</h2>
-      </div>
-      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
-      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
-
-
-      <div class="modal-body">
-          <div style="margin:6px;">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
-              正文字号大小
-            </a>
-          </div>
-          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-          <div class="panel-body">
-            您已调整页面字体大小
-          </div>
-        </div>
-      
-
-
-          <div style="margin:6px;">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
-              夜间护眼模式
-            </a>
-        </div>
-          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-          <div class="panel-body">
-            夜间模式已经开启，再次单击按钮即可关闭 
-          </div>
-        </div>
-
-        <div>
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-        </div>
-         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-          <div class="panel-body">
-            Stata-Club
-          </div>
-          <div class="panel-body">
-            Copyright © 2017 爬虫俱乐部 All Rights Reserved.
-          </div>
-        </div>
-      </div>
-
-
-      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
-      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
-      <div class="modal-footer">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-      </div>
-    </div>
-  </div>
-</div>
-  
-  <a id="rocket" href="#top" class=""></a>
-  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
-  
+    </script>
 </body>
+
 </html>

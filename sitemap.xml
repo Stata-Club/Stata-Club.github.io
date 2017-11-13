@@ -2,9 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/learn/index.html</loc>
+    
+    <lastmod>2017-11-13T08:17:13.113Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/program/index.html</loc>
+    
+    <lastmod>2017-11-13T08:07:18.855Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/example/index.html</loc>
+    
+    <lastmod>2017-11-13T07:58:06.639Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/staff/lichuntao.html</loc>
+    
+    <lastmod>2017-11-13T07:39:55.780Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/staff/zhoupeng.html</loc>
+    
+    <lastmod>2017-11-13T07:21:35.459Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/staff/liubeibei.html</loc>
+    
+    <lastmod>2017-11-13T07:19:40.415Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/staff/xueyuan.html</loc>
+    
+    <lastmod>2017-11-13T07:17:33.950Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/staff/snowman.html</loc>
     
-    <lastmod>2017-11-09T02:49:16.114Z</lastmod>
+    <lastmod>2017-11-13T07:15:04.229Z</lastmod>
     
   </url>
   
@@ -12,13 +61,6 @@
     <loc>http://yoursite.com/staff/index.html</loc>
     
     <lastmod>2017-11-09T01:41:57.544Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/staff/liubeibei.html</loc>
-    
-    <lastmod>2017-11-08T03:55:36.572Z</lastmod>
     
   </url>
   
