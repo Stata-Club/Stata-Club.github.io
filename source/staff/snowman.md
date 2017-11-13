@@ -1,4 +1,4 @@
-![](snowman/pict.jpg)
+![](index/pict.jpg)
 
 >姓名：张学人
 
