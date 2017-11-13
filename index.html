@@ -52,6 +52,25 @@
 </head>
 
 <body id="custom">
+        <div class="animationload">
+    <div class="loader">Loading...</div>
+    </div>
+
+    <div class="makeborder-top"></div>
+    <div class="makeborder-bottom"></div>
+    <div class="makeborder-left"></div>
+    <div class="makeborder-right"></div>
+
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form id="searchform" role="form">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <input type="text" class="form-control" placeholder="What you are looking for?">
+                </form>
+            </div>
+        </div>
+    </div>
     <div id="wrapper">
         <div class="container">
             <header id="Home" class="header">
@@ -124,8 +143,8 @@
                     <div class="row">
                     <div class="team_list">
 
-                        <div class="wow animated zoomIn" data-wow-delay=".5s">
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <a href="https://stata-club.github.io/staff/lichuntao.html"><div class="wow animated zoomIn">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 first">
                                 <div class="team_member practice-box">
                                     <div class="entry">
                                         <img class="img-responsive" src="https://stata-club.github.io/staff/index/lichuntao.jpg" alt="">
@@ -137,9 +156,9 @@
                                 <!-- end team_member -->
                             </div>
                             <!-- end col-lg-3 -->
-                        </div>
-                        <div class="wow animated zoomIn">
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 first">
+                        </div></a>
+                        <a href="https://stata-club.github.io/staff/xueyuan.html"><div class="wow animated zoomIn" data-wow-delay=".5s">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                 <div class="team_member practice-box">
                                     <div class="entry">
                                         <img class="img-responsive" src="https://stata-club.github.io/staff/index/xueyuan.jpg" alt="">
@@ -151,8 +170,8 @@
                                 <!-- end team_member -->
                             </div>
                             <!-- end col-lg-3 -->
-                        </div>
-                        <div class="wow animated zoomIn" data-wow-delay="1s">
+                        </div></a>
+                        <a href="https://stata-club.github.io/staff/liubeibei.html"><div class="wow animated zoomIn" data-wow-delay="1s">
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                 <div class="team_member practice-box">
                                     <div class="entry">
@@ -165,8 +184,8 @@
                                 <!-- end team_member -->
                             </div>
                             <!-- end col-lg-3 -->
-                        </div>
-                        <div class="wow animated zoomIn" data-wow-delay="1s">
+                        </div></a>
+                        <a href="https://stata-club.github.io/staff/zhoupeng.html"><div class="wow animated zoomIn" data-wow-delay="1.5s">
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                 <div class="team_member practice-box">
                                     <div class="entry">
@@ -179,7 +198,7 @@
                                 <!-- end team_member -->
                             </div>
                             <!-- end col-lg-3 -->
-                        </div>
+                        </div></a>
                     </div>
                         <!-- End of .portfolio-items -->
                     </div>
@@ -193,7 +212,7 @@
                         <h3 class="title-text">推文展示</h3>
                         <div class="btn-blk"><a href="https://Stata-Club.github.io/categories/推文" class="pm-rounded-btn">点击了解更多</a></div>
                         <hr>
-                        <em class="lead">爬虫俱乐部以微信公众号为主平台，多平台同步更新关于Stata的最新最热命令与案例，同时我们热枕期盼您的投稿，并有丰厚稿费。</em>
+                        <p class="lead">爬虫俱乐部以微信公众号为主平台，多平台同步更新关于Stata的最新最热命令与案例，同时我们热枕期盼您的投稿，并有丰厚稿费。</p>
                     </div>
                     <br>
                 </div>            
@@ -222,7 +241,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="item-blog col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="item-blog col-lg-4 col-md-4 col-sm-6 col-xs-12" data-wow-delay=".5s">
                                 <ul>
                                     <li class="img_item">
                                         <div class="caption8 ctn_green">
@@ -233,7 +252,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="item-blog col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="item-blog col-lg-4 col-md-4 col-sm-6 col-xs-12" data-wow-delay="1s">
                                 <ul>
                                     <li class="img_item">
                                         <div class="caption8 ctn_brown">
@@ -251,7 +270,7 @@
                     <div class="title text-center">
                         <h3 class="title-text">程序开源</h3>
                         <p class="lead">爬虫俱乐部在研究、分享Stata知识的过程中，逐步积累了质量上乘的do文档与数据，我们本着分享、开源的精神，将其发布出来，供大家下载使用。</p>
-                        <div class="btn-blk"><a href="https://Stata-Club.github.io/do" class="pm-rounded-btn">点击了解更多</a></div>
+                        <div class="btn-blk"><a href="https://stata-club.github.io/Sharing-Center-of-Stata-Club/" class="pm-rounded-btn">点击了解更多</a></div>
                         <hr>
                     </div>
                     <!-- end row -->
@@ -265,7 +284,7 @@
                     <div class="title text-center">
                         <h3 class="title-text">特色命令</h3>
                         <p class="lead">爬虫俱乐部的成员在分享、传播Stata技能的过程中，开发了迅捷又实用的一系列命令，您在本站或通过ssc install均可下载</p>
-                        <div class="btn-blk"><a href="https://Stata-Club.github.io/program" class="pm-rounded-btn">点击了解更多</a></div>
+                        <div class="btn-blk"><a href="https://stata-club.github.io/Sharing-Center-of-Stata-Club/program/" class="pm-rounded-btn">点击了解更多</a></div>
                         <hr>
                     </div>
                     <div class="row">
@@ -312,7 +331,7 @@
                             </div>
                             <!-- end col-lg-3 -->
                         </div>
-                        <div class="wow animated zoomIn" data-wow-delay="1s">
+                        <div class="wow animated zoomIn" data-wow-delay="1.5s">
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                 <div class="team_member practice-box">
                                     <div class="entry">
@@ -385,7 +404,7 @@
                             </div>
                             <!-- end col-lg-3 -->
                         </div>
-                        <div class="wow animated zoomIn" data-wow-delay="1s">
+                        <div class="wow animated zoomIn" data-wow-delay="1.5s">
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                 <div class="team_member practice-box">
                                     <div class="entry">
