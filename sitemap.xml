@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/staff/index.html</loc>
+    
+    <lastmod>2017-11-20T04:40:59.371Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/staff/wangkaili.html</loc>
+    
+    <lastmod>2017-11-20T04:40:28.863Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/staff/HXZ.html</loc>
+    
+    <lastmod>2017-11-20T04:38:35.777Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/staff/snowman.html</loc>
+    
+    <lastmod>2017-11-20T04:28:56.276Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/staff/zhoupeng.html</loc>
     
     <lastmod>2017-11-20T03:14:55.315Z</lastmod>
@@ -61,27 +89,6 @@
     <loc>http://yoursite.com/staff/fangchongwen.html</loc>
     
     <lastmod>2017-11-19T12:41:19.202Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/staff/index.html</loc>
-    
-    <lastmod>2017-11-13T12:39:16.410Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/staff/HXZ.html</loc>
-    
-    <lastmod>2017-11-13T12:35:26.876Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/staff/snowman.html</loc>
-    
-    <lastmod>2017-11-13T12:30:02.664Z</lastmod>
     
   </url>
   
