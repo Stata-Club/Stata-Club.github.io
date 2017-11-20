@@ -1,3 +1,8 @@
+---
+title: 李春涛
+date: 2010-09-01
+---
+
 ![](index/lichuntao.jpg)
 
 
