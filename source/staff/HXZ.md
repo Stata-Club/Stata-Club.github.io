@@ -3,7 +3,7 @@ title: 何雪泽
 date: 2017-09-01
 ---
 
-![](index/HXZ.jpg)
+<img width="300px" style="text-align:center;" src="index/HXZ.jpg" alt="" />
 
 >姓名：何雪泽
 

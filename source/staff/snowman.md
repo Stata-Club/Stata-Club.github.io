@@ -3,7 +3,7 @@ title: 张学人
 date: 2017-09-01
 ---
 
-![](index/pict.jpg)
+<img width="300px" style="text-align:center;" src="index/snowman.jpg" alt="" />
 
 >姓名：张学人
 
