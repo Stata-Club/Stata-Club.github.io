@@ -3,6 +3,16 @@
 <head>
   <meta charset="utf-8">
   
+  <script>
+    (function(){
+        if('{{ page.password }}'){
+            if (prompt('请输入文章密码') !== '{{ page.password }}'){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
   <title>玩转stata15—putdocx生成word文档 | Stata-Club</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
@@ -486,5 +496,8 @@ var a = new Donate({
   <a id="rocket" href="#top" class=""></a>
   <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
   
+  <script type="text/javascript" src="/js/src/love.js"></script>
+  {{ live2d() }}
 </body>
+
 </html>
