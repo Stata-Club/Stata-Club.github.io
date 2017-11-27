@@ -34,6 +34,10 @@ date: 2017-09-27 09:46:36
 
 ## [张学人](snowman.html)
 
+## [闫续文](yanxuwen.html)
+
+## [徐露露](xululu.html)
+
 ## [李金洋](lita.html)
 
 ## [王凯丽](wangkaili.html)
