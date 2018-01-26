@@ -1,0 +1,257 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="./js/esl.js"></script>
+        <script src="./js/config.js"></script>
+        <script src="./js/jquery.js"></script>
+        <script src="./js/facePrint.js"></script>
+        <title>全国PPP项目规模分布图</title>
+    </head>
+    <body>
+        <style>
+            html, body, #main {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+            }
+        </style>
+        <div id="main"></div>
+        <script>
+
+            require([
+                'echarts'
+            ], function (echarts) {
+
+                require(['js/china'], function () {
+                    var chart = echarts.init(document.getElementById('main'));
+
+                    chart.setOption({
+                        tooltip: {},
+                        legend: {
+                            orient: 'vertical',
+                            left: 'left',
+                            data:['准备阶段','执行阶段','识别阶段','采购阶段']
+                        },
+                        visualMap: {
+                            min: 0,
+                            max: 15000,
+                            left: 'left',
+                            top: 'bottom',
+                            text: ['High','Low'],
+                            seriesIndex: [1, 2, 3, 4],
+                            inRange: {
+                                color: ['#e0ffff','#006edd']
+                            },
+                            calculable : true
+                        },
+                        geo: {
+                            map: 'china',
+                            roam: true,
+                            label: {
+                                normal: {
+                                    show: true,
+                                    textStyle: {
+                                        color: 'rgba(0,0,0,0.4)'
+                                    }
+                                }
+                            },
+                            itemStyle: {
+                                normal:{
+                                    borderColor: 'rgba(0, 0, 0, 0.2)'
+                                },
+                                emphasis:{
+                                    color: null,
+                                    areaColor: null,
+                                    shadowOffsetX: 0,
+                                    shadowOffsetY: 0,
+                                    shadowBlur: 20,
+                                    borderWidth: 0,
+                                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                }
+                            }
+                        },
+                        series : [
+                           {
+                               name: '总投资',
+                               type: 'scatter',
+                               coordinateSystem: 'geo',
+                               symbolSize: function (val) {
+                                   return val[2] / 10;
+                               },
+                               label: {
+                                   normal: {
+                                       formatter: '{b}',
+                                       position: 'right',
+                                       show: false
+                                   },
+                                   emphasis: {
+                                       show: true
+                                   }
+                               },
+                               itemStyle: {
+                                   normal: {
+                                       color: '#ddb926'
+                                   }
+                               }
+                            },
+
+                            {
+                                name: '准备阶段',
+                                type: 'map',
+                                geoIndex: 0,
+                                data:[
+                                    {name: '上海' ,value: 0},
+                                    {name: '内蒙古' ,value: 2788.3982},
+                                    {name: '北京' ,value: 12.1689},
+                                    {name: '吉林' ,value: 164.8174},
+                                    {name: '四川' ,value: 857.90991},
+                                    {name: '天津' ,value: 30.3713},
+                                    {name: '宁夏' ,value: 164.19769},
+                                    {name: '安徽' ,value: 171.4334},
+                                    {name: '山西' ,value: 126.3407},
+                                    {name: '广东' ,value: 521.05859},
+                                    {name: '广西' ,value: 528.12732},
+                                    {name: '新疆' ,value: 1308.2898},
+                                    {name: '江苏' ,value: 966.56512},
+                                    {name: '江西' ,value: 206.7894},
+                                    {name: '河北' ,value: 885.19537},
+                                    {name: '河南' ,value: 2670.1421},
+                                    {name: '浙江' ,value: 1162.1074},
+                                    {name: '海南' ,value: 387.1983},
+                                    {name: '湖北' ,value: 619.3595},
+                                    {name: '湖南' ,value: 3153.7561},
+                                    {name: '甘肃' ,value: 1416.3114},
+                                    {name: '福建' ,value: 615.20117},
+                                    {name: '贵州' ,value: 2379.0659},
+                                    {name: '辽宁' ,value: 1195.465},
+                                    {name: '重庆' ,value: 1361.4841},
+                                    {name: '陕西' ,value: 402.2627},
+                                    {name: '青海' ,value: 263.18051},
+                                    {name: '黑龙江' ,value: 164.6954},
+                                ]
+                            },
+                            {
+                                name: '执行阶段',
+                                type: 'map',
+                                geoIndex: 0,
+                                data:[
+                                    {name: '上海' ,value: 15.7496},
+                                    {name: '内蒙古' ,value: 1434.4489},
+                                    {name: '北京' ,value: 1872.6014},
+                                    {name: '吉林' ,value: 1562.9326},
+                                    {name: '四川' ,value: 2003.1344},
+                                    {name: '天津' ,value: 20.219999},
+                                    {name: '宁夏' ,value: 239.1554},
+                                    {name: '安徽' ,value: 1865.8593},
+                                    {name: '山西' ,value: 259.94739},
+                                    {name: '广东' ,value: 1639.1222},
+                                    {name: '广西' ,value: 343.5141},
+                                    {name: '新疆' ,value: 2535.3008},
+                                    {name: '江苏' ,value: 2552.4558},
+                                    {name: '江西' ,value: 499.86539},
+                                    {name: '河北' ,value: 2698.1345},
+                                    {name: '河南' ,value: 2797.0483},
+                                    {name: '浙江' ,value: 2909.8528},
+                                    {name: '海南' ,value: 563.57428},
+                                    {name: '湖北' ,value: 1532.1586},
+                                    {name: '湖南' ,value: 1668.953},
+                                    {name: '甘肃' ,value: 208.0728},
+                                    {name: '福建' ,value: 1663.9449},
+                                    {name: '贵州' ,value: 3052.0127},
+                                    {name: '辽宁' ,value: 543.26892},
+                                    {name: '重庆' ,value: 256.91391},
+                                    {name: '陕西' ,value: 1590.3138},
+                                    {name: '青海' ,value: 47.016998},
+                                    {name: '黑龙江' ,value: 800.66248},
+                                ]
+                            },
+                            {
+                                name: '识别阶段',
+                                type: 'map',
+                                geoIndex: 0,
+                                data:[
+                                    {name: '上海' ,value: 14.5029},
+                                    {name: '内蒙古' ,value: 3112.4785},
+                                    {name: '北京' ,value: 488.56509},
+                                    {name: '吉林' ,value: 96.055801},
+                                    {name: '四川' ,value: 8056.7983},
+                                    {name: '天津' ,value: 967.27081},
+                                    {name: '宁夏' ,value: 1608.3148},
+                                    {name: '山西' ,value: 145.047},
+                                    {name: '广东' ,value: 236.9984},
+                                    {name: '广西' ,value: 1034.6967},
+                                    {name: '新疆' ,value: 6834.7593},
+                                    {name: '江苏' ,value: 4764.2744},
+                                    {name: '江西' ,value: 1259.8579},
+                                    {name: '河北' ,value: 3174.3655},
+                                    {name: '河南' ,value: 6262.2642},
+                                    {name: '浙江' ,value: 1601.5295},
+                                    {name: '海南' ,value: 418.8631},
+                                    {name: '湖北' ,value: 524.2085},
+                                    {name: '湖南' ,value: 768.60181},
+                                    {name: '甘肃' ,value: 2435.9763},
+                                    {name: '福建' ,value: 1087.4561},
+                                    {name: '西藏' ,value: 22.4783},
+                                    {name: '贵州' ,value: 9536.0313},
+                                    {name: '辽宁' ,value: 2953.0916},
+                                    {name: '重庆' ,value: 575.14203},
+                                    {name: '陕西' ,value: 2359.9727},
+                                    {name: '青海' ,value: 914.27991},
+                                    {name: '黑龙江' ,value: 1182.0444},
+                                ]
+                            },
+                           {
+                                name: '采购阶段',
+                                type: 'map',
+                                geoIndex: 0,
+                                data:[
+                                    {name: '内蒙古' ,value: 1448.8749},
+                                    {name: '北京' ,value: 237.1033},
+                                    {name: '吉林' ,value: 515.1059},
+                                    {name: '四川' ,value: 2963.8203},
+                                    {name: '天津' ,value: 131.7038},
+                                    {name: '宁夏' ,value: 294.24329},
+                                    {name: '安徽' ,value: 417.49619},
+                                    {name: '山西' ,value: 883.22357},
+                                    {name: '广东' ,value: 492.1044},
+                                    {name: '广西' ,value: 454.9462},
+                                    {name: '新疆' ,value: 2813.4688},
+                                    {name: '江苏' ,value: 1938.1187},
+                                    {name: '江西' ,value: 477.1572},
+                                    {name: '河北' ,value: 807.65601},
+                                    {name: '河南' ,value: 1993.6263},
+                                    {name: '浙江' ,value: 1119.4655},
+                                    {name: '海南' ,value: 171.7403},
+                                    {name: '湖北' ,value: 1521.2391},
+                                    {name: '湖南' ,value: 3292.1487},
+                                    {name: '甘肃' ,value: 449.33371},
+                                    {name: '福建' ,value: 621.88},
+                                    {name: '西藏' ,value: 97.444397},
+                                    {name: '贵州' ,value: 2640.3428},
+                                    {name: '辽宁' ,value: 444.0957},
+                                    {name: '重庆' ,value: 142.90491},
+                                    {name: '陕西' ,value: 797.84692},
+                                    {name: '青海' ,value: 27.5203},
+                                    {name: '黑龙江' ,value: 209.8922},
+                                ]
+                            }
+                        ]
+                    });
+
+                    chart.on('click', function (param) {
+                        alert('asdf');
+                    });
+                    // setTimeout(function () {
+                    //     chart.setOption({
+                    //         series: [{
+                    //             zoom: 5
+                    //         }]
+                    //     });
+                    // }, 2000);
+                });
+            });
+
+        </script>
+    </body>
+</html>
